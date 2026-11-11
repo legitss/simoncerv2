@@ -1,0 +1,6 @@
+{
+  "name": "SIMONCER - Sistem Monitoring & Evaluasi CAPA Terintegrasi",
+  "description": "Sistem monitoring dan evaluasi Corrective and Preventive Action (CAPA) terintegrasi dengan pelacakan real-time, surat tindak lanjut SRIKANDI TTE, notifikasi otomatis WhatsApp & Email, serta pelaporan transparan.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
