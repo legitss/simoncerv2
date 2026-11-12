@@ -56,6 +56,17 @@ if ($LASTEXITCODE -ne 0) {
     throw "Gagal menjalankan npm.cmd run build"
 }
 
+# 5. Otomatis Sinkronkan ke XAMPP (C:\xampp\htdocs\simoncerv2) jika XAMPP terpasang
+if (Test-Path "C:\xampp\htdocs") {
+    Write-Host "`n[Langkah 5/5] Menyinkronkan hasil build ke XAMPP (C:\xampp\htdocs\simoncerv2)..." -ForegroundColor Yellow
+    if (!(Test-Path "C:\xampp\htdocs\simoncerv2")) {
+        New-Item -ItemType Directory -Path "C:\xampp\htdocs\simoncerv2" -Force | Out-Null
+    }
+    Copy-Item -Path "$ProjectDir\dist\*" -Destination "C:\xampp\htdocs\simoncerv2" -Recurse -Force
+    Copy-Item -Path "$ProjectDir\dist\*" -Destination "C:\xampp\htdocs" -Recurse -Force
+    Write-Host "Sinkronisasi ke XAMPP selesai! Akses via https://192.168.1.25/simoncerv2/" -ForegroundColor Green
+}
+
 Write-Host "`n==========================================================" -ForegroundColor Green
 Write-Host "   UPDATE & BUILD SELESAI DENGAN SUKSES!" -ForegroundColor Green
 Write-Host "   Folder siap pakai produksi: $ProjectDir\dist" -ForegroundColor White

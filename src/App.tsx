@@ -776,7 +776,7 @@ export default function App() {
             </div>
 
             {/* Main Content Area */}
-            <main className={`flex-1 w-full py-5 sm:py-6 space-y-5 sm:space-y-6 transition-all duration-200 ${
+            <main className={`flex-1 w-full pt-5 sm:pt-6 pb-24 lg:pb-8 space-y-5 sm:space-y-6 transition-all duration-200 ${
               isWideView ? 'px-3 sm:px-8' : 'max-w-7xl mx-auto px-3 sm:px-6 lg:px-8'
             }`}>
 
@@ -878,28 +878,28 @@ export default function App() {
                     />
                   )}
 
-                  {/* Quick Hero Section (Khusus Admin Balai) — Official BPOM Navy & Green Gradient */}
+                  {/* Quick Hero Section (Khusus Admin Balai) — Soft BPOM Sky-Mint Gradient with High-Contrast Navy Text */}
                   {currentRole === 'ADMIN' && (
-                    <div className="bpom-hero-gradient rounded-2xl p-6 sm:p-8 text-white relative overflow-hidden shadow-lg border border-white/10">
+                    <div className="bpom-hero-gradient rounded-2xl p-5 sm:p-8 text-[#1e3a5f] dark:text-white relative overflow-hidden shadow-md border border-blue-200/80 dark:border-slate-700">
                       <div className="max-w-2xl relative z-10 space-y-3">
-                        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/15 text-white border border-white/25 text-xs font-bold backdrop-blur-xs">
-                          <Sparkles className="w-3.5 h-3.5 text-[#86efac]" />
+                        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/90 dark:bg-slate-800/90 text-[#1e3a5f] dark:text-sky-200 border border-blue-200 dark:border-slate-600 text-xs font-extrabold shadow-2xs">
+                          <Sparkles className="w-3.5 h-3.5 text-[#2e8b75]" />
                           <span>SIMONCER • Sistem Terintegrasi Pemantauan Kinerja & CAPA</span>
                         </div>
 
-                        <h1 className="text-2xl sm:text-3xl font-black tracking-tight text-white leading-tight">
+                        <h1 className="text-xl sm:text-3xl font-black tracking-tight text-[#1e3a5f] dark:text-white leading-tight">
                           Pelacakan Kinerja & Evaluasi CAPA Real-Time, Akurat, dan Transparan
                         </h1>
 
-                        <p className="text-xs sm:text-sm text-white/90 leading-relaxed">
-                          Admin mengunggah surat tindak lanjut yang telah diunduh dari <strong>SRIKANDI (TTE Kepala Balai)</strong>. Sistem secara otomatis mengekstrak seluruh parameter surat serta rincian temuan per klausul regulasi, dan memicu notifikasi pembaruan ke pihak sarana via WhatsApp & Email.
+                        <p className="text-xs sm:text-sm text-slate-700 dark:text-slate-200 leading-relaxed font-medium">
+                          Admin mengunggah surat tindak lanjut yang telah diunduh dari <strong className="text-[#1e3a5f] dark:text-white font-extrabold">SRIKANDI (TTE Kepala Balai)</strong>. Sistem secara otomatis mengekstrak seluruh parameter surat serta rincian temuan per klausul regulasi, dan memicu notifikasi pembaruan ke pihak sarana via WhatsApp & Email.
                         </p>
 
-                        <div className="pt-2 flex items-center gap-3 flex-wrap">
+                        <div className="pt-2 flex items-center gap-2.5 sm:gap-3 flex-wrap">
                           <button
                             onClick={() => setIsNewInspectionModalOpen(true)}
                             type="button"
-                            className="px-4 py-2.5 bg-[#2e856e] hover:bg-[#256d5a] text-white rounded-xl font-extrabold text-xs sm:text-sm flex items-center gap-2 shadow-lg shadow-[#2e856e]/30 border border-white/20 transition-all cursor-pointer"
+                            className="w-full sm:w-auto justify-center px-4 py-2.5 bg-[#2e8b75] hover:bg-[#257360] text-white rounded-xl font-extrabold text-xs sm:text-sm flex items-center gap-2 shadow-md shadow-[#2e8b75]/20 border border-[#257360]/20 transition-all cursor-pointer"
                           >
                             <Sparkles className="w-4 h-4" />
                             <span>Upload Surat SRIKANDI (TTE)</span>
@@ -912,9 +912,9 @@ export default function App() {
                               setIsTrackingModalOpen(true);
                             }}
                             type="button"
-                            className="px-4 py-2.5 bg-white/15 hover:bg-white/25 text-white rounded-xl font-bold text-xs sm:text-sm border border-white/25 transition-all cursor-pointer flex items-center gap-2 backdrop-blur-xs"
+                            className="w-full sm:w-auto justify-center px-4 py-2.5 bg-white/95 hover:bg-white dark:bg-slate-800 dark:hover:bg-slate-700 text-[#1e3a5f] dark:text-white rounded-xl font-extrabold text-xs sm:text-sm border border-blue-300/90 dark:border-slate-600 shadow-2xs transition-all cursor-pointer flex items-center gap-2"
                           >
-                            <Search className="w-4 h-4 text-[#86efac]" />
+                            <Search className="w-4 h-4 text-[#2e8b75]" />
                             <span>Lacak Kode Unik CAPA</span>
                           </button>
                         </div>

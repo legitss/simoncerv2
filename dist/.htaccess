@@ -1,0 +1,17 @@
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+
+  # Jangan rewrite file atau direktori fisik yang memang ada (assets, gambar, css, js)
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteCond %{REQUEST_FILENAME} !-l
+
+  # Arahkan seluruh request lain ke index.html (React SPA Routing)
+  RewriteRule . index.html [L]
+</IfModule>
+
+# Kompresi Gzip untuk mempercepat loading di HP & PC
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/plain text/css application/javascript application/json image/svg+xml
+</IfModule>
