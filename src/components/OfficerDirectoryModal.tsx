@@ -179,11 +179,11 @@ export const OfficerDirectoryModal: React.FC<OfficerDirectoryModalProps> = ({
             <div>
               <h3 className="font-bold text-sm sm:text-base flex items-center gap-2">
                 <span>Pengaturan Daftar Nama Petugas & Evaluator PIC</span>
-                <span className="text-[10px] font-mono bg-emerald-800/80 text-emerald-200 px-2 py-0.5 rounded-full border border-emerald-600/40">
+                <span className="text-[10px] font-mono bg-white/90 text-emerald-800 px-2 py-0.5 rounded-full border border-emerald-300 font-bold shadow-2xs">
                   {officers.length} Petugas Terdaftar
                 </span>
               </h3>
-              <p className="text-xs text-emerald-200/80 mt-0.5">
+              <p className="text-xs text-slate-700 font-medium mt-0.5">
                 Nama yang ada di daftar ini akan otomatis muncul pada dropdown pilihan penugasan dan siap menerima notifikasi WhatsApp resmi
               </p>
             </div>

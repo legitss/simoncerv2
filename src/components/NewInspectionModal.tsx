@@ -2329,7 +2329,7 @@ export const NewInspectionModal: React.FC<NewInspectionModalProps> = ({
             {/* Header */}
             <div className="p-4 sm:p-5 bpom-hero-gradient text-[#1e3a5f] flex items-center justify-between border-b border-blue-200/80">
               <div className="flex items-center gap-2.5">
-                <span className="p-2 rounded-xl bg-blue-500/20 text-blue-400 border border-blue-500/30">
+                <span className="p-2 rounded-xl bg-white/90 text-blue-700 border border-blue-300 shadow-2xs">
                   <BookOpen className="w-5 h-5" />
                 </span>
                 <div>

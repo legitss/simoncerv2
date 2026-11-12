@@ -154,19 +154,19 @@ export const InspectionList: React.FC<InspectionListProps> = ({
       {!hideOfficerBanner && currentRole === 'PETUGAS_EVALUATOR' && currentUser && (
         <div className="p-4 bpom-hero-gradient text-[#1e3a5f] rounded-2xl border border-emerald-500/30 shadow-md flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-xl bg-emerald-500/20 text-emerald-400 border border-emerald-500/40 flex items-center justify-center shrink-0">
+            <div className="w-10 h-10 rounded-xl bg-white/90 text-emerald-700 border border-emerald-300 shadow-2xs flex items-center justify-center shrink-0">
               <UserCheck className="w-5 h-5" />
             </div>
             <div>
               <div className="flex items-center gap-2 flex-wrap">
-                <h3 className="font-bold text-sm text-white">
+                <h3 className="font-extrabold text-sm text-[#1e3a5f]">
                   Portal Tugas Evaluator: {currentUser.name}
                 </h3>
                 <span className="text-[10px] font-mono px-2 py-0.5 rounded-full bg-emerald-500/20 text-emerald-800 border border-emerald-500/40 font-semibold">
                   NIP. {currentUser.nip || '-'}
                 </span>
               </div>
-              <p className="text-xs text-slate-300 mt-0.5">
+              <p className="text-xs text-slate-700 font-medium mt-0.5 leading-relaxed">
                 {isOfficerFiltered !== false 
                   ? 'Menampilkan daftar CAPA di mana Anda ditunjuk sebagai Penanggung Jawab / Lead Auditor PIC.'
                   : 'Menampilkan seluruh CAPA se-Balai Besar POM.'}
@@ -182,7 +182,7 @@ export const InspectionList: React.FC<InspectionListProps> = ({
                 className={`px-3 py-1.5 rounded-xl text-xs font-bold flex items-center gap-1.5 shadow-sm transition-all cursor-pointer ${
                   activeFilter === 'BELUM_DIEVALUASI'
                     ? 'bg-amber-500 text-slate-950 font-extrabold ring-2 ring-amber-300'
-                    : 'bg-amber-500/20 text-amber-300 border border-amber-500/40 hover:bg-amber-500/30'
+                    : 'bg-white/95 text-amber-900 border border-amber-400 hover:bg-amber-50'
                 }`}
               >
                 <AlertTriangle className="w-3.5 h-3.5 text-amber-400" />
@@ -194,7 +194,7 @@ export const InspectionList: React.FC<InspectionListProps> = ({
               <button
                 type="button"
                 onClick={onToggleOfficerFilter}
-                className="px-3 py-1.5 bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 rounded-xl text-xs font-semibold transition-colors cursor-pointer"
+                className="px-3 py-1.5 bg-white/95 hover:bg-white text-[#1e3a5f] border border-blue-300 shadow-2xs rounded-xl text-xs font-semibold transition-colors cursor-pointer"
                 title="Beralih antara menampilkan hanya penugasan Anda atau semua data balai"
               >
                 {isOfficerFiltered !== false ? 'Lihat Semua CAPA Balai' : 'Hanya Penugasan Saya'}
@@ -208,19 +208,19 @@ export const InspectionList: React.FC<InspectionListProps> = ({
       {(currentRole === 'ADMIN' || currentRole === 'SUPERVISOR') && pendingAdminCoverLetterCount > 0 && (
         <div className="p-4 bpom-hero-gradient text-[#1e3a5f] rounded-2xl border border-blue-400/40 shadow-md flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 animate-in fade-in">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-xl bg-blue-500/20 text-blue-400 border border-blue-400/30 flex items-center justify-center shrink-0">
-              <FileCheck2 className="w-5 h-5 text-blue-400" />
+            <div className="w-10 h-10 rounded-xl bg-white/90 text-blue-700 border border-blue-300 shadow-2xs flex items-center justify-center shrink-0">
+              <FileCheck2 className="w-5 h-5 text-blue-700" />
             </div>
             <div>
               <div className="flex items-center gap-2 flex-wrap">
-                <h3 className="font-bold text-sm text-white">
+                <h3 className="font-extrabold text-sm text-[#1e3a5f]">
                   Pemberitahuan Tugas Admin: {pendingAdminCoverLetterCount} Sesi Menunggu Surat Pengantar SRIKANDI
                 </h3>
                 <span className="text-[10px] font-mono px-2 py-0.5 rounded-full bg-amber-400 text-slate-950 font-extrabold shadow-xs animate-pulse">
                   Perlu Unggah Naskah TTE
                 </span>
               </div>
-              <p className="text-xs text-slate-300 mt-0.5">
+              <p className="text-xs text-slate-700 font-medium mt-0.5 leading-relaxed">
                 Petugas/Evaluator telah menyelesaikan telaah evaluasi CAPA. Admin perlu mengunggah Surat Pengantar ber-TTE dari SRIKANDI agar hasil evaluasi dapat resmi dikirimkan ke Sarana.
               </p>
             </div>
