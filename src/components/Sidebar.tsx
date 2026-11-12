@@ -8,34 +8,26 @@ import {
   UserCheck, 
   Building2, 
   ClipboardCheck, 
-  FileCheck2, 
   Upload, 
   Users, 
   Award,
   LogOut,
   ExternalLink,
   ChevronDown,
-  ChevronLeft,
-  ChevronRight,
-  MessageSquare,
   Settings,
   FileText,
   PanelLeftClose,
   PanelLeftOpen,
   Maximize2,
   Minimize2,
-  Sparkles,
   Smartphone,
   Printer,
   X,
-  Compass,
   Sliders,
   CheckCircle2,
-  Table,
   Home,
   LayoutDashboard,
   FolderOpen,
-  BarChart3,
   Bell
 } from 'lucide-react';
 
@@ -83,7 +75,6 @@ export const Sidebar: React.FC<SidebarProps> = ({
   onOpenTracking,
   onOpenNewInspection,
   onOpenOfficerDirectory,
-  onOpenNotificationSettings,
   onOpenSuperAdminSettings,
   onOpenPrintReport,
   onResetData,
@@ -93,7 +84,6 @@ export const Sidebar: React.FC<SidebarProps> = ({
   onToggleWideView,
   isFullscreen,
   onToggleFullscreen,
-  isHidden = false,
   onToggleHide,
 }) => {
   const [showRoleDropdown, setShowRoleDropdown] = useState(false);
@@ -102,28 +92,28 @@ export const Sidebar: React.FC<SidebarProps> = ({
     {
       id: 'ADMIN',
       label: 'Admin Balai POM',
-      icon: <UserCheck className="w-4 h-4 text-emerald-400" />,
+      icon: <UserCheck className="w-4 h-4 text-[#2e856e]" />,
       desc: 'Upload surat SRIKANDI TTE, tunjuk petugas PIC, & kelola akun',
       badge: 'Admin',
     },
     {
       id: 'PETUGAS_EVALUATOR',
       label: 'Petugas / Evaluator',
-      icon: <ClipboardCheck className="w-4 h-4 text-teal-400" />,
+      icon: <ClipboardCheck className="w-4 h-4 text-[#2c4c70] dark:text-sky-400" />,
       desc: 'Telaah bukti CAPA sarana & verifikasi pemenuhan standar',
       badge: 'Evaluator',
     },
     {
       id: 'SUPERVISOR',
       label: 'Supervisor (Kepala Balai)',
-      icon: <Award className="w-4 h-4 text-purple-400" />,
+      icon: <Award className="w-4 h-4 text-purple-600 dark:text-purple-400" />,
       desc: 'Supervisi SLA 14 hari, evaluasi kinerja, & berita acara',
       badge: 'Supervisor',
     },
     {
       id: 'SARANA',
       label: 'Portal Pelaku Usaha',
-      icon: <Building2 className="w-4 h-4 text-blue-400" />,
+      icon: <Building2 className="w-4 h-4 text-sky-600 dark:text-sky-400" />,
       desc: 'Lacak status & kirim dokumen tindak lanjut sarana',
       badge: 'Sarana',
     },
@@ -137,13 +127,13 @@ export const Sidebar: React.FC<SidebarProps> = ({
       {isOpenMobile && (
         <div
           onClick={onCloseMobile}
-          className="fixed inset-0 bg-slate-950/80 backdrop-blur-xs z-50 lg:hidden animate-in fade-in"
+          className="fixed inset-0 bg-[#243b55]/60 backdrop-blur-xs z-50 lg:hidden animate-in fade-in"
         />
       )}
 
-      {/* Sidebar Container */}
+      {/* Sidebar Container — Clean White BPOM Identity with Dark Mode support */}
       <aside
-        className={`fixed inset-y-0 left-0 z-50 lg:static flex flex-col bg-slate-950 text-slate-200 border-r border-slate-800/80 shadow-2xl transition-all duration-300 ease-in-out shrink-0 ${
+        className={`fixed inset-y-0 left-0 z-50 lg:static flex flex-col bg-white dark:bg-slate-900 text-slate-700 dark:text-slate-200 border-r border-slate-200/90 dark:border-slate-800 shadow-[4px_0_24px_rgba(0,64,133,0.06)] transition-all duration-300 ease-in-out shrink-0 ${
           isCollapsed ? 'w-20' : 'w-72'
         } ${
           isOpenMobile
@@ -151,10 +141,10 @@ export const Sidebar: React.FC<SidebarProps> = ({
             : '-translate-x-full lg:translate-x-0'
         }`}
       >
-        {/* Header / Brand Logo */}
-        <div className="h-16 px-4 flex items-center justify-between border-b border-slate-800/90 shrink-0">
+        {/* Header / Brand Logo — BPOM Identity */}
+        <div className="h-16 px-4 flex items-center justify-between border-b border-slate-200/80 dark:border-slate-800 shrink-0 bg-gradient-to-r from-[#2c4c70]/[0.05] via-[#2e856e]/[0.04] to-transparent">
           <div className="flex items-center gap-3 overflow-hidden">
-            <div className="w-9 h-9 rounded-xl bg-white p-1 shadow-md shadow-emerald-500/20 shrink-0 border border-slate-700 flex items-center justify-center">
+            <div className="w-10 h-10 rounded-xl bg-white p-1.5 shadow-sm shrink-0 border border-slate-200 dark:border-slate-700 flex items-center justify-center">
               <img
                 src="/assets/aistudio/logo-simoncer_467003a7.webp"
                 alt="Logo SIMONCER"
@@ -165,15 +155,15 @@ export const Sidebar: React.FC<SidebarProps> = ({
             {!isCollapsed && (
               <div className="flex flex-col truncate">
                 <div className="flex items-center gap-1.5">
-                  <span className="font-extrabold text-base tracking-tight text-white">
+                  <span className="font-black text-base tracking-tight text-[#243b55] dark:text-white">
                     SIMONCER
                   </span>
-                  <span className="text-[9px] uppercase font-bold px-1.5 py-0.2 rounded bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">
+                  <span className="text-[9px] uppercase font-extrabold px-1.5 py-0.5 rounded bg-[#2e856e]/15 text-[#2e856e] border border-[#2e856e]/30">
                     BBPOM
                   </span>
                 </div>
-                <span className="text-[10px] text-slate-400 truncate">
-                  Semarang • CAPA Integrated
+                <span className="text-[10px] font-semibold text-slate-500 dark:text-slate-400 truncate">
+                  Balai Besar POM di Semarang
                 </span>
               </div>
             )}
@@ -184,7 +174,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
             <button
               type="button"
               onClick={onCloseMobile}
-              className="p-1.5 text-slate-400 hover:text-white rounded-lg hover:bg-slate-800 lg:hidden cursor-pointer"
+              className="p-1.5 text-slate-500 hover:text-[#243b55] dark:text-slate-400 dark:hover:text-white rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 lg:hidden cursor-pointer"
               title="Tutup Menu"
             >
               <X className="w-5 h-5" />
@@ -193,11 +183,11 @@ export const Sidebar: React.FC<SidebarProps> = ({
             <button
               type="button"
               onClick={onToggleCollapse}
-              className="hidden lg:flex p-1.5 text-slate-400 hover:text-white rounded-lg hover:bg-slate-800 transition-colors cursor-pointer"
+              className="hidden lg:flex p-1.5 text-slate-500 hover:text-[#243b55] dark:text-slate-400 dark:hover:text-white rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors cursor-pointer"
               title={isCollapsed ? 'Perlebar Sidebar (Expand Menu)' : 'Ciutkan Sidebar (Collapse Menu)'}
             >
               {isCollapsed ? (
-                <PanelLeftOpen className="w-5 h-5 text-emerald-400" />
+                <PanelLeftOpen className="w-5 h-5 text-[#2e856e]" />
               ) : (
                 <PanelLeftClose className="w-5 h-5" />
               )}
@@ -207,7 +197,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
               <button
                 type="button"
                 onClick={onToggleHide}
-                className="hidden lg:flex p-1.5 text-slate-400 hover:text-rose-400 rounded-lg hover:bg-slate-800 transition-colors cursor-pointer"
+                className="hidden lg:flex p-1.5 text-slate-400 hover:text-rose-600 rounded-lg hover:bg-rose-50 dark:hover:bg-slate-800 transition-colors cursor-pointer"
                 title="Sembunyikan Sidebar Sepenuhnya (Hide Sidebar)"
               >
                 <X className="w-4 h-4" />
@@ -217,12 +207,12 @@ export const Sidebar: React.FC<SidebarProps> = ({
         </div>
 
         {/* Scrollable Navigation Items */}
-        <div className="flex-1 overflow-y-auto overflow-x-hidden p-3 space-y-5 scrollbar-thin scrollbar-thumb-slate-800">
+        <div className="flex-1 overflow-y-auto overflow-x-hidden p-3 space-y-5 scrollbar-thin">
           
           {/* Section 1: Navigasi Utama */}
-          <div className="space-y-1">
+          <div className="space-y-1.5">
             {!isCollapsed && (
-              <span className="px-3 text-[10px] font-bold uppercase tracking-wider text-slate-500">
+              <span className="px-3 text-[10px] font-extrabold uppercase tracking-wider text-slate-400 dark:text-slate-500">
                 Menu Utama
               </span>
             )}
@@ -234,20 +224,26 @@ export const Sidebar: React.FC<SidebarProps> = ({
                 onSelectHomeTab('HOME');
                 if (isOpenMobile) onCloseMobile();
               }}
-              className={`w-full flex items-center gap-3 px-3 py-2.5 rounded-xl font-semibold text-xs transition-all cursor-pointer group relative ${
+              className={`w-full flex items-center gap-3 px-3 py-2.5 rounded-xl font-bold text-xs transition-all cursor-pointer group relative ${
                 activeHomeTab === 'HOME'
-                  ? 'bg-emerald-500 text-slate-950 font-bold shadow-md shadow-emerald-500/20'
-                  : 'text-slate-300 hover:bg-slate-900 hover:text-white'
+                  ? 'bpom-active-gradient text-white shadow-md shadow-[#243b55]/20'
+                  : 'text-slate-600 dark:text-slate-300 hover:bg-[#2c4c70]/[0.06] dark:hover:bg-slate-800 hover:text-[#243b55] dark:hover:text-white'
               }`}
               title="Home • Dashboard Kinerja, Evaluasi, & Ringkasan Alur"
             >
-              <Home className={`w-4 h-4 shrink-0 ${activeHomeTab === 'HOME' ? 'text-slate-950' : 'text-emerald-400'}`} />
+              <span className={`w-7 h-7 rounded-lg flex items-center justify-center shrink-0 transition-colors ${
+                activeHomeTab === 'HOME'
+                  ? 'bg-white/20 text-white'
+                  : 'bg-[#2c4c70]/10 dark:bg-slate-800 text-[#2c4c70] dark:text-sky-400'
+              }`}>
+                <Home className="w-4 h-4" />
+              </span>
               
               {!isCollapsed ? (
-                <span className="flex-1 text-left truncate">Home</span>
+                <span className="flex-1 text-left truncate">Beranda Utama</span>
               ) : (
-                <div className="absolute left-full ml-2 hidden group-hover:block px-2 py-1 bg-slate-900 text-white text-xs rounded-md shadow-lg border border-slate-700 whitespace-nowrap z-50 font-sans">
-                  Home (Beranda)
+                <div className="absolute left-full ml-2 hidden group-hover:block px-2.5 py-1.5 bg-[#243b55] text-white text-xs rounded-lg shadow-lg whitespace-nowrap z-50 font-sans">
+                  Beranda Utama
                 </div>
               )}
             </button>
@@ -259,19 +255,25 @@ export const Sidebar: React.FC<SidebarProps> = ({
                 onSelectHomeTab('DASHBOARD');
                 if (isOpenMobile) onCloseMobile();
               }}
-              className={`w-full flex items-center gap-3 px-3 py-2.5 rounded-xl font-semibold text-xs transition-all cursor-pointer group relative ${
+              className={`w-full flex items-center gap-3 px-3 py-2.5 rounded-xl font-bold text-xs transition-all cursor-pointer group relative ${
                 activeHomeTab === 'DASHBOARD'
-                  ? 'bg-emerald-500 text-slate-950 font-bold shadow-md shadow-emerald-500/20'
-                  : 'text-slate-300 hover:bg-slate-900 hover:text-white'
+                  ? 'bpom-active-gradient text-white shadow-md shadow-[#243b55]/20'
+                  : 'text-slate-600 dark:text-slate-300 hover:bg-[#2c4c70]/[0.06] dark:hover:bg-slate-800 hover:text-[#243b55] dark:hover:text-white'
               }`}
               title="Dashboard Interaktif Ringkasan Visual Status Temuan & CAPA"
             >
-              <LayoutDashboard className={`w-4 h-4 shrink-0 ${activeHomeTab === 'DASHBOARD' ? 'text-slate-950' : 'text-emerald-400'}`} />
+              <span className={`w-7 h-7 rounded-lg flex items-center justify-center shrink-0 transition-colors ${
+                activeHomeTab === 'DASHBOARD'
+                  ? 'bg-white/20 text-white'
+                  : 'bg-[#2e856e]/10 dark:bg-slate-800 text-[#2e856e]'
+              }`}>
+                <LayoutDashboard className="w-4 h-4" />
+              </span>
               
               {!isCollapsed ? (
                 <span className="flex-1 text-left truncate">Dashboard Temuan</span>
               ) : (
-                <div className="absolute left-full ml-2 hidden group-hover:block px-2 py-1 bg-slate-900 text-white text-xs rounded-md shadow-lg border border-slate-700 whitespace-nowrap z-50 font-sans">
+                <div className="absolute left-full ml-2 hidden group-hover:block px-2.5 py-1.5 bg-[#243b55] text-white text-xs rounded-lg shadow-lg whitespace-nowrap z-50 font-sans">
                   Dashboard Temuan & CAPA
                 </div>
               )}
@@ -284,19 +286,25 @@ export const Sidebar: React.FC<SidebarProps> = ({
                 onSelectHomeTab('DOCUMENTS');
                 if (isOpenMobile) onCloseMobile();
               }}
-              className={`w-full flex items-center gap-3 px-3 py-2.5 rounded-xl font-semibold text-xs transition-all cursor-pointer group relative ${
+              className={`w-full flex items-center gap-3 px-3 py-2.5 rounded-xl font-bold text-xs transition-all cursor-pointer group relative ${
                 activeHomeTab === 'DOCUMENTS'
-                  ? 'bg-emerald-500 text-slate-950 font-bold shadow-md shadow-emerald-500/20'
-                  : 'text-slate-300 hover:bg-slate-900 hover:text-white'
+                  ? 'bpom-active-gradient text-white shadow-md shadow-[#243b55]/20'
+                  : 'text-slate-600 dark:text-slate-300 hover:bg-[#2c4c70]/[0.06] dark:hover:bg-slate-800 hover:text-[#243b55] dark:hover:text-white'
               }`}
               title="Sistem Manajemen Dokumen Pemeriksaan (Surat TL, Bukti, Hasil Evaluasi, & Jejak Audit)"
             >
-              <FolderOpen className={`w-4 h-4 shrink-0 ${activeHomeTab === 'DOCUMENTS' ? 'text-slate-950' : 'text-emerald-400'}`} />
+              <span className={`w-7 h-7 rounded-lg flex items-center justify-center shrink-0 transition-colors ${
+                activeHomeTab === 'DOCUMENTS'
+                  ? 'bg-white/20 text-white'
+                  : 'bg-sky-500/10 dark:bg-slate-800 text-sky-600 dark:text-sky-400'
+              }`}>
+                <FolderOpen className="w-4 h-4" />
+              </span>
               
               {!isCollapsed ? (
                 <span className="flex-1 text-left truncate">Manajemen Dokumen</span>
               ) : (
-                <div className="absolute left-full ml-2 hidden group-hover:block px-2 py-1 bg-slate-900 text-white text-xs rounded-md shadow-lg border border-slate-700 whitespace-nowrap z-50 font-sans">
+                <div className="absolute left-full ml-2 hidden group-hover:block px-2.5 py-1.5 bg-[#243b55] text-white text-xs rounded-lg shadow-lg whitespace-nowrap z-50 font-sans">
                   Manajemen Dokumen Pemeriksaan
                 </div>
               )}
@@ -309,28 +317,34 @@ export const Sidebar: React.FC<SidebarProps> = ({
                 onSelectHomeTab('INSPECTIONS');
                 if (isOpenMobile) onCloseMobile();
               }}
-              className={`w-full flex items-center gap-3 px-3 py-2.5 rounded-xl font-semibold text-xs transition-all cursor-pointer group relative ${
+              className={`w-full flex items-center gap-3 px-3 py-2.5 rounded-xl font-bold text-xs transition-all cursor-pointer group relative ${
                 activeHomeTab === 'INSPECTIONS'
-                  ? 'bg-emerald-500 text-slate-950 font-bold shadow-md shadow-emerald-500/20'
-                  : 'text-slate-300 hover:bg-slate-900 hover:text-white'
+                  ? 'bpom-active-gradient text-white shadow-md shadow-[#243b55]/20'
+                  : 'text-slate-600 dark:text-slate-300 hover:bg-[#2c4c70]/[0.06] dark:hover:bg-slate-800 hover:text-[#243b55] dark:hover:text-white'
               }`}
               title="Daftar Sesi CAPA Sarana (Pemeriksaan & Tindak Lanjut)"
             >
-              <FileText className={`w-4 h-4 shrink-0 ${activeHomeTab === 'INSPECTIONS' ? 'text-slate-950' : 'text-emerald-400'}`} />
+              <span className={`w-7 h-7 rounded-lg flex items-center justify-center shrink-0 transition-colors ${
+                activeHomeTab === 'INSPECTIONS'
+                  ? 'bg-white/20 text-white'
+                  : 'bg-indigo-500/10 dark:bg-slate-800 text-[#243b55] dark:text-indigo-400'
+              }`}>
+                <FileText className="w-4 h-4" />
+              </span>
               
               {!isCollapsed ? (
                 <>
                   <span className="flex-1 text-left truncate">Daftar Sesi CAPA</span>
-                  <span className={`text-[10px] px-2 py-0.5 rounded-full font-mono tabular-nums font-bold ${
+                  <span className={`text-[10px] px-2 py-0.5 rounded-full font-mono tabular-nums font-extrabold ${
                     activeHomeTab === 'INSPECTIONS'
-                      ? 'bg-slate-950/20 text-slate-950'
-                      : 'bg-slate-800 text-slate-300'
+                      ? 'bg-white/25 text-white'
+                      : 'bg-[#2c4c70]/10 dark:bg-slate-800 text-[#243b55] dark:text-slate-300'
                   }`}>
                     {inspectionsCount}
                   </span>
                 </>
               ) : (
-                <div className="absolute left-full ml-2 hidden group-hover:block px-2 py-1 bg-slate-900 text-white text-xs rounded-md shadow-lg border border-slate-700 whitespace-nowrap z-50 font-sans">
+                <div className="absolute left-full ml-2 hidden group-hover:block px-2.5 py-1.5 bg-[#243b55] text-white text-xs rounded-lg shadow-lg whitespace-nowrap z-50 font-sans">
                   Daftar Sesi CAPA ({inspectionsCount})
                 </div>
               )}
@@ -343,28 +357,34 @@ export const Sidebar: React.FC<SidebarProps> = ({
                 onSelectHomeTab('SIBERGAS_TABLE');
                 if (isOpenMobile) onCloseMobile();
               }}
-              className={`w-full flex items-center gap-3 px-3 py-2.5 rounded-xl font-semibold text-xs transition-all cursor-pointer group relative ${
+              className={`w-full flex items-center gap-3 px-3 py-2.5 rounded-xl font-bold text-xs transition-all cursor-pointer group relative ${
                 activeHomeTab === 'SIBERGAS_TABLE'
-                  ? 'bg-emerald-500 text-slate-950 font-bold shadow-md shadow-emerald-500/20'
-                  : 'text-slate-300 hover:bg-slate-900 hover:text-white'
+                  ? 'bpom-active-gradient text-white shadow-md shadow-[#243b55]/20'
+                  : 'text-slate-600 dark:text-slate-300 hover:bg-[#2c4c70]/[0.06] dark:hover:bg-slate-800 hover:text-[#243b55] dark:hover:text-white'
               }`}
               title="Tabel & Rekap Hasil Survei Integritas Petugas (SIBERGAS)"
             >
-              <ShieldCheck className={`w-4 h-4 shrink-0 ${activeHomeTab === 'SIBERGAS_TABLE' ? 'text-slate-950' : 'text-emerald-400'}`} />
+              <span className={`w-7 h-7 rounded-lg flex items-center justify-center shrink-0 transition-colors ${
+                activeHomeTab === 'SIBERGAS_TABLE'
+                  ? 'bg-white/20 text-white'
+                  : 'bg-[#2e856e]/10 dark:bg-slate-800 text-[#2e856e]'
+              }`}>
+                <ShieldCheck className="w-4 h-4" />
+              </span>
               
               {!isCollapsed ? (
                 <>
                   <span className="flex-1 text-left truncate">Survei SIBERGAS</span>
-                  <span className={`text-[10px] px-2 py-0.5 rounded-full font-mono tabular-nums font-bold ${
+                  <span className={`text-[10px] px-2 py-0.5 rounded-full font-mono tabular-nums font-extrabold ${
                     activeHomeTab === 'SIBERGAS_TABLE'
-                      ? 'bg-slate-950/20 text-slate-950'
-                      : 'bg-slate-800 text-emerald-400'
+                      ? 'bg-white/25 text-white'
+                      : 'bg-[#2e856e]/15 text-[#2e856e]'
                   }`}>
                     {surveysCount}
                   </span>
                 </>
               ) : (
-                <div className="absolute left-full ml-2 hidden group-hover:block px-2 py-1 bg-slate-900 text-white text-xs rounded-md shadow-lg border border-slate-700 whitespace-nowrap z-50 font-sans">
+                <div className="absolute left-full ml-2 hidden group-hover:block px-2.5 py-1.5 bg-[#243b55] text-white text-xs rounded-lg shadow-lg whitespace-nowrap z-50 font-sans">
                   Survei SIBERGAS ({surveysCount})
                 </div>
               )}
@@ -377,15 +397,17 @@ export const Sidebar: React.FC<SidebarProps> = ({
                 onOpenTracking();
                 if (isOpenMobile) onCloseMobile();
               }}
-              className="w-full flex items-center gap-3 px-3 py-2.5 rounded-xl font-semibold text-xs text-slate-300 hover:bg-slate-900 hover:text-white transition-all cursor-pointer group relative"
+              className="w-full flex items-center gap-3 px-3 py-2.5 rounded-xl font-bold text-xs text-slate-600 dark:text-slate-300 hover:bg-[#2c4c70]/[0.06] dark:hover:bg-slate-800 hover:text-[#243b55] dark:hover:text-white transition-all cursor-pointer group relative"
               title="Lacak status CAPA secara cepat menggunakan Kode Unik"
             >
-              <Search className="w-4 h-4 text-emerald-400 shrink-0" />
+              <span className="w-7 h-7 rounded-lg bg-amber-500/10 dark:bg-slate-800 text-amber-600 dark:text-amber-400 flex items-center justify-center shrink-0">
+                <Search className="w-4 h-4" />
+              </span>
               
               {!isCollapsed ? (
                 <span className="flex-1 text-left truncate">Lacak Kode CAPA</span>
               ) : (
-                <div className="absolute left-full ml-2 hidden group-hover:block px-2 py-1 bg-slate-900 text-white text-xs rounded-md shadow-lg border border-slate-700 whitespace-nowrap z-50 font-sans">
+                <div className="absolute left-full ml-2 hidden group-hover:block px-2.5 py-1.5 bg-[#243b55] text-white text-xs rounded-lg shadow-lg whitespace-nowrap z-50 font-sans">
                   Lacak Kode CAPA
                 </div>
               )}
@@ -393,9 +415,9 @@ export const Sidebar: React.FC<SidebarProps> = ({
           </div>
 
           {/* Section 2: Operasional & Tindak Lanjut */}
-          <div className="space-y-1">
+          <div className="space-y-1.5">
             {!isCollapsed && (
-              <span className="px-3 text-[10px] font-bold uppercase tracking-wider text-slate-500">
+              <span className="px-3 text-[10px] font-extrabold uppercase tracking-wider text-slate-400 dark:text-slate-500">
                 Operasional Balai
               </span>
             )}
@@ -408,27 +430,29 @@ export const Sidebar: React.FC<SidebarProps> = ({
                   onOpenNewInspection();
                   if (isOpenMobile) onCloseMobile();
                 }}
-                className="w-full flex items-center gap-3 px-3 py-2.5 rounded-xl font-semibold text-xs bg-gradient-to-r from-emerald-600/90 to-teal-600/90 hover:from-emerald-500 hover:to-teal-500 text-white shadow-sm transition-all cursor-pointer group relative"
+                className="w-full flex items-center gap-3 px-3 py-2.5 rounded-xl font-bold text-xs bg-[#2e856e] hover:bg-[#256d5a] text-white shadow-md shadow-[#2e856e]/25 transition-all cursor-pointer group relative"
                 title="Upload surat SRIKANDI TTE untuk terbitkan kode CAPA baru"
               >
-                <Upload className="w-4 h-4 shrink-0 text-white" />
+                <span className="w-7 h-7 rounded-lg bg-white/20 flex items-center justify-center shrink-0">
+                  <Upload className="w-4 h-4 text-white" />
+                </span>
                 
                 {!isCollapsed ? (
                   <>
-                    <span className="flex-1 text-left truncate font-bold">Upload Surat (TTE)</span>
-                    <span className="text-[9px] bg-emerald-950/80 text-emerald-300 px-1.5 py-0.2 rounded font-mono font-bold">
+                    <span className="flex-1 text-left truncate font-extrabold">Upload Surat (TTE)</span>
+                    <span className="text-[9px] bg-white/25 text-white px-1.5 py-0.5 rounded font-mono font-bold">
                       Baru
                     </span>
                   </>
                 ) : (
-                  <div className="absolute left-full ml-2 hidden group-hover:block px-2 py-1 bg-slate-900 text-white text-xs rounded-md shadow-lg border border-slate-700 whitespace-nowrap z-50 font-sans">
+                  <div className="absolute left-full ml-2 hidden group-hover:block px-2.5 py-1.5 bg-[#2e856e] text-white text-xs rounded-lg shadow-lg whitespace-nowrap z-50 font-sans">
                     Upload Surat SRIKANDI (TTE)
                   </div>
                 )}
               </button>
             )}
 
-            {/* Direktori Petugas / PIC Evaluator (Hanya untuk Admin & Supervisor, disembunyikan pada role Petugas/Evaluator) */}
+            {/* Direktori Petugas / PIC Evaluator */}
             {onOpenOfficerDirectory && currentRole !== 'PETUGAS_EVALUATOR' && (
               <button
                 type="button"
@@ -436,15 +460,17 @@ export const Sidebar: React.FC<SidebarProps> = ({
                   onOpenOfficerDirectory();
                   if (isOpenMobile) onCloseMobile();
                 }}
-                className="w-full flex items-center gap-3 px-3 py-2.5 rounded-xl font-semibold text-xs text-slate-300 hover:bg-slate-900 hover:text-white transition-all cursor-pointer group relative"
+                className="w-full flex items-center gap-3 px-3 py-2.5 rounded-xl font-bold text-xs text-slate-600 dark:text-slate-300 hover:bg-[#2c4c70]/[0.06] dark:hover:bg-slate-800 hover:text-[#243b55] dark:hover:text-white transition-all cursor-pointer group relative"
                 title="Lihat & kelola data Petugas/Evaluator Balai"
               >
-                <Users className="w-4 h-4 text-emerald-400 shrink-0" />
+                <span className="w-7 h-7 rounded-lg bg-[#2c4c70]/10 dark:bg-slate-800 text-[#2c4c70] dark:text-sky-400 flex items-center justify-center shrink-0">
+                  <Users className="w-4 h-4" />
+                </span>
                 
                 {!isCollapsed ? (
                   <span className="flex-1 text-left truncate">Direktori Petugas PIC</span>
                 ) : (
-                  <div className="absolute left-full ml-2 hidden group-hover:block px-2 py-1 bg-slate-900 text-white text-xs rounded-md shadow-lg border border-slate-700 whitespace-nowrap z-50 font-sans">
+                  <div className="absolute left-full ml-2 hidden group-hover:block px-2.5 py-1.5 bg-[#243b55] text-white text-xs rounded-lg shadow-lg whitespace-nowrap z-50 font-sans">
                     Direktori Petugas PIC
                   </div>
                 )}
@@ -459,15 +485,17 @@ export const Sidebar: React.FC<SidebarProps> = ({
                   onOpenPrintReport();
                   if (isOpenMobile) onCloseMobile();
                 }}
-                className="w-full flex items-center gap-3 px-3 py-2.5 rounded-xl font-semibold text-xs text-slate-300 hover:bg-slate-900 hover:text-white transition-all cursor-pointer group relative"
+                className="w-full flex items-center gap-3 px-3 py-2.5 rounded-xl font-bold text-xs text-slate-600 dark:text-slate-300 hover:bg-[#2c4c70]/[0.06] dark:hover:bg-slate-800 hover:text-[#243b55] dark:hover:text-white transition-all cursor-pointer group relative"
                 title="Cetak Laporan Rekapitulasi Pengawasan & CAPA Balai"
               >
-                <Printer className="w-4 h-4 text-purple-400 shrink-0" />
+                <span className="w-7 h-7 rounded-lg bg-purple-500/10 dark:bg-slate-800 text-purple-600 dark:text-purple-400 flex items-center justify-center shrink-0">
+                  <Printer className="w-4 h-4" />
+                </span>
                 
                 {!isCollapsed ? (
                   <span className="flex-1 text-left truncate">Cetak Rekap Balai</span>
                 ) : (
-                  <div className="absolute left-full ml-2 hidden group-hover:block px-2 py-1 bg-slate-900 text-white text-xs rounded-md shadow-lg border border-slate-700 whitespace-nowrap z-50 font-sans">
+                  <div className="absolute left-full ml-2 hidden group-hover:block px-2.5 py-1.5 bg-[#243b55] text-white text-xs rounded-lg shadow-lg whitespace-nowrap z-50 font-sans">
                     Cetak Rekap Balai
                   </div>
                 )}
@@ -481,20 +509,22 @@ export const Sidebar: React.FC<SidebarProps> = ({
                 onOpenPublicPortal();
                 if (isOpenMobile) onCloseMobile();
               }}
-              className="w-full flex items-center gap-3 px-3 py-2.5 rounded-xl font-semibold text-xs text-slate-300 hover:bg-slate-900 hover:text-white transition-all cursor-pointer group relative"
+              className="w-full flex items-center gap-3 px-3 py-2.5 rounded-xl font-bold text-xs text-slate-600 dark:text-slate-300 hover:bg-[#2c4c70]/[0.06] dark:hover:bg-slate-800 hover:text-[#243b55] dark:hover:text-white transition-all cursor-pointer group relative"
               title="Beralih ke tampilan publik portal sarana / pelaku usaha"
             >
-              <ExternalLink className="w-4 h-4 text-cyan-400 shrink-0" />
+              <span className="w-7 h-7 rounded-lg bg-sky-500/10 dark:bg-slate-800 text-sky-600 dark:text-sky-400 flex items-center justify-center shrink-0">
+                <ExternalLink className="w-4 h-4" />
+              </span>
               
               {!isCollapsed ? (
                 <>
                   <span className="flex-1 text-left truncate">Portal Publik Sarana</span>
-                  <span className="text-[10px] text-cyan-400 font-bold bg-cyan-950/60 px-1.5 py-0.2 rounded border border-cyan-800/50">
+                  <span className="text-[10px] text-[#2c4c70] dark:text-sky-300 font-bold bg-[#2c4c70]/10 dark:bg-sky-950/60 px-1.5 py-0.5 rounded border border-[#2c4c70]/20">
                     Publik
                   </span>
                 </>
               ) : (
-                <div className="absolute left-full ml-2 hidden group-hover:block px-2 py-1 bg-slate-900 text-white text-xs rounded-md shadow-lg border border-slate-700 whitespace-nowrap z-50 font-sans">
+                <div className="absolute left-full ml-2 hidden group-hover:block px-2.5 py-1.5 bg-[#243b55] text-white text-xs rounded-lg shadow-lg whitespace-nowrap z-50 font-sans">
                   Portal Publik Sarana
                 </div>
               )}
@@ -503,13 +533,13 @@ export const Sidebar: React.FC<SidebarProps> = ({
 
           {/* Section 3: Pusat Pengaturan Terpadu (Notifikasi & Sistem) */}
           {(currentRole === 'ADMIN' || currentRole === 'SUPERVISOR') && onOpenSuperAdminSettings && (
-            <div className="space-y-1">
+            <div className="space-y-1.5">
               {!isCollapsed && (
                 <div className="flex items-center justify-between px-3">
-                  <span className="text-[10px] font-bold uppercase tracking-wider text-slate-500">
+                  <span className="text-[10px] font-extrabold uppercase tracking-wider text-slate-400 dark:text-slate-500">
                     Pengaturan SIMONCER
                   </span>
-                  <span className="text-[9px] font-bold px-1.5 py-0.2 rounded bg-cyan-500/20 text-cyan-400 border border-cyan-500/30">
+                  <span className="text-[9px] font-extrabold px-1.5 py-0.5 rounded bg-[#2c4c70]/10 text-[#2c4c70] dark:text-sky-300">
                     Terpadu
                   </span>
                 </div>
@@ -522,20 +552,20 @@ export const Sidebar: React.FC<SidebarProps> = ({
                   onOpenSuperAdminSettings('NOTIFIKASI');
                   if (isOpenMobile) onCloseMobile();
                 }}
-                className="w-full flex items-center gap-3 px-3 py-2.5 rounded-xl font-bold text-xs text-white bg-slate-900/90 hover:bg-slate-900 border border-slate-700/80 hover:border-emerald-500/50 shadow-sm transition-all cursor-pointer group relative"
+                className="w-full flex items-center gap-3 px-3 py-2.5 rounded-xl font-bold text-xs text-[#243b55] dark:text-white bg-[#2c4c70]/[0.06] hover:bg-[#2c4c70]/[0.12] dark:bg-slate-800/90 dark:hover:bg-slate-800 border border-[#2c4c70]/20 dark:border-slate-700 shadow-2xs transition-all cursor-pointer group relative"
                 title="Pusat Pengaturan Terpadu: Pemicu Notifikasi, Saluran, Template & Live Preview, Gateway WA Fonnte, Akun & Petugas"
               >
-                <Settings className="w-4 h-4 text-emerald-400 group-hover:rotate-45 transition-transform shrink-0" />
+                <Settings className="w-4 h-4 text-[#2e856e] group-hover:rotate-45 transition-transform shrink-0" />
                 
                 {!isCollapsed ? (
                   <>
                     <span className="flex-1 text-left truncate">Menu Pengaturan</span>
-                    <span className="text-[9px] font-bold px-1.5 py-0.5 rounded bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">
+                    <span className="text-[9px] font-extrabold px-1.5 py-0.5 rounded bg-[#2e856e]/15 text-[#2e856e] border border-[#2e856e]/30">
                       Semua Opsi
                     </span>
                   </>
                 ) : (
-                  <div className="absolute left-full ml-2 hidden group-hover:block px-2.5 py-1.5 bg-slate-900 text-white text-xs rounded-xl shadow-xl border border-slate-700 whitespace-nowrap z-50 font-sans">
+                  <div className="absolute left-full ml-2 hidden group-hover:block px-2.5 py-1.5 bg-[#243b55] text-white text-xs rounded-xl shadow-xl whitespace-nowrap z-50 font-sans">
                     Menu Pengaturan Terpadu
                   </div>
                 )}
@@ -548,14 +578,14 @@ export const Sidebar: React.FC<SidebarProps> = ({
                   onOpenSuperAdminSettings('NOTIFIKASI');
                   if (isOpenMobile) onCloseMobile();
                 }}
-                className="w-full flex items-center gap-3 px-3 py-2 rounded-xl font-medium text-xs text-slate-300 hover:bg-slate-900/60 hover:text-emerald-400 transition-all cursor-pointer group relative"
+                className="w-full flex items-center gap-3 px-3 py-2 rounded-xl font-semibold text-xs text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 hover:text-[#243b55] dark:hover:text-white transition-all cursor-pointer group relative"
                 title="Sesuaikan Saluran (WA & Email) & Pemicu Notifikasi Otomatis"
               >
-                <Bell className="w-4 h-4 text-emerald-400 shrink-0" />
+                <Bell className="w-4 h-4 text-[#2e856e] shrink-0" />
                 {!isCollapsed ? (
                   <span className="flex-1 text-left truncate text-[11px]">Pemicu & Saluran Notif</span>
                 ) : (
-                  <div className="absolute left-full ml-2 hidden group-hover:block px-2 py-1 bg-slate-900 text-white text-xs rounded-md shadow-lg border border-slate-700 whitespace-nowrap z-50 font-sans">
+                  <div className="absolute left-full ml-2 hidden group-hover:block px-2 py-1 bg-[#243b55] text-white text-xs rounded-md shadow-lg whitespace-nowrap z-50 font-sans">
                     Pemicu & Saluran Notifikasi
                   </div>
                 )}
@@ -568,14 +598,14 @@ export const Sidebar: React.FC<SidebarProps> = ({
                   onOpenSuperAdminSettings('TEMPLATES');
                   if (isOpenMobile) onCloseMobile();
                 }}
-                className="w-full flex items-center gap-3 px-3 py-2 rounded-xl font-medium text-xs text-slate-300 hover:bg-slate-900/60 hover:text-cyan-400 transition-all cursor-pointer group relative"
+                className="w-full flex items-center gap-3 px-3 py-2 rounded-xl font-semibold text-xs text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 hover:text-[#243b55] dark:hover:text-white transition-all cursor-pointer group relative"
                 title="Edit Teks Pesan WhatsApp & Email serta Live Preview"
               >
-                <FileText className="w-4 h-4 text-cyan-400 shrink-0" />
+                <FileText className="w-4 h-4 text-[#2c4c70] dark:text-sky-400 shrink-0" />
                 {!isCollapsed ? (
                   <span className="flex-1 text-left truncate text-[11px]">Template & Live Preview</span>
                 ) : (
-                  <div className="absolute left-full ml-2 hidden group-hover:block px-2 py-1 bg-slate-900 text-white text-xs rounded-md shadow-lg border border-slate-700 whitespace-nowrap z-50 font-sans">
+                  <div className="absolute left-full ml-2 hidden group-hover:block px-2 py-1 bg-[#243b55] text-white text-xs rounded-md shadow-lg whitespace-nowrap z-50 font-sans">
                     Template & Live Preview
                   </div>
                 )}
@@ -588,14 +618,14 @@ export const Sidebar: React.FC<SidebarProps> = ({
                   onOpenSuperAdminSettings('WHATSAPP');
                   if (isOpenMobile) onCloseMobile();
                 }}
-                className="w-full flex items-center gap-3 px-3 py-2 rounded-xl font-medium text-xs text-slate-300 hover:bg-slate-900/60 hover:text-emerald-400 transition-all cursor-pointer group relative"
+                className="w-full flex items-center gap-3 px-3 py-2 rounded-xl font-semibold text-xs text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 hover:text-[#243b55] dark:hover:text-white transition-all cursor-pointer group relative"
                 title="Integrasi & Uji Coba WhatsApp Gateway Fonnte"
               >
-                <Smartphone className="w-4 h-4 text-emerald-400 shrink-0" />
+                <Smartphone className="w-4 h-4 text-[#2e856e] shrink-0" />
                 {!isCollapsed ? (
                   <span className="flex-1 text-left truncate text-[11px]">Gateway WA Fonnte</span>
                 ) : (
-                  <div className="absolute left-full ml-2 hidden group-hover:block px-2 py-1 bg-slate-900 text-white text-xs rounded-md shadow-lg border border-slate-700 whitespace-nowrap z-50 font-sans">
+                  <div className="absolute left-full ml-2 hidden group-hover:block px-2 py-1 bg-[#243b55] text-white text-xs rounded-md shadow-lg whitespace-nowrap z-50 font-sans">
                     Gateway WA Fonnte
                   </div>
                 )}
@@ -603,10 +633,10 @@ export const Sidebar: React.FC<SidebarProps> = ({
             </div>
           )}
 
-          {/* Section 4: Mode Tampilan & Layar Penuh (Wide / Full Screen) */}
-          <div className="space-y-1">
+          {/* Section 4: Mode Tampilan & Layar Penuh */}
+          <div className="space-y-1.5">
             {!isCollapsed && (
-              <span className="px-3 text-[10px] font-bold uppercase tracking-wider text-slate-500">
+              <span className="px-3 text-[10px] font-extrabold uppercase tracking-wider text-slate-400 dark:text-slate-500">
                 Mode Tampilan
               </span>
             )}
@@ -615,28 +645,28 @@ export const Sidebar: React.FC<SidebarProps> = ({
             <button
               type="button"
               onClick={onToggleWideView}
-              className={`w-full flex items-center gap-3 px-3 py-2.5 rounded-xl font-semibold text-xs transition-all cursor-pointer group relative ${
+              className={`w-full flex items-center gap-3 px-3 py-2 rounded-xl font-bold text-xs transition-all cursor-pointer group relative ${
                 isWideView
-                  ? 'bg-slate-900 text-emerald-300 border border-emerald-500/30'
-                  : 'text-slate-300 hover:bg-slate-900 hover:text-white'
+                  ? 'bg-[#2e856e]/10 text-[#2e856e] border border-[#2e856e]/30'
+                  : 'text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800'
               }`}
               title={isWideView ? 'Ganti ke Lebar Standar (Max 1280px)' : 'Perlebar Konten ke Layar Penuh (Fluid Width)'}
             >
-              <Sliders className="w-4 h-4 text-emerald-400 shrink-0" />
+              <Sliders className="w-4 h-4 text-[#2e856e] shrink-0" />
               
               {!isCollapsed ? (
                 <>
                   <span className="flex-1 text-left truncate">
                     {isWideView ? 'Tampilan Lebar Aktif' : 'Tampilan Lebih Lebar'}
                   </span>
-                  <span className={`text-[9px] font-bold px-1.5 py-0.2 rounded ${
-                    isWideView ? 'bg-emerald-500 text-slate-950' : 'bg-slate-800 text-slate-400'
+                  <span className={`text-[9px] font-bold px-1.5 py-0.5 rounded ${
+                    isWideView ? 'bg-[#2e856e] text-white' : 'bg-slate-200 dark:bg-slate-800 text-slate-600 dark:text-slate-400'
                   }`}>
                     {isWideView ? '100%' : 'Standar'}
                   </span>
                 </>
               ) : (
-                <div className="absolute left-full ml-2 hidden group-hover:block px-2 py-1 bg-slate-900 text-white text-xs rounded-md shadow-lg border border-slate-700 whitespace-nowrap z-50 font-sans">
+                <div className="absolute left-full ml-2 hidden group-hover:block px-2 py-1 bg-[#243b55] text-white text-xs rounded-md shadow-lg whitespace-nowrap z-50 font-sans">
                   {isWideView ? 'Lebar 100%' : 'Lebar Standar'}
                 </div>
               )}
@@ -646,13 +676,13 @@ export const Sidebar: React.FC<SidebarProps> = ({
             <button
               type="button"
               onClick={onToggleFullscreen}
-              className="w-full flex items-center gap-3 px-3 py-2.5 rounded-xl font-semibold text-xs text-slate-300 hover:bg-slate-900 hover:text-white transition-all cursor-pointer group relative"
+              className="w-full flex items-center gap-3 px-3 py-2 rounded-xl font-semibold text-xs text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition-all cursor-pointer group relative"
               title={isFullscreen ? 'Keluar dari Layar Penuh (Exit Fullscreen)' : 'Tampilan Layar Penuh (Fullscreen Mode)'}
             >
               {isFullscreen ? (
-                <Minimize2 className="w-4 h-4 text-amber-400 shrink-0" />
+                <Minimize2 className="w-4 h-4 text-amber-500 shrink-0" />
               ) : (
-                <Maximize2 className="w-4 h-4 text-emerald-400 shrink-0" />
+                <Maximize2 className="w-4 h-4 text-[#2c4c70] dark:text-sky-400 shrink-0" />
               )}
               
               {!isCollapsed ? (
@@ -660,47 +690,25 @@ export const Sidebar: React.FC<SidebarProps> = ({
                   {isFullscreen ? 'Keluar Layar Penuh' : 'Mode Layar Penuh'}
                 </span>
               ) : (
-                <div className="absolute left-full ml-2 hidden group-hover:block px-2 py-1 bg-slate-900 text-white text-xs rounded-md shadow-lg border border-slate-700 whitespace-nowrap z-50 font-sans">
+                <div className="absolute left-full ml-2 hidden group-hover:block px-2 py-1 bg-[#243b55] text-white text-xs rounded-md shadow-lg whitespace-nowrap z-50 font-sans">
                   {isFullscreen ? 'Keluar Fullscreen' : 'Layar Penuh'}
                 </div>
               )}
             </button>
 
-            {/* Sembunyikan Sidebar Sepenuhnya (Hide Sidebar untuk Full Screen / Max Width) */}
-            {onToggleHide && (
-              <button
-                type="button"
-                onClick={onToggleHide}
-                className="w-full flex items-center gap-3 px-3 py-2.5 rounded-xl font-semibold text-xs text-rose-300 hover:bg-rose-950/40 hover:text-rose-200 transition-all cursor-pointer group relative border border-rose-900/30"
-                title="Sembunyikan menu sidebar sepenuhnya untuk ruang tampilan layar maksimal"
-              >
-                <PanelLeftClose className="w-4 h-4 text-rose-400 shrink-0" />
-                
-                {!isCollapsed ? (
-                  <span className="flex-1 text-left truncate">
-                    Sembunyikan Sidebar
-                  </span>
-                ) : (
-                  <div className="absolute left-full ml-2 hidden group-hover:block px-2 py-1 bg-slate-900 text-white text-xs rounded-md shadow-lg border border-slate-700 whitespace-nowrap z-50 font-sans">
-                    Sembunyikan Sidebar
-                  </div>
-                )}
-              </button>
-            )}
-
             {/* Reset Data Button */}
             <button
               type="button"
               onClick={onResetData}
-              className="w-full flex items-center gap-3 px-3 py-2 rounded-xl text-xs text-slate-400 hover:bg-slate-900 hover:text-slate-200 transition-all cursor-pointer group relative"
+              className="w-full flex items-center gap-3 px-3 py-2 rounded-xl text-xs font-semibold text-slate-500 hover:bg-slate-100 dark:hover:bg-slate-800 hover:text-slate-800 dark:hover:text-slate-200 transition-all cursor-pointer group relative"
               title="Reset data demo kembali ke kondisi awal"
             >
-              <RefreshCw className="w-4 h-4 text-slate-500 group-hover:text-slate-300 shrink-0" />
+              <RefreshCw className="w-4 h-4 text-slate-400 shrink-0" />
               
               {!isCollapsed ? (
                 <span className="flex-1 text-left truncate">Reset Data Demo</span>
               ) : (
-                <div className="absolute left-full ml-2 hidden group-hover:block px-2 py-1 bg-slate-900 text-white text-xs rounded-md shadow-lg border border-slate-700 whitespace-nowrap z-50 font-sans">
+                <div className="absolute left-full ml-2 hidden group-hover:block px-2 py-1 bg-[#243b55] text-white text-xs rounded-md shadow-lg whitespace-nowrap z-50 font-sans">
                   Reset Data Demo
                 </div>
               )}
@@ -710,25 +718,25 @@ export const Sidebar: React.FC<SidebarProps> = ({
         </div>
 
         {/* Footer: User Role Selector & Profile */}
-        <div className="p-3 border-t border-slate-800 bg-slate-950/95 space-y-2 shrink-0">
+        <div className="p-3 border-t border-slate-200 dark:border-slate-800 bg-slate-50/80 dark:bg-slate-900/95 space-y-2 shrink-0">
           
           {/* Quick Role Switcher Dropdown */}
           <div className="relative">
             <button
               type="button"
               onClick={() => setShowRoleDropdown(!showRoleDropdown)}
-              className="w-full flex items-center gap-2 p-2 rounded-xl bg-slate-900 hover:bg-slate-850 border border-slate-800 text-xs transition-colors cursor-pointer"
+              className="w-full flex items-center gap-2 p-2 rounded-xl bg-white dark:bg-slate-800 hover:bg-slate-100 dark:hover:bg-slate-750 border border-slate-200 dark:border-slate-700 text-xs transition-colors cursor-pointer shadow-2xs"
               title="Ganti Peran Simulasi Hak Akses"
             >
-              <div className="w-6 h-6 rounded-lg bg-emerald-500/20 text-emerald-400 flex items-center justify-center shrink-0">
+              <div className="w-7 h-7 rounded-lg bg-[#2c4c70]/10 dark:bg-slate-700 flex items-center justify-center shrink-0">
                 {currentRoleObj.icon}
               </div>
 
               {!isCollapsed && (
                 <>
                   <div className="flex-1 text-left truncate">
-                    <span className="text-[10px] text-slate-400 block leading-tight">Peran Aktif</span>
-                    <span className="font-bold text-slate-100 truncate block leading-tight">
+                    <span className="text-[10px] text-slate-400 font-semibold block leading-tight">Peran Aktif</span>
+                    <span className="font-extrabold text-[#243b55] dark:text-white truncate block leading-tight">
                       {currentRoleObj.label}
                     </span>
                   </div>
@@ -739,8 +747,8 @@ export const Sidebar: React.FC<SidebarProps> = ({
 
             {/* Role Switcher Menu Popup */}
             {showRoleDropdown && (
-              <div className="absolute bottom-full left-0 mb-2 w-64 bg-slate-900 rounded-2xl shadow-2xl border border-slate-700 p-2 z-50 space-y-1 animate-in fade-in zoom-in-95">
-                <span className="text-[10px] font-bold text-slate-400 px-2 py-1 block uppercase">
+              <div className="absolute bottom-full left-0 mb-2 w-64 bg-white dark:bg-slate-900 rounded-2xl shadow-2xl border border-slate-200 dark:border-slate-700 p-2 z-50 space-y-1 animate-in fade-in zoom-in-95">
+                <span className="text-[10px] font-extrabold text-slate-400 px-2 py-1 block uppercase">
                   Pilih Peran Pengguna
                 </span>
                 {roles.map((r) => {
@@ -755,18 +763,18 @@ export const Sidebar: React.FC<SidebarProps> = ({
                       }}
                       className={`w-full flex items-center gap-2.5 p-2 rounded-xl text-left text-xs transition-all cursor-pointer ${
                         isActive
-                          ? 'bg-emerald-500/20 text-emerald-300 font-bold border border-emerald-500/40'
-                          : 'text-slate-300 hover:bg-slate-800 hover:text-white'
+                          ? 'bg-[#2c4c70]/10 dark:bg-[#2e856e]/20 text-[#243b55] dark:text-white font-bold border border-[#2c4c70]/25'
+                          : 'text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800'
                       }`}
                     >
-                      <div className="p-1 rounded-lg bg-slate-800 shrink-0">
+                      <div className="p-1.5 rounded-lg bg-slate-100 dark:bg-slate-800 shrink-0">
                         {r.icon}
                       </div>
                       <div className="flex-1 truncate">
-                        <span className="block truncate font-semibold">{r.label}</span>
+                        <span className="block truncate font-bold">{r.label}</span>
                         <span className="text-[10px] text-slate-400 block truncate">{r.desc}</span>
                       </div>
-                      {isActive && <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400 shrink-0" />}
+                      {isActive && <CheckCircle2 className="w-3.5 h-3.5 text-[#2e856e] shrink-0" />}
                     </button>
                   );
                 })}
@@ -780,10 +788,10 @@ export const Sidebar: React.FC<SidebarProps> = ({
               <span className="text-base shrink-0">{currentUser?.avatar || '👨‍💼'}</span>
               {!isCollapsed && (
                 <div className="truncate">
-                  <span className="text-xs font-bold text-white block truncate leading-tight">
+                  <span className="text-xs font-extrabold text-[#243b55] dark:text-white block truncate leading-tight">
                     {currentUser?.name || 'Petugas Balai POM'}
                   </span>
-                  <span className="text-[10px] text-slate-400 block truncate leading-tight">
+                  <span className="text-[10px] text-slate-500 dark:text-slate-400 block truncate leading-tight">
                     {currentUser?.nip ? `NIP: ${currentUser.nip}` : currentRole}
                   </span>
                 </div>
@@ -794,14 +802,13 @@ export const Sidebar: React.FC<SidebarProps> = ({
               <button
                 type="button"
                 onClick={onLogout}
-                className="p-1.5 text-slate-400 hover:text-rose-400 hover:bg-rose-950/40 rounded-lg transition-colors cursor-pointer shrink-0"
+                className="p-1.5 text-slate-400 hover:text-rose-600 hover:bg-rose-50 dark:hover:bg-rose-950/40 rounded-lg transition-colors cursor-pointer shrink-0"
                 title="Keluar / Logout Akun"
               >
                 <LogOut className="w-4 h-4" />
               </button>
             )}
           </div>
-
         </div>
       </aside>
     </>

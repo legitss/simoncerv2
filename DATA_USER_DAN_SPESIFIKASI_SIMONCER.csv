@@ -1,0 +1,34 @@
+﻿DAFTAR AKUN LOGIN INTERNAL BALAI (PORTAL PETUGAS SIMONCER v2);;;;;;;;;
+No;Peran / Role;Username;Password;Nama Lengkap;NIP;Jabatan;Email;No. WhatsApp;Hak Akses Utama
+1;ADMIN;admin;admin123;Administrator BBPOM;'198205152006041001;Pranata Komputer dan Administrator SIMONCER BBPOM;admin.simoncer@pom.go.id;+62 812-3456-7890;Akses penuh: Kelola akun pegawai, tambah pemeriksaan, WhatsApp Gateway, Hari Libur SLA, dan semua data
+2;SUPERVISOR;supervisor;super123;Dr. apt. Hendrawan Kusuma, M.Si;'197405121999031002;Kepala Balai Besar POM (Supervisor);hendrawan.kusuma@pom.go.id;+62 811-9988-7711;Dashboard eksekutif pimpinan, pantau SLA seluruh tim, rekap survei SIBERGAS, dan ekspor laporan
+3;PETUGAS_EVALUATOR;bambang;petugas123;apt. Bambang Wicaksono, M.Biomed;'198004122005011002;Pengawas Farmasi dan Makanan Ahli Madya / Lead Auditor CPOB;bambang.wicaksono@pom.go.id;+62 812-7788-9911;Evaluasi berkas CAPA sarana CPOB yang ditugaskan
+4;PETUGAS_EVALUATOR;petugas;petugas123;apt. Tri Wahyuni, M.Sc;'198108142005012003;Subkoordinator Pengawasan Fasyankes dan Evaluator CAPA;tri.wahyuni@pom.go.id;+62 813-8899-2233;Evaluasi berkas CAPA sarana Fasyankes (RS/Klinik/Apotek)
+5;PETUGAS_EVALUATOR;eko;petugas123;apt. Eko Prasetyo, M.Farm;'197906152003121001;Auditor Distribusi CDOB dan Verifikator CAPA Rantai Dingin;eko.prasetyo@pom.go.id;+62 811-2233-4455;Evaluasi berkas CAPA sarana Distribusi CDOB dan Cold Chain
+6;PETUGAS_EVALUATOR;wahyu;petugas123;Wahyu Hidayat, S.Si;'198305122006041003;Pengawas Industri Pangan Olahan dan Verifikator CPPOB;wahyu.hidayat@pom.go.id;+62 815-6677-8899;Evaluasi berkas CAPA sarana Industri Pangan Olahan (CPPOB)
+7;PETUGAS_EVALUATOR;hendro;petugas123;dr. Hendro Purwanto;'197503112002121004;Kepala Seksi Pelayanan Kesehatan dan Auditor Limbah B3;hendro.purwanto@dinkes.go.id;+62 818-5566-7788;Evaluasi berkas CAPA sarana Pelayanan Kesehatan
+8;PETUGAS_EVALUATOR;srimulyani;petugas123;apt. Sri Mulyani, S.Si;'197906152003122002;Subkoordinator Pengawasan NPP dan Verifikator SIPNAP;sri.mulyani@pom.go.id;+62 812-9911-3344;Evaluasi berkas CAPA sarana Apotek dan NPP
+
+DAFTAR KODE UNIK CAPA SARANA (UNTUK TES PENGAJUAN PERUSAHAAN DI HALAMAN DEPAN);;;;;;;;;
+No;Kode Unik CAPA;Nomor Surat SRIKANDI;Nama Perusahaan / Sarana;Jenis Komoditi;Petugas Evaluator PIC;Status Saat Ini;;;
+1;CAPA-2026-SRN01;SRK/TL-CPOB/2026/0914;PT Farma Husada Sejahtera;Industri Farmasi;apt. Bambang Wicaksono, M.Biomed;MENUNGGU_CAPA;;;
+2;CAPA-2026-PBF02;SRK/TL-CDOB/2026/0881;PT Kimia Farma Trading & Distribution;Pedagang Besar Farmasi (PBF);apt. Eko Prasetyo, M.Farm;CAPA_TERKIRIM;;;
+3;CAPA-2026-RS03;SRK/TL-FASYANKES/2026/0742;RSUD Mitra Husada Sehat;Rumah Sakit;apt. Tri Wahyuni, M.Sc;PERLU_REVISI;;;
+4;CAPA-2026-OT04;SRK/TL-CPOTB/2026/0619;CV Jamu Nusantara Warisan;Industri Obat Tradisional (IOT);apt. Bambang Wicaksono, M.Biomed;SELESAI_CLOSED;;;
+5;CAPA-2026-KLN05;SRK/TL-KLINIK/2026/0919;Klinik Pratama Sehat Bersama;Klinik;dr. Hendro Purwanto;MASIH_EVALUASI;;;
+6;CAPA-2026-IF06;SRK/TL-CPOB/2026/0516;PT Sanbe Bio Farma;Industri Farmasi;apt. Bambang Wicaksono, M.Biomed;SELESAI_CLOSED;;;
+7;CAPA-2026-PANG08;SRK/TL-CPPOB/2026/0712;PT Nutri Prima Perkasa;Industri Pangan Olahan;Wahyu Hidayat, S.Si;SELESAI_CLOSED;;;
+8;CAPA-2026-APT09;SRK/TL-APT/2026/0808;Apotek Guardian Mall Kelapa Gading;Apotek;apt. Sri Mulyani, S.Si;TERVALIDASI;;;
+
+SPESIFIKASI TEKNIS APLIKASI SIMONCER v2;;;;;;;;;
+No;Kategori;Komponen;Detail Spesifikasi;;;;;;
+1;Frontend UI;Framework Antarmuka;React 19.0.1 + TypeScript 7.0 (Single Page Application);;;;;;
+2;Styling & Desain;Framework CSS;Tailwind CSS v4.3.3 + Lucide Icons (Responsif HP, Tablet, dan PC);;;;;;
+3;Build Engine;Bundler Produksi;Vite v8.3 (Rolldown Engine);;;;;;
+4;Backend API;Runtime Server;Node.js v20/v22 + Express 4.21.2;;;;;;
+5;Web Server;HTTP/HTTPS Server;Apache (XAMPP / Laragon) atau Nginx;;;;;;
+6;Kecerdasan Buatan (AI);Ekstraksi PDF;Google Gemini AI SDK (@google/genai) + Deterministic OCR Parser (pdf-parse);;;;;;
+7;Cetak & Dokumen;Laporan PDF & QR TTE;jsPDF 4.2.1 + jsPDF-AutoTable 5.0.8 + QRCode 1.5.4;;;;;;
+8;Notifikasi;WhatsApp Gateway;Fonnte, Wassenger, Meta WABA, dan Custom Webhook;;;;;;
+9;Keamanan Akses;Pemisahan Portal;Portal Publik (Khusus Kode CAPA Perusahaan) dan Portal Internal Balai (Wajib Login);;;;;;
+10;Spesifikasi Server;Minimum Server/VPS;CPU 1-2 Core, RAM 2-4 GB, SSD 10-20 GB, Windows Server / Linux Ubuntu;;;;;;

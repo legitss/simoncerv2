@@ -607,18 +607,18 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-slate-100 flex flex-col font-sans text-slate-900 selection:bg-emerald-500 selection:text-white">
+    <div className="min-h-screen bg-[#f4f7fb] dark:bg-[#0b1120] flex flex-col font-sans text-slate-900 dark:text-slate-100 selection:bg-[#2e856e] selection:text-white transition-colors">
       
       {/* Toast Notification */}
       {toastMessage && (
-        <div className="fixed bottom-5 right-5 z-50 animate-in fade-in slide-in-from-bottom-5 duration-300">
-          <div className="p-4 bg-slate-900 text-white rounded-2xl shadow-2xl border border-slate-700 max-w-sm flex items-start gap-3">
-            <div className="p-1 rounded-full bg-emerald-500/20 text-emerald-400 mt-0.5 shrink-0">
+        <div className="fixed bottom-20 lg:bottom-5 right-4 lg:right-5 z-50 animate-in fade-in slide-in-from-bottom-5 duration-300">
+          <div className="p-4 bg-[#243b55] text-white rounded-2xl shadow-2xl border border-[#2e856e]/40 max-w-sm flex items-start gap-3">
+            <div className="p-1 rounded-full bg-[#2e856e]/25 text-[#86efac] mt-0.5 shrink-0">
               <CheckCircle2 className="w-5 h-5" />
             </div>
             <div className="text-xs">
-              <h4 className="font-bold text-slate-100">{toastMessage.title}</h4>
-              <p className="text-slate-300 mt-0.5 leading-relaxed">{toastMessage.description}</p>
+              <h4 className="font-bold text-white">{toastMessage.title}</h4>
+              <p className="text-slate-200 mt-0.5 leading-relaxed">{toastMessage.description}</p>
             </div>
           </div>
         </div>
@@ -640,13 +640,14 @@ export default function App() {
             handleSaveSibergasSurvey(surveyData);
           }}
         />
-      ) : currentRole === 'SARANA' ? (
+      ) : (!currentUser || currentRole === 'SARANA') ? (
         <PublicLandingView
           inspections={inspections}
           currentRole={currentRole}
+          currentUser={currentUser}
           onRoleChange={(r) => {
             setCurrentRole(r);
-            showToast('Peran Aktif Diubah', `Anda saat ini menjelajah sebagai ${r}.`, 'info');
+            showToast('Kembali ke Dashboard Internal', `Anda kembali masuk sebagai ${currentUser?.name || r}.`, 'info');
           }}
           onOpenLoginModal={() => setIsLoginModalOpen(true)}
           onOpenSubmitCapa={handleRequestSubmitCapa}
@@ -748,24 +749,24 @@ export default function App() {
               onSelectHomeTab={setActiveHomeTab}
             />
 
-            {/* Role Context Helper Banner */}
-            <div className="bg-slate-900/95 border-b border-slate-800 text-xs py-2 px-4 sm:px-6 shrink-0 text-slate-300">
+            {/* Role Context Helper Banner — BPOM Navy & Green Subbar */}
+            <div className="bg-white dark:bg-slate-900 border-b border-slate-200/90 dark:border-slate-800 text-xs py-2.5 px-4 sm:px-6 shrink-0 text-slate-600 dark:text-slate-300 shadow-2xs">
               <div className={`${isWideView ? 'w-full' : 'max-w-7xl mx-auto'} flex items-center justify-between flex-wrap gap-2`}>
                 <div className="flex items-center gap-2 min-w-0">
-                  <span className="w-2 h-2 rounded-full bg-emerald-400 shrink-0"></span>
+                  <span className="w-2 h-2 rounded-full bg-[#2e856e] shrink-0"></span>
                   <span className="truncate">
-                    <strong className="text-white font-semibold">Otoritas Akses:</strong>{' '}
+                    <strong className="text-[#243b55] dark:text-white font-bold">Otoritas Akses:</strong>{' '}
                     {currentRole === 'SUPERVISOR' && 'Supervisor (Supervisi kepatuhan SLA 14 hari, evaluasi kinerja evaluator, & pengesahan laporan CAPA)'}
                     {currentRole === 'ADMIN' && 'Admin Balai (Pengelolaan surat SRIKANDI TTE Kepala Balai, penugasan Petugas PIC, & akun)'}
                     {currentRole === 'PETUGAS_EVALUATOR' && 'Petugas / Evaluator (Telaah bukti tindak lanjut CAPA sarana, catatan rekomendasi, & validasi status)'}
                   </span>
                 </div>
 
-                <div className="flex items-center gap-3 text-[11px] text-slate-400 shrink-0">
+                <div className="flex items-center gap-3 text-[11px] shrink-0">
                   <button
                     type="button"
                     onClick={() => setCurrentRole('SARANA')}
-                    className="text-emerald-400 hover:text-emerald-300 font-semibold flex items-center gap-1.5 cursor-pointer transition-colors"
+                    className="text-[#2e856e] hover:text-[#256d5a] font-bold flex items-center gap-1.5 cursor-pointer transition-colors"
                   >
                     <span>Portal Publik Pelaku Usaha</span>
                     <ExternalLink className="w-3 h-3" />
@@ -779,20 +780,20 @@ export default function App() {
               isWideView ? 'px-3 sm:px-8' : 'max-w-7xl mx-auto px-3 sm:px-6 lg:px-8'
             }`}>
 
-              {/* Menu Tab Switcher: Modern Segmented Navigation Bar */}
-              <div className="flex items-center justify-between gap-3 border-b border-slate-200 pb-3 flex-wrap">
-                <nav className="bg-slate-200/80 p-1.5 rounded-2xl flex items-center gap-1 backdrop-blur-xs border border-slate-300/80 shadow-2xs overflow-x-auto max-w-full">
+              {/* Menu Tab Switcher: Modern BPOM Segmented Navigation Bar */}
+              <div className="flex items-center justify-between gap-3 border-b border-slate-200 dark:border-slate-800 pb-3 flex-wrap">
+                <nav className="bg-white dark:bg-slate-900 p-1.5 rounded-2xl flex items-center gap-1.5 border border-slate-200/90 dark:border-slate-800 shadow-xs overflow-x-auto max-w-full">
                   <button
                     type="button"
                     onClick={() => setActiveHomeTab('HOME')}
                     className={`flex items-center gap-2 px-3.5 py-2 rounded-xl text-xs sm:text-sm transition-all whitespace-nowrap shrink-0 cursor-pointer ${
                       activeHomeTab === 'HOME'
-                        ? 'bg-white text-slate-950 font-bold shadow-xs border border-slate-300/70'
-                        : 'text-slate-600 hover:text-slate-950 hover:bg-white/60 font-semibold'
+                        ? 'bpom-active-gradient text-white font-extrabold shadow-sm'
+                        : 'text-slate-600 dark:text-slate-300 hover:text-[#243b55] dark:hover:text-white hover:bg-[#2c4c70]/[0.06] font-bold'
                     }`}
                   >
-                    <Home className={`w-4 h-4 ${activeHomeTab === 'HOME' ? 'text-emerald-600' : 'text-slate-500'}`} />
-                    <span>Home</span>
+                    <Home className={`w-4 h-4 ${activeHomeTab === 'HOME' ? 'text-white' : 'text-[#2c4c70] dark:text-sky-400'}`} />
+                    <span>Beranda</span>
                   </button>
 
                   <button
@@ -800,11 +801,11 @@ export default function App() {
                     onClick={() => setActiveHomeTab('DASHBOARD')}
                     className={`flex items-center gap-2 px-3.5 py-2 rounded-xl text-xs sm:text-sm transition-all whitespace-nowrap shrink-0 cursor-pointer ${
                       activeHomeTab === 'DASHBOARD'
-                        ? 'bg-white text-slate-950 font-bold shadow-xs border border-slate-300/70'
-                        : 'text-slate-600 hover:text-slate-950 hover:bg-white/60 font-semibold'
+                        ? 'bpom-active-gradient text-white font-extrabold shadow-sm'
+                        : 'text-slate-600 dark:text-slate-300 hover:text-[#243b55] dark:hover:text-white hover:bg-[#2c4c70]/[0.06] font-bold'
                     }`}
                   >
-                    <LayoutDashboard className={`w-4 h-4 ${activeHomeTab === 'DASHBOARD' ? 'text-teal-600' : 'text-slate-500'}`} />
+                    <LayoutDashboard className={`w-4 h-4 ${activeHomeTab === 'DASHBOARD' ? 'text-white' : 'text-[#2e856e]'}`} />
                     <span>Dashboard Temuan</span>
                   </button>
 
@@ -813,11 +814,11 @@ export default function App() {
                     onClick={() => setActiveHomeTab('DOCUMENTS')}
                     className={`flex items-center gap-2 px-3.5 py-2 rounded-xl text-xs sm:text-sm transition-all whitespace-nowrap shrink-0 cursor-pointer ${
                       activeHomeTab === 'DOCUMENTS'
-                        ? 'bg-white text-slate-950 font-bold shadow-xs border border-slate-300/70'
-                        : 'text-slate-600 hover:text-slate-950 hover:bg-white/60 font-semibold'
+                        ? 'bpom-active-gradient text-white font-extrabold shadow-sm'
+                        : 'text-slate-600 dark:text-slate-300 hover:text-[#243b55] dark:hover:text-white hover:bg-[#2c4c70]/[0.06] font-bold'
                     }`}
                   >
-                    <FolderOpen className={`w-4 h-4 ${activeHomeTab === 'DOCUMENTS' ? 'text-cyan-600' : 'text-slate-500'}`} />
+                    <FolderOpen className={`w-4 h-4 ${activeHomeTab === 'DOCUMENTS' ? 'text-white' : 'text-sky-600'}`} />
                     <span>Manajemen Dokumen</span>
                   </button>
 
@@ -826,14 +827,14 @@ export default function App() {
                     onClick={() => setActiveHomeTab('INSPECTIONS')}
                     className={`flex items-center gap-2 px-3.5 py-2 rounded-xl text-xs sm:text-sm transition-all whitespace-nowrap shrink-0 cursor-pointer ${
                       activeHomeTab === 'INSPECTIONS'
-                        ? 'bg-white text-slate-950 font-bold shadow-xs border border-slate-300/70'
-                        : 'text-slate-600 hover:text-slate-950 hover:bg-white/60 font-semibold'
+                        ? 'bpom-active-gradient text-white font-extrabold shadow-sm'
+                        : 'text-slate-600 dark:text-slate-300 hover:text-[#243b55] dark:hover:text-white hover:bg-[#2c4c70]/[0.06] font-bold'
                     }`}
                   >
-                    <FileText className={`w-4 h-4 ${activeHomeTab === 'INSPECTIONS' ? 'text-indigo-600' : 'text-slate-500'}`} />
+                    <FileText className={`w-4 h-4 ${activeHomeTab === 'INSPECTIONS' ? 'text-white' : 'text-[#243b55] dark:text-indigo-400'}`} />
                     <span>Daftar Sesi CAPA</span>
-                    <span className={`text-[10px] px-1.5 py-0.2 rounded-md font-bold font-mono tabular-nums ${
-                      activeHomeTab === 'INSPECTIONS' ? 'bg-slate-100 text-slate-900 border border-slate-200' : 'bg-slate-300/70 text-slate-700'
+                    <span className={`text-[10px] px-1.5 py-0.5 rounded-md font-extrabold font-mono tabular-nums ${
+                      activeHomeTab === 'INSPECTIONS' ? 'bg-white/25 text-white' : 'bg-[#2c4c70]/10 text-[#243b55] dark:text-slate-200'
                     }`}>
                       {displayedInspections.length}
                     </span>
@@ -844,23 +845,23 @@ export default function App() {
                     onClick={() => setActiveHomeTab('SIBERGAS_TABLE')}
                     className={`flex items-center gap-2 px-3.5 py-2 rounded-xl text-xs sm:text-sm transition-all whitespace-nowrap shrink-0 cursor-pointer ${
                       activeHomeTab === 'SIBERGAS_TABLE'
-                        ? 'bg-white text-slate-950 font-bold shadow-xs border border-slate-300/70'
-                        : 'text-slate-600 hover:text-slate-950 hover:bg-white/60 font-semibold'
+                        ? 'bpom-active-gradient text-white font-extrabold shadow-sm'
+                        : 'text-slate-600 dark:text-slate-300 hover:text-[#243b55] dark:hover:text-white hover:bg-[#2c4c70]/[0.06] font-bold'
                     }`}
                   >
-                    <ShieldCheck className={`w-4 h-4 ${activeHomeTab === 'SIBERGAS_TABLE' ? 'text-emerald-600' : 'text-slate-500'}`} />
+                    <ShieldCheck className={`w-4 h-4 ${activeHomeTab === 'SIBERGAS_TABLE' ? 'text-white' : 'text-[#2e856e]'}`} />
                     <span>Survei SIBERGAS</span>
-                    <span className={`text-[10px] px-1.5 py-0.2 rounded-md font-bold font-mono tabular-nums ${
-                      activeHomeTab === 'SIBERGAS_TABLE' ? 'bg-emerald-100 text-emerald-800 border border-emerald-200' : 'bg-slate-300/70 text-slate-700'
+                    <span className={`text-[10px] px-1.5 py-0.5 rounded-md font-extrabold font-mono tabular-nums ${
+                      activeHomeTab === 'SIBERGAS_TABLE' ? 'bg-white/25 text-white' : 'bg-[#2e856e]/15 text-[#2e856e]'
                     }`}>
                       {inspections.filter((i) => i.sibergasSurvey?.completed).length}/{inspections.length}
                     </span>
                   </button>
                 </nav>
 
-                <div className="text-xs text-slate-500 items-center gap-1.5 hidden md:flex">
-                  <ShieldCheck className="w-3.5 h-3.5 text-emerald-600" />
-                  <span>Zona Integritas (WBK/WBBM) BBPOM</span>
+                <div className="text-xs font-semibold text-[#243b55] dark:text-slate-300 items-center gap-1.5 hidden md:flex">
+                  <ShieldCheck className="w-4 h-4 text-[#2e856e]" />
+                  <span>Zona Integritas (WBK/WBBM) BBPOM Semarang</span>
                 </div>
               </div>
 
@@ -877,22 +878,20 @@ export default function App() {
                     />
                   )}
 
-                  {/* Quick Hero Section (Khusus Admin Balai) */}
+                  {/* Quick Hero Section (Khusus Admin Balai) — Official BPOM Navy & Green Gradient */}
                   {currentRole === 'ADMIN' && (
-                    <div className="bg-gradient-to-r from-slate-900 via-emerald-950 to-slate-900 rounded-2xl p-6 sm:p-8 text-white relative overflow-hidden shadow-md">
-                      <div className="absolute right-0 top-0 bottom-0 w-1/3 bg-radial from-emerald-500/10 to-transparent pointer-events-none"></div>
-                      
+                    <div className="bpom-hero-gradient rounded-2xl p-6 sm:p-8 text-white relative overflow-hidden shadow-lg border border-white/10">
                       <div className="max-w-2xl relative z-10 space-y-3">
-                        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 text-xs font-semibold">
-                          <Sparkles className="w-3.5 h-3.5" />
+                        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/15 text-white border border-white/25 text-xs font-bold backdrop-blur-xs">
+                          <Sparkles className="w-3.5 h-3.5 text-[#86efac]" />
                           <span>SIMONCER • Sistem Terintegrasi Pemantauan Kinerja & CAPA</span>
                         </div>
 
-                        <h1 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-white leading-tight">
+                        <h1 className="text-2xl sm:text-3xl font-black tracking-tight text-white leading-tight">
                           Pelacakan Kinerja & Evaluasi CAPA Real-Time, Akurat, dan Transparan
                         </h1>
 
-                        <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
+                        <p className="text-xs sm:text-sm text-white/90 leading-relaxed">
                           Admin mengunggah surat tindak lanjut yang telah diunduh dari <strong>SRIKANDI (TTE Kepala Balai)</strong>. Sistem secara otomatis mengekstrak seluruh parameter surat serta rincian temuan per klausul regulasi, dan memicu notifikasi pembaruan ke pihak sarana via WhatsApp & Email.
                         </p>
 
@@ -900,7 +899,7 @@ export default function App() {
                           <button
                             onClick={() => setIsNewInspectionModalOpen(true)}
                             type="button"
-                            className="px-4 py-2.5 bg-emerald-500 hover:bg-emerald-400 text-slate-950 rounded-xl font-bold text-xs sm:text-sm flex items-center gap-2 shadow-lg shadow-emerald-500/20 transition-all cursor-pointer"
+                            className="px-4 py-2.5 bg-[#2e856e] hover:bg-[#256d5a] text-white rounded-xl font-extrabold text-xs sm:text-sm flex items-center gap-2 shadow-lg shadow-[#2e856e]/30 border border-white/20 transition-all cursor-pointer"
                           >
                             <Sparkles className="w-4 h-4" />
                             <span>Upload Surat SRIKANDI (TTE)</span>
@@ -913,9 +912,9 @@ export default function App() {
                               setIsTrackingModalOpen(true);
                             }}
                             type="button"
-                            className="px-4 py-2.5 bg-slate-800 hover:bg-slate-700 text-white rounded-xl font-semibold text-xs sm:text-sm border border-slate-700 transition-all cursor-pointer flex items-center gap-2"
+                            className="px-4 py-2.5 bg-white/15 hover:bg-white/25 text-white rounded-xl font-bold text-xs sm:text-sm border border-white/25 transition-all cursor-pointer flex items-center gap-2 backdrop-blur-xs"
                           >
-                            <Search className="w-4 h-4 text-emerald-400" />
+                            <Search className="w-4 h-4 text-[#86efac]" />
                             <span>Lacak Kode Unik CAPA</span>
                           </button>
                         </div>
@@ -1121,16 +1120,16 @@ export default function App() {
               )}
             </main>
 
-            {/* Footer */}
-            <footer className="bg-slate-900 border-t border-slate-800 text-slate-400 text-xs py-6 mt-12 shrink-0">
-              <div className={`${isWideView ? 'w-full px-6' : 'max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'} flex flex-col sm:flex-row items-center justify-between gap-4`}>
-                <div className="flex items-center gap-2">
-                  <ShieldCheck className="w-4 h-4 text-emerald-400" />
-                  <span className="font-bold text-white">SIMONCER</span>
+            {/* Footer — BPOM Navy Identity */}
+            <footer className="bg-[#243b55] border-t-4 border-[#2e856e] text-white/80 text-xs py-6 pb-24 lg:pb-6 mt-12 shrink-0">
+              <div className={`${isWideView ? 'w-full px-6' : 'max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'} flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left`}>
+                <div className="flex items-center gap-2 flex-wrap justify-center sm:justify-start">
+                  <ShieldCheck className="w-4 h-4 text-[#86efac] shrink-0" />
+                  <span className="font-extrabold text-white">SIMONCER</span>
                   <span>— Balai Besar Pengawas Obat dan Makanan di Semarang</span>
                 </div>
 
-                <div className="flex items-center gap-4 text-slate-400 text-[11px] flex-wrap">
+                <div className="flex items-center justify-center sm:justify-end gap-3 sm:gap-4 text-white/75 text-[11px] flex-wrap">
                   <span>Integrasi SRIKANDI (TTE BSrE)</span>
                   <span>•</span>
                   <span>Gateway WhatsApp & Email Otomatis</span>
@@ -1139,6 +1138,91 @@ export default function App() {
                 </div>
               </div>
             </footer>
+
+            {/* Mobile Bottom Navigation Bar for Internal Dashboard (HP / Tablet < lg) — BPOM Clean White & Navy/Green */}
+            <nav className="fixed bottom-0 inset-x-0 z-40 lg:hidden glass-bottom-nav px-2 py-1.5 shadow-[0_-8px_24px_rgba(29,25,115,0.12)]">
+              <div className="grid grid-cols-5 gap-1">
+                <button
+                  type="button"
+                  onClick={() => {
+                    setActiveHomeTab('HOME');
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                  }}
+                  className={`flex flex-col items-center justify-center py-1.5 rounded-xl transition-all cursor-pointer ${
+                    activeHomeTab === 'HOME'
+                      ? 'bpom-active-gradient text-white font-extrabold shadow-sm'
+                      : 'text-slate-600 dark:text-slate-400 hover:text-[#243b55]'
+                  }`}
+                >
+                  <Home className="w-4 h-4" />
+                  <span className="text-[10px] mt-0.5">Beranda</span>
+                </button>
+
+                <button
+                  type="button"
+                  onClick={() => {
+                    setActiveHomeTab('DASHBOARD');
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                  }}
+                  className={`flex flex-col items-center justify-center py-1.5 rounded-xl transition-all cursor-pointer ${
+                    activeHomeTab === 'DASHBOARD'
+                      ? 'bpom-active-gradient text-white font-extrabold shadow-sm'
+                      : 'text-slate-600 dark:text-slate-400 hover:text-[#243b55]'
+                  }`}
+                >
+                  <LayoutDashboard className="w-4 h-4" />
+                  <span className="text-[10px] mt-0.5">Temuan</span>
+                </button>
+
+                <button
+                  type="button"
+                  onClick={() => {
+                    setActiveHomeTab('INSPECTIONS');
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                  }}
+                  className={`flex flex-col items-center justify-center py-1.5 rounded-xl transition-all cursor-pointer relative ${
+                    activeHomeTab === 'INSPECTIONS'
+                      ? 'bpom-active-gradient text-white font-extrabold shadow-sm'
+                      : 'text-slate-600 dark:text-slate-400 hover:text-[#243b55]'
+                  }`}
+                >
+                  <FileText className="w-4 h-4" />
+                  <span className="text-[10px] mt-0.5">Sesi ({displayedInspections.length})</span>
+                </button>
+
+                <button
+                  type="button"
+                  onClick={() => {
+                    setActiveHomeTab('DOCUMENTS');
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                  }}
+                  className={`flex flex-col items-center justify-center py-1.5 rounded-xl transition-all cursor-pointer ${
+                    activeHomeTab === 'DOCUMENTS'
+                      ? 'bpom-active-gradient text-white font-extrabold shadow-sm'
+                      : 'text-slate-600 dark:text-slate-400 hover:text-[#243b55]'
+                  }`}
+                >
+                  <FolderOpen className="w-4 h-4" />
+                  <span className="text-[10px] mt-0.5">Dokumen</span>
+                </button>
+
+                <button
+                  type="button"
+                  onClick={() => {
+                    setActiveHomeTab('SIBERGAS_TABLE');
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                  }}
+                  className={`flex flex-col items-center justify-center py-1.5 rounded-xl transition-all cursor-pointer ${
+                    activeHomeTab === 'SIBERGAS_TABLE'
+                      ? 'bpom-active-gradient text-white font-extrabold shadow-sm'
+                      : 'text-slate-600 dark:text-slate-400 hover:text-[#243b55]'
+                  }`}
+                >
+                  <ShieldCheck className="w-4 h-4" />
+                  <span className="text-[10px] mt-0.5">SIBERGAS</span>
+                </button>
+              </div>
+            </nav>
           </div>
         </div>
       )}
@@ -1168,6 +1252,7 @@ export default function App() {
         }}
         inspections={inspections}
         initialCode={trackingInitialCode}
+        isInternalUser={Boolean(currentUser)}
         onSelectInspection={(ins) => {
           setSelectedInspection(ins);
           setIsTrackingModalOpen(false);
