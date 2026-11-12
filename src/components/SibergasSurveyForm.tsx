@@ -209,51 +209,51 @@ export const SibergasSurveyForm: React.FC<SibergasSurveyFormProps> = ({
   return (
     <form onSubmit={handleSubmit} className="space-y-6">
       {/* SIBERGAS Hero Header */}
-      <div className="bg-gradient-to-r from-emerald-950 via-slate-900 to-teal-950 text-white p-5 rounded-2xl border border-emerald-800/40 shadow-sm">
+      <div className="bpom-hero-gradient text-[#1e3a5f] p-5 rounded-2xl border border-emerald-200 shadow-sm">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
           <div className="flex items-center gap-3">
             <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-emerald-400 to-teal-600 flex items-center justify-center text-slate-950 shadow-md font-black shrink-0">
-              <ShieldCheck className="w-7 h-7 text-white" />
+              <ShieldCheck className="w-7 h-7 text-[#1e3a5f]" />
             </div>
             <div>
               <div className="flex items-center gap-2 flex-wrap">
-                <span className="text-[11px] font-bold px-2 py-0.5 rounded-full bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 tracking-wide uppercase">
+                <span className="text-[11px] font-bold px-2 py-0.5 rounded-full bg-emerald-500/20 text-emerald-800 border border-emerald-500/30 tracking-wide uppercase">
                   Integrasi SIBERGAS
                 </span>
-                <span className="text-[10px] text-slate-400">
+                <span className="text-[10px] text-slate-600">
                   Zona Integritas WBK / WBBM
                 </span>
               </div>
-              <h2 className="text-base sm:text-lg font-bold text-white tracking-tight mt-0.5">
+              <h2 className="text-base sm:text-lg font-bold text-[#1e3a5f] tracking-tight mt-0.5">
                 Survei Kepuasan & Integritas Petugas
               </h2>
             </div>
           </div>
 
           {readOnly && formData.submittedAt && (
-            <div className="px-3 py-1.5 rounded-xl bg-emerald-500/20 border border-emerald-500/40 text-emerald-300 text-xs flex items-center gap-1.5 font-medium self-start sm:self-center">
-              <CheckCircle2 className="w-4 h-4 text-emerald-400" />
+            <div className="px-3 py-1.5 rounded-xl bg-emerald-500/20 border border-emerald-500/40 text-emerald-800 text-xs flex items-center gap-1.5 font-medium self-start sm:self-center">
+              <CheckCircle2 className="w-4 h-4 text-emerald-700" />
               <span>Telah Diisi: {formatIndonesianDate(formData.submittedAt.split('T')[0])}</span>
             </div>
           )}
         </div>
 
         {/* Survey Instructions */}
-        <div className="mt-4 pt-3 border-t border-emerald-800/40 grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs text-slate-300">
-          <div className="flex items-start gap-2 bg-slate-900/60 p-2.5 rounded-xl border border-slate-800">
-            <Building2 className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
+        <div className="mt-4 pt-3 border-t border-emerald-200 grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs text-slate-700">
+          <div className="flex items-start gap-2 bg-white/85 p-2.5 rounded-xl border border-blue-200/80">
+            <Building2 className="w-4 h-4 text-emerald-700 shrink-0 mt-0.5" />
             <div>
-              <span className="text-[10px] uppercase font-bold text-slate-400 block">Sarana Diperiksa:</span>
-              <span className="font-semibold text-white">{inspection.facility.name}</span>
+              <span className="text-[10px] uppercase font-bold text-slate-600 block">Sarana Diperiksa:</span>
+              <span className="font-semibold text-[#1e3a5f]">{inspection.facility.name}</span>
             </div>
           </div>
-          <div className="flex items-start gap-2 bg-slate-900/60 p-2.5 rounded-xl border border-slate-800">
-            <UserCheck className="w-4 h-4 text-teal-400 shrink-0 mt-0.5" />
+          <div className="flex items-start gap-2 bg-white/85 p-2.5 rounded-xl border border-blue-200/80">
+            <UserCheck className="w-4 h-4 text-teal-700 shrink-0 mt-0.5" />
             <div>
-              <span className="text-[10px] uppercase font-bold text-slate-400 block">Petugas Pemeriksa:</span>
-              <span className="font-semibold text-white">{officerName}</span>
+              <span className="text-[10px] uppercase font-bold text-slate-600 block">Petugas Pemeriksa:</span>
+              <span className="font-semibold text-[#1e3a5f]">{officerName}</span>
               {inspection.auditorTeam && inspection.auditorTeam.length > 0 && (
-                <span className="text-[11px] text-slate-400 block mt-0.5">
+                <span className="text-[11px] text-slate-600 block mt-0.5">
                   Tim: {inspection.auditorTeam.join(', ')}
                 </span>
               )}
@@ -262,8 +262,8 @@ export const SibergasSurveyForm: React.FC<SibergasSurveyFormProps> = ({
         </div>
 
         {!readOnly && (
-          <div className="mt-3 bg-emerald-950/60 border border-emerald-500/30 rounded-xl p-3 text-xs text-emerald-200 flex items-start gap-2">
-            <Info className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
+          <div className="mt-3 bg-emerald-50 border border-emerald-500/30 rounded-xl p-3 text-xs text-emerald-200 flex items-start gap-2">
+            <Info className="w-4 h-4 text-emerald-700 shrink-0 mt-0.5" />
             <p className="leading-relaxed">
               <strong>Pemberitahuan Wajib:</strong> Sesuai SOP Pelayanan Balai POM, sebelum mengirimkan dokumen tindak lanjut (CAPA) untuk pertama kali, sarana/pelaku usaha wajib mengisi survei integritas ini. Penilaian Anda dijamin <strong>kerahasiaannya</strong> dan tidak mempengaruhi hasil evaluasi teknis CAPA.
             </p>

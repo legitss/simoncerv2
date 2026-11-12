@@ -430,49 +430,49 @@ export const SuperAdminSettingsModal: React.FC<SuperAdminSettingsModalProps> = (
 
   return (
     <div className="fixed inset-0 z-50 overflow-y-auto bg-slate-950/85 backdrop-blur-md flex items-center justify-center p-3 sm:p-4">
-      <div className="bg-slate-900 border border-slate-800 rounded-3xl max-w-5xl w-full shadow-2xl overflow-hidden flex flex-col max-h-[92vh] animate-in fade-in zoom-in-95 duration-150">
+      <div className="bg-white border border-blue-200/80 rounded-3xl max-w-5xl w-full shadow-2xl overflow-hidden flex flex-col max-h-[92vh] animate-in fade-in zoom-in-95 duration-150">
         
         {/* Header Terpadu */}
-        <div className="p-4 sm:p-5 bg-slate-900 border-b border-slate-800 flex items-center justify-between gap-4 shrink-0">
+        <div className="p-4 sm:p-5 bg-white border-b border-blue-200/80 flex items-center justify-between gap-4 shrink-0">
           <div className="flex items-center gap-3.5">
-            <div className="w-11 h-11 rounded-2xl bg-gradient-to-br from-emerald-500/20 via-cyan-500/20 to-blue-500/20 border border-emerald-500/40 flex items-center justify-center text-emerald-400 shrink-0">
+            <div className="w-11 h-11 rounded-2xl bg-gradient-to-br from-emerald-500/20 via-cyan-500/20 to-blue-500/20 border border-emerald-500/40 flex items-center justify-center text-emerald-700 shrink-0">
               <Settings className="w-5 h-5" />
             </div>
             <div>
               <div className="flex items-center gap-2 flex-wrap">
-                <h3 className="font-extrabold text-base sm:text-lg text-white">
+                <h3 className="font-extrabold text-base sm:text-lg text-[#1e3a5f]">
                   Pengaturan Terpadu Sistem & Notifikasi SIMONCER
                 </h3>
-                <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-emerald-500/20 text-emerald-300 border border-emerald-500/40">
+                <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-emerald-500/20 text-emerald-800 border border-emerald-500/40">
                   Full Control Center • BBPOM di Semarang
                 </span>
               </div>
-              <p className="text-xs text-slate-400 mt-0.5">
+              <p className="text-xs text-slate-600 mt-0.5">
                 Kelola integrasi WhatsApp & Email, pemicu otomatis, editor isi pesan, akun pengguna, dan direktori evaluator dalam satu menu
               </p>
             </div>
           </div>
           <button
             onClick={onClose}
-            className="p-2 text-slate-400 hover:text-white rounded-xl hover:bg-slate-800 transition-colors cursor-pointer shrink-0"
+            className="p-2 text-slate-600 hover:text-[#1e3a5f] rounded-xl hover:bg-[#e8f1fb] transition-colors cursor-pointer shrink-0"
           >
             <X className="w-5 h-5" />
           </button>
         </div>
 
         {/* Unified Tab Navigation (No Horizontal Scroll - Fully Responsive Grid) */}
-        <div className="p-2 sm:p-2.5 bg-slate-950 border-b border-slate-800 shrink-0 z-10">
+        <div className="p-2 sm:p-2.5 bg-[#f4f8fd] border-b border-blue-200/80 shrink-0 z-10">
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-1.5 text-xs font-semibold">
             <button
               onClick={() => setActiveTab('NOTIFIKASI')}
               type="button"
               className={`px-3 py-2.5 rounded-xl transition-all flex items-center justify-center gap-2 text-center cursor-pointer ${
                 activeTab === 'NOTIFIKASI'
-                  ? 'bg-emerald-600/25 text-emerald-300 border border-emerald-500/50 font-bold shadow-xs'
-                  : 'bg-slate-900/60 text-slate-400 hover:text-white hover:bg-slate-850 border border-slate-800'
+                  ? 'bg-emerald-600/25 text-emerald-800 border border-emerald-500/50 font-bold shadow-xs'
+                  : 'bg-white/85 text-slate-600 hover:text-[#1e3a5f] hover:bg-[#eef5fc] border border-blue-200/80'
               }`}
             >
-              <Smartphone className="w-4 h-4 text-emerald-400 shrink-0" />
+              <Smartphone className="w-4 h-4 text-emerald-700 shrink-0" />
               <span className="truncate">Saluran & Pemicu</span>
             </button>
             <button
@@ -480,11 +480,11 @@ export const SuperAdminSettingsModal: React.FC<SuperAdminSettingsModalProps> = (
               type="button"
               className={`px-3 py-2.5 rounded-xl transition-all flex items-center justify-center gap-2 text-center cursor-pointer ${
                 activeTab === 'TEMPLATES'
-                  ? 'bg-cyan-600/25 text-cyan-300 border border-cyan-500/50 font-bold shadow-xs'
-                  : 'bg-slate-900/60 text-slate-400 hover:text-white hover:bg-slate-850 border border-slate-800'
+                  ? 'bg-cyan-600/25 text-sky-800 border border-cyan-500/50 font-bold shadow-xs'
+                  : 'bg-white/85 text-slate-600 hover:text-[#1e3a5f] hover:bg-[#eef5fc] border border-blue-200/80'
               }`}
             >
-              <Edit3 className="w-4 h-4 text-cyan-400 shrink-0" />
+              <Edit3 className="w-4 h-4 text-sky-700 shrink-0" />
               <span className="truncate">Editor Isi Pesan</span>
             </button>
             <button
@@ -492,8 +492,8 @@ export const SuperAdminSettingsModal: React.FC<SuperAdminSettingsModalProps> = (
               type="button"
               className={`px-3 py-2.5 rounded-xl transition-all flex items-center justify-center gap-2 text-center cursor-pointer ${
                 activeTab === 'LOGS'
-                  ? 'bg-purple-600/25 text-purple-300 border border-purple-500/50 font-bold shadow-xs'
-                  : 'bg-slate-900/60 text-slate-400 hover:text-white hover:bg-slate-850 border border-slate-800'
+                  ? 'bg-purple-600/25 text-purple-800 border border-purple-500/50 font-bold shadow-xs'
+                  : 'bg-white/85 text-slate-600 hover:text-[#1e3a5f] hover:bg-[#eef5fc] border border-blue-200/80'
               }`}
             >
               <Clock className="w-4 h-4 text-purple-400 shrink-0" />
@@ -504,11 +504,11 @@ export const SuperAdminSettingsModal: React.FC<SuperAdminSettingsModalProps> = (
               type="button"
               className={`px-3 py-2.5 rounded-xl transition-all flex items-center justify-center gap-2 text-center cursor-pointer ${
                 activeTab === 'ACCOUNTS'
-                  ? 'bg-amber-600/25 text-amber-300 border border-amber-500/50 font-bold shadow-xs'
-                  : 'bg-slate-900/60 text-slate-400 hover:text-white hover:bg-slate-850 border border-slate-800'
+                  ? 'bg-amber-600/25 text-amber-800 border border-amber-500/50 font-bold shadow-xs'
+                  : 'bg-white/85 text-slate-600 hover:text-[#1e3a5f] hover:bg-[#eef5fc] border border-blue-200/80'
               }`}
             >
-              <Users className="w-4 h-4 text-amber-400 shrink-0" />
+              <Users className="w-4 h-4 text-amber-700 shrink-0" />
               <span className="truncate">Manajemen Akun ({accounts.length})</span>
             </button>
             <button
@@ -516,18 +516,18 @@ export const SuperAdminSettingsModal: React.FC<SuperAdminSettingsModalProps> = (
               type="button"
               className={`px-3 py-2.5 rounded-xl transition-all flex items-center justify-center gap-2 text-center cursor-pointer col-span-2 sm:col-span-1 ${
                 activeTab === 'OFFICERS'
-                  ? 'bg-rose-600/25 text-rose-300 border border-rose-500/50 font-bold shadow-xs'
-                  : 'bg-slate-900/60 text-slate-400 hover:text-white hover:bg-slate-850 border border-slate-800'
+                  ? 'bg-rose-600/25 text-rose-700 border border-rose-500/50 font-bold shadow-xs'
+                  : 'bg-white/85 text-slate-600 hover:text-[#1e3a5f] hover:bg-[#eef5fc] border border-blue-200/80'
               }`}
             >
-              <UserCheck className="w-4 h-4 text-rose-400 shrink-0" />
+              <UserCheck className="w-4 h-4 text-rose-700 shrink-0" />
               <span className="truncate">Direktori Petugas ({officers.length})</span>
             </button>
           </div>
         </div>
 
         {/* Modal Body */}
-        <div className="p-5 sm:p-6 overflow-y-auto flex-1 min-h-0 space-y-6 text-sm text-slate-200">
+        <div className="p-5 sm:p-6 overflow-y-auto flex-1 min-h-0 space-y-6 text-sm text-[#1e3a5f]">
           
           {/* ========================================================= */}
           {/* TAB 1: NOTIFIKASI, SALURAN & PEMICU OTOMATIS (TERPADU)    */}
@@ -536,17 +536,17 @@ export const SuperAdminSettingsModal: React.FC<SuperAdminSettingsModalProps> = (
             <div className="space-y-6">
               
               {/* Status Header Banner */}
-              <div className="p-4 bg-gradient-to-r from-emerald-950/40 via-slate-900 to-cyan-950/40 border border-emerald-500/30 rounded-2xl flex items-center justify-between gap-4 flex-wrap">
+              <div className="p-4 bpom-hero-gradient border border-emerald-500/30 rounded-2xl flex items-center justify-between gap-4 flex-wrap">
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center font-bold shrink-0">
+                  <div className="w-10 h-10 rounded-xl bg-emerald-500/20 text-emerald-700 flex items-center justify-center font-bold shrink-0">
                     <ShieldCheck className="w-5 h-5" />
                   </div>
                   <div>
-                    <h4 className="font-bold text-white text-xs sm:text-sm">
+                    <h4 className="font-bold text-[#1e3a5f] text-xs sm:text-sm">
                       Integrasi Gateway Resmi WhatsApp (Fonnte API) & Server Email SMTP
                     </h4>
-                    <p className="text-[11px] text-slate-300 mt-0.5">
-                      Perangkat Pengirim WA: <span className="text-emerald-400 font-mono font-bold">Device BBPOM ({waConfig.senderNumber || '0812-7788-9911'})</span> • Email Pengirim: <span className="text-blue-300 font-mono">{notifPrefs.emailSenderEmail || 'simoncer@pom.go.id'} ({notifPrefs.emailSmtpServer || 'mail.pom.go.id'})</span>
+                    <p className="text-[11px] text-slate-700 mt-0.5">
+                      Perangkat Pengirim WA: <span className="text-emerald-700 font-mono font-bold">Device BBPOM ({waConfig.senderNumber || '0812-7788-9911'})</span> • Email Pengirim: <span className="text-blue-700 font-mono">{notifPrefs.emailSenderEmail || 'simoncer@pom.go.id'} ({notifPrefs.emailSmtpServer || 'mail.pom.go.id'})</span>
                     </p>
                   </div>
                 </div>
@@ -566,13 +566,13 @@ export const SuperAdminSettingsModal: React.FC<SuperAdminSettingsModalProps> = (
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 
                 {/* WhatsApp Gateway Sender Config Card */}
-                <div className="p-4 bg-slate-950/60 rounded-2xl border border-slate-800 space-y-3">
-                  <div className="flex items-center justify-between pb-2 border-b border-slate-800">
+                <div className="p-4 bg-[#f4f8fd] rounded-2xl border border-blue-200/80 space-y-3">
+                  <div className="flex items-center justify-between pb-2 border-b border-blue-200/80">
                     <div className="flex items-center gap-2">
-                      <MessageSquare className="w-4 h-4 text-emerald-400" />
+                      <MessageSquare className="w-4 h-4 text-emerald-700" />
                       <div>
-                        <span className="font-bold text-xs text-white block">Gateway WhatsApp Pengirim</span>
-                        <span className="text-[10px] text-slate-400">Server Pengirim Resmi BBPOM</span>
+                        <span className="font-bold text-xs text-[#1e3a5f] block">Gateway WhatsApp Pengirim</span>
+                        <span className="text-[10px] text-slate-600">Server Pengirim Resmi BBPOM</span>
                       </div>
                     </div>
                     <label className="relative inline-flex items-center cursor-pointer">
@@ -585,20 +585,20 @@ export const SuperAdminSettingsModal: React.FC<SuperAdminSettingsModalProps> = (
                         })}
                         className="sr-only peer"
                       />
-                      <div className="w-9 h-5 bg-slate-800 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-slate-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-emerald-500"></div>
+                      <div className="w-9 h-5 bg-[#e8f1fb] peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-slate-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-emerald-500"></div>
                     </label>
                   </div>
 
                   <div className="space-y-2.5 text-xs">
                     <div>
-                      <label className="block text-[11px] font-semibold text-slate-400 mb-1">
+                      <label className="block text-[11px] font-semibold text-slate-600 mb-1">
                         Token API Fonnte / Gateway BBPOM
                       </label>
                       <input
                         type="text"
                         value={waConfig.apiKey}
                         onChange={(e) => setWaConfig({ ...waConfig, apiKey: e.target.value })}
-                        className="w-full px-3 py-2 bg-slate-900 border border-slate-700 rounded-xl text-white font-mono text-xs focus:outline-none focus:border-emerald-500"
+                        className="w-full px-3 py-2 bg-white border border-blue-200 rounded-xl text-[#1e3a5f] font-mono text-xs focus:outline-none focus:border-emerald-500"
                         placeholder="Contoh: q1yphTjb... (Token Akun Fonnte BBPOM)"
                       />
                       <span className="text-[10px] text-slate-500 mt-0.5 block">
@@ -606,14 +606,14 @@ export const SuperAdminSettingsModal: React.FC<SuperAdminSettingsModalProps> = (
                       </span>
                     </div>
                     <div>
-                      <label className="block text-[11px] font-semibold text-slate-400 mb-1">
+                      <label className="block text-[11px] font-semibold text-slate-600 mb-1">
                         Nomor WhatsApp Perangkat Pengirim (Device WA Resmi BBPOM)
                       </label>
                       <input
                         type="text"
                         value={waConfig.senderNumber || '0812-7788-9911'}
                         onChange={(e) => setWaConfig({ ...waConfig, senderNumber: e.target.value })}
-                        className="w-full px-3 py-2 bg-slate-900 border border-slate-700 rounded-xl text-white font-mono text-xs focus:outline-none focus:border-emerald-500"
+                        className="w-full px-3 py-2 bg-white border border-blue-200 rounded-xl text-[#1e3a5f] font-mono text-xs focus:outline-none focus:border-emerald-500"
                         placeholder="Contoh: 0812-7788-9911 (Nomor SIM Device BBPOM)"
                       />
                       <span className="text-[10px] text-slate-500 mt-0.5 block">
@@ -621,14 +621,14 @@ export const SuperAdminSettingsModal: React.FC<SuperAdminSettingsModalProps> = (
                       </span>
                     </div>
                     <div>
-                      <label className="block text-[11px] font-semibold text-slate-400 mb-1">
+                      <label className="block text-[11px] font-semibold text-slate-600 mb-1">
                         Nama Identitas Pengirim WA (Sender Profile Name)
                       </label>
                       <input
                         type="text"
                         value={waConfig.senderName}
                         onChange={(e) => setWaConfig({ ...waConfig, senderName: e.target.value })}
-                        className="w-full px-3 py-2 bg-slate-900 border border-slate-700 rounded-xl text-white text-xs focus:outline-none focus:border-emerald-500"
+                        className="w-full px-3 py-2 bg-white border border-blue-200 rounded-xl text-[#1e3a5f] text-xs focus:outline-none focus:border-emerald-500"
                         placeholder="BBPOM di Semarang (SIMONCER)"
                       />
                       <span className="text-[10px] text-slate-500 mt-0.5 block">
@@ -639,13 +639,13 @@ export const SuperAdminSettingsModal: React.FC<SuperAdminSettingsModalProps> = (
                 </div>
 
                 {/* Email Server Sender Config Card */}
-                <div className="p-4 bg-slate-950/60 rounded-2xl border border-slate-800 space-y-3">
-                  <div className="flex items-center justify-between pb-2 border-b border-slate-800">
+                <div className="p-4 bg-[#f4f8fd] rounded-2xl border border-blue-200/80 space-y-3">
+                  <div className="flex items-center justify-between pb-2 border-b border-blue-200/80">
                     <div className="flex items-center gap-2">
                       <Mail className="w-4 h-4 text-blue-400" />
                       <div>
-                        <span className="font-bold text-xs text-white block">Server Email Resmi BBPOM</span>
-                        <span className="text-[10px] text-slate-400">Server SMTP Pengirim Instansi</span>
+                        <span className="font-bold text-xs text-[#1e3a5f] block">Server Email Resmi BBPOM</span>
+                        <span className="text-[10px] text-slate-600">Server SMTP Pengirim Instansi</span>
                       </div>
                     </div>
                     <label className="relative inline-flex items-center cursor-pointer">
@@ -658,20 +658,20 @@ export const SuperAdminSettingsModal: React.FC<SuperAdminSettingsModalProps> = (
                         })}
                         className="sr-only peer"
                       />
-                      <div className="w-9 h-5 bg-slate-800 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-slate-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-blue-500"></div>
+                      <div className="w-9 h-5 bg-[#e8f1fb] peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-slate-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-blue-500"></div>
                     </label>
                   </div>
 
                   <div className="space-y-2.5 text-xs">
                     <div>
-                      <label className="block text-[11px] font-semibold text-slate-400 mb-1">
+                      <label className="block text-[11px] font-semibold text-slate-600 mb-1">
                         Host Server SMTP & Port
                       </label>
                       <input
                         type="text"
                         value={notifPrefs.emailSmtpServer}
                         onChange={(e) => setNotifPrefs({ ...notifPrefs, emailSmtpServer: e.target.value })}
-                        className="w-full px-3 py-2 bg-slate-900 border border-slate-700 rounded-xl text-white font-mono text-xs focus:outline-none focus:border-blue-500"
+                        className="w-full px-3 py-2 bg-white border border-blue-200 rounded-xl text-[#1e3a5f] font-mono text-xs focus:outline-none focus:border-blue-500"
                         placeholder="mail.pom.go.id (TLS/SSL Port 465)"
                       />
                       <span className="text-[10px] text-slate-500 mt-0.5 block">
@@ -679,7 +679,7 @@ export const SuperAdminSettingsModal: React.FC<SuperAdminSettingsModalProps> = (
                       </span>
                     </div>
                     <div>
-                      <label className="block text-[11px] font-semibold text-slate-400 mb-1">
+                      <label className="block text-[11px] font-semibold text-slate-600 mb-1">
                         Alamat Email Pengirim Resmi (BBPOM di Semarang)
                       </label>
                       <input
@@ -689,7 +689,7 @@ export const SuperAdminSettingsModal: React.FC<SuperAdminSettingsModalProps> = (
                           ...notifPrefs,
                           emailSenderEmail: e.target.value
                         })}
-                        className="w-full px-3 py-2 bg-slate-900 border border-slate-700 rounded-xl text-white font-mono text-xs focus:outline-none focus:border-blue-500"
+                        className="w-full px-3 py-2 bg-white border border-blue-200 rounded-xl text-[#1e3a5f] font-mono text-xs focus:outline-none focus:border-blue-500"
                         placeholder="simoncer@pom.go.id"
                       />
                       <span className="text-[10px] text-slate-500 mt-0.5 block">
@@ -697,7 +697,7 @@ export const SuperAdminSettingsModal: React.FC<SuperAdminSettingsModalProps> = (
                       </span>
                     </div>
                     <div>
-                      <label className="block text-[11px] font-semibold text-slate-400 mb-1">
+                      <label className="block text-[11px] font-semibold text-slate-600 mb-1">
                         Nama Tampilan Pengirim Email (Sender Display Name)
                       </label>
                       <input
@@ -707,7 +707,7 @@ export const SuperAdminSettingsModal: React.FC<SuperAdminSettingsModalProps> = (
                           ...notifPrefs,
                           emailSenderName: e.target.value
                         })}
-                        className="w-full px-3 py-2 bg-slate-900 border border-slate-700 rounded-xl text-white text-xs focus:outline-none focus:border-blue-500"
+                        className="w-full px-3 py-2 bg-white border border-blue-200 rounded-xl text-[#1e3a5f] text-xs focus:outline-none focus:border-blue-500"
                         placeholder="SIMONCER - Balai Besar POM di Semarang"
                       />
                       <span className="text-[10px] text-slate-500 mt-0.5 block">
@@ -719,29 +719,29 @@ export const SuperAdminSettingsModal: React.FC<SuperAdminSettingsModalProps> = (
               </div>
 
               {/* PEMICU NOTIFIKASI OTOMATIS (EVENT TRIGGERS) TERPADU */}
-              <div className="p-4 bg-slate-950/70 rounded-2xl border border-slate-800 space-y-3">
-                <div className="flex items-center justify-between pb-2 border-b border-slate-800">
-                  <h4 className="font-extrabold text-xs sm:text-sm text-white uppercase tracking-wider flex items-center gap-2">
-                    <Sliders className="w-4 h-4 text-emerald-400" />
+              <div className="p-4 bg-[#f4f8fd] rounded-2xl border border-blue-200/80 space-y-3">
+                <div className="flex items-center justify-between pb-2 border-b border-blue-200/80">
+                  <h4 className="font-extrabold text-xs sm:text-sm text-[#1e3a5f] uppercase tracking-wider flex items-center gap-2">
+                    <Sliders className="w-4 h-4 text-emerald-700" />
                     <span>Pemicu Notifikasi Otomatis (Event Triggers Terpadu)</span>
                   </h4>
-                  <span className="text-[11px] text-slate-400">
+                  <span className="text-[11px] text-slate-600">
                     Centang peristiwa yang otomatis mengirimkan notifikasi WA & Email
                   </span>
                 </div>
 
                 <div className="space-y-2.5">
                   {/* 1. Surat Tindak Lanjut Baru */}
-                  <label className="p-3 bg-slate-900 border border-slate-800 hover:border-slate-700 rounded-xl flex items-start justify-between gap-3 cursor-pointer transition-colors">
+                  <label className="p-3 bg-white border border-blue-200/80 hover:border-blue-200 rounded-xl flex items-start justify-between gap-3 cursor-pointer transition-colors">
                     <div className="flex items-start gap-2.5">
                       <div className="w-7 h-7 rounded-lg bg-blue-500/20 text-blue-400 flex items-center justify-center font-bold shrink-0 mt-0.5">
                         <FileText className="w-3.5 h-3.5" />
                       </div>
                       <div>
-                        <span className="font-bold text-white text-xs block">
+                        <span className="font-bold text-[#1e3a5f] text-xs block">
                           1. Notifikasi Surat Tindak Lanjut ke Sarana & Petugas Evaluator
                         </span>
-                        <p className="text-[11px] text-slate-400 mt-0.5">
+                        <p className="text-[11px] text-slate-600 mt-0.5">
                           Mengirimkan nomor surat SRIKANDI (TTE BSrE), batas SLA hari kerja (terhitung sejak surat diterima), dan tautan tracking mandiri saat surat hasil pemeriksaan diterbitkan.
                         </p>
                       </div>
@@ -757,21 +757,21 @@ export const SuperAdminSettingsModal: React.FC<SuperAdminSettingsModalProps> = (
                         });
                         setWaConfig({ ...waConfig, notifyOnSrikandiLetter: val });
                       }}
-                      className="w-4 h-4 text-emerald-600 rounded bg-slate-800 border-slate-700 focus:ring-emerald-500 shrink-0 mt-1"
+                      className="w-4 h-4 text-emerald-600 rounded bg-[#e8f1fb] border-blue-200 focus:ring-emerald-500 shrink-0 mt-1"
                     />
                   </label>
 
                   {/* 2. Capa submitted */}
-                  <label className="p-3 bg-slate-900 border border-slate-800 hover:border-slate-700 rounded-xl flex items-start justify-between gap-3 cursor-pointer transition-colors">
+                  <label className="p-3 bg-white border border-blue-200/80 hover:border-blue-200 rounded-xl flex items-start justify-between gap-3 cursor-pointer transition-colors">
                     <div className="flex items-start gap-2.5">
-                      <div className="w-7 h-7 rounded-lg bg-emerald-500/20 text-emerald-400 flex items-center justify-center font-bold shrink-0 mt-0.5">
+                      <div className="w-7 h-7 rounded-lg bg-emerald-500/20 text-emerald-700 flex items-center justify-center font-bold shrink-0 mt-0.5">
                         <CheckCheck className="w-3.5 h-3.5" />
                       </div>
                       <div>
-                        <span className="font-bold text-white text-xs block">
+                        <span className="font-bold text-[#1e3a5f] text-xs block">
                           2. Notifikasi Penyerahan Dokumen CAPA ke Petugas Evaluator PIC & Tanda Terima Sarana
                         </span>
-                        <p className="text-[11px] text-slate-400 mt-0.5">
+                        <p className="text-[11px] text-slate-600 mt-0.5">
                           Mengirimkan pesan penugasan ke nomor Petugas Evaluator ketika sarana menyerahkan matriks CAPA & bukti perbaikan, serta memberikan tanda terima resmi ke sarana.
                         </p>
                       </div>
@@ -787,21 +787,21 @@ export const SuperAdminSettingsModal: React.FC<SuperAdminSettingsModalProps> = (
                         });
                         setWaConfig({ ...waConfig, notifyOnCapaSubmitted: val });
                       }}
-                      className="w-4 h-4 text-emerald-600 rounded bg-slate-800 border-slate-700 focus:ring-emerald-500 shrink-0 mt-1"
+                      className="w-4 h-4 text-emerald-600 rounded bg-[#e8f1fb] border-blue-200 focus:ring-emerald-500 shrink-0 mt-1"
                     />
                   </label>
 
                   {/* 3. Capa evaluated & status change */}
-                  <label className="p-3 bg-slate-900 border border-slate-800 hover:border-slate-700 rounded-xl flex items-start justify-between gap-3 cursor-pointer transition-colors">
+                  <label className="p-3 bg-white border border-blue-200/80 hover:border-blue-200 rounded-xl flex items-start justify-between gap-3 cursor-pointer transition-colors">
                     <div className="flex items-start gap-2.5">
                       <div className="w-7 h-7 rounded-lg bg-purple-500/20 text-purple-400 flex items-center justify-center font-bold shrink-0 mt-0.5">
                         <Sliders className="w-3.5 h-3.5" />
                       </div>
                       <div>
-                        <span className="font-bold text-white text-xs block">
+                        <span className="font-bold text-[#1e3a5f] text-xs block">
                           3. Notifikasi Perubahan Status Evaluasi CAPA ke Sarana & Petugas
                         </span>
-                        <p className="text-[11px] text-slate-400 mt-0.5">
+                        <p className="text-[11px] text-slate-600 mt-0.5">
                           Mengirimkan laporan hasil evaluasi saat status sesi berganti (EVALUASI_PETUGAS, CAPA CLOSED / MEMADAI, atau PERLU PERBAIKAN / EVALUASI ULANG).
                         </p>
                       </div>
@@ -817,21 +817,21 @@ export const SuperAdminSettingsModal: React.FC<SuperAdminSettingsModalProps> = (
                         });
                         setWaConfig({ ...waConfig, notifyOnCapaEvaluated: val });
                       }}
-                      className="w-4 h-4 text-emerald-600 rounded bg-slate-800 border-slate-700 focus:ring-emerald-500 shrink-0 mt-1"
+                      className="w-4 h-4 text-emerald-600 rounded bg-[#e8f1fb] border-blue-200 focus:ring-emerald-500 shrink-0 mt-1"
                     />
                   </label>
 
                   {/* 4. Pembaruan Status Temuan */}
-                  <label className="p-3 bg-slate-900 border border-slate-800 hover:border-slate-700 rounded-xl flex items-start justify-between gap-3 cursor-pointer transition-colors">
+                  <label className="p-3 bg-white border border-blue-200/80 hover:border-blue-200 rounded-xl flex items-start justify-between gap-3 cursor-pointer transition-colors">
                     <div className="flex items-start gap-2.5">
-                      <div className="w-7 h-7 rounded-lg bg-amber-500/20 text-amber-400 flex items-center justify-center font-bold shrink-0 mt-0.5">
+                      <div className="w-7 h-7 rounded-lg bg-amber-500/20 text-amber-700 flex items-center justify-center font-bold shrink-0 mt-0.5">
                         <FileText className="w-3.5 h-3.5" />
                       </div>
                       <div>
-                        <span className="font-bold text-white text-xs block">
+                        <span className="font-bold text-[#1e3a5f] text-xs block">
                           4. Notifikasi Pembaruan Status Temuan Pemeriksaan
                         </span>
-                        <p className="text-[11px] text-slate-400 mt-0.5">
+                        <p className="text-[11px] text-slate-600 mt-0.5">
                           Kirim notifikasi saat auditor memverifikasi butir temuan atau mengubah tingkat kritis ketidaksesuaian (Minor/Mayor/Kritis).
                         </p>
                       </div>
@@ -843,21 +843,21 @@ export const SuperAdminSettingsModal: React.FC<SuperAdminSettingsModalProps> = (
                         ...notifPrefs,
                         triggers: { ...notifPrefs.triggers, findingStatusUpdate: e.target.checked }
                       })}
-                      className="w-4 h-4 text-emerald-600 rounded bg-slate-800 border-slate-700 focus:ring-emerald-500 shrink-0 mt-1"
+                      className="w-4 h-4 text-emerald-600 rounded bg-[#e8f1fb] border-blue-200 focus:ring-emerald-500 shrink-0 mt-1"
                     />
                   </label>
 
                   {/* 5. Deadline Reminder */}
-                  <label className="p-3 bg-slate-900 border border-slate-800 hover:border-slate-700 rounded-xl flex items-start justify-between gap-3 cursor-pointer transition-colors">
+                  <label className="p-3 bg-white border border-blue-200/80 hover:border-blue-200 rounded-xl flex items-start justify-between gap-3 cursor-pointer transition-colors">
                     <div className="flex items-start gap-2.5">
-                      <div className="w-7 h-7 rounded-lg bg-rose-500/20 text-rose-400 flex items-center justify-center font-bold shrink-0 mt-0.5">
+                      <div className="w-7 h-7 rounded-lg bg-rose-500/20 text-rose-700 flex items-center justify-center font-bold shrink-0 mt-0.5">
                         <Clock className="w-3.5 h-3.5" />
                       </div>
                       <div>
-                        <span className="font-bold text-white text-xs block">
+                        <span className="font-bold text-[#1e3a5f] text-xs block">
                           5. Notifikasi Pengingat Tenggat Waktu (Deadline Alert H-7 & H-3)
                         </span>
-                        <p className="text-[11px] text-slate-400 mt-0.5">
+                        <p className="text-[11px] text-slate-600 mt-0.5">
                           Mengirimkan peringatan otomatis ke sarana sebelum masa berlaku penyampaian CAPA berakhir agar tidak melanggar kepatuhan regulasi.
                         </p>
                       </div>
@@ -869,7 +869,7 @@ export const SuperAdminSettingsModal: React.FC<SuperAdminSettingsModalProps> = (
                         ...notifPrefs,
                         triggers: { ...notifPrefs.triggers, deadlineReminder: e.target.checked }
                       })}
-                      className="w-4 h-4 text-emerald-600 rounded bg-slate-800 border-slate-700 focus:ring-emerald-500 shrink-0 mt-1"
+                      className="w-4 h-4 text-emerald-600 rounded bg-[#e8f1fb] border-blue-200 focus:ring-emerald-500 shrink-0 mt-1"
                     />
                   </label>
                 </div>
@@ -885,13 +885,13 @@ export const SuperAdminSettingsModal: React.FC<SuperAdminSettingsModalProps> = (
             <div className="space-y-5">
               
               {/* Trigger Selector Bar */}
-              <div className="p-4 bg-slate-950/70 border border-slate-800 rounded-2xl space-y-2.5">
+              <div className="p-4 bg-[#f4f8fd] border border-blue-200/80 rounded-2xl space-y-2.5">
                 <div className="flex items-center justify-between gap-2 flex-wrap">
-                  <span className="font-extrabold text-xs text-white uppercase tracking-wider flex items-center gap-1.5">
-                    <Sliders className="w-4 h-4 text-cyan-400" />
+                  <span className="font-extrabold text-xs text-[#1e3a5f] uppercase tracking-wider flex items-center gap-1.5">
+                    <Sliders className="w-4 h-4 text-sky-700" />
                     <span>Pilih Pemicu Notifikasi yang Ingin Diedit Isinya:</span>
                   </span>
-                  <span className="text-[11px] text-slate-400">
+                  <span className="text-[11px] text-slate-600">
                     Template tersimpan permanen dan digunakan saat pengiriman otomatis
                   </span>
                 </div>
@@ -910,8 +910,8 @@ export const SuperAdminSettingsModal: React.FC<SuperAdminSettingsModalProps> = (
                       onClick={() => setSelectedTrigger(t.id as NotificationTriggerEvent)}
                       className={`p-2 rounded-xl text-xs font-bold transition-all text-center border cursor-pointer ${
                         selectedTrigger === t.id
-                          ? 'bg-cyan-500/20 border-cyan-400 text-cyan-200 shadow-sm'
-                          : 'bg-slate-900 border-slate-800 text-slate-400 hover:text-white hover:border-slate-700'
+                          ? 'bg-cyan-500/20 border-cyan-400 text-sky-800 shadow-sm'
+                          : 'bg-white border-blue-200/80 text-slate-600 hover:text-[#1e3a5f] hover:border-blue-200'
                       }`}
                     >
                       {t.label}
@@ -921,8 +921,8 @@ export const SuperAdminSettingsModal: React.FC<SuperAdminSettingsModalProps> = (
               </div>
 
               {/* Tag Variabel Dinamis Toolbar */}
-              <div className="p-3 bg-slate-950/40 border border-slate-800/80 rounded-xl space-y-1.5">
-                <span className="text-[10px] font-bold text-slate-400 uppercase tracking-wider block">
+              <div className="p-3 bg-[#f8fbff] border border-blue-200/80 rounded-xl space-y-1.5">
+                <span className="text-[10px] font-bold text-slate-600 uppercase tracking-wider block">
                   💡 Klik Tag di Bawah untuk Menyisipkan Variabel Otomatis ke dalam Teks:
                 </span>
                 <div className="flex flex-wrap gap-1.5 text-[10px] font-mono">
@@ -942,7 +942,7 @@ export const SuperAdminSettingsModal: React.FC<SuperAdminSettingsModalProps> = (
                       key={tag}
                       type="button"
                       onClick={() => handleInsertTag(tag)}
-                      className="px-2 py-0.5 rounded-lg bg-slate-800 hover:bg-cyan-900/60 text-cyan-300 border border-slate-700 hover:border-cyan-500 transition-colors cursor-pointer"
+                      className="px-2 py-0.5 rounded-lg bg-[#e8f1fb] hover:bg-sky-100 text-sky-800 border border-blue-200 hover:border-cyan-500 transition-colors cursor-pointer"
                       title={`Klik untuk menyisipkan ${tag}`}
                     >
                       + {tag}
@@ -952,14 +952,14 @@ export const SuperAdminSettingsModal: React.FC<SuperAdminSettingsModalProps> = (
               </div>
 
               {/* Channel Selector: WhatsApp vs Email Editor */}
-              <div className="flex gap-2 border-b border-slate-800 pb-2">
+              <div className="flex gap-2 border-b border-blue-200/80 pb-2">
                 <button
                   type="button"
                   onClick={() => setEditingChannel('WHATSAPP')}
                   className={`px-4 py-1.5 rounded-xl text-xs font-bold transition-all flex items-center gap-1.5 cursor-pointer ${
                     editingChannel === 'WHATSAPP'
                       ? 'bg-emerald-600 text-white shadow-sm'
-                      : 'bg-slate-800 text-slate-400 hover:text-white'
+                      : 'bg-[#e8f1fb] text-slate-600 hover:text-[#1e3a5f]'
                   }`}
                 >
                   <MessageSquare className="w-3.5 h-3.5" />
@@ -971,7 +971,7 @@ export const SuperAdminSettingsModal: React.FC<SuperAdminSettingsModalProps> = (
                   className={`px-4 py-1.5 rounded-xl text-xs font-bold transition-all flex items-center gap-1.5 cursor-pointer ${
                     editingChannel === 'EMAIL'
                       ? 'bg-blue-600 text-white shadow-sm'
-                      : 'bg-slate-800 text-slate-400 hover:text-white'
+                      : 'bg-[#e8f1fb] text-slate-600 hover:text-[#1e3a5f]'
                   }`}
                 >
                   <Mail className="w-3.5 h-3.5" />
@@ -983,16 +983,16 @@ export const SuperAdminSettingsModal: React.FC<SuperAdminSettingsModalProps> = (
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 items-start">
                 
                 {/* LEFT: TEXTAREA EDITOR */}
-                <div className="p-4 bg-slate-950 rounded-2xl border border-slate-800 space-y-3">
+                <div className="p-4 bg-[#f4f8fd] rounded-2xl border border-blue-200/80 space-y-3">
                   <div className="flex items-center justify-between">
-                    <span className="font-bold text-xs text-white flex items-center gap-1.5">
-                      <Edit3 className="w-3.5 h-3.5 text-cyan-400" />
+                    <span className="font-bold text-xs text-[#1e3a5f] flex items-center gap-1.5">
+                      <Edit3 className="w-3.5 h-3.5 text-sky-700" />
                       <span>Formulir Pengubahan Isi Pesan</span>
                     </span>
                     <button
                       type="button"
                       onClick={handleResetCurrentTemplate}
-                      className="text-[10px] text-slate-400 hover:text-amber-300 flex items-center gap-1 cursor-pointer"
+                      className="text-[10px] text-slate-600 hover:text-amber-800 flex items-center gap-1 cursor-pointer"
                       title="Kembalikan pemicu ini ke teks bawaan resmi"
                     >
                       <RefreshCw className="w-3 h-3" />
@@ -1002,49 +1002,49 @@ export const SuperAdminSettingsModal: React.FC<SuperAdminSettingsModalProps> = (
 
                   {editingChannel === 'WHATSAPP' ? (
                     <div className="space-y-1.5">
-                      <label className="block text-[11px] font-semibold text-slate-300">
+                      <label className="block text-[11px] font-semibold text-slate-700">
                         Isi Pesan WhatsApp (Mendukung format *tebal*, _miring_, dan emoji):
                       </label>
                       <textarea
                         rows={14}
                         value={currentTemplate.waContent || ''}
                         onChange={(e) => handleTemplateChange('waContent', e.target.value)}
-                        className="w-full p-3 bg-slate-900 border border-slate-700 focus:border-emerald-500 rounded-xl text-xs font-mono text-slate-100 focus:outline-none leading-relaxed"
+                        className="w-full p-3 bg-white border border-blue-200 focus:border-emerald-500 rounded-xl text-xs font-mono text-[#1e3a5f] focus:outline-none leading-relaxed"
                         placeholder="Tuliskan naskah pesan WhatsApp..."
                       />
                     </div>
                   ) : (
                     <div className="space-y-3">
                       <div>
-                        <label className="block text-[11px] font-semibold text-slate-300 mb-1">
+                        <label className="block text-[11px] font-semibold text-slate-700 mb-1">
                           Subjek Email Resmi BBPOM:
                         </label>
                         <input
                           type="text"
                           value={currentTemplate.emailSubject || ''}
                           onChange={(e) => handleTemplateChange('emailSubject', e.target.value)}
-                          className="w-full px-3 py-2 bg-slate-900 border border-slate-700 focus:border-blue-500 rounded-xl text-xs font-mono text-slate-100 focus:outline-none"
+                          className="w-full px-3 py-2 bg-white border border-blue-200 focus:border-blue-500 rounded-xl text-xs font-mono text-[#1e3a5f] focus:outline-none"
                           placeholder="Subjek email..."
                         />
                       </div>
                       <div>
-                        <label className="block text-[11px] font-semibold text-slate-300 mb-1">
+                        <label className="block text-[11px] font-semibold text-slate-700 mb-1">
                           Badan Naskah Email:
                         </label>
                         <textarea
                           rows={11}
                           value={currentTemplate.emailContent || ''}
                           onChange={(e) => handleTemplateChange('emailContent', e.target.value)}
-                          className="w-full p-3 bg-slate-900 border border-slate-700 focus:border-blue-500 rounded-xl text-xs font-mono text-slate-100 focus:outline-none leading-relaxed"
+                          className="w-full p-3 bg-white border border-blue-200 focus:border-blue-500 rounded-xl text-xs font-mono text-[#1e3a5f] focus:outline-none leading-relaxed"
                           placeholder="Tuliskan naskah isi email..."
                         />
                       </div>
                     </div>
                   )}
 
-                  <div className="pt-2 flex items-center justify-between border-t border-slate-800">
-                    <div className="flex items-center gap-1.5 text-[11px] text-emerald-400 font-semibold bg-emerald-950/40 px-2.5 py-1 rounded-lg border border-emerald-500/30">
-                      <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
+                  <div className="pt-2 flex items-center justify-between border-t border-blue-200/80">
+                    <div className="flex items-center gap-1.5 text-[11px] text-emerald-700 font-semibold bg-emerald-50 px-2.5 py-1 rounded-lg border border-emerald-500/30">
+                      <CheckCircle2 className="w-3.5 h-3.5 text-emerald-700 shrink-0" />
                       <span>Tersimpan otomatis saat mengetik</span>
                     </div>
                     <button
@@ -1061,51 +1061,51 @@ export const SuperAdminSettingsModal: React.FC<SuperAdminSettingsModalProps> = (
                 {/* RIGHT: REALISTIC LIVE PREVIEW */}
                 <div className="space-y-3">
                   <div className="flex items-center justify-between">
-                    <span className="font-bold text-xs text-white flex items-center gap-1.5">
-                      <Eye className="w-3.5 h-3.5 text-emerald-400" />
+                    <span className="font-bold text-xs text-[#1e3a5f] flex items-center gap-1.5">
+                      <Eye className="w-3.5 h-3.5 text-emerald-700" />
                       <span>Pratinjau Langsung (Live Realistic Preview)</span>
                     </span>
-                    <span className="text-[10px] font-mono text-slate-400 bg-slate-950 px-2 py-0.5 rounded border border-slate-800">
+                    <span className="text-[10px] font-mono text-slate-600 bg-[#f4f8fd] px-2 py-0.5 rounded border border-blue-200/80">
                       Real-time Render
                     </span>
                   </div>
 
                   {editingChannel === 'WHATSAPP' ? (
                     /* WhatsApp Realistic Dark Chat Bubble */
-                    <div className="bg-[#0b141a] rounded-2xl border border-slate-800 p-4 space-y-2.5 shadow-xl">
-                      <div className="flex items-center justify-between pb-2 border-b border-slate-800/80">
+                    <div className="bg-[#f0f7f4] rounded-2xl border border-blue-200/80 p-4 space-y-2.5 shadow-xl">
+                      <div className="flex items-center justify-between pb-2 border-b border-blue-200/80">
                         <div className="flex items-center gap-2">
                           <div className="w-7 h-7 rounded-full bg-emerald-600 text-white flex items-center justify-center font-bold text-xs">
                             BP
                           </div>
                           <div>
-                            <span className="font-bold text-xs text-white block">SIMONCER BBPOM Semarang</span>
-                            <span className="text-[9px] text-emerald-400">Online • Centang Hijau Resmi</span>
+                            <span className="font-bold text-xs text-[#1e3a5f] block">SIMONCER BBPOM Semarang</span>
+                            <span className="text-[9px] text-emerald-700">Online • Centang Hijau Resmi</span>
                           </div>
                         </div>
-                        <span className="text-[10px] font-mono text-slate-400">Fonnte Cloud</span>
+                        <span className="text-[10px] font-mono text-slate-600">Fonnte Cloud</span>
                       </div>
 
-                      <div className="bg-[#202c33] rounded-2xl p-3.5 text-slate-100 font-sans text-xs leading-relaxed shadow-sm space-y-2 border border-slate-700/50">
+                      <div className="bg-[#202c33] rounded-2xl p-3.5 text-[#1e3a5f] font-sans text-xs leading-relaxed shadow-sm space-y-2 border border-blue-200">
                         <div className="whitespace-pre-wrap font-sans text-[11px] leading-relaxed">
                           {previewWaText}
                         </div>
-                        <div className="flex items-center justify-end gap-1 text-[9px] text-slate-400 pt-1 border-t border-slate-700/40">
+                        <div className="flex items-center justify-end gap-1 text-[9px] text-slate-600 pt-1 border-t border-blue-200">
                           <span>{new Date().toLocaleTimeString('id-ID', { hour: '2-digit', minute: '2-digit' })}</span>
-                          <CheckCheck className="w-3.5 h-3.5 text-cyan-400" />
+                          <CheckCheck className="w-3.5 h-3.5 text-sky-700" />
                         </div>
                       </div>
                     </div>
                   ) : (
                     /* Email Realistic Official Letter Preview */
-                    <div className="bg-slate-950 rounded-2xl border border-slate-800 p-4 space-y-2.5 shadow-xl">
-                      <div className="flex items-center justify-between pb-2 border-b border-slate-800/80">
+                    <div className="bg-[#f4f8fd] rounded-2xl border border-blue-200/80 p-4 space-y-2.5 shadow-xl">
+                      <div className="flex items-center justify-between pb-2 border-b border-blue-200/80">
                         <div className="flex items-center gap-2">
                           <div className="w-7 h-7 rounded-lg bg-blue-600 text-white flex items-center justify-center font-bold text-xs">
                             <Mail className="w-3.5 h-3.5" />
                           </div>
                           <div>
-                            <span className="font-bold text-xs text-white block">Subjek: {previewEmailSubj}</span>
+                            <span className="font-bold text-xs text-[#1e3a5f] block">Subjek: {previewEmailSubj}</span>
                             <span className="text-[9px] text-blue-400">Pengirim: simoncer@pom.go.id (BBPOM Semarang)</span>
                           </div>
                         </div>
@@ -1131,7 +1131,7 @@ export const SuperAdminSettingsModal: React.FC<SuperAdminSettingsModalProps> = (
                         </div>
 
                         <div className="pt-2 border-t border-slate-200 flex items-center justify-between">
-                          <span className="text-[9px] text-slate-400">Email ini diterbitkan otomatis oleh sistem SIMONCER</span>
+                          <span className="text-[9px] text-slate-600">Email ini diterbitkan otomatis oleh sistem SIMONCER</span>
                           <span className="px-3 py-1 bg-blue-700 text-white rounded text-[10px] font-bold">
                             Buka Sistem SIMONCER ↗
                           </span>
@@ -1141,23 +1141,23 @@ export const SuperAdminSettingsModal: React.FC<SuperAdminSettingsModalProps> = (
                   )}
 
                   {/* LIVE TEST SEND SECTION WITH CURRENT EDITED TEXT */}
-                  <div className="p-3.5 bg-slate-950 rounded-2xl border border-slate-800 space-y-2.5">
+                  <div className="p-3.5 bg-[#f4f8fd] rounded-2xl border border-blue-200/80 space-y-2.5">
                     <div className="flex items-center justify-between">
-                      <span className="font-bold text-xs text-white flex items-center gap-1.5">
-                        <Send className="w-3.5 h-3.5 text-emerald-400" />
+                      <span className="font-bold text-xs text-[#1e3a5f] flex items-center gap-1.5">
+                        <Send className="w-3.5 h-3.5 text-emerald-700" />
                         <span>Kirim Uji Coba Langsung (Menggunakan Teks Hasil Edit di Atas)</span>
                       </span>
                     </div>
 
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs">
                       <div>
-                        <label className="block text-[10px] text-slate-400 mb-0.5">No WhatsApp Uji Coba</label>
+                        <label className="block text-[10px] text-slate-600 mb-0.5">No WhatsApp Uji Coba</label>
                         <div className="flex gap-1.5">
                           <input
                             type="text"
                             value={testRecipientPhone}
                             onChange={(e) => setTestRecipientPhone(e.target.value)}
-                            className="flex-1 px-2.5 py-1.5 bg-slate-900 border border-slate-700 rounded-lg text-white font-mono text-xs focus:outline-none focus:border-emerald-500"
+                            className="flex-1 px-2.5 py-1.5 bg-white border border-blue-200 rounded-lg text-[#1e3a5f] font-mono text-xs focus:outline-none focus:border-emerald-500"
                             placeholder="0812..."
                           />
                           <button
@@ -1172,13 +1172,13 @@ export const SuperAdminSettingsModal: React.FC<SuperAdminSettingsModalProps> = (
                       </div>
 
                       <div>
-                        <label className="block text-[10px] text-slate-400 mb-0.5">Email Tujuan Uji Coba</label>
+                        <label className="block text-[10px] text-slate-600 mb-0.5">Email Tujuan Uji Coba</label>
                         <div className="flex gap-1.5">
                           <input
                             type="email"
                             value={testRecipientEmail}
                             onChange={(e) => setTestRecipientEmail(e.target.value)}
-                            className="flex-1 px-2.5 py-1.5 bg-slate-900 border border-slate-700 rounded-lg text-white font-mono text-xs focus:outline-none focus:border-blue-500"
+                            className="flex-1 px-2.5 py-1.5 bg-white border border-blue-200 rounded-lg text-[#1e3a5f] font-mono text-xs focus:outline-none focus:border-blue-500"
                             placeholder="pic@sarana.co.id"
                           />
                           <button
@@ -1196,13 +1196,13 @@ export const SuperAdminSettingsModal: React.FC<SuperAdminSettingsModalProps> = (
                     {testResult && (
                       <div className={`p-2.5 rounded-xl text-xs flex items-start gap-2 border animate-in fade-in ${
                         testResult.success 
-                          ? 'bg-emerald-950/80 border-emerald-500/40 text-emerald-200' 
-                          : 'bg-rose-950/80 border-rose-500/40 text-rose-200'
+                          ? 'bg-emerald-50 border-emerald-500/40 text-emerald-200' 
+                          : 'bg-rose-50 border-rose-500/40 text-rose-200'
                       }`}>
                         {testResult.success ? (
-                          <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
+                          <CheckCircle2 className="w-4 h-4 text-emerald-700 shrink-0 mt-0.5" />
                         ) : (
-                          <AlertCircle className="w-4 h-4 text-rose-400 shrink-0 mt-0.5" />
+                          <AlertCircle className="w-4 h-4 text-rose-700 shrink-0 mt-0.5" />
                         )}
                         <div className="flex-1 text-[11px]">
                           <strong>{testResult.success ? 'Berhasil Terkirim: ' : 'Gagal: '}</strong>
@@ -1224,20 +1224,20 @@ export const SuperAdminSettingsModal: React.FC<SuperAdminSettingsModalProps> = (
           {/* ========================================================= */}
           {activeTab === 'LOGS' && (
             <div className="space-y-3">
-              <div className="flex items-center justify-between pb-2 border-b border-slate-800">
+              <div className="flex items-center justify-between pb-2 border-b border-blue-200/80">
                 <div>
-                  <span className="font-bold text-xs text-white block">Log Riwayat Pengiriman Notifikasi Otomatis</span>
-                  <span className="text-[11px] text-slate-400">
+                  <span className="font-bold text-xs text-[#1e3a5f] block">Log Riwayat Pengiriman Notifikasi Otomatis</span>
+                  <span className="text-[11px] text-slate-600">
                     Semua pesan WhatsApp dan Email yang otomatis tersalurkan dari sistem SIMONCER
                   </span>
                 </div>
-                <span className="text-[11px] font-mono text-emerald-400 bg-emerald-950/80 px-2.5 py-1 rounded-lg border border-emerald-500/30">
+                <span className="text-[11px] font-mono text-emerald-700 bg-emerald-50 px-2.5 py-1 rounded-lg border border-emerald-500/30">
                   {recentLogs.length} Pesan Tercatat
                 </span>
               </div>
 
               {recentLogs.length === 0 ? (
-                <div className="py-12 text-center text-slate-500 bg-slate-950/40 rounded-2xl border border-dashed border-slate-800 text-xs">
+                <div className="py-12 text-center text-slate-500 bg-[#f8fbff] rounded-2xl border border-dashed border-blue-200/80 text-xs">
                   Belum ada log notifikasi pada sesi ini. Notifikasi akan tercatat secara otomatis saat ada perubahan status temuan, surat baru, atau pengiriman CAPA.
                 </div>
               ) : (
@@ -1245,12 +1245,12 @@ export const SuperAdminSettingsModal: React.FC<SuperAdminSettingsModalProps> = (
                   {recentLogs.map((log, idx) => (
                     <div
                       key={log.id || `notif-log-${idx}`}
-                      className="p-3 bg-slate-950/70 border border-slate-800 rounded-xl space-y-1.5 text-xs hover:border-slate-700 transition-colors"
+                      className="p-3 bg-[#f4f8fd] border border-blue-200/80 rounded-xl space-y-1.5 text-xs hover:border-blue-200 transition-colors"
                     >
                       <div className="flex items-center justify-between gap-2 flex-wrap">
                         <div className="flex items-center gap-2">
                           {log.channel === 'WHATSAPP' ? (
-                            <span className="px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 text-[10px] font-bold flex items-center gap-1">
+                            <span className="px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-700 border border-emerald-500/30 text-[10px] font-bold flex items-center gap-1">
                               <MessageSquare className="w-3 h-3" /> WhatsApp
                             </span>
                           ) : (
@@ -1258,20 +1258,20 @@ export const SuperAdminSettingsModal: React.FC<SuperAdminSettingsModalProps> = (
                               <Mail className="w-3 h-3" /> Email
                             </span>
                           )}
-                          <span className="font-semibold text-white truncate max-w-sm">{log.subject}</span>
+                          <span className="font-semibold text-[#1e3a5f] truncate max-w-sm">{log.subject}</span>
                         </div>
-                        <div className="flex items-center gap-2 text-[10px] text-slate-400">
+                        <div className="flex items-center gap-2 text-[10px] text-slate-600">
                           <span>{new Date(log.sentAt).toLocaleTimeString('id-ID', { hour: '2-digit', minute: '2-digit', second: '2-digit' })}</span>
-                          <span className="px-1.5 py-0.2 rounded bg-emerald-950 text-emerald-400 font-bold border border-emerald-500/30">
+                          <span className="px-1.5 py-0.2 rounded bg-emerald-50 text-emerald-700 font-bold border border-emerald-500/30">
                             DELIVERED
                           </span>
                         </div>
                       </div>
-                      <p className="text-[11px] text-slate-300 font-mono line-clamp-2 bg-slate-900/60 p-2 rounded-lg border border-slate-800">
+                      <p className="text-[11px] text-slate-700 font-mono line-clamp-2 bg-white/85 p-2 rounded-lg border border-blue-200/80">
                         {log.content}
                       </p>
-                      <div className="flex items-center justify-between text-[10px] text-slate-400">
-                        <span>Penerima: <strong className="text-slate-300">{log.recipient}</strong></span>
+                      <div className="flex items-center justify-between text-[10px] text-slate-600">
+                        <span>Penerima: <strong className="text-slate-700">{log.recipient}</strong></span>
                         <span className="text-slate-500">Pemicu: {log.triggerEvent}</span>
                       </div>
                     </div>
@@ -1288,8 +1288,8 @@ export const SuperAdminSettingsModal: React.FC<SuperAdminSettingsModalProps> = (
             <div className="space-y-4">
               <div className="flex items-center justify-between gap-3 flex-wrap">
                 <div>
-                  <h4 className="font-bold text-xs text-white">Daftar Akun Pengguna Sistem SIMONCER</h4>
-                  <p className="text-[11px] text-slate-400">
+                  <h4 className="font-bold text-xs text-[#1e3a5f]">Daftar Akun Pengguna Sistem SIMONCER</h4>
+                  <p className="text-[11px] text-slate-600">
                     Kelola kredensial akun internal (Admin Balai, Petugas Evaluator, dan Supervisor)
                   </p>
                 </div>
@@ -1297,7 +1297,7 @@ export const SuperAdminSettingsModal: React.FC<SuperAdminSettingsModalProps> = (
                   <button
                     type="button"
                     onClick={handleResetAccounts}
-                    className="px-3 py-1.5 bg-slate-800 hover:bg-slate-700 text-slate-300 rounded-xl text-xs font-semibold border border-slate-700 transition-colors flex items-center gap-1.5 cursor-pointer"
+                    className="px-3 py-1.5 bg-[#e8f1fb] hover:bg-[#d0e2f5] text-slate-700 rounded-xl text-xs font-semibold border border-blue-200 transition-colors flex items-center gap-1.5 cursor-pointer"
                   >
                     <RefreshCw className="w-3 h-3" />
                     <span>Reset Bawaan</span>
@@ -1314,50 +1314,50 @@ export const SuperAdminSettingsModal: React.FC<SuperAdminSettingsModalProps> = (
               </div>
 
               {accountSuccessMsg && (
-                <div className="p-3 bg-emerald-950/80 border border-emerald-500/50 rounded-xl text-xs text-emerald-200 flex items-center gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
+                <div className="p-3 bg-emerald-50 border border-emerald-500/50 rounded-xl text-xs text-emerald-200 flex items-center gap-2">
+                  <CheckCircle2 className="w-4 h-4 text-emerald-700 shrink-0" />
                   <span>{accountSuccessMsg}</span>
                 </div>
               )}
 
               {/* Add Account Modal Form inline */}
               {isAddingAccount && (
-                <form onSubmit={handleSaveAccountSubmit} className="p-4 bg-slate-950 rounded-2xl border border-emerald-500/40 space-y-3">
-                  <div className="flex items-center justify-between pb-2 border-b border-slate-800">
-                    <span className="font-bold text-xs text-emerald-400">Tambah Akun Pengguna Baru</span>
+                <form onSubmit={handleSaveAccountSubmit} className="p-4 bg-[#f4f8fd] rounded-2xl border border-emerald-500/40 space-y-3">
+                  <div className="flex items-center justify-between pb-2 border-b border-blue-200/80">
+                    <span className="font-bold text-xs text-emerald-700">Tambah Akun Pengguna Baru</span>
                     <button
                       type="button"
                       onClick={() => setIsAddingAccount(false)}
-                      className="text-slate-400 hover:text-white"
+                      className="text-slate-600 hover:text-[#1e3a5f]"
                     >
                       <X className="w-4 h-4" />
                     </button>
                   </div>
 
                   {accountErrorMsg && (
-                    <div className="p-2 bg-rose-950/80 border border-rose-500/50 rounded-lg text-xs text-rose-200">
+                    <div className="p-2 bg-rose-50 border border-rose-500/50 rounded-lg text-xs text-rose-200">
                       {accountErrorMsg}
                     </div>
                   )}
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
                     <div>
-                      <label className="block text-[11px] font-semibold text-slate-400 mb-1">Nama Lengkap & Gelar *</label>
+                      <label className="block text-[11px] font-semibold text-slate-600 mb-1">Nama Lengkap & Gelar *</label>
                       <input
                         type="text"
                         value={accountFormData.name}
                         onChange={(e) => setAccountFormData({ ...accountFormData, name: e.target.value })}
                         placeholder="apt. Nama Petugas, M.Farm"
-                        className="w-full px-3 py-1.5 bg-slate-900 border border-slate-700 rounded-xl text-white text-xs focus:outline-none focus:border-emerald-500"
+                        className="w-full px-3 py-1.5 bg-white border border-blue-200 rounded-xl text-[#1e3a5f] text-xs focus:outline-none focus:border-emerald-500"
                         required
                       />
                     </div>
                     <div>
-                      <label className="block text-[11px] font-semibold text-slate-400 mb-1">Peran Akses (Role) *</label>
+                      <label className="block text-[11px] font-semibold text-slate-600 mb-1">Peran Akses (Role) *</label>
                       <select
                         value={accountFormData.role}
                         onChange={(e) => setAccountFormData({ ...accountFormData, role: e.target.value as any })}
-                        className="w-full px-3 py-1.5 bg-slate-900 border border-slate-700 rounded-xl text-white text-xs focus:outline-none focus:border-emerald-500"
+                        className="w-full px-3 py-1.5 bg-white border border-blue-200 rounded-xl text-[#1e3a5f] text-xs focus:outline-none focus:border-emerald-500"
                       >
                         <option value="PETUGAS_EVALUATOR">Petugas Evaluator CAPA</option>
                         <option value="ADMIN">Admin Balai POM</option>
@@ -1365,45 +1365,45 @@ export const SuperAdminSettingsModal: React.FC<SuperAdminSettingsModalProps> = (
                       </select>
                     </div>
                     <div>
-                      <label className="block text-[11px] font-semibold text-slate-400 mb-1">Username Login *</label>
+                      <label className="block text-[11px] font-semibold text-slate-600 mb-1">Username Login *</label>
                       <input
                         type="text"
                         value={accountFormData.username}
                         onChange={(e) => setAccountFormData({ ...accountFormData, username: e.target.value })}
                         placeholder="eko.prasetyo"
-                        className="w-full px-3 py-1.5 bg-slate-900 border border-slate-700 rounded-xl text-white text-xs focus:outline-none focus:border-emerald-500"
+                        className="w-full px-3 py-1.5 bg-white border border-blue-200 rounded-xl text-[#1e3a5f] text-xs focus:outline-none focus:border-emerald-500"
                         required
                       />
                     </div>
                     <div>
-                      <label className="block text-[11px] font-semibold text-slate-400 mb-1">Password *</label>
+                      <label className="block text-[11px] font-semibold text-slate-600 mb-1">Password *</label>
                       <input
                         type="password"
                         value={accountFormData.password}
                         onChange={(e) => setAccountFormData({ ...accountFormData, password: e.target.value })}
                         placeholder="Minimal 6 karakter"
-                        className="w-full px-3 py-1.5 bg-slate-900 border border-slate-700 rounded-xl text-white text-xs focus:outline-none focus:border-emerald-500"
+                        className="w-full px-3 py-1.5 bg-white border border-blue-200 rounded-xl text-[#1e3a5f] text-xs focus:outline-none focus:border-emerald-500"
                         required
                       />
                     </div>
                     <div>
-                      <label className="block text-[11px] font-semibold text-slate-400 mb-1">NIP Pegawai</label>
+                      <label className="block text-[11px] font-semibold text-slate-600 mb-1">NIP Pegawai</label>
                       <input
                         type="text"
                         value={accountFormData.nip}
                         onChange={(e) => setAccountFormData({ ...accountFormData, nip: e.target.value })}
                         placeholder="19870512..."
-                        className="w-full px-3 py-1.5 bg-slate-900 border border-slate-700 rounded-xl text-white font-mono text-xs focus:outline-none focus:border-emerald-500"
+                        className="w-full px-3 py-1.5 bg-white border border-blue-200 rounded-xl text-[#1e3a5f] font-mono text-xs focus:outline-none focus:border-emerald-500"
                       />
                     </div>
                     <div>
-                      <label className="block text-[11px] font-semibold text-slate-400 mb-1">Nomor WhatsApp Petugas</label>
+                      <label className="block text-[11px] font-semibold text-slate-600 mb-1">Nomor WhatsApp Petugas</label>
                       <input
                         type="text"
                         value={accountFormData.phone}
                         onChange={(e) => setAccountFormData({ ...accountFormData, phone: e.target.value })}
                         placeholder="+62 811-..."
-                        className="w-full px-3 py-1.5 bg-slate-900 border border-slate-700 rounded-xl text-white font-mono text-xs focus:outline-none focus:border-emerald-500"
+                        className="w-full px-3 py-1.5 bg-white border border-blue-200 rounded-xl text-[#1e3a5f] font-mono text-xs focus:outline-none focus:border-emerald-500"
                       />
                     </div>
                   </div>
@@ -1412,7 +1412,7 @@ export const SuperAdminSettingsModal: React.FC<SuperAdminSettingsModalProps> = (
                     <button
                       type="button"
                       onClick={() => setIsAddingAccount(false)}
-                      className="px-3 py-1.5 text-xs text-slate-400 hover:text-white"
+                      className="px-3 py-1.5 text-xs text-slate-600 hover:text-[#1e3a5f]"
                     >
                       Batal
                     </button>
@@ -1433,29 +1433,29 @@ export const SuperAdminSettingsModal: React.FC<SuperAdminSettingsModalProps> = (
                   value={accountSearch}
                   onChange={(e) => setAccountSearch(e.target.value)}
                   placeholder="Cari akun berdasarkan nama, username, atau NIP..."
-                  className="w-full px-3.5 py-2 bg-slate-950 border border-slate-800 rounded-xl text-xs text-white focus:outline-none focus:border-emerald-500"
+                  className="w-full px-3.5 py-2 bg-[#f4f8fd] border border-blue-200/80 rounded-xl text-xs text-[#1e3a5f] focus:outline-none focus:border-emerald-500"
                 />
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 max-h-[350px] overflow-y-auto pr-1">
                   {filteredAccounts.map((acc) => (
                     <div
                       key={acc.id}
-                      className="p-3 bg-slate-950/80 border border-slate-800 rounded-xl flex items-center justify-between gap-3 text-xs"
+                      className="p-3 bg-[#f4f8fd] border border-blue-200/80 rounded-xl flex items-center justify-between gap-3 text-xs"
                     >
                       <div className="min-w-0">
                         <div className="flex items-center gap-1.5">
-                          <span className="font-bold text-white truncate block">{acc.name}</span>
+                          <span className="font-bold text-[#1e3a5f] truncate block">{acc.name}</span>
                           <span className={`text-[9px] font-bold px-1.5 py-0.2 rounded ${
                             acc.role === 'ADMIN' 
-                              ? 'bg-rose-950 text-rose-300 border border-rose-800'
+                              ? 'bg-rose-50 text-rose-700 border border-rose-800'
                               : acc.role === 'SUPERVISOR'
-                              ? 'bg-purple-950 text-purple-300 border border-purple-800'
-                              : 'bg-emerald-950 text-emerald-300 border border-emerald-800'
+                              ? 'bg-purple-50 text-purple-800 border border-purple-200'
+                              : 'bg-emerald-50 text-emerald-800 border border-emerald-200'
                           }`}>
                             {acc.role}
                           </span>
                         </div>
-                        <span className="text-[10px] text-slate-400 font-mono block mt-0.5">
+                        <span className="text-[10px] text-slate-600 font-mono block mt-0.5">
                           @{acc.username} {acc.nip ? `• NIP: ${acc.nip}` : ''}
                         </span>
                       </div>
@@ -1464,7 +1464,7 @@ export const SuperAdminSettingsModal: React.FC<SuperAdminSettingsModalProps> = (
                         <button
                           type="button"
                           onClick={() => handleDeleteAccount(acc.id, acc.name)}
-                          className="p-1.5 text-slate-500 hover:text-rose-400 rounded-lg hover:bg-slate-900 transition-colors cursor-pointer"
+                          className="p-1.5 text-slate-500 hover:text-rose-700 rounded-lg hover:bg-white transition-colors cursor-pointer"
                           title="Hapus akun"
                         >
                           <Trash2 className="w-3.5 h-3.5" />
@@ -1484,8 +1484,8 @@ export const SuperAdminSettingsModal: React.FC<SuperAdminSettingsModalProps> = (
             <div className="space-y-4">
               <div className="flex items-center justify-between gap-3 flex-wrap">
                 <div>
-                  <h4 className="font-bold text-xs text-white">Direktori Petugas Evaluator BBPOM di Semarang</h4>
-                  <p className="text-[11px] text-slate-400">
+                  <h4 className="font-bold text-xs text-[#1e3a5f]">Direktori Petugas Evaluator BBPOM di Semarang</h4>
+                  <p className="text-[11px] text-slate-600">
                     Daftar auditor & evaluator yang terdaftar untuk penugasan verifikasi CAPA
                   </p>
                 </div>
@@ -1493,7 +1493,7 @@ export const SuperAdminSettingsModal: React.FC<SuperAdminSettingsModalProps> = (
                   <button
                     type="button"
                     onClick={handleResetOfficers}
-                    className="px-3 py-1.5 bg-slate-800 hover:bg-slate-700 text-slate-300 rounded-xl text-xs font-semibold border border-slate-700 transition-colors flex items-center gap-1.5 cursor-pointer"
+                    className="px-3 py-1.5 bg-[#e8f1fb] hover:bg-[#d0e2f5] text-slate-700 rounded-xl text-xs font-semibold border border-blue-200 transition-colors flex items-center gap-1.5 cursor-pointer"
                   >
                     <RefreshCw className="w-3 h-3" />
                     <span>Reset Bawaan</span>
@@ -1510,57 +1510,57 @@ export const SuperAdminSettingsModal: React.FC<SuperAdminSettingsModalProps> = (
               </div>
 
               {isAddingOfficer && (
-                <form onSubmit={handleSaveOfficer} className="p-4 bg-slate-950 rounded-2xl border border-emerald-500/40 space-y-3">
-                  <div className="flex items-center justify-between pb-2 border-b border-slate-800">
-                    <span className="font-bold text-xs text-emerald-400">Tambah Petugas Evaluator Baru</span>
+                <form onSubmit={handleSaveOfficer} className="p-4 bg-[#f4f8fd] rounded-2xl border border-emerald-500/40 space-y-3">
+                  <div className="flex items-center justify-between pb-2 border-b border-blue-200/80">
+                    <span className="font-bold text-xs text-emerald-700">Tambah Petugas Evaluator Baru</span>
                     <button
                       type="button"
                       onClick={() => setIsAddingOfficer(false)}
-                      className="text-slate-400 hover:text-white"
+                      className="text-slate-600 hover:text-[#1e3a5f]"
                     >
                       <X className="w-4 h-4" />
                     </button>
                   </div>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
                     <div>
-                      <label className="block text-[11px] text-slate-400 mb-1">Nama & Gelar *</label>
+                      <label className="block text-[11px] text-slate-600 mb-1">Nama & Gelar *</label>
                       <input
                         type="text"
                         value={officerForm.name}
                         onChange={(e) => setOfficerForm({ ...officerForm, name: e.target.value })}
                         placeholder="apt. ..."
-                        className="w-full px-3 py-1.5 bg-slate-900 border border-slate-700 rounded-xl text-white text-xs focus:outline-none focus:border-emerald-500"
+                        className="w-full px-3 py-1.5 bg-white border border-blue-200 rounded-xl text-[#1e3a5f] text-xs focus:outline-none focus:border-emerald-500"
                         required
                       />
                     </div>
                     <div>
-                      <label className="block text-[11px] text-slate-400 mb-1">NIP Pegawai</label>
+                      <label className="block text-[11px] text-slate-600 mb-1">NIP Pegawai</label>
                       <input
                         type="text"
                         value={officerForm.nip}
                         onChange={(e) => setOfficerForm({ ...officerForm, nip: e.target.value })}
                         placeholder="198..."
-                        className="w-full px-3 py-1.5 bg-slate-900 border border-slate-700 rounded-xl text-white font-mono text-xs focus:outline-none focus:border-emerald-500"
+                        className="w-full px-3 py-1.5 bg-white border border-blue-200 rounded-xl text-[#1e3a5f] font-mono text-xs focus:outline-none focus:border-emerald-500"
                       />
                     </div>
                     <div>
-                      <label className="block text-[11px] text-slate-400 mb-1">Nomor WhatsApp</label>
+                      <label className="block text-[11px] text-slate-600 mb-1">Nomor WhatsApp</label>
                       <input
                         type="text"
                         value={officerForm.phone}
                         onChange={(e) => setOfficerForm({ ...officerForm, phone: e.target.value })}
                         placeholder="+62 8..."
-                        className="w-full px-3 py-1.5 bg-slate-900 border border-slate-700 rounded-xl text-white font-mono text-xs focus:outline-none focus:border-emerald-500"
+                        className="w-full px-3 py-1.5 bg-white border border-blue-200 rounded-xl text-[#1e3a5f] font-mono text-xs focus:outline-none focus:border-emerald-500"
                       />
                     </div>
                     <div>
-                      <label className="block text-[11px] text-slate-400 mb-1">Email Resmi</label>
+                      <label className="block text-[11px] text-slate-600 mb-1">Email Resmi</label>
                       <input
                         type="email"
                         value={officerForm.email}
                         onChange={(e) => setOfficerForm({ ...officerForm, email: e.target.value })}
                         placeholder="...@pom.go.id"
-                        className="w-full px-3 py-1.5 bg-slate-900 border border-slate-700 rounded-xl text-white font-mono text-xs focus:outline-none focus:border-emerald-500"
+                        className="w-full px-3 py-1.5 bg-white border border-blue-200 rounded-xl text-[#1e3a5f] font-mono text-xs focus:outline-none focus:border-emerald-500"
                       />
                     </div>
                   </div>
@@ -1568,7 +1568,7 @@ export const SuperAdminSettingsModal: React.FC<SuperAdminSettingsModalProps> = (
                     <button
                       type="button"
                       onClick={() => setIsAddingOfficer(false)}
-                      className="px-3 py-1.5 text-xs text-slate-400 hover:text-white"
+                      className="px-3 py-1.5 text-xs text-slate-600 hover:text-[#1e3a5f]"
                     >
                       Batal
                     </button>
@@ -1586,19 +1586,19 @@ export const SuperAdminSettingsModal: React.FC<SuperAdminSettingsModalProps> = (
                 {officers.map((off) => (
                   <div
                     key={off.id}
-                    className="p-3 bg-slate-950/80 border border-slate-800 rounded-xl flex items-center justify-between gap-3 text-xs"
+                    className="p-3 bg-[#f4f8fd] border border-blue-200/80 rounded-xl flex items-center justify-between gap-3 text-xs"
                   >
                     <div className="min-w-0">
-                      <span className="font-bold text-white block truncate">{off.name}</span>
-                      <span className="text-[10px] text-slate-400 block mt-0.5 truncate">{off.position}</span>
-                      <span className="text-[10px] text-emerald-400 font-mono block mt-0.5">
+                      <span className="font-bold text-[#1e3a5f] block truncate">{off.name}</span>
+                      <span className="text-[10px] text-slate-600 block mt-0.5 truncate">{off.position}</span>
+                      <span className="text-[10px] text-emerald-700 font-mono block mt-0.5">
                         {off.phone} • {off.email}
                       </span>
                     </div>
                     <button
                       type="button"
                       onClick={() => handleDeleteOfficer(off.id, off.name)}
-                      className="p-1.5 text-slate-500 hover:text-rose-400 rounded-lg hover:bg-slate-900 transition-colors cursor-pointer shrink-0"
+                      className="p-1.5 text-slate-500 hover:text-rose-700 rounded-lg hover:bg-white transition-colors cursor-pointer shrink-0"
                       title="Hapus petugas"
                     >
                       <Trash2 className="w-3.5 h-3.5" />
@@ -1612,11 +1612,11 @@ export const SuperAdminSettingsModal: React.FC<SuperAdminSettingsModalProps> = (
         </div>
 
         {/* Unified Footer */}
-        <div className="p-4 sm:p-5 bg-slate-950/90 border-t border-slate-800 flex items-center justify-between gap-3 flex-wrap shrink-0">
+        <div className="p-4 sm:p-5 bg-[#f4f8fd] border-t border-blue-200/80 flex items-center justify-between gap-3 flex-wrap shrink-0">
           <button
             type="button"
             onClick={handleResetToDefaults}
-            className="px-3.5 py-2 text-xs text-slate-400 hover:text-white rounded-xl hover:bg-slate-800 transition-colors flex items-center gap-1.5 cursor-pointer"
+            className="px-3.5 py-2 text-xs text-slate-600 hover:text-[#1e3a5f] rounded-xl hover:bg-[#e8f1fb] transition-colors flex items-center gap-1.5 cursor-pointer"
           >
             <RefreshCw className="w-3.5 h-3.5" />
             <span>Pulihkan Semua Pengaturan Bawaan</span>
@@ -1624,15 +1624,15 @@ export const SuperAdminSettingsModal: React.FC<SuperAdminSettingsModalProps> = (
 
           <div className="flex items-center gap-2">
             {saveSuccessMsg && (
-              <span className="text-xs text-emerald-400 font-semibold flex items-center gap-1 animate-in fade-in">
-                <CheckCircle2 className="w-4 h-4 text-emerald-400" />
+              <span className="text-xs text-emerald-700 font-semibold flex items-center gap-1 animate-in fade-in">
+                <CheckCircle2 className="w-4 h-4 text-emerald-700" />
                 {saveSuccessMsg}
               </span>
             )}
             <button
               type="button"
               onClick={onClose}
-              className="px-4 py-2 bg-slate-800 hover:bg-slate-700 text-slate-300 rounded-xl text-xs font-bold transition-all cursor-pointer"
+              className="px-4 py-2 bg-[#e8f1fb] hover:bg-[#d0e2f5] text-slate-700 rounded-xl text-xs font-bold transition-all cursor-pointer"
             >
               Tutup
             </button>

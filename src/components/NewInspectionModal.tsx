@@ -927,22 +927,22 @@ export const NewInspectionModal: React.FC<NewInspectionModalProps> = ({
   };
 
   return (
-    <div className="fixed inset-0 z-50 bg-slate-900 flex flex-col w-screen h-screen overflow-hidden animate-in fade-in duration-100">
+    <div className="fixed inset-0 z-50 bg-white flex flex-col w-screen h-screen overflow-hidden animate-in fade-in duration-100">
       <div className="bg-white flex flex-col w-full h-full overflow-hidden">
         
         {/* Header */}
-        <div className="bg-gradient-to-r from-slate-900 via-slate-800 to-emerald-950 text-white px-4 sm:px-6 py-3.5 flex items-center justify-between border-b border-slate-800 shrink-0">
+        <div className="bpom-hero-gradient text-[#1e3a5f] px-4 sm:px-6 py-3.5 flex items-center justify-between border-b border-blue-200/80 shrink-0">
           <div className="flex items-center gap-3">
             <button
               onClick={onClose}
               type="button"
-              className="flex items-center gap-1.5 px-3 py-1.5 bg-slate-800 hover:bg-slate-700 text-slate-200 hover:text-white rounded-xl transition-all cursor-pointer text-xs font-semibold border border-slate-700 shadow-xs"
+              className="flex items-center gap-1.5 px-3 py-1.5 bg-[#e8f1fb] hover:bg-[#d0e2f5] text-[#1e3a5f] hover:text-[#1e3a5f] rounded-xl transition-all cursor-pointer text-xs font-semibold border border-blue-200 shadow-xs"
               title="Kembali ke Dashboard Utama"
             >
               <ArrowLeft className="w-4 h-4" />
               <span className="hidden sm:inline">Kembali</span>
             </button>
-            <div className="p-2 rounded-xl bg-emerald-500/20 text-emerald-400 border border-emerald-500/30">
+            <div className="p-2 rounded-xl bg-emerald-500/20 text-emerald-700 border border-emerald-500/30">
               <Upload className="w-5 h-5" />
             </div>
             <div>
@@ -950,11 +950,11 @@ export const NewInspectionModal: React.FC<NewInspectionModalProps> = ({
                 <h3 className="font-bold text-base">
                   Upload Surat SRIKANDI (TTE Kepala Balai)
                 </h3>
-                <span className="text-[10px] font-bold px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300 border border-emerald-500/40 uppercase">
+                <span className="text-[10px] font-bold px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-800 border border-emerald-500/40 uppercase">
                   Alur Kerja Admin
                 </span>
               </div>
-              <p className="text-xs text-slate-300 mt-0.5">
+              <p className="text-xs text-slate-700 mt-0.5">
                 Unggah berkas yang telah di-TTE oleh Kepala Balai dari SRIKANDI. Sistem otomatis mengekstrak seluruh kolom parameter dan temuan per klausul.
               </p>
             </div>
@@ -962,7 +962,7 @@ export const NewInspectionModal: React.FC<NewInspectionModalProps> = ({
           <button
             onClick={onClose}
             type="button"
-            className="p-1.5 text-slate-400 hover:text-white rounded-lg hover:bg-slate-800 transition-colors cursor-pointer"
+            className="p-1.5 text-slate-600 hover:text-[#1e3a5f] rounded-lg hover:bg-[#e8f1fb] transition-colors cursor-pointer"
             title="Tutup Halaman (Kembali ke Beranda)"
           >
             <X className="w-5 h-5" />
@@ -1383,7 +1383,7 @@ export const NewInspectionModal: React.FC<NewInspectionModalProps> = ({
                   Nama & Alamat Sarana Otomatis Terisi oleh AI
                 </span>
               ) : (
-                <span className="text-[10px] text-slate-400 font-mono">
+                <span className="text-[10px] text-slate-600 font-mono">
                   Otomatis terisi saat surat diunggah / entri manual
                 </span>
               )}
@@ -1539,7 +1539,7 @@ export const NewInspectionModal: React.FC<NewInspectionModalProps> = ({
                       >
                         Terapkan Butir Standar ({facilityType})
                       </button>
-                      <span className="text-emerald-400">•</span>
+                      <span className="text-emerald-700">•</span>
                       <button
                         type="button"
                         onClick={() => setShowSaranaFormsModal(true)}
@@ -1679,7 +1679,7 @@ export const NewInspectionModal: React.FC<NewInspectionModalProps> = ({
             <div className="p-3.5 bg-white rounded-xl border border-slate-200 shadow-2xs space-y-2 text-xs">
               <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1.5 pb-2 border-b border-slate-100">
                 <div>
-                  <span className="text-[10px] font-bold uppercase tracking-wider text-slate-400">
+                  <span className="text-[10px] font-bold uppercase tracking-wider text-slate-600">
                     Petugas / Evaluator yang Ditugaskan:
                   </span>
                   <h5 className="font-extrabold text-slate-900 text-xs sm:text-sm text-emerald-950 flex items-center gap-2">
@@ -1768,7 +1768,7 @@ export const NewInspectionModal: React.FC<NewInspectionModalProps> = ({
                       <button
                         type="button"
                         onClick={() => handleRemoveTeamMember(member.id)}
-                        className="p-1 text-slate-400 hover:text-red-600 hover:bg-red-50 rounded-lg transition-colors cursor-pointer shrink-0"
+                        className="p-1 text-slate-600 hover:text-red-600 hover:bg-red-50 rounded-lg transition-colors cursor-pointer shrink-0"
                         title="Hapus dari Anggota Tim"
                       >
                         <Trash2 className="w-3.5 h-3.5" />
@@ -1802,7 +1802,7 @@ export const NewInspectionModal: React.FC<NewInspectionModalProps> = ({
                   type="button"
                   onClick={() => handleAddTeamMember(selectedTeamMemberId)}
                   disabled={!selectedTeamMemberId}
-                  className="px-3 py-1.5 bg-emerald-600 hover:bg-emerald-700 disabled:bg-slate-200 disabled:text-slate-400 text-white rounded-lg text-xs font-bold flex items-center gap-1.5 transition-all cursor-pointer shrink-0"
+                  className="px-3 py-1.5 bg-emerald-600 hover:bg-emerald-700 disabled:bg-slate-200 disabled:text-slate-600 text-white rounded-lg text-xs font-bold flex items-center gap-1.5 transition-all cursor-pointer shrink-0"
                 >
                   <UserPlus className="w-3.5 h-3.5" />
                   <span>+ Tambah Anggota</span>
@@ -2134,8 +2134,8 @@ export const NewInspectionModal: React.FC<NewInspectionModalProps> = ({
             </div>
 
             {findings.length === 0 ? (
-              <div className="p-8 text-center bg-slate-50 rounded-xl border border-slate-200 text-slate-400">
-                <FileText className="w-8 h-8 mx-auto mb-1 text-slate-300" />
+              <div className="p-8 text-center bg-slate-50 rounded-xl border border-slate-200 text-slate-600">
+                <FileText className="w-8 h-8 mx-auto mb-1 text-slate-700" />
                 <p className="text-xs font-medium">
                   Belum ada butir temuan. Klik tombol tambah manual atau unggah surat tindak lanjut di atas.
                 </p>
@@ -2157,7 +2157,7 @@ export const NewInspectionModal: React.FC<NewInspectionModalProps> = ({
                   >
                     <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
                       <div className="flex items-center gap-2">
-                        <span className="w-5 h-5 rounded-full bg-slate-800 text-white text-[10px] flex items-center justify-center font-bold">
+                        <span className="w-5 h-5 rounded-full bg-[#e8f1fb] text-[#1e3a5f] text-[10px] flex items-center justify-center font-bold">
                           {idx + 1}
                         </span>
                         <span className="font-bold text-slate-800 text-xs">
@@ -2203,7 +2203,7 @@ export const NewInspectionModal: React.FC<NewInspectionModalProps> = ({
                           <button
                             onClick={() => handleRemoveFinding(idx)}
                             type="button"
-                            className="text-slate-400 hover:text-red-600 p-1 cursor-pointer"
+                            className="text-slate-600 hover:text-red-600 p-1 cursor-pointer"
                             title="Hapus butir temuan ini"
                           >
                             <Trash2 className="w-3.5 h-3.5" />
@@ -2324,10 +2324,10 @@ export const NewInspectionModal: React.FC<NewInspectionModalProps> = ({
 
       {/* MODAL: DAFTAR FORM CAPA TIAP SARANA (STANDAR REGULASI BPOM & KEMENKES) */}
       {showSaranaFormsModal && (
-        <div className="fixed inset-0 z-[60] bg-slate-950/80 backdrop-blur-sm flex items-center justify-center p-3 sm:p-5">
+        <div className="fixed inset-0 z-[60] bg-slate-900/45 backdrop-blur-sm flex items-center justify-center p-3 sm:p-5">
           <div className="bg-white rounded-2xl max-w-3xl w-full max-h-[85vh] flex flex-col shadow-2xl border border-slate-200 overflow-hidden animate-in fade-in zoom-in-95">
             {/* Header */}
-            <div className="p-4 sm:p-5 bg-gradient-to-r from-slate-900 via-blue-950 to-slate-900 text-white flex items-center justify-between border-b border-slate-800">
+            <div className="p-4 sm:p-5 bpom-hero-gradient text-[#1e3a5f] flex items-center justify-between border-b border-blue-200/80">
               <div className="flex items-center gap-2.5">
                 <span className="p-2 rounded-xl bg-blue-500/20 text-blue-400 border border-blue-500/30">
                   <BookOpen className="w-5 h-5" />
@@ -2336,7 +2336,7 @@ export const NewInspectionModal: React.FC<NewInspectionModalProps> = ({
                   <h3 className="font-bold text-sm sm:text-base">
                     Daftar Form CAPA Tiap Sarana (Standar BPOM & Kemenkes)
                   </h3>
-                  <p className="text-xs text-blue-200/80 mt-0.5">
+                  <p className="text-xs text-blue-800/80 mt-0.5">
                     Setiap jenis sarana memiliki formulir CAPA dan standar regulasi klausul tersendiri
                   </p>
                 </div>
@@ -2344,7 +2344,7 @@ export const NewInspectionModal: React.FC<NewInspectionModalProps> = ({
               <button
                 type="button"
                 onClick={() => setShowSaranaFormsModal(false)}
-                className="p-1.5 text-slate-400 hover:text-white rounded-lg hover:bg-slate-800 transition-colors cursor-pointer"
+                className="p-1.5 text-slate-600 hover:text-[#1e3a5f] rounded-lg hover:bg-[#e8f1fb] transition-colors cursor-pointer"
               >
                 <X className="w-5 h-5" />
               </button>
@@ -2410,7 +2410,7 @@ export const NewInspectionModal: React.FC<NewInspectionModalProps> = ({
                               </li>
                             ))}
                             {form.aspects.length > 4 && (
-                              <li className="text-slate-400 italic">
+                              <li className="text-slate-600 italic">
                                 +{form.aspects.length - 4} aspek regulasi lainnya
                               </li>
                             )}
@@ -2419,7 +2419,7 @@ export const NewInspectionModal: React.FC<NewInspectionModalProps> = ({
                       </div>
 
                       <div className="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between">
-                        <span className="text-[10px] text-slate-400 font-mono">
+                        <span className="text-[10px] text-slate-600 font-mono">
                           {form.defaultClauses.length} Klausul Standar
                         </span>
                         <button
@@ -2452,7 +2452,7 @@ export const NewInspectionModal: React.FC<NewInspectionModalProps> = ({
               <button
                 type="button"
                 onClick={() => setShowSaranaFormsModal(false)}
-                className="px-4 py-1.5 bg-slate-900 hover:bg-slate-800 text-white rounded-lg text-xs font-bold cursor-pointer"
+                className="px-4 py-1.5 bg-white hover:bg-[#e8f1fb] text-[#1e3a5f] rounded-lg text-xs font-bold cursor-pointer"
               >
                 Tutup Panduan Form
               </button>

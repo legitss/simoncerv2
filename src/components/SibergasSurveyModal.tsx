@@ -31,30 +31,30 @@ export const SibergasSurveyModal: React.FC<SibergasSurveyModalProps> = ({
   const isFirstTime = isFirstTimeCapaSubmission || !inspection.sibergasSurvey?.completed;
 
   return (
-    <div className="fixed inset-0 z-50 overflow-y-auto bg-slate-950/80 backdrop-blur-sm flex items-center justify-center p-3 sm:p-4">
+    <div className="fixed inset-0 z-50 overflow-y-auto bg-slate-900/45 backdrop-blur-sm flex items-center justify-center p-3 sm:p-4">
       <div className="bg-white rounded-3xl max-w-3xl w-full shadow-2xl border border-slate-300 overflow-hidden transform transition-all animate-in fade-in zoom-in-95 flex flex-col max-h-[92vh]">
         
         {/* Header */}
-        <div className="bg-gradient-to-r from-slate-950 via-[#0a1e1b] to-slate-900 text-white p-4 sm:p-5 flex items-center justify-between border-b border-slate-800 shrink-0">
+        <div className="bpom-hero-gradient text-[#1e3a5f] p-4 sm:p-5 flex items-center justify-between border-b border-blue-200/80 shrink-0">
           <div className="flex items-center gap-3">
-            <div className="p-2.5 rounded-2xl bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 shrink-0">
+            <div className="p-2.5 rounded-2xl bg-emerald-500/20 text-emerald-800 border border-emerald-500/30 shrink-0">
               <ShieldCheck className="w-5 h-5" />
             </div>
             <div>
               <div className="flex items-center gap-2 flex-wrap">
-                <h3 className="font-extrabold text-base sm:text-lg text-white">
+                <h3 className="font-extrabold text-base sm:text-lg text-[#1e3a5f]">
                   {readOnly ? 'Hasil Survei Integritas Petugas' : 'Survei Integritas & Kepuasan (SIBERGAS)'}
                 </h3>
-                <span className="font-mono text-xs px-2.5 py-0.5 rounded-full bg-emerald-950 text-emerald-300 border border-emerald-500/50 font-bold">
+                <span className="font-mono text-xs px-2.5 py-0.5 rounded-full bg-emerald-50 text-emerald-800 border border-emerald-500/50 font-bold">
                   {inspection.capaCode}
                 </span>
                 {isFirstTime && !readOnly && (
-                  <span className="text-[10px] px-2 py-0.5 rounded-full bg-amber-500/20 text-amber-300 border border-amber-500/40 font-bold">
+                  <span className="text-[10px] px-2 py-0.5 rounded-full bg-amber-500/20 text-amber-800 border border-amber-500/40 font-bold">
                     Prasyarat CAPA Pertama
                   </span>
                 )}
               </div>
-              <p className="text-xs text-slate-300 mt-0.5">
+              <p className="text-xs text-slate-700 mt-0.5">
                 {inspection.facility.name} • Balai Besar Pengawas Obat dan Makanan
               </p>
             </div>
@@ -63,7 +63,7 @@ export const SibergasSurveyModal: React.FC<SibergasSurveyModalProps> = ({
           <button
             type="button"
             onClick={onClose}
-            className="p-2 text-slate-400 hover:text-white rounded-xl hover:bg-slate-800 transition-colors cursor-pointer"
+            className="p-2 text-slate-600 hover:text-[#1e3a5f] rounded-xl hover:bg-[#e8f1fb] transition-colors cursor-pointer"
           >
             <X className="w-5 h-5" />
           </button>

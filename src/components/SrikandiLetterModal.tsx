@@ -40,27 +40,27 @@ export const SrikandiLetterModal: React.FC<SrikandiLetterModalProps> = ({
   };
 
   return (
-    <div className="fixed inset-0 z-50 bg-slate-900 flex flex-col w-screen h-screen overflow-hidden animate-in fade-in duration-100">
+    <div className="fixed inset-0 z-50 bg-white flex flex-col w-screen h-screen overflow-hidden animate-in fade-in duration-100">
       <div className="bg-white flex flex-col w-full h-full overflow-hidden">
         
         {/* Top Control Bar (Hidden during print) */}
-        <div className="no-print bg-slate-900 text-white px-4 sm:px-6 py-3.5 flex items-center justify-between border-b border-slate-800 shrink-0">
+        <div className="no-print bg-white text-[#1e3a5f] px-4 sm:px-6 py-3.5 flex items-center justify-between border-b border-blue-200/80 shrink-0">
           <div className="flex items-center gap-3">
             <button
               onClick={onClose}
               type="button"
-              className="flex items-center gap-1.5 px-3 py-1.5 bg-slate-800 hover:bg-slate-700 text-slate-200 hover:text-white rounded-xl transition-all cursor-pointer text-xs font-semibold border border-slate-700 shadow-xs"
+              className="flex items-center gap-1.5 px-3 py-1.5 bg-[#e8f1fb] hover:bg-[#d0e2f5] text-[#1e3a5f] hover:text-[#1e3a5f] rounded-xl transition-all cursor-pointer text-xs font-semibold border border-blue-200 shadow-xs"
               title="Kembali ke Dashboard Utama"
             >
               <ArrowLeft className="w-4 h-4" />
               <span className="hidden sm:inline">Kembali</span>
             </button>
-            <span className="p-1.5 rounded-xl bg-emerald-500/20 text-emerald-400">
+            <span className="p-1.5 rounded-xl bg-emerald-500/20 text-emerald-700">
               <ShieldCheck className="w-5 h-5" />
             </span>
             <div>
               <span className="text-sm font-bold">Dokumen Surat Tindak Lanjut SRIKANDI TTE</span>
-              <span className="ml-2 text-[10px] font-mono px-2 py-0.5 rounded bg-slate-800 text-slate-300 border border-slate-700">
+              <span className="ml-2 text-[10px] font-mono px-2 py-0.5 rounded bg-[#e8f1fb] text-slate-700 border border-blue-200">
                 Terverifikasi BSrE
               </span>
             </div>
@@ -88,7 +88,7 @@ export const SrikandiLetterModal: React.FC<SrikandiLetterModalProps> = ({
             <button
               onClick={handlePrint}
               type="button"
-              className="px-3 py-1.5 bg-slate-800 hover:bg-slate-700 text-white text-xs font-semibold rounded-lg flex items-center gap-1.5 transition-colors cursor-pointer"
+              className="px-3 py-1.5 bg-[#e8f1fb] hover:bg-[#d0e2f5] text-[#1e3a5f] text-xs font-semibold rounded-lg flex items-center gap-1.5 transition-colors cursor-pointer"
             >
               <Printer className="w-3.5 h-3.5" />
               <span>Cetak Surat</span>
@@ -96,7 +96,7 @@ export const SrikandiLetterModal: React.FC<SrikandiLetterModalProps> = ({
             <button
               onClick={onClose}
               type="button"
-              className="p-1.5 text-slate-400 hover:text-white rounded-lg hover:bg-slate-800 transition-colors cursor-pointer"
+              className="p-1.5 text-slate-600 hover:text-[#1e3a5f] rounded-lg hover:bg-[#e8f1fb] transition-colors cursor-pointer"
               title="Tutup Halaman (Kembali ke Beranda)"
             >
               <X className="w-5 h-5" />
@@ -270,7 +270,7 @@ export const SrikandiLetterModal: React.FC<SrikandiLetterModalProps> = ({
                   <p className="text-[10px] text-slate-500 font-mono">
                     NIP. {letter.signerNip}
                   </p>
-                  <p className="text-[9px] text-slate-400 font-mono truncate">
+                  <p className="text-[9px] text-slate-600 font-mono truncate">
                     ID: {letter.tteId}
                   </p>
                 </div>

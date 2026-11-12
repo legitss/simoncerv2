@@ -143,7 +143,7 @@ export const EvaluationModal: React.FC<EvaluationModalProps> = ({
   // STRICT ACCESS CONTROL: SARANA ROLE CAN NEVER ACCESS EVALUATION MENU
   if (currentRole === 'SARANA') {
     return (
-      <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/80 backdrop-blur-sm animate-in fade-in">
+      <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/45 backdrop-blur-sm animate-in fade-in">
         <div className="bg-white rounded-3xl max-w-md w-full p-6 text-center shadow-2xl border border-rose-200 space-y-4">
           <div className="w-16 h-16 rounded-2xl bg-rose-100 text-rose-600 flex items-center justify-center mx-auto border border-rose-200 shadow-sm">
             <ShieldAlert className="w-8 h-8" />
@@ -164,7 +164,7 @@ export const EvaluationModal: React.FC<EvaluationModalProps> = ({
             <button
               type="button"
               onClick={onClose}
-              className="w-full py-2.5 bg-slate-900 hover:bg-slate-800 text-white rounded-xl font-bold text-xs shadow-md transition-all cursor-pointer"
+              className="w-full py-2.5 bg-white hover:bg-[#e8f1fb] text-[#1e3a5f] rounded-xl font-bold text-xs shadow-md transition-all cursor-pointer"
             >
               Tutup & Kembali
             </button>
@@ -323,12 +323,12 @@ export const EvaluationModal: React.FC<EvaluationModalProps> = ({
       <div className="bg-white flex flex-col w-full h-full overflow-hidden">
         
         {/* Modal Header */}
-        <div className="bg-slate-900 text-white px-4 sm:px-6 py-3.5 flex items-center justify-between border-b border-slate-800 shrink-0">
+        <div className="bg-white text-[#1e3a5f] px-4 sm:px-6 py-3.5 flex items-center justify-between border-b border-blue-200/80 shrink-0">
           <div className="flex items-center gap-3">
             <button
               onClick={onClose}
               type="button"
-              className="flex items-center gap-1.5 px-3 py-1.5 bg-slate-800 hover:bg-slate-700 text-slate-200 hover:text-white rounded-xl transition-all cursor-pointer text-xs font-semibold border border-slate-700 shadow-xs"
+              className="flex items-center gap-1.5 px-3 py-1.5 bg-[#e8f1fb] hover:bg-[#d0e2f5] text-[#1e3a5f] hover:text-[#1e3a5f] rounded-xl transition-all cursor-pointer text-xs font-semibold border border-blue-200 shadow-xs"
               title="Kembali ke Dashboard Utama"
             >
               <ArrowLeft className="w-4 h-4" />
@@ -342,14 +342,14 @@ export const EvaluationModal: React.FC<EvaluationModalProps> = ({
                 <h3 className="font-bold text-sm sm:text-base">
                   Panel Petugas / Evaluator: Telaah Hasil Evaluasi & Update Status CAPA
                 </h3>
-                <span className="font-mono text-xs px-2 py-0.5 rounded bg-slate-800 text-slate-300 border border-slate-700">
+                <span className="font-mono text-xs px-2 py-0.5 rounded bg-[#e8f1fb] text-slate-700 border border-blue-200">
                   {inspection.capaCode}
                 </span>
-                <span className="text-[10px] font-bold px-2 py-0.5 rounded bg-purple-500/20 text-purple-300 border border-purple-500/30 uppercase">
+                <span className="text-[10px] font-bold px-2 py-0.5 rounded bg-purple-500/20 text-purple-800 border border-purple-500/30 uppercase">
                   Petugas / Evaluator
                 </span>
               </div>
-              <p className="text-xs text-slate-400 mt-0.5">
+              <p className="text-xs text-slate-600 mt-0.5">
                 {inspection.facility.name} • No Surat SRIKANDI: {inspection.srikandiLetter.letterNo}
               </p>
             </div>
@@ -367,7 +367,7 @@ export const EvaluationModal: React.FC<EvaluationModalProps> = ({
             <button
               onClick={onClose}
               type="button"
-              className="p-2 text-slate-400 hover:text-white rounded-lg hover:bg-slate-800 transition-colors cursor-pointer"
+              className="p-2 text-slate-600 hover:text-[#1e3a5f] rounded-lg hover:bg-[#e8f1fb] transition-colors cursor-pointer"
               title="Tutup Halaman (Kembali ke Beranda)"
             >
               <X className="w-5 h-5" />
@@ -454,12 +454,12 @@ export const EvaluationModal: React.FC<EvaluationModalProps> = ({
                   <span className="w-2 h-2 rounded-full bg-emerald-500 inline-block" />
                   Close: {statusSummary.closeCount}
                 </span>
-                <span className="text-slate-300">|</span>
+                <span className="text-slate-700">|</span>
                 <span className="text-[11px] font-bold text-rose-800 flex items-center gap-1">
                   <span className="w-2 h-2 rounded-full bg-rose-500 inline-block" />
                   Open: {statusSummary.openCount}
                 </span>
-                <span className="text-slate-300">|</span>
+                <span className="text-slate-700">|</span>
                 <span className="text-[11px] font-mono font-bold text-slate-600">
                   Total: {statusSummary.total}
                 </span>
@@ -905,7 +905,7 @@ export const EvaluationModal: React.FC<EvaluationModalProps> = ({
               onClick={() => handleSaveEvaluation(false, false)}
               disabled={isProcessing}
               type="button"
-              className="px-4 py-2 bg-slate-800 hover:bg-slate-700 text-white rounded-xl text-xs font-semibold flex items-center gap-1.5 shadow-sm transition-all cursor-pointer"
+              className="px-4 py-2 bg-[#e8f1fb] hover:bg-[#d0e2f5] text-[#1e3a5f] rounded-xl text-xs font-semibold flex items-center gap-1.5 shadow-sm transition-all cursor-pointer"
               title="Simpan draf evaluasi ke sistem tanpa menutup halaman"
             >
               <Save className="w-3.5 h-3.5" />
@@ -926,7 +926,7 @@ export const EvaluationModal: React.FC<EvaluationModalProps> = ({
                   : 'Simpan evaluasi dan teruskan ke alur naskah dinas Admin SRIKANDI (Surat Evaluasi Ulang)'
               }
             >
-              <ShieldCheck className="w-4 h-4 text-white" />
+              <ShieldCheck className="w-4 h-4 text-[#1e3a5f]" />
               <span>
                 {isProcessing
                   ? 'Menyimpan...'

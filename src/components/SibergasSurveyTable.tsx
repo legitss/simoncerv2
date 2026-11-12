@@ -155,17 +155,17 @@ export const SibergasSurveyTable: React.FC<SibergasSurveyTableProps> = ({
   return (
     <div className="space-y-6">
       {/* Top Banner / Summary */}
-      <div className="bg-gradient-to-r from-emerald-950 via-slate-900 to-teal-950 rounded-2xl p-6 sm:p-7 text-white border border-emerald-800/40 shadow-lg relative overflow-hidden">
+      <div className="bpom-hero-gradient rounded-2xl p-6 sm:p-7 text-[#1e3a5f] border border-emerald-200 shadow-lg relative overflow-hidden">
         <div className="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-6">
           <div className="space-y-2 max-w-2xl">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 text-xs font-bold uppercase tracking-wider">
-              <ShieldCheck className="w-4 h-4 text-emerald-400" />
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-800 border border-emerald-500/30 text-xs font-bold uppercase tracking-wider">
+              <ShieldCheck className="w-4 h-4 text-emerald-700" />
               <span>Monitoring Zona Integritas • Integrasi SIBERGAS</span>
             </div>
-            <h2 className="text-xl sm:text-2xl font-black text-white tracking-tight">
+            <h2 className="text-xl sm:text-2xl font-black text-[#1e3a5f] tracking-tight">
               Tabel & Rekapitulasi Hasil Survei Integritas Petugas
             </h2>
-            <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
+            <p className="text-xs sm:text-sm text-slate-700 leading-relaxed">
               Pemantauan survei kepuasan dan integritas petugas pengawas yang diisi oleh sarana saat pertama kali menyerahkan dokumen tindak lanjut CAPA. Menjamin pengawasan yang bersih, bebas gratifikasi, dan profesional.
             </p>
           </div>
@@ -184,31 +184,31 @@ export const SibergasSurveyTable: React.FC<SibergasSurveyTableProps> = ({
         </div>
 
         {/* 4 Summary Mini Cards */}
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mt-6 pt-5 border-t border-emerald-800/40 text-xs">
-          <div className="bg-slate-900/70 p-3 rounded-xl border border-slate-800">
-            <span className="text-[10px] text-slate-400 font-bold uppercase block">Total Sesi CAPA</span>
-            <div className="text-xl font-black text-white mt-0.5">{totalCount}</div>
-            <span className="text-[10px] text-slate-400">Terdaftar di SIMONCER</span>
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mt-6 pt-5 border-t border-emerald-200 text-xs">
+          <div className="bg-white/90 p-3 rounded-xl border border-blue-200/80">
+            <span className="text-[10px] text-slate-600 font-bold uppercase block">Total Sesi CAPA</span>
+            <div className="text-xl font-black text-[#1e3a5f] mt-0.5">{totalCount}</div>
+            <span className="text-[10px] text-slate-600">Terdaftar di SIMONCER</span>
           </div>
 
-          <div className="bg-slate-900/70 p-3 rounded-xl border border-slate-800">
-            <span className="text-[10px] text-emerald-400 font-bold uppercase block">Survei Selesai</span>
-            <div className="text-xl font-black text-emerald-300 mt-0.5">{completedCount} <span className="text-xs font-normal text-slate-400">({complianceRate}%)</span></div>
-            <span className="text-[10px] text-emerald-400/90">Kepatuhan Survei CAPA</span>
+          <div className="bg-white/90 p-3 rounded-xl border border-blue-200/80">
+            <span className="text-[10px] text-emerald-700 font-bold uppercase block">Survei Selesai</span>
+            <div className="text-xl font-black text-emerald-800 mt-0.5">{completedCount} <span className="text-xs font-normal text-slate-600">({complianceRate}%)</span></div>
+            <span className="text-[10px] text-emerald-700/90">Kepatuhan Survei CAPA</span>
           </div>
 
-          <div className="bg-slate-900/70 p-3 rounded-xl border border-slate-800">
-            <span className="text-[10px] text-teal-400 font-bold uppercase block">Bebas Gratifikasi</span>
-            <div className="text-xl font-black text-teal-300 mt-0.5">
+          <div className="bg-white/90 p-3 rounded-xl border border-blue-200/80">
+            <span className="text-[10px] text-teal-700 font-bold uppercase block">Bebas Gratifikasi</span>
+            <div className="text-xl font-black text-teal-800 mt-0.5">
               {completedCount > 0 ? `${Math.round((bebasGratifikasiCount / completedCount) * 100)}%` : '100%'}
             </div>
-            <span className="text-[10px] text-slate-400">{bebasGratifikasiCount} dari {completedCount} responden</span>
+            <span className="text-[10px] text-slate-600">{bebasGratifikasiCount} dari {completedCount} responden</span>
           </div>
 
-          <div className="bg-slate-900/70 p-3 rounded-xl border border-slate-800">
-            <span className="text-[10px] text-amber-400 font-bold uppercase block">Menunggu Pengisian</span>
-            <div className="text-xl font-black text-amber-300 mt-0.5">{pendingCount}</div>
-            <span className="text-[10px] text-slate-400">Wajib diisi saat CAPA 1</span>
+          <div className="bg-white/90 p-3 rounded-xl border border-blue-200/80">
+            <span className="text-[10px] text-amber-700 font-bold uppercase block">Menunggu Pengisian</span>
+            <div className="text-xl font-black text-amber-800 mt-0.5">{pendingCount}</div>
+            <span className="text-[10px] text-slate-600">Wajib diisi saat CAPA 1</span>
           </div>
         </div>
       </div>
@@ -218,7 +218,7 @@ export const SibergasSurveyTable: React.FC<SibergasSurveyTableProps> = ({
         <div className="flex flex-col md:flex-row items-stretch md:items-center justify-between gap-3">
           {/* Search Box */}
           <div className="relative flex-1">
-            <Search className="w-4 h-4 text-slate-400 absolute left-3.5 top-1/2 -translate-y-1/2" />
+            <Search className="w-4 h-4 text-slate-600 absolute left-3.5 top-1/2 -translate-y-1/2" />
             <input
               type="text"
               value={searchQuery}
@@ -289,7 +289,7 @@ export const SibergasSurveyTable: React.FC<SibergasSurveyTableProps> = ({
             onClick={() => setSurveyStatusFilter('ALL')}
             className={`px-3 py-1 rounded-lg font-semibold transition-all cursor-pointer ${
               surveyStatusFilter === 'ALL'
-                ? 'bg-slate-900 text-white shadow-xs'
+                ? 'bg-white text-white shadow-xs'
                 : 'bg-slate-100 text-slate-600 hover:bg-slate-200'
             }`}
           >
@@ -344,9 +344,9 @@ export const SibergasSurveyTable: React.FC<SibergasSurveyTableProps> = ({
                   <tr>
                     <td colSpan={8} className="py-12 text-center text-slate-500">
                       <div className="max-w-sm mx-auto space-y-2">
-                        <ShieldCheck className="w-8 h-8 text-slate-300 mx-auto" />
+                        <ShieldCheck className="w-8 h-8 text-slate-700 mx-auto" />
                         <p className="font-semibold text-slate-700">Tidak ada data pemeriksaan yang cocok</p>
-                        <p className="text-[11px] text-slate-400">
+                        <p className="text-[11px] text-slate-600">
                           Coba ubah kata kunci pencarian atau sesuaikan filter status survei.
                         </p>
                       </div>
@@ -364,7 +364,7 @@ export const SibergasSurveyTable: React.FC<SibergasSurveyTableProps> = ({
                         className="hover:bg-slate-50/80 transition-colors group"
                       >
                         {/* No */}
-                        <td className="py-3.5 px-4 text-center font-mono text-slate-400 font-bold">
+                        <td className="py-3.5 px-4 text-center font-mono text-slate-600 font-bold">
                           {index + 1}
                         </td>
 
@@ -404,7 +404,7 @@ export const SibergasSurveyTable: React.FC<SibergasSurveyTableProps> = ({
                           <div className="font-semibold text-slate-900 truncate" title={officer}>
                             {officer}
                           </div>
-                          <div className="text-[11px] text-slate-400">
+                          <div className="text-[11px] text-slate-600">
                             Audit: {formatIndonesianDate(ins.inspectionDate)}
                           </div>
                         </td>
@@ -417,7 +417,7 @@ export const SibergasSurveyTable: React.FC<SibergasSurveyTableProps> = ({
                                 <Check className="w-3 h-3 stroke-[3]" />
                                 <span>Terisi (CAPA 1)</span>
                               </span>
-                              <div className="text-[10px] text-slate-400 font-mono mt-1">
+                              <div className="text-[10px] text-slate-600 font-mono mt-1">
                                 {formatIndonesianDate(survey.submittedAt.split('T')[0])}
                               </div>
                             </div>
@@ -427,7 +427,7 @@ export const SibergasSurveyTable: React.FC<SibergasSurveyTableProps> = ({
                                 <Clock className="w-3 h-3" />
                                 <span>Belum Mengisi</span>
                               </span>
-                              <div className="text-[10px] text-slate-400 mt-1">
+                              <div className="text-[10px] text-slate-600 mt-1">
                                 Wajib saat CAPA pertama
                               </div>
                             </div>
@@ -513,7 +513,7 @@ export const SibergasSurveyTable: React.FC<SibergasSurveyTableProps> = ({
                               </div>
                             </div>
                           ) : (
-                            <span className="text-slate-400 italic text-[11px]">- Menunggu CAPA pertama -</span>
+                            <span className="text-slate-600 italic text-[11px]">- Menunggu CAPA pertama -</span>
                           )}
                         </td>
 
@@ -527,7 +527,7 @@ export const SibergasSurveyTable: React.FC<SibergasSurveyTableProps> = ({
                               "{survey.saranaMasukan}"
                             </p>
                           ) : (
-                            <span className="text-slate-400 text-[11px]">-</span>
+                            <span className="text-slate-600 text-[11px]">-</span>
                           )}
                         </td>
 
@@ -595,12 +595,12 @@ export const SibergasSurveyTable: React.FC<SibergasSurveyTableProps> = ({
 
                   <div className="p-3 bg-slate-50 rounded-xl border border-slate-100 space-y-1.5 text-xs text-slate-700">
                     <div className="flex items-center justify-between text-[11px]">
-                      <span className="text-slate-400">Petugas Pemeriksa:</span>
+                      <span className="text-slate-600">Petugas Pemeriksa:</span>
                       <span className="font-semibold text-slate-800 truncate max-w-[170px]">{officer}</span>
                     </div>
 
                     <div className="flex items-center justify-between text-[11px] pt-1 border-t border-slate-200/60">
-                      <span className="text-slate-400">Status SIBERGAS:</span>
+                      <span className="text-slate-600">Status SIBERGAS:</span>
                       {survey?.completed ? (
                         <span className="text-emerald-700 font-bold flex items-center gap-1">
                           <CheckCircle2 className="w-3.5 h-3.5" />
@@ -652,7 +652,7 @@ export const SibergasSurveyTable: React.FC<SibergasSurveyTableProps> = ({
                     <button
                       type="button"
                       onClick={() => onOpenSurveyModal(ins, true)}
-                      className="px-3 py-1.5 bg-slate-900 hover:bg-slate-800 text-white rounded-xl text-xs font-bold flex items-center gap-1.5 cursor-pointer shadow-2xs"
+                      className="px-3 py-1.5 bg-white hover:bg-[#e8f1fb] text-[#1e3a5f] rounded-xl text-xs font-bold flex items-center gap-1.5 cursor-pointer shadow-2xs"
                     >
                       <Eye className="w-3.5 h-3.5" />
                       <span>Hasil Survei</span>

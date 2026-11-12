@@ -495,41 +495,41 @@ export const SrikandiWorkflowModal: React.FC<SrikandiWorkflowModalProps> = ({
   };
 
   return (
-    <div className="fixed inset-0 z-60 bg-slate-900 flex flex-col w-screen h-screen overflow-hidden animate-in fade-in duration-100">
+    <div className="fixed inset-0 z-60 bg-white flex flex-col w-screen h-screen overflow-hidden animate-in fade-in duration-100">
       <div className="bg-white flex flex-col w-full h-full overflow-hidden">
         
         {/* Header Bar */}
-        <div className="bg-gradient-to-r from-slate-950 via-[#0b1b3d] to-purple-950 text-white px-4 sm:px-6 py-3.5 flex items-center justify-between border-b border-slate-800 shrink-0">
+        <div className="bpom-hero-gradient text-[#1e3a5f] px-4 sm:px-6 py-3.5 flex items-center justify-between border-b border-blue-200/80 shrink-0">
           <div className="flex items-center gap-3">
             <button
               onClick={onClose}
               type="button"
-              className="flex items-center gap-1.5 px-3 py-1.5 bg-slate-800 hover:bg-slate-700 text-slate-200 hover:text-white rounded-xl transition-all cursor-pointer text-xs font-semibold border border-slate-700 shadow-xs"
+              className="flex items-center gap-1.5 px-3 py-1.5 bg-[#e8f1fb] hover:bg-[#d0e2f5] text-[#1e3a5f] hover:text-[#1e3a5f] rounded-xl transition-all cursor-pointer text-xs font-semibold border border-blue-200 shadow-xs"
               title="Kembali ke Dashboard Utama"
             >
               <ArrowLeft className="w-4 h-4" />
               <span className="hidden sm:inline">Kembali</span>
             </button>
-            <div className="w-10 h-10 rounded-xl bg-purple-500/20 text-purple-300 border border-purple-500/30 flex items-center justify-center shrink-0">
+            <div className="w-10 h-10 rounded-xl bg-purple-500/20 text-purple-800 border border-purple-500/30 flex items-center justify-center shrink-0">
               <ShieldCheck className="w-6 h-6" />
             </div>
             <div>
               <div className="flex items-center gap-2 flex-wrap">
-                <h3 className="font-extrabold text-base text-white">
+                <h3 className="font-extrabold text-base text-[#1e3a5f]">
                   Alur Integrasi SRIKANDI (TTE BSrE) ⇄ SIMONCER
                 </h3>
-                <span className="text-[10px] font-mono px-2.5 py-0.5 rounded-full bg-emerald-500/20 text-emerald-300 border border-emerald-500/40 font-bold">
+                <span className="text-[10px] font-mono px-2.5 py-0.5 rounded-full bg-emerald-500/20 text-emerald-800 border border-emerald-500/40 font-bold">
                   {inspection.capaCode}
                 </span>
                 <span className={`text-[10px] font-bold px-2 py-0.5 rounded-full border ${
                   isRequiresCapa
-                    ? 'bg-purple-500/30 text-purple-200 border-purple-400/40'
-                    : 'bg-teal-500/30 text-teal-200 border-teal-400/40'
+                    ? 'bg-purple-500/30 text-purple-800 border-purple-400/40'
+                    : 'bg-teal-500/30 text-teal-800 border-teal-400/40'
                 }`}>
                   {isRequiresCapa ? 'Wajib Kirim CAPA' : 'Memenuhi Ketentuan (MK)'}
                 </span>
               </div>
-              <p className="text-xs text-purple-200/90 mt-0.5">
+              <p className="text-xs text-purple-800 mt-0.5">
                 {inspection.facility.name} • Tata Kelola Naskah Dinas SRIKANDI & Monitoring Evaluasi CAPA SIMONCER
               </p>
             </div>
@@ -539,7 +539,7 @@ export const SrikandiWorkflowModal: React.FC<SrikandiWorkflowModalProps> = ({
             <button
               type="button"
               onClick={onClose}
-              className="p-2 text-slate-400 hover:text-white hover:bg-slate-800 rounded-lg transition-colors cursor-pointer"
+              className="p-2 text-slate-600 hover:text-[#1e3a5f] hover:bg-[#e8f1fb] rounded-lg transition-colors cursor-pointer"
               title="Tutup Halaman (Kembali ke Beranda)"
             >
               <X className="w-5 h-5" />
@@ -556,7 +556,7 @@ export const SrikandiWorkflowModal: React.FC<SrikandiWorkflowModalProps> = ({
               ? 'bg-rose-600 text-white' 
               : 'bg-blue-600 text-white'
           }`}>
-            <Check className="w-4 h-4 text-white shrink-0" />
+            <Check className="w-4 h-4 text-[#1e3a5f] shrink-0" />
             <span>{feedbackMessage.text}</span>
           </div>
         )}
@@ -586,7 +586,7 @@ export const SrikandiWorkflowModal: React.FC<SrikandiWorkflowModalProps> = ({
               </span>
               <div className="leading-tight truncate">
                 <p className="text-xs font-bold truncate">1. Dossier Surat Tindak Lanjut (TL)</p>
-                <p className={`text-[10px] truncate ${activeTab === 'DOSSIER_TL' ? 'text-purple-200' : 'text-slate-400'}`}>
+                <p className={`text-[10px] truncate ${activeTab === 'DOSSIER_TL' ? 'text-purple-800' : 'text-slate-600'}`}>
                   Data Surat Awal SRIKANDI (Sudah Terkirim)
                 </p>
               </div>
@@ -615,7 +615,7 @@ export const SrikandiWorkflowModal: React.FC<SrikandiWorkflowModalProps> = ({
                 <p className="text-xs font-bold truncate">
                   2. Jembatan Evaluasi CAPA & Naskah TTE SRIKANDI
                 </p>
-                <p className={`text-[10px] truncate ${activeTab === 'EVALUASI_CAPA' ? 'text-purple-200' : 'text-slate-400'}`}>
+                <p className={`text-[10px] truncate ${activeTab === 'EVALUASI_CAPA' ? 'text-purple-800' : 'text-slate-600'}`}>
                   Tahap {evaluationCycle} • {totalOpen > 0 ? `${totalOpen} Butir Open (Revisi Lanjutan)` : 'Semua Butir Close (Tuntas)'}
                 </p>
               </div>
@@ -671,32 +671,32 @@ export const SrikandiWorkflowModal: React.FC<SrikandiWorkflowModalProps> = ({
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 text-slate-700">
                   <div className="p-3 rounded-xl bg-slate-50 border border-slate-200">
-                    <span className="text-[10px] text-slate-400 block font-semibold">Nomor Surat SRIKANDI</span>
+                    <span className="text-[10px] text-slate-600 block font-semibold">Nomor Surat SRIKANDI</span>
                     <span className="font-mono font-bold text-xs text-slate-900">{inspection.srikandiLetter.letterNo}</span>
                   </div>
 
                   <div className="p-3 rounded-xl bg-slate-50 border border-slate-200">
-                    <span className="text-[10px] text-slate-400 block font-semibold">Tanggal Terbit Naskah</span>
+                    <span className="text-[10px] text-slate-600 block font-semibold">Tanggal Terbit Naskah</span>
                     <span className="font-semibold text-xs text-slate-900">{formatIndonesianDate(inspection.srikandiLetter.issuedDate)}</span>
                   </div>
 
                   <div className="p-3 rounded-xl bg-slate-50 border border-slate-200">
-                    <span className="text-[10px] text-slate-400 block font-semibold">Batas Waktu CAPA (SLA)</span>
+                    <span className="text-[10px] text-slate-600 block font-semibold">Batas Waktu CAPA (SLA)</span>
                     <span className="font-bold text-xs text-purple-900">{formatIndonesianDate(inspection.srikandiLetter.deadlineDate)} ({inspection.srikandiLetter.deadlineDays} Hari Kerja)</span>
                   </div>
 
                   <div className="p-3 rounded-xl bg-slate-50 border border-slate-200">
-                    <span className="text-[10px] text-slate-400 block font-semibold">Pejabat Penandatangan (TTE)</span>
+                    <span className="text-[10px] text-slate-600 block font-semibold">Pejabat Penandatangan (TTE)</span>
                     <span className="font-semibold text-xs text-slate-900">{inspection.srikandiLetter.signerName}</span>
                   </div>
 
                   <div className="p-3 rounded-xl bg-slate-50 border border-slate-200">
-                    <span className="text-[10px] text-slate-400 block font-semibold">ID Sertifikat TTE BSrE</span>
+                    <span className="text-[10px] text-slate-600 block font-semibold">ID Sertifikat TTE BSrE</span>
                     <span className="font-mono font-semibold text-xs text-slate-900">{inspection.srikandiLetter.tteId}</span>
                   </div>
 
                   <div className="p-3 rounded-xl bg-slate-50 border border-slate-200">
-                    <span className="text-[10px] text-slate-400 block font-semibold">Status Kewajiban</span>
+                    <span className="text-[10px] text-slate-600 block font-semibold">Status Kewajiban</span>
                     <span className={`font-bold text-xs ${isRequiresCapa ? 'text-purple-800' : 'text-teal-800'}`}>
                       {isRequiresCapa ? `Wajib CAPA (${inspection.findings.length} Butir)` : 'Memenuhi Ketentuan (MK)'}
                     </span>
@@ -724,7 +724,7 @@ export const SrikandiWorkflowModal: React.FC<SrikandiWorkflowModalProps> = ({
                       <button
                         type="button"
                         onClick={onOpenSrikandiLetter}
-                        className="px-3 py-1.5 bg-slate-800 hover:bg-slate-700 text-white rounded-lg font-semibold flex items-center gap-1.5 cursor-pointer shadow-xs"
+                        className="px-3 py-1.5 bg-[#e8f1fb] hover:bg-[#d0e2f5] text-[#1e3a5f] rounded-lg font-semibold flex items-center gap-1.5 cursor-pointer shadow-xs"
                       >
                         <ExternalLink className="w-3.5 h-3.5" />
                         <span>Buka Surat Dinas</span>
@@ -794,21 +794,21 @@ export const SrikandiWorkflowModal: React.FC<SrikandiWorkflowModalProps> = ({
               
               {/* ADMIN TASK ALERT: MENUNGGU SURAT PENGANTAR SRIKANDI */}
               {currentWorkflow.needsAdminCoverLetter && (
-                <div className="p-4 bg-gradient-to-r from-blue-900 via-indigo-900 to-slate-900 text-white rounded-2xl border border-blue-400/40 shadow-sm flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 animate-in fade-in">
+                <div className="p-4 bpom-hero-gradient text-[#1e3a5f] rounded-2xl border border-blue-400/40 shadow-sm flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 animate-in fade-in">
                   <div className="flex items-center gap-3">
-                    <div className="w-9 h-9 rounded-xl bg-blue-500/20 text-blue-300 border border-blue-400/30 flex items-center justify-center shrink-0">
-                      <FileCheck2 className="w-5 h-5 text-blue-300" />
+                    <div className="w-9 h-9 rounded-xl bg-blue-500/20 text-blue-700 border border-blue-400/30 flex items-center justify-center shrink-0">
+                      <FileCheck2 className="w-5 h-5 text-blue-700" />
                     </div>
                     <div>
                       <div className="flex items-center gap-2 flex-wrap">
-                        <span className="font-bold text-xs uppercase text-blue-200">
+                        <span className="font-bold text-xs uppercase text-blue-800">
                           Tugas Admin SIMONCER (Integrasi Naskah SRIKANDI):
                         </span>
                         <span className="text-[10px] font-mono px-2 py-0.5 rounded-full bg-amber-400 text-slate-950 font-extrabold shadow-xs">
                           Menunggu Naskah Surat Pengantar
                         </span>
                       </div>
-                      <p className="text-xs text-slate-200 mt-0.5 leading-relaxed">
+                      <p className="text-xs text-[#1e3a5f] mt-0.5 leading-relaxed">
                         Evaluator (<strong>{currentWorkflow.evaluationCompletedBy || inspection.assignedOfficer?.name || 'Petugas'}</strong>) telah menyelesaikan telaah evaluasi CAPA. Lembar hasil evaluasi dapat diunduh pada tombol aksi kluster di bawah, lalu unggah Surat Pengantar ber-TTE agar resmi diteruskan ke Sarana.
                       </p>
                     </div>
@@ -882,14 +882,14 @@ export const SrikandiWorkflowModal: React.FC<SrikandiWorkflowModalProps> = ({
                             </span>
                             <span className={`text-[9px] px-1.5 py-0.2 rounded font-mono font-bold ${
                               isSelected
-                                ? 'bg-purple-800 text-purple-200'
+                                ? 'bg-purple-800 text-purple-800'
                                 : 'bg-slate-200 text-slate-600'
                             }`}>
                               Tahap ke-{stageNum}
                             </span>
                           </div>
                           <span className={`text-[10px] block truncate mt-0.5 ${
-                            isSelected ? 'text-purple-200' : 'text-slate-500'
+                            isSelected ? 'text-purple-800' : 'text-slate-500'
                           }`}>
                             {isStageLetterAvailable ? '✓ Surat Pengantar Siap' : '⚠️ Menunggu Surat Pengantar'}
                           </span>
@@ -982,28 +982,28 @@ export const SrikandiWorkflowModal: React.FC<SrikandiWorkflowModalProps> = ({
                   <div className="bg-white border-2 border-purple-200/90 rounded-3xl p-4 sm:p-6 shadow-sm space-y-6">
 
                     {/* TOP HEADER KLUSTER SESI */}
-                    <div className="bg-gradient-to-r from-slate-900 via-indigo-950 to-purple-950 rounded-2xl p-4 sm:p-5 text-white flex flex-col md:flex-row md:items-center justify-between gap-4 shadow-sm">
+                    <div className="bpom-hero-gradient rounded-2xl p-4 sm:p-5 text-[#1e3a5f] flex flex-col md:flex-row md:items-center justify-between gap-4 shadow-sm">
                       <div className="space-y-1">
                         <div className="flex items-center gap-2 flex-wrap">
-                          <span className="px-3 py-1 rounded-xl bg-purple-500/30 text-purple-200 text-xs font-black uppercase tracking-wider border border-purple-400/40">
+                          <span className="px-3 py-1 rounded-xl bg-purple-500/30 text-purple-800 text-xs font-black uppercase tracking-wider border border-purple-400/40">
                             Kluster: Sesi CAPA {selectedClusterStage}
                           </span>
                           <span className={`text-xs font-bold px-3 py-1 rounded-xl flex items-center gap-1.5 ${
                             isClusterComplete 
-                              ? 'bg-emerald-500/20 text-emerald-300 border border-emerald-500/40' 
-                              : 'bg-amber-500/20 text-amber-300 border border-amber-500/40'
+                              ? 'bg-emerald-500/20 text-emerald-800 border border-emerald-500/40' 
+                              : 'bg-amber-500/20 text-amber-800 border border-amber-500/40'
                           }`}>
                             {isClusterComplete ? <CheckCircle2 className="w-3.5 h-3.5" /> : <Clock className="w-3.5 h-3.5" />}
                             <span>{isClusterComplete ? 'Dokumen & Evaluasi: KOMPLIT (Siap Dikirim)' : 'Dokumen & Evaluasi: BELUM KOMPLIT'}</span>
                           </span>
-                          <span className="text-[11px] font-mono bg-blue-500/20 text-blue-300 px-2.5 py-0.5 rounded-lg border border-blue-400/30">
+                          <span className="text-[11px] font-mono bg-blue-500/20 text-blue-700 px-2.5 py-0.5 rounded-lg border border-blue-400/30">
                             Tahap Pemeriksaan ke-{selectedClusterStage}
                           </span>
                         </div>
-                        <h3 className="text-base sm:text-lg font-black text-white">
+                        <h3 className="text-base sm:text-lg font-black text-[#1e3a5f]">
                           Paket Terpadu Evaluasi & Naskah Dinas SRIKANDI (Sesi CAPA {selectedClusterStage})
                         </h3>
-                        <p className="text-xs text-slate-300 max-w-2xl leading-relaxed">
+                        <p className="text-xs text-slate-700 max-w-2xl leading-relaxed">
                           Satu kesatuan kluster yang memuat status Surat Pengantar resmi SRIKANDI (TTE BSrE), rekap butir-butir evaluasi telaah petugas, serta kontrol pengiriman hasil ke Sarana.
                         </p>
                       </div>
@@ -1013,7 +1013,7 @@ export const SrikandiWorkflowModal: React.FC<SrikandiWorkflowModalProps> = ({
                         <button
                           type="button"
                           onClick={handleDownloadEvaluationReportPdf}
-                          className="px-3.5 py-2 bg-white/10 hover:bg-white/20 text-white rounded-xl text-xs font-bold transition-all border border-white/20 flex items-center gap-1.5 cursor-pointer shadow-2xs"
+                          className="px-3.5 py-2 bg-white/10 hover:bg-white/20 text-[#1e3a5f] rounded-xl text-xs font-bold transition-all border border-white/20 flex items-center gap-1.5 cursor-pointer shadow-2xs"
                           title="Unduh Berita Acara & Lembar Hasil Evaluasi CAPA (.pdf)"
                         >
                           <Download className="w-3.5 h-3.5" />
@@ -1122,15 +1122,15 @@ export const SrikandiWorkflowModal: React.FC<SrikandiWorkflowModalProps> = ({
 
                           <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5 pt-2 border-t border-emerald-100 text-xs">
                             <div className="bg-white p-3 rounded-xl border border-emerald-100 shadow-2xs">
-                              <span className="text-[10px] text-slate-400 block font-semibold">Nomor Surat Pengantar</span>
+                              <span className="text-[10px] text-slate-600 block font-semibold">Nomor Surat Pengantar</span>
                               <span className="font-mono font-bold text-slate-900 text-xs">{displayLetterNo}</span>
                             </div>
                             <div className="bg-white p-3 rounded-xl border border-emerald-100 shadow-2xs">
-                              <span className="text-[10px] text-slate-400 block font-semibold">Tanggal Naskah</span>
+                              <span className="text-[10px] text-slate-600 block font-semibold">Tanggal Naskah</span>
                               <span className="font-semibold text-slate-900 text-xs">{formatIndonesianDate(displayLetterDate)}</span>
                             </div>
                             <div className="bg-white p-3 rounded-xl border border-emerald-100 shadow-2xs">
-                              <span className="text-[10px] text-slate-400 block font-semibold">Status Akhir Sesi Ini</span>
+                              <span className="text-[10px] text-slate-600 block font-semibold">Status Akhir Sesi Ini</span>
                               <span className={`font-bold text-xs ${totalOpen === 0 ? 'text-emerald-700' : 'text-amber-700'}`}>
                                 {totalOpen === 0 ? '✓ SELESAI / CLOSED (100%)' : `⚠️ PERLU PERBAIKAN (${totalOpen} Butir Open)`}
                               </span>
@@ -1138,13 +1138,13 @@ export const SrikandiWorkflowModal: React.FC<SrikandiWorkflowModalProps> = ({
                           </div>
 
                           <div className="bg-white p-3 rounded-xl border border-emerald-100 text-xs text-slate-700">
-                            <span className="text-[10px] text-slate-400 block font-semibold mb-0.5">Hal (Perihal Surat):</span>
+                            <span className="text-[10px] text-slate-600 block font-semibold mb-0.5">Hal (Perihal Surat):</span>
                             <p className="font-medium text-slate-900">{displayLetterSubject}</p>
                           </div>
 
                           {notificationNotes && (
                             <div className="bg-white p-3 rounded-xl border border-emerald-100 text-xs text-slate-700">
-                              <span className="text-[10px] text-slate-400 block font-semibold mb-0.5">Catatan Resmi Evaluator:</span>
+                              <span className="text-[10px] text-slate-600 block font-semibold mb-0.5">Catatan Resmi Evaluator:</span>
                               <p className="italic text-slate-700 leading-relaxed">"{notificationNotes}"</p>
                             </div>
                           )}
@@ -1345,7 +1345,7 @@ export const SrikandiWorkflowModal: React.FC<SrikandiWorkflowModalProps> = ({
                               onClick={() => setFindingsFilter('ALL')}
                               className={`px-2.5 py-1 rounded-lg text-xs font-bold transition-all cursor-pointer ${
                                 findingsFilter === 'ALL'
-                                  ? 'bg-slate-900 text-white'
+                                  ? 'bg-white text-white'
                                   : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100'
                               }`}
                             >
@@ -1393,7 +1393,7 @@ export const SrikandiWorkflowModal: React.FC<SrikandiWorkflowModalProps> = ({
                       {/* Summary Metrics Bar for Findings */}
                       <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5 text-xs">
                         <div className="bg-white p-3 rounded-xl border border-slate-200">
-                          <span className="text-[10px] text-slate-400 block font-semibold">Total Temuan Audit</span>
+                          <span className="text-[10px] text-slate-600 block font-semibold">Total Temuan Audit</span>
                           <span className="font-extrabold text-sm text-slate-900 font-mono">{totalFindings} Butir</span>
                         </div>
                         <div className="bg-white p-3 rounded-xl border border-emerald-200">
@@ -1463,7 +1463,7 @@ export const SrikandiWorkflowModal: React.FC<SrikandiWorkflowModalProps> = ({
 
                                 {/* Deskripsi Temuan Audit */}
                                 <div>
-                                  <span className="text-[10px] font-bold text-slate-400 uppercase tracking-wider block mb-0.5">
+                                  <span className="text-[10px] font-bold text-slate-600 uppercase tracking-wider block mb-0.5">
                                     Deskripsi Temuan Pemeriksaan:
                                   </span>
                                   <p className="text-xs text-slate-800 leading-relaxed font-medium">
@@ -1486,14 +1486,14 @@ export const SrikandiWorkflowModal: React.FC<SrikandiWorkflowModalProps> = ({
                                     </div>
 
                                     <div>
-                                      <span className="text-[10px] text-slate-400 block font-semibold">Akar Masalah (RCA):</span>
+                                      <span className="text-[10px] text-slate-600 block font-semibold">Akar Masalah (RCA):</span>
                                       <p className="text-slate-700 text-[11px] italic">
                                         "{finding.capa.rootCauseAnalysis || 'Tidak dicantumkan oleh sarana'}"
                                       </p>
                                     </div>
 
                                     <div>
-                                      <span className="text-[10px] text-slate-400 block font-semibold">Tindakan Perbaikan (CAP):</span>
+                                      <span className="text-[10px] text-slate-600 block font-semibold">Tindakan Perbaikan (CAP):</span>
                                       <p className="text-slate-700 text-[11px]">
                                         {finding.capa.correctiveAction || 'Menunggu tindakan perbaikan sarana'}
                                       </p>
@@ -1502,7 +1502,7 @@ export const SrikandiWorkflowModal: React.FC<SrikandiWorkflowModalProps> = ({
                                     {/* Bukti Berkas */}
                                     {finding.capa.evidenceFiles && finding.capa.evidenceFiles.length > 0 && (
                                       <div className="pt-1 border-t border-slate-200">
-                                        <span className="text-[10px] text-slate-400 block font-semibold mb-1">Berkas Bukti Dukung:</span>
+                                        <span className="text-[10px] text-slate-600 block font-semibold mb-1">Berkas Bukti Dukung:</span>
                                         <div className="flex flex-wrap gap-1.5">
                                           {finding.capa.evidenceFiles.map((ev, eIdx) => (
                                             <span
@@ -1534,14 +1534,14 @@ export const SrikandiWorkflowModal: React.FC<SrikandiWorkflowModalProps> = ({
                                     </div>
 
                                     <div>
-                                      <span className="text-[10px] text-slate-400 block font-semibold">Nama Evaluator:</span>
+                                      <span className="text-[10px] text-slate-600 block font-semibold">Nama Evaluator:</span>
                                       <span className="font-semibold text-slate-900 text-xs">
                                         {inspection.evaluationReport?.evaluatorName || inspection.assignedOfficer?.name || 'Petugas Evaluator BBPOM'}
                                       </span>
                                     </div>
 
                                     <div>
-                                      <span className="text-[10px] text-slate-400 block font-semibold mb-0.5">Catatan & Masukan Evaluator:</span>
+                                      <span className="text-[10px] text-slate-600 block font-semibold mb-0.5">Catatan & Masukan Evaluator:</span>
                                       <p className="text-[11px] text-slate-800 leading-relaxed bg-white p-2 rounded-lg border border-slate-200 italic">
                                         "{finding.capa.evaluatorNotes || (isClose ? 'Tindakan perbaikan dan dokumen bukti telah memenuhi ketentuan (Close).' : 'Masih diperlukan kelengkapan bukti dan revisi SOP lanjutan.')}"
                                       </p>
@@ -1621,7 +1621,7 @@ export const SrikandiWorkflowModal: React.FC<SrikandiWorkflowModalProps> = ({
                             ) : isClusterComplete ? (
                               <CheckCircle2 className="w-4 h-4 text-emerald-600" />
                             ) : (
-                              <Lock className="w-4 h-4 text-slate-400" />
+                              <Lock className="w-4 h-4 text-slate-600" />
                             )}
                             <span>
                               {isStageAlreadySent
@@ -1873,7 +1873,7 @@ export const SrikandiWorkflowModal: React.FC<SrikandiWorkflowModalProps> = ({
           <button
             type="button"
             onClick={onClose}
-            className="px-4 py-2 bg-slate-800 hover:bg-slate-700 text-white rounded-xl font-semibold cursor-pointer"
+            className="px-4 py-2 bg-[#e8f1fb] hover:bg-[#d0e2f5] text-[#1e3a5f] rounded-xl font-semibold cursor-pointer"
           >
             Tutup
           </button>

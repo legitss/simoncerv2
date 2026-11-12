@@ -252,7 +252,7 @@ export const SessionDocumentManager: React.FC<SessionDocumentManagerProps> = ({
 
   if (!activeSession) {
     return (
-      <div className="p-8 text-center text-slate-400">
+      <div className="p-8 text-center text-slate-600">
         Tidak ada data sesi pemeriksaan tersedia.
       </div>
     );
@@ -265,17 +265,17 @@ export const SessionDocumentManager: React.FC<SessionDocumentManagerProps> = ({
     <div className="space-y-6 animate-in fade-in duration-300">
       
       {/* Header Banner */}
-      <div className="bg-gradient-to-r from-slate-900 via-slate-850 to-slate-900 border border-slate-700/80 rounded-2xl p-5 md:p-6 shadow-xl relative overflow-hidden">
+      <div className="bpom-hero-gradient border border-blue-200 rounded-2xl p-5 md:p-6 shadow-xl relative overflow-hidden">
         <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
           <div className="space-y-1.5 max-w-2xl">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/15 border border-cyan-500/30 text-cyan-300 text-xs font-bold">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/15 border border-cyan-500/30 text-sky-800 text-xs font-bold">
               <FolderOpen className="w-3.5 h-3.5" />
               <span>Dossier & Repositori Dokumen Terpadu</span>
             </div>
-            <h1 className="text-xl md:text-2xl font-black text-white tracking-tight flex items-center gap-2.5">
+            <h1 className="text-xl md:text-2xl font-black text-[#1e3a5f] tracking-tight flex items-center gap-2.5">
               <span>Sistem Manajemen Dokumen Pemeriksaan</span>
             </h1>
-            <p className="text-xs md:text-sm text-slate-300 leading-relaxed">
+            <p className="text-xs md:text-sm text-slate-700 leading-relaxed">
               Pusat arsip dan tata kelola seluruh file pemeriksaan: Naskah Dinas SRIKANDI (TTE BSrE), berkas bukti perbaikan sarana, lembar evaluasi CAPA auditor, dan jejak audit kronologis per sesi.
             </p>
           </div>
@@ -296,7 +296,7 @@ export const SessionDocumentManager: React.FC<SessionDocumentManagerProps> = ({
               <button
                 type="button"
                 onClick={onClose}
-                className="p-2.5 bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white rounded-xl border border-slate-700 cursor-pointer"
+                className="p-2.5 bg-[#e8f1fb] hover:bg-[#d0e2f5] text-slate-700 hover:text-[#1e3a5f] rounded-xl border border-blue-200 cursor-pointer"
                 title="Tutup Manajemen Dokumen"
               >
                 <X className="w-4 h-4" />
@@ -307,21 +307,21 @@ export const SessionDocumentManager: React.FC<SessionDocumentManagerProps> = ({
       </div>
 
       {/* Session Switcher Card */}
-      <div className="bg-slate-900 border border-slate-800 rounded-2xl p-4 md:p-5 shadow-lg space-y-4">
-        <div className="flex flex-col md:flex-row md:items-center justify-between gap-3 pb-3 border-b border-slate-800">
+      <div className="bg-white border border-blue-200/80 rounded-2xl p-4 md:p-5 shadow-lg space-y-4">
+        <div className="flex flex-col md:flex-row md:items-center justify-between gap-3 pb-3 border-b border-blue-200/80">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-xl bg-emerald-500/15 border border-emerald-500/30 flex items-center justify-center text-emerald-400 shrink-0">
+            <div className="w-10 h-10 rounded-xl bg-emerald-500/15 border border-emerald-500/30 flex items-center justify-center text-emerald-700 shrink-0">
               <Building2 className="w-5 h-5" />
             </div>
             <div>
-              <span className="text-[11px] font-bold uppercase tracking-wider text-slate-400 block">
+              <span className="text-[11px] font-bold uppercase tracking-wider text-slate-600 block">
                 Sesi Pemeriksaan Yang Dipilih:
               </span>
               <div className="flex items-center gap-2 flex-wrap">
-                <h2 className="text-base font-bold text-white">
+                <h2 className="text-base font-bold text-[#1e3a5f]">
                   {activeSession.facility.name}
                 </h2>
-                <span className="px-2 py-0.5 rounded font-mono font-bold text-xs bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">
+                <span className="px-2 py-0.5 rounded font-mono font-bold text-xs bg-emerald-500/20 text-emerald-800 border border-emerald-500/30">
                   {activeSession.capaCode}
                 </span>
                 <span className={`px-2 py-0.5 rounded-full text-[11px] font-bold border ${statusBadge.bg} ${statusBadge.text}`}>
@@ -333,13 +333,13 @@ export const SessionDocumentManager: React.FC<SessionDocumentManagerProps> = ({
 
           {/* Sesi Dropdown Switcher */}
           <div className="flex items-center gap-2">
-            <span className="text-xs text-slate-400 shrink-0 font-medium hidden sm:inline">
+            <span className="text-xs text-slate-600 shrink-0 font-medium hidden sm:inline">
               Pilih Sesi Lain:
             </span>
             <select
               value={selectedSessionId}
               onChange={(e) => setSelectedSessionId(e.target.value)}
-              className="px-3 py-2 bg-slate-950 border border-slate-700 rounded-xl text-xs text-slate-200 focus:outline-none focus:border-cyan-500 cursor-pointer max-w-xs md:max-w-sm"
+              className="px-3 py-2 bg-[#f4f8fd] border border-blue-200 rounded-xl text-xs text-[#1e3a5f] focus:outline-none focus:border-cyan-500 cursor-pointer max-w-xs md:max-w-sm"
             >
               {inspections.map((ins) => (
                 <option key={ins.id} value={ins.id}>
@@ -351,36 +351,36 @@ export const SessionDocumentManager: React.FC<SessionDocumentManagerProps> = ({
         </div>
 
         {/* Quick Session Metadata Bar */}
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 text-xs bg-slate-950/60 p-3 rounded-xl border border-slate-800">
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 text-xs bg-[#f4f8fd] p-3 rounded-xl border border-blue-200/80">
           <div>
-            <span className="text-[11px] text-slate-400 block">Komoditi & Standar</span>
-            <span className="font-semibold text-slate-200 truncate block">
+            <span className="text-[11px] text-slate-600 block">Komoditi & Standar</span>
+            <span className="font-semibold text-[#1e3a5f] truncate block">
               {activeSession.facility.type} • {matrixConfig?.codeStandard || 'Standar CDOB/CPOB'}
             </span>
           </div>
           <div>
-            <span className="text-[11px] text-slate-400 block">No. Surat SRIKANDI</span>
-            <div className="flex items-center gap-1 font-mono text-cyan-300 truncate">
+            <span className="text-[11px] text-slate-600 block">No. Surat SRIKANDI</span>
+            <div className="flex items-center gap-1 font-mono text-sky-800 truncate">
               <span className="truncate">{activeSession.srikandiLetter?.letterNo || '-'}</span>
               <button
                 type="button"
                 onClick={() => handleCopy(activeSession.srikandiLetter?.letterNo || '', 'srikandi-no')}
-                className="text-slate-400 hover:text-white cursor-pointer shrink-0"
+                className="text-slate-600 hover:text-[#1e3a5f] cursor-pointer shrink-0"
                 title="Salin Nomor Surat"
               >
-                {copiedText === 'srikandi-no' ? <Check className="w-3 h-3 text-emerald-400" /> : <Copy className="w-3 h-3" />}
+                {copiedText === 'srikandi-no' ? <Check className="w-3 h-3 text-emerald-700" /> : <Copy className="w-3 h-3" />}
               </button>
             </div>
           </div>
           <div>
-            <span className="text-[11px] text-slate-400 block">Lead Auditor / Evaluator</span>
-            <span className="font-semibold text-slate-200 truncate block">
+            <span className="text-[11px] text-slate-600 block">Lead Auditor / Evaluator</span>
+            <span className="font-semibold text-[#1e3a5f] truncate block">
               {activeSession.assignedOfficer?.name || activeSession.leadAuditor}
             </span>
           </div>
           <div>
-            <span className="text-[11px] text-slate-400 block">Batas Waktu (SLA)</span>
-            <span className={`font-bold ${sla.isOverdue ? 'text-rose-400' : 'text-amber-400'}`}>
+            <span className="text-[11px] text-slate-600 block">Batas Waktu (SLA)</span>
+            <span className={`font-bold ${sla.isOverdue ? 'text-rose-700' : 'text-amber-700'}`}>
               {sla.text}
             </span>
           </div>
@@ -398,7 +398,7 @@ export const SessionDocumentManager: React.FC<SessionDocumentManagerProps> = ({
               className={`px-3.5 py-2 rounded-xl text-xs font-bold transition-all cursor-pointer whitespace-nowrap flex items-center gap-2 ${
                 activeTab === 'ALL'
                   ? 'bg-cyan-500 text-slate-950 shadow-md shadow-cyan-500/20'
-                  : 'bg-slate-900 border border-slate-800 text-slate-300 hover:text-white hover:bg-slate-850'
+                  : 'bg-white border border-blue-200/80 text-slate-700 hover:text-[#1e3a5f] hover:bg-[#eef5fc]'
               }`}
             >
               <FolderOpen className="w-3.5 h-3.5" />
@@ -411,7 +411,7 @@ export const SessionDocumentManager: React.FC<SessionDocumentManagerProps> = ({
               className={`px-3.5 py-2 rounded-xl text-xs font-bold transition-all cursor-pointer whitespace-nowrap flex items-center gap-2 ${
                 activeTab === 'SURAT_PEMERIKSAAN'
                   ? 'bg-cyan-500 text-slate-950 shadow-md shadow-cyan-500/20'
-                  : 'bg-slate-900 border border-slate-800 text-slate-300 hover:text-white hover:bg-slate-850'
+                  : 'bg-white border border-blue-200/80 text-slate-700 hover:text-[#1e3a5f] hover:bg-[#eef5fc]'
               }`}
             >
               <FileText className="w-3.5 h-3.5" />
@@ -424,7 +424,7 @@ export const SessionDocumentManager: React.FC<SessionDocumentManagerProps> = ({
               className={`px-3.5 py-2 rounded-xl text-xs font-bold transition-all cursor-pointer whitespace-nowrap flex items-center gap-2 ${
                 activeTab === 'BUKTI_SARANA'
                   ? 'bg-cyan-500 text-slate-950 shadow-md shadow-cyan-500/20'
-                  : 'bg-slate-900 border border-slate-800 text-slate-300 hover:text-white hover:bg-slate-850'
+                  : 'bg-white border border-blue-200/80 text-slate-700 hover:text-[#1e3a5f] hover:bg-[#eef5fc]'
               }`}
             >
               <Paperclip className="w-3.5 h-3.5" />
@@ -437,7 +437,7 @@ export const SessionDocumentManager: React.FC<SessionDocumentManagerProps> = ({
               className={`px-3.5 py-2 rounded-xl text-xs font-bold transition-all cursor-pointer whitespace-nowrap flex items-center gap-2 ${
                 activeTab === 'HASIL_EVALUASI'
                   ? 'bg-cyan-500 text-slate-950 shadow-md shadow-cyan-500/20'
-                  : 'bg-slate-900 border border-slate-800 text-slate-300 hover:text-white hover:bg-slate-850'
+                  : 'bg-white border border-blue-200/80 text-slate-700 hover:text-[#1e3a5f] hover:bg-[#eef5fc]'
               }`}
             >
               <FileCheck2 className="w-3.5 h-3.5" />
@@ -450,7 +450,7 @@ export const SessionDocumentManager: React.FC<SessionDocumentManagerProps> = ({
               className={`px-3.5 py-2 rounded-xl text-xs font-bold transition-all cursor-pointer whitespace-nowrap flex items-center gap-2 ${
                 activeTab === 'AUDIT_TRAIL'
                   ? 'bg-cyan-500 text-slate-950 shadow-md shadow-cyan-500/20'
-                  : 'bg-slate-900 border border-slate-800 text-slate-300 hover:text-white hover:bg-slate-850'
+                  : 'bg-white border border-blue-200/80 text-slate-700 hover:text-[#1e3a5f] hover:bg-[#eef5fc]'
               }`}
             >
               <History className="w-3.5 h-3.5" />
@@ -461,13 +461,13 @@ export const SessionDocumentManager: React.FC<SessionDocumentManagerProps> = ({
           {/* Filter Search Input */}
           {activeTab !== 'AUDIT_TRAIL' && (
             <div className="relative w-full md:w-72">
-              <Search className="w-3.5 h-3.5 text-slate-400 absolute left-3 top-1/2 -translate-y-1/2" />
+              <Search className="w-3.5 h-3.5 text-slate-600 absolute left-3 top-1/2 -translate-y-1/2" />
               <input
                 type="text"
                 value={searchDocQuery}
                 onChange={(e) => setSearchDocQuery(e.target.value)}
                 placeholder="Cari nama berkas, nomor, atau pengunggah..."
-                className="w-full pl-9 pr-3 py-1.5 bg-slate-950 border border-slate-800 rounded-xl text-xs text-white placeholder-slate-500 focus:outline-none focus:border-cyan-500"
+                className="w-full pl-9 pr-3 py-1.5 bg-[#f4f8fd] border border-blue-200/80 rounded-xl text-xs text-[#1e3a5f] placeholder-slate-500 focus:outline-none focus:border-cyan-500"
               />
             </div>
           )}
@@ -477,50 +477,50 @@ export const SessionDocumentManager: React.FC<SessionDocumentManagerProps> = ({
       {/* Main Tab Content */}
       {activeTab === 'AUDIT_TRAIL' ? (
         /* Log Histori & Jejak Audit Dokumen */
-        <div className="bg-slate-900 border border-slate-800 rounded-2xl p-5 shadow-xl space-y-4">
-          <div className="flex items-center justify-between pb-3 border-b border-slate-800">
+        <div className="bg-white border border-blue-200/80 rounded-2xl p-5 shadow-xl space-y-4">
+          <div className="flex items-center justify-between pb-3 border-b border-blue-200/80">
             <div>
-              <h3 className="text-sm font-bold text-white flex items-center gap-2">
-                <History className="w-4 h-4 text-cyan-400" />
+              <h3 className="text-sm font-bold text-[#1e3a5f] flex items-center gap-2">
+                <History className="w-4 h-4 text-sky-700" />
                 <span>Riwayat Dokumen & Log Jejak Audit Kronologis</span>
               </h3>
-              <p className="text-xs text-slate-400 mt-0.5">
+              <p className="text-xs text-slate-600 mt-0.5">
                 Pencatatan resmi setiap tindakan terhadap naskah dinas, bukti perbaikan, dan evaluasi pada sesi {activeSession.capaCode}.
               </p>
             </div>
-            <span className="text-xs text-slate-400 font-mono">
+            <span className="text-xs text-slate-600 font-mono">
               Total {activeSession.auditTrail?.length || 0} Aktivitas
             </span>
           </div>
 
-          <div className="space-y-3 relative before:absolute before:inset-0 before:left-3.5 before:w-0.5 before:bg-slate-800">
+          <div className="space-y-3 relative before:absolute before:inset-0 before:left-3.5 before:w-0.5 before:bg-[#e8f1fb]">
             {(activeSession.auditTrail || []).map((log, idx) => (
               <div key={log.id || idx} className="relative flex items-start gap-3.5 pl-1 text-xs">
                 <div className={`w-6 h-6 rounded-full flex items-center justify-center shrink-0 z-10 border ${
                   log.badgeType === 'success'
-                    ? 'bg-emerald-950 border-emerald-500 text-emerald-400'
+                    ? 'bg-emerald-50 border-emerald-500 text-emerald-700'
                     : log.badgeType === 'danger'
-                    ? 'bg-rose-950 border-rose-500 text-rose-400'
-                    : 'bg-cyan-950 border-cyan-500 text-cyan-400'
+                    ? 'bg-rose-50 border-rose-500 text-rose-700'
+                    : 'bg-sky-50 border-cyan-500 text-sky-700'
                 }`}>
                   <Check className="w-3 h-3" />
                 </div>
 
-                <div className="flex-1 bg-slate-950/70 border border-slate-800 rounded-xl p-3 space-y-1">
+                <div className="flex-1 bg-[#f4f8fd] border border-blue-200/80 rounded-xl p-3 space-y-1">
                   <div className="flex items-center justify-between gap-2 flex-wrap">
-                    <span className="font-bold text-white text-xs">
+                    <span className="font-bold text-[#1e3a5f] text-xs">
                       {log.action}
                     </span>
-                    <span className="text-[11px] text-slate-400 font-mono">
+                    <span className="text-[11px] text-slate-600 font-mono">
                       {new Date(log.timestamp).toLocaleString('id-ID', { dateStyle: 'medium', timeStyle: 'short' })} WIB
                     </span>
                   </div>
-                  <div className="flex items-center gap-2 text-[11px] text-slate-400">
-                    <span>Aktor: <strong className="text-slate-200">{log.actor}</strong></span>
+                  <div className="flex items-center gap-2 text-[11px] text-slate-600">
+                    <span>Aktor: <strong className="text-[#1e3a5f]">{log.actor}</strong></span>
                     <span>•</span>
-                    <span className="px-1.5 py-0.2 rounded bg-slate-800 text-slate-300 text-[10px]">{log.role}</span>
+                    <span className="px-1.5 py-0.2 rounded bg-[#e8f1fb] text-slate-700 text-[10px]">{log.role}</span>
                   </div>
-                  <p className="text-slate-300 text-xs mt-1">
+                  <p className="text-slate-700 text-xs mt-1">
                     {log.details}
                   </p>
                 </div>
@@ -532,10 +532,10 @@ export const SessionDocumentManager: React.FC<SessionDocumentManagerProps> = ({
         /* File Cards Grid */
         <div className="space-y-3">
           {filteredDocuments.length === 0 ? (
-            <div className="p-12 bg-slate-900 border border-slate-800 rounded-2xl text-center space-y-2">
+            <div className="p-12 bg-white border border-blue-200/80 rounded-2xl text-center space-y-2">
               <FolderOpen className="w-10 h-10 text-slate-500 mx-auto" />
-              <h4 className="text-sm font-bold text-white">Tidak ada berkas yang ditemukan</h4>
-              <p className="text-xs text-slate-400">
+              <h4 className="text-sm font-bold text-[#1e3a5f]">Tidak ada berkas yang ditemukan</h4>
+              <p className="text-xs text-slate-600">
                 Silakan sesuaikan filter kategori atau kata kunci pencarian dokumen di atas.
               </p>
             </div>
@@ -548,24 +548,24 @@ export const SessionDocumentManager: React.FC<SessionDocumentManagerProps> = ({
                 return (
                   <div
                     key={doc.id}
-                    className="bg-slate-900 border border-slate-800 hover:border-slate-700 rounded-2xl p-4 transition-all flex flex-col justify-between gap-3 shadow-md hover:shadow-lg relative group"
+                    className="bg-white border border-blue-200/80 hover:border-blue-200 rounded-2xl p-4 transition-all flex flex-col justify-between gap-3 shadow-md hover:shadow-lg relative group"
                   >
                     <div className="space-y-2">
                       {/* Top badges */}
                       <div className="flex items-center justify-between gap-2 flex-wrap">
                         <span className={`px-2 py-0.5 rounded text-[10px] font-bold ${
                           doc.category === 'SURAT_PEMERIKSAAN'
-                            ? 'bg-purple-950 text-purple-300 border border-purple-800/60'
+                            ? 'bg-purple-50 text-purple-800 border border-purple-200'
                             : doc.category === 'BUKTI_SARANA'
-                            ? 'bg-emerald-950 text-emerald-300 border border-emerald-800/60'
-                            : 'bg-cyan-950 text-cyan-300 border border-cyan-800/60'
+                            ? 'bg-emerald-50 text-emerald-800 border border-emerald-200'
+                            : 'bg-sky-50 text-sky-800 border border-sky-200'
                         }`}>
                           {doc.categoryLabel}
                         </span>
 
                         {doc.tteStatus && (
-                          <span className="px-2 py-0.5 rounded-full text-[10px] font-bold bg-emerald-500/10 text-emerald-300 border border-emerald-500/30 flex items-center gap-1">
-                            <ShieldCheck className="w-3 h-3 text-emerald-400" />
+                          <span className="px-2 py-0.5 rounded-full text-[10px] font-bold bg-emerald-500/10 text-emerald-800 border border-emerald-500/30 flex items-center gap-1">
+                            <ShieldCheck className="w-3 h-3 text-emerald-700" />
                             {doc.tteStatus}
                           </span>
                         )}
@@ -573,10 +573,10 @@ export const SessionDocumentManager: React.FC<SessionDocumentManagerProps> = ({
 
                       {/* Title & Filename */}
                       <div>
-                        <h4 className="text-xs md:text-sm font-bold text-white group-hover:text-cyan-300 transition-colors line-clamp-2">
+                        <h4 className="text-xs md:text-sm font-bold text-[#1e3a5f] group-hover:text-sky-800 transition-colors line-clamp-2">
                           {doc.title}
                         </h4>
-                        <div className="flex items-center gap-2 text-[11px] text-slate-400 font-mono mt-1">
+                        <div className="flex items-center gap-2 text-[11px] text-slate-600 font-mono mt-1">
                           <span className="truncate">{doc.fileName}</span>
                           <span>•</span>
                           <span className="shrink-0">{doc.fileSize}</span>
@@ -585,13 +585,13 @@ export const SessionDocumentManager: React.FC<SessionDocumentManagerProps> = ({
 
                       {/* Notes / Description */}
                       {doc.notes && (
-                        <p className="text-xs text-slate-300 bg-slate-950/60 p-2.5 rounded-xl border border-slate-800/80 line-clamp-2">
+                        <p className="text-xs text-slate-700 bg-[#f4f8fd] p-2.5 rounded-xl border border-blue-200/80 line-clamp-2">
                           {doc.notes}
                         </p>
                       )}
 
                       {/* Metadata */}
-                      <div className="flex items-center justify-between text-[11px] text-slate-400 pt-1">
+                      <div className="flex items-center justify-between text-[11px] text-slate-600 pt-1">
                         <span className="truncate">Pengunggah: {doc.uploadedBy}</span>
                         <span className="shrink-0 font-mono">
                           {doc.uploadedAt ? new Date(doc.uploadedAt).toLocaleDateString('id-ID') : '-'}
@@ -600,14 +600,14 @@ export const SessionDocumentManager: React.FC<SessionDocumentManagerProps> = ({
                     </div>
 
                     {/* Action buttons */}
-                    <div className="pt-2 border-t border-slate-800/80 flex items-center justify-between gap-2 flex-wrap">
+                    <div className="pt-2 border-t border-blue-200/80 flex items-center justify-between gap-2 flex-wrap">
                       <div className="flex items-center gap-1.5">
                         <button
                           type="button"
                           onClick={() => setSelectedPreviewDoc(doc)}
-                          className="px-3 py-1.5 bg-slate-800 hover:bg-slate-700 text-slate-200 hover:text-white rounded-lg text-xs font-semibold flex items-center gap-1.5 cursor-pointer transition-colors"
+                          className="px-3 py-1.5 bg-[#e8f1fb] hover:bg-[#d0e2f5] text-[#1e3a5f] hover:text-[#1e3a5f] rounded-lg text-xs font-semibold flex items-center gap-1.5 cursor-pointer transition-colors"
                         >
-                          <Eye className="w-3.5 h-3.5 text-cyan-400" />
+                          <Eye className="w-3.5 h-3.5 text-sky-700" />
                           <span>Pratinjau</span>
                         </button>
 
@@ -616,7 +616,7 @@ export const SessionDocumentManager: React.FC<SessionDocumentManagerProps> = ({
                             href={doc.cloudUrl}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="px-3 py-1.5 bg-blue-950 hover:bg-blue-900 text-blue-200 rounded-lg text-xs font-semibold border border-blue-700/50 flex items-center gap-1.5 cursor-pointer transition-colors"
+                            className="px-3 py-1.5 bg-blue-50 hover:bg-blue-900 text-blue-800 rounded-lg text-xs font-semibold border border-blue-700/50 flex items-center gap-1.5 cursor-pointer transition-colors"
                           >
                             <ExternalLink className="w-3.5 h-3.5" />
                             <span>Buka Google Drive</span>
@@ -630,10 +630,10 @@ export const SessionDocumentManager: React.FC<SessionDocumentManagerProps> = ({
                           // Simulate download
                           alert(`Mengunduh berkas: ${doc.fileName}`);
                         }}
-                        className="px-3 py-1.5 bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white rounded-lg text-xs font-semibold flex items-center gap-1.5 cursor-pointer transition-colors"
+                        className="px-3 py-1.5 bg-[#e8f1fb] hover:bg-[#d0e2f5] text-slate-700 hover:text-[#1e3a5f] rounded-lg text-xs font-semibold flex items-center gap-1.5 cursor-pointer transition-colors"
                         title="Unduh Salinan Dokumen Resmi"
                       >
-                        <Download className="w-3.5 h-3.5 text-emerald-400" />
+                        <Download className="w-3.5 h-3.5 text-emerald-700" />
                         <span>Unduh File</span>
                       </button>
                     </div>
@@ -647,21 +647,21 @@ export const SessionDocumentManager: React.FC<SessionDocumentManagerProps> = ({
 
       {/* Document Preview Modal */}
       {selectedPreviewDoc && (
-        <div className="fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-md flex items-center justify-center p-4 overflow-y-auto animate-in fade-in duration-200">
-          <div className="bg-slate-900 border border-slate-700 rounded-2xl max-w-2xl w-full shadow-2xl overflow-hidden my-8">
-            <div className="p-4 md:p-5 border-b border-slate-800 flex items-center justify-between bg-slate-950">
+        <div className="fixed inset-0 z-50 bg-slate-900/45 backdrop-blur-md flex items-center justify-center p-4 overflow-y-auto animate-in fade-in duration-200">
+          <div className="bg-white border border-blue-200 rounded-2xl max-w-2xl w-full shadow-2xl overflow-hidden my-8">
+            <div className="p-4 md:p-5 border-b border-blue-200/80 flex items-center justify-between bg-[#f4f8fd]">
               <div className="space-y-1">
-                <span className="text-[10px] font-bold uppercase tracking-wider text-cyan-400">
+                <span className="text-[10px] font-bold uppercase tracking-wider text-sky-700">
                   {selectedPreviewDoc.categoryLabel}
                 </span>
-                <h3 className="text-base font-bold text-white truncate max-w-md">
+                <h3 className="text-base font-bold text-[#1e3a5f] truncate max-w-md">
                   {selectedPreviewDoc.title}
                 </h3>
               </div>
               <button
                 type="button"
                 onClick={() => setSelectedPreviewDoc(null)}
-                className="p-1.5 text-slate-400 hover:text-white hover:bg-slate-800 rounded-lg cursor-pointer"
+                className="p-1.5 text-slate-600 hover:text-[#1e3a5f] hover:bg-[#e8f1fb] rounded-lg cursor-pointer"
               >
                 <X className="w-5 h-5" />
               </button>
@@ -669,47 +669,47 @@ export const SessionDocumentManager: React.FC<SessionDocumentManagerProps> = ({
 
             <div className="p-6 space-y-4 text-xs">
               {/* Document Mock Viewer Card */}
-              <div className="bg-slate-950 border border-slate-800 rounded-xl p-6 text-center space-y-4">
-                <div className="w-16 h-16 rounded-2xl bg-slate-900 border border-slate-700 mx-auto flex items-center justify-center text-cyan-400 shadow-inner">
+              <div className="bg-[#f4f8fd] border border-blue-200/80 rounded-xl p-6 text-center space-y-4">
+                <div className="w-16 h-16 rounded-2xl bg-white border border-blue-200 mx-auto flex items-center justify-center text-sky-700 shadow-inner">
                   <FileText className="w-8 h-8" />
                 </div>
                 <div>
-                  <h4 className="text-sm font-bold text-white">{selectedPreviewDoc.fileName}</h4>
-                  <p className="text-xs text-slate-400 mt-1">
+                  <h4 className="text-sm font-bold text-[#1e3a5f]">{selectedPreviewDoc.fileName}</h4>
+                  <p className="text-xs text-slate-600 mt-1">
                     Format: {selectedPreviewDoc.fileType} • Ukuran: {selectedPreviewDoc.fileSize}
                   </p>
                 </div>
 
                 {selectedPreviewDoc.tteStatus && (
-                  <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-300 text-xs font-bold">
-                    <ShieldCheck className="w-4 h-4 text-emerald-400" />
+                  <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-800 text-xs font-bold">
+                    <ShieldCheck className="w-4 h-4 text-emerald-700" />
                     <span>{selectedPreviewDoc.tteStatus}</span>
                   </div>
                 )}
 
-                <div className="text-left bg-slate-900 p-3.5 rounded-xl border border-slate-800 space-y-2">
+                <div className="text-left bg-white p-3.5 rounded-xl border border-blue-200/80 space-y-2">
                   <div className="flex justify-between">
-                    <span className="text-slate-400">Sesi Pemeriksaan:</span>
-                    <span className="font-mono text-emerald-400 font-bold">{activeSession.capaCode}</span>
+                    <span className="text-slate-600">Sesi Pemeriksaan:</span>
+                    <span className="font-mono text-emerald-700 font-bold">{activeSession.capaCode}</span>
                   </div>
                   <div className="flex justify-between">
-                    <span className="text-slate-400">Sarana:</span>
-                    <span className="text-white font-medium">{activeSession.facility.name}</span>
+                    <span className="text-slate-600">Sarana:</span>
+                    <span className="text-[#1e3a5f] font-medium">{activeSession.facility.name}</span>
                   </div>
                   <div className="flex justify-between">
-                    <span className="text-slate-400">Pengunggah:</span>
-                    <span className="text-slate-200">{selectedPreviewDoc.uploadedBy}</span>
+                    <span className="text-slate-600">Pengunggah:</span>
+                    <span className="text-[#1e3a5f]">{selectedPreviewDoc.uploadedBy}</span>
                   </div>
                   <div className="flex justify-between">
-                    <span className="text-slate-400">Tanggal Rekam:</span>
-                    <span className="text-slate-200 font-mono">
+                    <span className="text-slate-600">Tanggal Rekam:</span>
+                    <span className="text-[#1e3a5f] font-mono">
                       {new Date(selectedPreviewDoc.uploadedAt).toLocaleString('id-ID')} WIB
                     </span>
                   </div>
                   {selectedPreviewDoc.notes && (
-                    <div className="pt-2 border-t border-slate-800">
-                      <span className="text-slate-400 block mb-1">Catatan Dokumen:</span>
-                      <p className="text-slate-300 text-[11px] leading-relaxed">
+                    <div className="pt-2 border-t border-blue-200/80">
+                      <span className="text-slate-600 block mb-1">Catatan Dokumen:</span>
+                      <p className="text-slate-700 text-[11px] leading-relaxed">
                         {selectedPreviewDoc.notes}
                       </p>
                     </div>
@@ -718,8 +718,8 @@ export const SessionDocumentManager: React.FC<SessionDocumentManagerProps> = ({
               </div>
 
               {selectedPreviewDoc.cloudUrl && (
-                <div className="p-3 bg-blue-950/40 border border-blue-800/50 rounded-xl flex items-center justify-between gap-3">
-                  <div className="flex items-center gap-2 text-blue-300">
+                <div className="p-3 bg-blue-50 border border-blue-200 rounded-xl flex items-center justify-between gap-3">
+                  <div className="flex items-center gap-2 text-blue-700">
                     <HardDrive className="w-4 h-4" />
                     <span>Tersimpan di Google Drive Sarana</span>
                   </div>
@@ -736,11 +736,11 @@ export const SessionDocumentManager: React.FC<SessionDocumentManagerProps> = ({
               )}
             </div>
 
-            <div className="p-4 bg-slate-950 border-t border-slate-800 flex items-center justify-between">
+            <div className="p-4 bg-[#f4f8fd] border-t border-blue-200/80 flex items-center justify-between">
               <button
                 type="button"
                 onClick={() => setSelectedPreviewDoc(null)}
-                className="px-4 py-2 bg-slate-800 hover:bg-slate-700 text-slate-300 rounded-xl font-medium cursor-pointer"
+                className="px-4 py-2 bg-[#e8f1fb] hover:bg-[#d0e2f5] text-slate-700 rounded-xl font-medium cursor-pointer"
               >
                 Tutup Pratinjau
               </button>

@@ -64,27 +64,27 @@ export const OfficerEvaluationDashboard: React.FC<OfficerEvaluationDashboardProp
   return (
     <div className="space-y-4">
       {/* 1. Header Workspace Petugas (Tanpa Tombol Upload SRIKANDI!) */}
-      <div className="bg-gradient-to-r from-slate-900 via-teal-950 to-slate-900 rounded-2xl p-5 sm:p-6 text-white shadow-md border border-teal-500/30 relative overflow-hidden">
+      <div className="bpom-hero-gradient rounded-2xl p-5 sm:p-6 text-[#1e3a5f] shadow-md border border-teal-500/30 relative overflow-hidden">
         <div className="absolute right-0 top-0 bottom-0 w-1/3 bg-radial from-teal-500/10 to-transparent pointer-events-none"></div>
 
         <div className="relative z-10 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
           <div className="space-y-2 max-w-2xl">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-teal-500/20 text-teal-300 border border-teal-500/40 text-xs font-semibold">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-teal-500/20 text-teal-800 border border-teal-500/40 text-xs font-semibold">
               <UserCheck className="w-3.5 h-3.5" />
               <span>Workspace Petugas Evaluator • BBPOM di Semarang</span>
             </div>
 
-            <h1 className="text-xl sm:text-2xl font-extrabold tracking-tight text-white flex items-center gap-2 flex-wrap">
+            <h1 className="text-xl sm:text-2xl font-extrabold tracking-tight text-[#1e3a5f] flex items-center gap-2 flex-wrap">
               <span>Selamat Bertugas,</span>
-              <span className="text-teal-300">{currentUser?.name || 'Petugas Evaluator'}</span>
+              <span className="text-teal-800">{currentUser?.name || 'Petugas Evaluator'}</span>
             </h1>
 
-            <p className="text-xs text-slate-300 leading-relaxed">
+            <p className="text-xs text-slate-700 leading-relaxed">
               Fokus tugas Anda adalah <strong>menelaah berkas perbaikan (CAPA) yang masuk dari sarana</strong>, memvalidasi bukti temuan teknis (Memadai / Belum Memadai), dan mengunduh matriks lampiran resmi.
             </p>
 
             {currentUser?.nip && (
-              <div className="flex items-center gap-3 text-[11px] text-teal-200/80 font-mono">
+              <div className="flex items-center gap-3 text-[11px] text-teal-800 font-mono">
                 <span>NIP. {currentUser.nip}</span>
                 <span>•</span>
                 <span>{currentUser.position || 'Pengawas Farmasi & Makanan'}</span>
@@ -97,9 +97,9 @@ export const OfficerEvaluationDashboard: React.FC<OfficerEvaluationDashboardProp
             <button
               onClick={onOpenTracking}
               type="button"
-              className="px-4 py-2.5 bg-slate-800/90 hover:bg-slate-700 text-white rounded-xl font-semibold text-xs border border-slate-700 transition-all cursor-pointer flex items-center justify-center gap-2 shadow-xs"
+              className="px-4 py-2.5 bg-[#e8f1fb] hover:bg-[#d0e2f5] text-[#1e3a5f] rounded-xl font-semibold text-xs border border-blue-200 transition-all cursor-pointer flex items-center justify-center gap-2 shadow-xs"
             >
-              <Search className="w-3.5 h-3.5 text-teal-400" />
+              <Search className="w-3.5 h-3.5 text-teal-700" />
               <span>Lacak Kode Unik CAPA</span>
             </button>
 
@@ -125,22 +125,22 @@ export const OfficerEvaluationDashboard: React.FC<OfficerEvaluationDashboardProp
 
       {/* 2. SOROTAN KHUSUS: CAPA MASUK YANG PERLU DITELAAH SEGERA */}
       {incomingCapaList.length > 0 && (
-        <div className="p-4 sm:p-5 bg-gradient-to-r from-purple-900 via-indigo-950 to-slate-900 rounded-2xl border-2 border-purple-400/50 shadow-lg text-white space-y-3.5 animate-in fade-in">
+        <div className="p-4 sm:p-5 bg-gradient-to-r from-[#eef2ff] via-[#f5f3ff] to-[#e0f2fe] rounded-2xl border-2 border-purple-400/50 shadow-lg text-[#1e3a5f] space-y-3.5 animate-in fade-in">
           <div className="flex items-center justify-between gap-3 flex-wrap">
             <div className="flex items-center gap-2.5">
               <div className="w-9 h-9 rounded-xl bg-purple-500 text-white flex items-center justify-center shrink-0 shadow-md animate-pulse">
-                <Flame className="w-5 h-5 text-amber-300" />
+                <Flame className="w-5 h-5 text-amber-800" />
               </div>
               <div>
                 <div className="flex items-center gap-2">
-                  <h3 className="font-extrabold text-sm text-white">
+                  <h3 className="font-extrabold text-sm text-[#1e3a5f]">
                     Sorotan CAPA Masuk: {incomingCapaList.length} Sarana Menunggu Evaluasi Anda
                   </h3>
                   <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-amber-400 text-slate-950">
                     Perlu Ditelaah
                   </span>
                 </div>
-                <p className="text-xs text-purple-200/90 mt-0.5">
+                <p className="text-xs text-purple-800 mt-0.5">
                   Sarana telah mengirimkan berkas bukti perbaikan. Mohon lakukan evaluasi teknis pada butir temuan terkait.
                 </p>
               </div>
@@ -152,7 +152,7 @@ export const OfficerEvaluationDashboard: React.FC<OfficerEvaluationDashboardProp
               className={`px-3 py-1.5 rounded-xl text-xs font-bold transition-all cursor-pointer flex items-center gap-1.5 ${
                 activeFilter === 'EVALUASI'
                   ? 'bg-amber-400 text-slate-950'
-                  : 'bg-purple-800/80 hover:bg-purple-700 text-white border border-purple-500/50'
+                  : 'bg-purple-100 hover:bg-purple-700 text-white border border-purple-500/50'
               }`}
             >
               <span>{activeFilter === 'EVALUASI' ? 'Tampilkan Semua' : 'Filter CAPA Masuk Saja'}</span>
@@ -167,28 +167,28 @@ export const OfficerEvaluationDashboard: React.FC<OfficerEvaluationDashboardProp
               return (
                 <div
                   key={`spotlight-${ins.id}`}
-                  className="p-3.5 rounded-xl bg-slate-900/80 border border-purple-500/40 hover:border-purple-400 flex flex-col justify-between gap-2.5 transition-all shadow-xs"
+                  className="p-3.5 rounded-xl bg-white/95 border border-purple-500/40 hover:border-purple-400 flex flex-col justify-between gap-2.5 transition-all shadow-xs"
                 >
                   <div className="flex items-start justify-between gap-2">
                     <div className="space-y-1">
                       <div className="flex items-center gap-2">
-                        <span className="font-mono text-[10px] font-bold px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">
+                        <span className="font-mono text-[10px] font-bold px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-800 border border-emerald-500/30">
                           {ins.capaCode}
                         </span>
-                        <span className="text-[10px] text-purple-200 font-semibold truncate max-w-[140px]">
+                        <span className="text-[10px] text-purple-800 font-semibold truncate max-w-[140px]">
                           {ins.facility.type}
                         </span>
                       </div>
-                      <h4 className="font-bold text-white text-xs line-clamp-1">
+                      <h4 className="font-bold text-[#1e3a5f] text-xs line-clamp-1">
                         {ins.facility.name}
                       </h4>
-                      <p className="text-[11px] text-slate-300">
+                      <p className="text-[11px] text-slate-700">
                         {ins.findings.length} Butir Temuan •{' '}
-                        <strong className="text-amber-300">{pendingItemsCount} butir belum disetujui</strong>
+                        <strong className="text-amber-800">{pendingItemsCount} butir belum disetujui</strong>
                       </p>
                     </div>
 
-                    <span className="text-[10px] font-mono text-purple-300 bg-purple-950 px-2 py-1 rounded border border-purple-800 shrink-0">
+                    <span className="text-[10px] font-mono text-purple-800 bg-purple-50 px-2 py-1 rounded border border-purple-200 shrink-0">
                       {formatIndonesianDate(ins.updatedAt)}
                     </span>
                   </div>
@@ -197,7 +197,7 @@ export const OfficerEvaluationDashboard: React.FC<OfficerEvaluationDashboardProp
                     <button
                       type="button"
                       onClick={() => onSelectInspection(ins)}
-                      className="text-[11px] text-purple-300 hover:text-white font-semibold cursor-pointer"
+                      className="text-[11px] text-purple-800 hover:text-[#1e3a5f] font-semibold cursor-pointer"
                     >
                       Lihat Rincian Sesi →
                     </button>
@@ -232,10 +232,10 @@ export const OfficerEvaluationDashboard: React.FC<OfficerEvaluationDashboardProp
           }`}
         >
           <div className="flex items-center justify-between">
-            <span className={`text-[10px] font-bold uppercase tracking-wider ${activeFilter === 'EVALUASI' ? 'text-purple-200' : 'text-purple-700'}`}>
+            <span className={`text-[10px] font-bold uppercase tracking-wider ${activeFilter === 'EVALUASI' ? 'text-purple-800' : 'text-purple-700'}`}>
               CAPA Masuk
             </span>
-            <span className={`p-1 rounded-lg ${activeFilter === 'EVALUASI' ? 'bg-purple-800 text-amber-300' : 'bg-purple-100 text-purple-700'}`}>
+            <span className={`p-1 rounded-lg ${activeFilter === 'EVALUASI' ? 'bg-purple-800 text-amber-800' : 'bg-purple-100 text-purple-700'}`}>
               <Flame className="w-3.5 h-3.5" />
             </span>
           </div>
@@ -243,7 +243,7 @@ export const OfficerEvaluationDashboard: React.FC<OfficerEvaluationDashboardProp
             <span className={`text-xl font-extrabold ${activeFilter === 'EVALUASI' ? 'text-white' : 'text-purple-900'}`}>
               {inEvaluationCount}
             </span>
-            <span className={`text-[10px] block truncate ${activeFilter === 'EVALUASI' ? 'text-purple-200' : 'text-slate-500'}`}>
+            <span className={`text-[10px] block truncate ${activeFilter === 'EVALUASI' ? 'text-purple-800' : 'text-slate-500'}`}>
               Perlu Telaah Evaluator
             </span>
           </div>
@@ -260,7 +260,7 @@ export const OfficerEvaluationDashboard: React.FC<OfficerEvaluationDashboardProp
           }`}
         >
           <div className="flex items-center justify-between">
-            <span className={`text-[10px] font-bold uppercase tracking-wider ${activeFilter === 'MENUNGGU_CAPA' ? 'text-amber-200' : 'text-amber-700'}`}>
+            <span className={`text-[10px] font-bold uppercase tracking-wider ${activeFilter === 'MENUNGGU_CAPA' ? 'text-amber-800' : 'text-amber-700'}`}>
               Menunggu Sarana
             </span>
             <span className={`p-1 rounded-lg ${activeFilter === 'MENUNGGU_CAPA' ? 'bg-amber-800 text-white' : 'bg-amber-100 text-amber-700'}`}>
@@ -271,7 +271,7 @@ export const OfficerEvaluationDashboard: React.FC<OfficerEvaluationDashboardProp
             <span className={`text-xl font-extrabold ${activeFilter === 'MENUNGGU_CAPA' ? 'text-white' : 'text-amber-900'}`}>
               {waitingSaranaCount}
             </span>
-            <span className={`text-[10px] block truncate ${activeFilter === 'MENUNGGU_CAPA' ? 'text-amber-200' : 'text-slate-500'}`}>
+            <span className={`text-[10px] block truncate ${activeFilter === 'MENUNGGU_CAPA' ? 'text-amber-800' : 'text-slate-500'}`}>
               Belum Kirim CAPA
             </span>
           </div>
@@ -339,15 +339,15 @@ export const OfficerEvaluationDashboard: React.FC<OfficerEvaluationDashboardProp
           onClick={() => onFilterChange('ALL')}
           className={`p-3.5 rounded-2xl border text-left transition-all cursor-pointer flex flex-col justify-between ${
             activeFilter === 'ALL'
-              ? 'bg-slate-900 text-white border-slate-700 shadow-md ring-2 ring-slate-400'
+              ? 'bg-white text-white border-blue-200 shadow-md ring-2 ring-slate-400'
               : 'bg-white hover:bg-slate-50 text-slate-800 border-slate-200'
           }`}
         >
           <div className="flex items-center justify-between">
-            <span className={`text-[10px] font-bold uppercase tracking-wider ${activeFilter === 'ALL' ? 'text-slate-300' : 'text-slate-500'}`}>
+            <span className={`text-[10px] font-bold uppercase tracking-wider ${activeFilter === 'ALL' ? 'text-slate-700' : 'text-slate-500'}`}>
               Total Sesi
             </span>
-            <span className={`p-1 rounded-lg ${activeFilter === 'ALL' ? 'bg-slate-800 text-white' : 'bg-slate-100 text-slate-700'}`}>
+            <span className={`p-1 rounded-lg ${activeFilter === 'ALL' ? 'bg-[#e8f1fb] text-white' : 'bg-slate-100 text-slate-700'}`}>
               <FileText className="w-3.5 h-3.5" />
             </span>
           </div>
@@ -355,7 +355,7 @@ export const OfficerEvaluationDashboard: React.FC<OfficerEvaluationDashboardProp
             <span className={`text-xl font-extrabold ${activeFilter === 'ALL' ? 'text-white' : 'text-slate-900'}`}>
               {totalCount}
             </span>
-            <span className={`text-[10px] block truncate ${activeFilter === 'ALL' ? 'text-slate-300' : 'text-slate-500'}`}>
+            <span className={`text-[10px] block truncate ${activeFilter === 'ALL' ? 'text-slate-700' : 'text-slate-500'}`}>
               {isOfficerOnlyFilter ? 'Penugasan Saya' : 'Semua Balai'}
             </span>
           </div>

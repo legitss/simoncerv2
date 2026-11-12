@@ -111,21 +111,21 @@ export const WhatsAppGatewaySettingsModal: React.FC<WhatsAppGatewaySettingsModal
       <div className="bg-white rounded-3xl max-w-3xl w-full shadow-2xl border border-slate-200 overflow-hidden transform transition-all animate-in fade-in zoom-in-95 flex flex-col max-h-[92vh]">
         
         {/* Header */}
-        <div className="bg-gradient-to-r from-slate-950 via-[#0a1e1b] to-slate-900 text-white p-5 sm:p-6 border-b border-slate-800 flex items-center justify-between shrink-0">
+        <div className="bpom-hero-gradient text-[#1e3a5f] p-5 sm:p-6 border-b border-blue-200/80 flex items-center justify-between shrink-0">
           <div className="flex items-center gap-3.5">
-            <div className="w-12 h-12 rounded-2xl bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 flex items-center justify-center shrink-0">
+            <div className="w-12 h-12 rounded-2xl bg-emerald-500/20 text-emerald-700 border border-emerald-500/30 flex items-center justify-center shrink-0">
               <MessageSquare className="w-6 h-6" />
             </div>
             <div>
               <div className="flex items-center gap-2">
-                <h3 className="font-extrabold text-base sm:text-lg text-white">
+                <h3 className="font-extrabold text-base sm:text-lg text-[#1e3a5f]">
                   Pengaturan WhatsApp Gateway
                 </h3>
-                <span className="text-[10px] font-mono px-2 py-0.5 rounded-full bg-emerald-500/20 text-emerald-300 border border-emerald-500/40">
+                <span className="text-[10px] font-mono px-2 py-0.5 rounded-full bg-emerald-500/20 text-emerald-800 border border-emerald-500/40">
                   {config.provider}
                 </span>
               </div>
-              <p className="text-xs text-slate-300 mt-0.5">
+              <p className="text-xs text-slate-700 mt-0.5">
                 Konfigurasi penyedia layanan WhatsApp API (Fonnte) untuk notifikasi otomatis SIMONCER
               </p>
             </div>
@@ -134,7 +134,7 @@ export const WhatsAppGatewaySettingsModal: React.FC<WhatsAppGatewaySettingsModal
           <button
             type="button"
             onClick={onClose}
-            className="p-1.5 text-slate-400 hover:text-white rounded-lg hover:bg-slate-800 transition-colors cursor-pointer"
+            className="p-1.5 text-slate-600 hover:text-[#1e3a5f] rounded-lg hover:bg-[#e8f1fb] transition-colors cursor-pointer"
           >
             <X className="w-5 h-5" />
           </button>
@@ -197,7 +197,7 @@ export const WhatsAppGatewaySettingsModal: React.FC<WhatsAppGatewaySettingsModal
                   >
                     <div className="flex items-center justify-between mb-1">
                       <span className="font-bold text-xs text-slate-900 flex items-center gap-1.5">
-                        <Smartphone className={`w-4 h-4 ${isSelected ? 'text-emerald-600' : 'text-slate-400'}`} />
+                        <Smartphone className={`w-4 h-4 ${isSelected ? 'text-emerald-600' : 'text-slate-600'}`} />
                         {provKey}
                       </span>
                       {isSelected && (
@@ -230,7 +230,7 @@ export const WhatsAppGatewaySettingsModal: React.FC<WhatsAppGatewaySettingsModal
                   API Token / Secret Key ({config.provider}) <span className="text-red-500">*</span>
                 </label>
                 <div className="relative">
-                  <Key className="w-4 h-4 text-slate-400 absolute left-3 top-2.5" />
+                  <Key className="w-4 h-4 text-slate-600 absolute left-3 top-2.5" />
                   <input
                     type="text"
                     required
@@ -254,7 +254,7 @@ export const WhatsAppGatewaySettingsModal: React.FC<WhatsAppGatewaySettingsModal
                     API Endpoint URL
                   </label>
                   <div className="relative">
-                    <Globe className="w-4 h-4 text-slate-400 absolute left-3 top-2.5" />
+                    <Globe className="w-4 h-4 text-slate-600 absolute left-3 top-2.5" />
                     <input
                       type="url"
                       required
@@ -427,7 +427,7 @@ export const WhatsAppGatewaySettingsModal: React.FC<WhatsAppGatewaySettingsModal
                 type="button"
                 onClick={handleTestSend}
                 disabled={isTesting}
-                className="px-4 py-2 bg-slate-900 hover:bg-slate-800 disabled:bg-slate-700 text-white rounded-xl text-xs font-bold flex items-center gap-1.5 shadow-sm transition-all cursor-pointer"
+                className="px-4 py-2 bg-white hover:bg-[#e8f1fb] disabled:bg-slate-700 text-[#1e3a5f] rounded-xl text-xs font-bold flex items-center gap-1.5 shadow-sm transition-all cursor-pointer"
               >
                 {isTesting ? (
                   <>
@@ -436,7 +436,7 @@ export const WhatsAppGatewaySettingsModal: React.FC<WhatsAppGatewaySettingsModal
                   </>
                 ) : (
                   <>
-                    <Send className="w-3.5 h-3.5 text-emerald-400" />
+                    <Send className="w-3.5 h-3.5 text-emerald-700" />
                     <span>Kirim Pesan Uji Coba Sekarang</span>
                   </>
                 )}
@@ -461,7 +461,7 @@ export const WhatsAppGatewaySettingsModal: React.FC<WhatsAppGatewaySettingsModal
                   <span>{testResult.message}</span>
                 </div>
                 {testResult.details && (
-                  <pre className="p-2 bg-slate-900 text-slate-100 rounded-lg text-[10px] font-mono overflow-x-auto max-h-32">
+                  <pre className="p-2 bg-white text-[#1e3a5f] rounded-lg text-[10px] font-mono overflow-x-auto max-h-32">
                     {testResult.details}
                   </pre>
                 )}
@@ -479,7 +479,7 @@ export const WhatsAppGatewaySettingsModal: React.FC<WhatsAppGatewaySettingsModal
           <button
             type="button"
             onClick={onClose}
-            className="px-4 py-2 bg-slate-900 hover:bg-slate-800 text-white rounded-xl text-xs font-semibold cursor-pointer ml-auto"
+            className="px-4 py-2 bg-white hover:bg-[#e8f1fb] text-[#1e3a5f] rounded-xl text-xs font-semibold cursor-pointer ml-auto"
           >
             Tutup
           </button>

@@ -592,13 +592,13 @@ export const CapaMatrixFullPageView: React.FC<CapaMatrixFullPageViewProps> = ({
   };
 
   return (
-    <div className="min-h-screen bg-slate-900 text-slate-100 flex flex-col font-sans selection:bg-emerald-500 selection:text-white print:bg-white print:text-black">
+    <div className="min-h-screen bg-white text-[#1e3a5f] flex flex-col font-sans selection:bg-emerald-500 selection:text-white print:bg-white print:text-black">
       
       {/* Toast Notification */}
       {saveSuccessMessage && (
         <div className="fixed top-20 right-6 z-50 animate-in fade-in slide-in-from-top-3 duration-300">
           <div className="px-4 py-3 bg-emerald-900/95 text-emerald-100 border border-emerald-500 rounded-2xl shadow-2xl flex items-center gap-3 backdrop-blur-md">
-            <CheckCircle2 className="w-5 h-5 text-emerald-400 shrink-0" />
+            <CheckCircle2 className="w-5 h-5 text-emerald-700 shrink-0" />
             <span className="text-xs font-semibold">{saveSuccessMessage}</span>
           </div>
         </div>
@@ -614,7 +614,7 @@ export const CapaMatrixFullPageView: React.FC<CapaMatrixFullPageViewProps> = ({
               <button
                 type="button"
                 onClick={onBack}
-                className="p-2 text-white bg-white/15 hover:bg-white/25 rounded-xl border border-white/25 transition-colors cursor-pointer flex items-center gap-1.5 text-xs font-bold shrink-0"
+                className="p-2 text-[#1e3a5f] bg-white/15 hover:bg-white/25 rounded-xl border border-white/25 transition-colors cursor-pointer flex items-center gap-1.5 text-xs font-bold shrink-0"
                 title="Kembali ke Halaman Sebelumnya"
               >
                 <ArrowLeft className="w-4 h-4 text-[#86efac]" />
@@ -628,14 +628,14 @@ export const CapaMatrixFullPageView: React.FC<CapaMatrixFullPageViewProps> = ({
                   <span className="text-[11px] sm:text-xs font-mono font-bold px-2 py-0.5 rounded-lg bg-[#2e856e] text-white border border-white/20 shrink-0 shadow-xs">
                     {inspection.capaCode}
                   </span>
-                  <span className="text-xs font-extrabold text-white truncate max-w-[170px] sm:max-w-none">
+                  <span className="text-xs font-extrabold text-[#1e3a5f] truncate max-w-[170px] sm:max-w-none">
                     {inspection.facility.name}
                   </span>
-                  <span className="text-[10px] sm:text-[11px] px-2 py-0.5 rounded-full bg-white/15 text-white border border-white/25 font-semibold hidden md:inline-block">
+                  <span className="text-[10px] sm:text-[11px] px-2 py-0.5 rounded-full bg-white/15 text-[#1e3a5f] border border-white/25 font-semibold hidden md:inline-block">
                     {matrixConfig.codeStandard}
                   </span>
                 </div>
-                <p className="text-[11px] text-white/80 mt-0.5 hidden sm:flex items-center gap-2 truncate">
+                <p className="text-[11px] text-[#1e3a5f]/80 mt-0.5 hidden sm:flex items-center gap-2 truncate">
                   <span>{matrixConfig.title}</span>
                   <span>•</span>
                   <span>PIC: {inspection.facility.picName} ({inspection.facility.picPhone})</span>
@@ -661,7 +661,7 @@ export const CapaMatrixFullPageView: React.FC<CapaMatrixFullPageViewProps> = ({
             <div className={`px-3 py-1.5 rounded-xl border text-xs font-bold flex items-center gap-1.5 ${
               sla.isOverdue 
                 ? 'bg-red-600/90 text-white border-red-300/40' 
-                : 'bg-amber-400/20 text-amber-200 border-amber-300/40'
+                : 'bg-amber-400/20 text-amber-800 border-amber-300/40'
             }`}>
               <Clock className="w-3.5 h-3.5" />
               <span>{sla.text}</span>
@@ -672,7 +672,7 @@ export const CapaMatrixFullPageView: React.FC<CapaMatrixFullPageViewProps> = ({
               <button
                 type="button"
                 onClick={handleSaveDraft}
-                className="px-3.5 py-2 bg-white/15 hover:bg-white/25 text-white rounded-xl text-xs font-bold border border-white/25 transition-colors flex items-center gap-1.5 cursor-pointer"
+                className="px-3.5 py-2 bg-white/15 hover:bg-white/25 text-[#1e3a5f] rounded-xl text-xs font-bold border border-white/25 transition-colors flex items-center gap-1.5 cursor-pointer"
               >
                 <Save className="w-3.5 h-3.5 text-[#86efac]" />
                 <span>Simpan Draf</span>
@@ -684,7 +684,7 @@ export const CapaMatrixFullPageView: React.FC<CapaMatrixFullPageViewProps> = ({
               type="button"
               onClick={handleDownloadPdfAttachment}
               disabled={isDownloadingMatrix}
-              className="px-3.5 py-2 bg-white/15 hover:bg-white/25 text-white rounded-xl text-xs font-bold border border-white/25 transition-colors flex items-center gap-1.5 cursor-pointer disabled:opacity-50"
+              className="px-3.5 py-2 bg-white/15 hover:bg-white/25 text-[#1e3a5f] rounded-xl text-xs font-bold border border-white/25 transition-colors flex items-center gap-1.5 cursor-pointer disabled:opacity-50"
               title="Unduh Dokumen Lampiran Matriks CAPA Resmi"
             >
               <Download className="w-3.5 h-3.5 text-sky-300" />
@@ -695,7 +695,7 @@ export const CapaMatrixFullPageView: React.FC<CapaMatrixFullPageViewProps> = ({
             <button
               type="button"
               onClick={handlePrint}
-              className="p-2 bg-white/15 hover:bg-white/25 text-white rounded-xl border border-white/25 transition-colors cursor-pointer"
+              className="p-2 bg-white/15 hover:bg-white/25 text-[#1e3a5f] rounded-xl border border-white/25 transition-colors cursor-pointer"
               title="Cetak Dokumen Resmi"
             >
               <Printer className="w-4 h-4" />
@@ -706,14 +706,14 @@ export const CapaMatrixFullPageView: React.FC<CapaMatrixFullPageViewProps> = ({
               isAlreadySubmitted ? (
                 <div className="flex items-center gap-2 flex-wrap">
                   <div className="px-3.5 py-1.5 bg-[#2e856e] border border-white/30 text-white rounded-xl text-xs font-bold flex items-center gap-2 shadow-sm">
-                    <CheckCircle2 className="w-4 h-4 text-white shrink-0" />
+                    <CheckCircle2 className="w-4 h-4 text-[#1e3a5f] shrink-0" />
                     <div className="text-left">
-                      <span className="font-extrabold text-white block leading-tight">
+                      <span className="font-extrabold text-[#1e3a5f] block leading-tight">
                         {inspection.status === 'TERVALIDASI' || inspection.status === 'SELESAI_CLOSED'
                           ? 'CAPA Telah Tervalidasi Balai'
                           : 'CAPA Telah Terkirim ke Balai'}
                       </span>
-                      <span className="text-[10px] text-white/90 font-medium block">
+                      <span className="text-[10px] text-[#1e3a5f]/90 font-medium block">
                         {inspection.status === 'TERVALIDASI' || inspection.status === 'SELESAI_CLOSED'
                           ? 'Selesai (Closed)'
                           : 'Status: EVALUASI_PETUGAS'}
@@ -763,20 +763,20 @@ export const CapaMatrixFullPageView: React.FC<CapaMatrixFullPageViewProps> = ({
           {!surveyData?.completed ? (
             /* Jika belum isi survei: Tampilkan alur prasyarat survei */
             <div className="flex items-center gap-2 sm:gap-3 text-xs whitespace-nowrap">
-              <div className="flex items-center gap-2 px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-xl font-bold bg-amber-400/20 text-amber-200 border border-amber-300/40 shadow-xs">
+              <div className="flex items-center gap-2 px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-xl font-bold bg-amber-400/20 text-amber-800 border border-amber-300/40 shadow-xs">
                 <div className="w-5 h-5 rounded-full bg-amber-400 text-slate-950 flex items-center justify-center text-[10px] font-bold">
                   1
                 </div>
                 <span>Langkah 1: Survei Integritas (SIBERGAS)</span>
-                <span className="text-[10px] bg-amber-400/30 text-white px-1.5 py-0.5 rounded font-bold hidden sm:inline">
+                <span className="text-[10px] bg-amber-400/30 text-[#1e3a5f] px-1.5 py-0.5 rounded font-bold hidden sm:inline">
                   Wajib Diisi Dahulu
                 </span>
               </div>
 
-              <ChevronRight className="w-4 h-4 text-white/50 shrink-0" />
+              <ChevronRight className="w-4 h-4 text-[#1e3a5f]/50 shrink-0" />
 
-              <div className="flex items-center gap-2 px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-xl font-bold bg-white/10 text-white/60 border border-white/15">
-                <div className="w-5 h-5 rounded-full bg-white/20 text-white flex items-center justify-center text-[10px] font-bold">
+              <div className="flex items-center gap-2 px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-xl font-bold bg-white/10 text-[#1e3a5f]/60 border border-white/15">
+                <div className="w-5 h-5 rounded-full bg-white/20 text-[#1e3a5f] flex items-center justify-center text-[10px] font-bold">
                   2
                 </div>
                 <span>Langkah 2: Matriks CAPA (Terkunci)</span>
@@ -785,12 +785,12 @@ export const CapaMatrixFullPageView: React.FC<CapaMatrixFullPageViewProps> = ({
           ) : (
             /* Jika survei SUDAH diisi: Tab survei dihilangkan sepenuhnya agar tidak membingungkan sarana */
             <div className="hidden md:flex items-center gap-2 sm:gap-3 text-xs shrink-0">
-              <div className="flex items-center gap-2 text-white">
+              <div className="flex items-center gap-2 text-[#1e3a5f]">
                 <div className="w-6 h-6 rounded-lg bg-[#2e856e] text-white flex items-center justify-center shrink-0">
                   <CheckCircle2 className="w-3.5 h-3.5" />
                 </div>
                 <div>
-                  <span className="font-extrabold text-white text-xs block leading-tight">
+                  <span className="font-extrabold text-[#1e3a5f] text-xs block leading-tight">
                     Pengisian Formulir Dokumen CAPA
                   </span>
                   <span className="text-[10px] text-[#86efac] font-semibold block">
@@ -810,7 +810,7 @@ export const CapaMatrixFullPageView: React.FC<CapaMatrixFullPageViewProps> = ({
                 className={`px-2.5 sm:px-3 py-1.5 rounded-lg transition-all flex items-center gap-1.5 cursor-pointer whitespace-nowrap ${
                   viewMode === 'WIDE_MATRIX'
                     ? 'bg-[#2e856e] text-white font-extrabold shadow-xs'
-                    : 'text-white/80 hover:text-white'
+                    : 'text-white/80 hover:text-[#1e3a5f]'
                 }`}
                 title="Daftar Butir Temuan dan Status Pengisian CAPA"
               >
@@ -831,7 +831,7 @@ export const CapaMatrixFullPageView: React.FC<CapaMatrixFullPageViewProps> = ({
                 className={`px-2.5 sm:px-3 py-1.5 rounded-lg transition-all flex items-center gap-1.5 cursor-pointer whitespace-nowrap ${
                   viewMode === 'GUIDED_FORM'
                     ? 'bg-[#2e856e] text-white font-extrabold shadow-xs'
-                    : 'text-white/80 hover:text-white'
+                    : 'text-white/80 hover:text-[#1e3a5f]'
                 }`}
                 title="Formulir Pengisian Terpadu per Butir Temuan"
               >
@@ -845,7 +845,7 @@ export const CapaMatrixFullPageView: React.FC<CapaMatrixFullPageViewProps> = ({
                 className={`px-2.5 sm:px-3 py-1.5 rounded-lg transition-all flex items-center gap-1.5 cursor-pointer whitespace-nowrap ${
                   viewMode === 'DOCUMENT_PREVIEW'
                     ? 'bg-[#2e856e] text-white font-extrabold shadow-xs'
-                    : 'text-white/80 hover:text-white'
+                    : 'text-white/80 hover:text-[#1e3a5f]'
                 }`}
                 title="Preview Dokumen Resmi Srikandi Siap Cetak"
               >
@@ -866,18 +866,18 @@ export const CapaMatrixFullPageView: React.FC<CapaMatrixFullPageViewProps> = ({
           <div className="max-w-4xl mx-auto space-y-6 animate-in fade-in">
             
             {/* Banner: Survey is required before CAPA form */}
-            <div className="p-4 sm:p-5 bg-gradient-to-r from-amber-950/80 via-slate-900 to-amber-950/80 border border-amber-500/50 rounded-2xl space-y-2.5 text-xs text-amber-200 shadow-xl">
-              <div className="flex items-center gap-2.5 font-bold text-amber-300 text-sm">
-                <ShieldCheck className="w-5 h-5 text-amber-400 shrink-0" />
+            <div className="p-4 sm:p-5 bg-gradient-to-r from-amber-50 via-[#fffbeb] to-amber-50 border border-amber-500/50 rounded-2xl space-y-2.5 text-xs text-amber-800 shadow-xl">
+              <div className="flex items-center gap-2.5 font-bold text-amber-800 text-sm">
+                <ShieldCheck className="w-5 h-5 text-amber-700 shrink-0" />
                 <span>Prasyarat Mutlak Zona Integritas (WBK/WBBM) - Langkah 1</span>
               </div>
-              <p className="text-slate-300 leading-relaxed text-xs">
+              <p className="text-slate-700 leading-relaxed text-xs">
                 Sesuai standar operasional Balai Besar POM di Semarang, sebelum mengisi dan menyerahkan dokumen Matriks CAPA, sarana <strong>wajib mengisi 7 butir kuesioner integritas petugas (SIBERGAS)</strong> terlebih dahulu. Penilaian Anda dijamin kerahasiaannya dan digunakan untuk evaluasi pelayanan prima bebas dari korupsi & gratifikasi.
               </p>
             </div>
 
             {/* Real Survey Form Component */}
-            <div className="bg-slate-950 border border-slate-800 rounded-3xl p-6 sm:p-8 shadow-2xl">
+            <div className="bg-[#f4f8fd] border border-blue-200/80 rounded-3xl p-6 sm:p-8 shadow-2xl">
               <SibergasSurveyForm
                 inspection={inspection}
                 initialData={surveyData}
@@ -895,20 +895,20 @@ export const CapaMatrixFullPageView: React.FC<CapaMatrixFullPageViewProps> = ({
           <div className="w-full space-y-6 animate-in fade-in">
             
             {/* Top Commodity Standard Information Banner */}
-            <div className="bg-slate-950 border border-slate-800 rounded-2xl p-4 sm:p-5 flex flex-col md:flex-row md:items-center justify-between gap-4 shadow-xl">
+            <div className="bg-[#f4f8fd] border border-blue-200/80 rounded-2xl p-4 sm:p-5 flex flex-col md:flex-row md:items-center justify-between gap-4 shadow-xl">
               <div className="space-y-1">
                 <div className="flex items-center gap-2">
-                  <span className="text-xs font-bold uppercase tracking-wider text-emerald-400">
+                  <span className="text-xs font-bold uppercase tracking-wider text-emerald-700">
                     Standar Format Komoditi:
                   </span>
-                  <span className="text-xs font-semibold px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">
+                  <span className="text-xs font-semibold px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-800 border border-emerald-500/30">
                     {matrixConfig.codeStandard}
                   </span>
                 </div>
-                <h2 className="text-lg sm:text-xl font-extrabold text-white">
+                <h2 className="text-lg sm:text-xl font-extrabold text-[#1e3a5f]">
                   {matrixConfig.title}
                 </h2>
-                <p className="text-xs text-slate-400">
+                <p className="text-xs text-slate-600">
                   {matrixConfig.sampleGuidance}
                 </p>
               </div>
@@ -926,9 +926,9 @@ export const CapaMatrixFullPageView: React.FC<CapaMatrixFullPageViewProps> = ({
                   </button>
                 )}
 
-                <div className="p-2.5 rounded-xl bg-slate-900 border border-slate-800 text-xs text-slate-300">
+                <div className="p-2.5 rounded-xl bg-white border border-blue-200/80 text-xs text-slate-700">
                   <span className="text-slate-500 block text-[10px] uppercase font-bold">Evaluator Balai:</span>
-                  <span className="font-semibold text-emerald-400">
+                  <span className="font-semibold text-emerald-700">
                     {inspection.assignedOfficer?.name || inspection.leadAuditor}
                   </span>
                 </div>
@@ -937,20 +937,20 @@ export const CapaMatrixFullPageView: React.FC<CapaMatrixFullPageViewProps> = ({
 
             {/* 1. VIEW MODE: WIDE MATRIX (Daftar Butir Temuan Disodorkan di Awal & Tabel Matriks Collapsible) */}
             {viewMode === 'WIDE_MATRIX' && (
-              <div className="bg-slate-950 border border-slate-800 rounded-3xl overflow-hidden shadow-2xl space-y-6 p-4 sm:p-6 lg:p-8">
+              <div className="bg-[#f4f8fd] border border-blue-200/80 rounded-3xl overflow-hidden shadow-2xl space-y-6 p-4 sm:p-6 lg:p-8">
                 
                 {/* Header: Friendly orientation and instruction */}
-                <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-4 border-b border-slate-800">
+                <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-4 border-b border-blue-200/80">
                   <div className="space-y-1">
-                    <h3 className="font-extrabold text-base sm:text-lg text-white flex items-center gap-2.5">
-                      <ListChecks className="w-5 h-5 text-emerald-400 shrink-0" />
+                    <h3 className="font-extrabold text-base sm:text-lg text-[#1e3a5f] flex items-center gap-2.5">
+                      <ListChecks className="w-5 h-5 text-emerald-700 shrink-0" />
                       <span>Daftar Butir Temuan Yang Wajib Diisi CAPA</span>
-                      <span className="text-xs px-2.5 py-0.5 rounded-full bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 font-mono font-bold">
+                      <span className="text-xs px-2.5 py-0.5 rounded-full bg-emerald-500/20 text-emerald-800 border border-emerald-500/30 font-mono font-bold">
                         {findingsData.length} Butir Temuan
                       </span>
                     </h3>
-                    <p className="text-xs text-slate-400 leading-relaxed">
-                      Survei integritas SIBERGAS telah selesai! Di bawah ini adalah seluruh butir temuan ketidaksesuaian hasil pemeriksaan Balai. Silakan klik tombol <strong className="text-emerald-400">"Isi CAPA Butir Ini"</strong> pada masing-masing kartu untuk menyusun tindakan perbaikan & mengunggah bukti pendukung.
+                    <p className="text-xs text-slate-600 leading-relaxed">
+                      Survei integritas SIBERGAS telah selesai! Di bawah ini adalah seluruh butir temuan ketidaksesuaian hasil pemeriksaan Balai. Silakan klik tombol <strong className="text-emerald-700">"Isi CAPA Butir Ini"</strong> pada masing-masing kartu untuk menyusun tindakan perbaikan & mengunggah bukti pendukung.
                     </p>
                   </div>
 
@@ -970,22 +970,22 @@ export const CapaMatrixFullPageView: React.FC<CapaMatrixFullPageViewProps> = ({
                 </div>
 
                 {/* Progress Tracking Bar */}
-                <div className="p-4 bg-slate-900/90 border border-slate-800 rounded-2xl space-y-2.5">
+                <div className="p-4 bg-white border border-blue-200/80 rounded-2xl space-y-2.5">
                   <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 text-xs">
-                    <span className="font-bold text-slate-200 flex items-center gap-1.5">
-                      <Clock className="w-4 h-4 text-emerald-400" />
+                    <span className="font-bold text-[#1e3a5f] flex items-center gap-1.5">
+                      <Clock className="w-4 h-4 text-emerald-700" />
                       <span>Progres Kelengkapan Pengisian CAPA:</span>
-                      <strong className="text-emerald-400 font-mono">
+                      <strong className="text-emerald-700 font-mono">
                         {completedFindingsCount} dari {findingsData.length} Butir Lengkap ({completionPercentage}%)
                       </strong>
                     </span>
 
                     <div className="flex items-center gap-2">
-                      <span className="px-2 py-0.5 rounded bg-emerald-950 text-emerald-300 border border-emerald-500/30 text-[11px] font-semibold">
+                      <span className="px-2 py-0.5 rounded bg-emerald-50 text-emerald-800 border border-emerald-500/30 text-[11px] font-semibold">
                         ✓ {completedFindingsCount} Lengkap
                       </span>
                       {findingsData.length - completedFindingsCount > 0 && (
-                        <span className="px-2 py-0.5 rounded bg-amber-950 text-amber-300 border border-amber-500/30 text-[11px] font-semibold">
+                        <span className="px-2 py-0.5 rounded bg-amber-50 text-amber-800 border border-amber-500/30 text-[11px] font-semibold">
                           ⚠️ {findingsData.length - completedFindingsCount} Belum Selesai
                         </span>
                       )}
@@ -993,14 +993,14 @@ export const CapaMatrixFullPageView: React.FC<CapaMatrixFullPageViewProps> = ({
                   </div>
 
                   {/* Progress Bar Container */}
-                  <div className="w-full bg-slate-800 rounded-full h-2.5 overflow-hidden">
+                  <div className="w-full bg-[#e8f1fb] rounded-full h-2.5 overflow-hidden">
                     <div
                       className="h-full bg-gradient-to-r from-emerald-500 to-teal-400 transition-all duration-500 rounded-full"
                       style={{ width: `${completionPercentage}%` }}
                     />
                   </div>
 
-                  <p className="text-[11px] text-slate-400">
+                  <p className="text-[11px] text-slate-600">
                     {isAllFindingsCompleted
                       ? '🎉 Seluruh butir temuan telah dilengkapi CAPA! Anda dapat meninjau dokumen matriks resmi di bawah atau langsung kirim ke Balai.'
                       : '💡 Pastikan semua butir temuan terisi (Akar Masalah, Tindakan Korektif, Pencegahan, dan Bukti Foto/SOP) sebelum mengirimkan dokumen ke Balai.'}
@@ -1010,7 +1010,7 @@ export const CapaMatrixFullPageView: React.FC<CapaMatrixFullPageViewProps> = ({
                 {/* KARTU BUTIR TEMUAN DISODORKAN LANGSUNG DI AWAL (UPFRONT) */}
                 <div className="space-y-3">
                   <div className="flex items-center justify-between">
-                    <h4 className="text-xs font-bold uppercase tracking-wider text-slate-300 flex items-center gap-2">
+                    <h4 className="text-xs font-bold uppercase tracking-wider text-slate-700 flex items-center gap-2">
                       <span>Kartu Rincian Butir Temuan & Status Pengisian:</span>
                     </h4>
                     <span className="text-[11px] text-slate-500">
@@ -1030,14 +1030,14 @@ export const CapaMatrixFullPageView: React.FC<CapaMatrixFullPageViewProps> = ({
                           key={f.id}
                           className={`p-5 rounded-2xl border transition-all space-y-3.5 ${
                             isComplete
-                              ? 'bg-slate-900/90 border-emerald-500/40 shadow-sm'
-                              : 'bg-slate-900/70 border-slate-800 hover:border-slate-700'
+                              ? 'bg-white border-emerald-500/40 shadow-sm'
+                              : 'bg-white/90 border-blue-200/80 hover:border-blue-200'
                           }`}
                         >
                           {/* Header row: Finding number, Category Badge, and Completion Status Badge */}
                           <div className="flex items-center justify-between gap-2 flex-wrap">
                             <div className="flex items-center gap-2">
-                              <span className="px-2.5 py-1 rounded-lg bg-emerald-950/80 border border-emerald-500/30 text-emerald-400 font-mono font-black text-xs">
+                              <span className="px-2.5 py-1 rounded-lg bg-emerald-50 border border-emerald-500/30 text-emerald-700 font-mono font-black text-xs">
                                 Butir #{idx + 1}
                               </span>
                               <span className={`text-[10px] px-2.5 py-0.5 rounded font-bold uppercase ${cat.bg} ${cat.text} border ${cat.border}`}>
@@ -1047,36 +1047,36 @@ export const CapaMatrixFullPageView: React.FC<CapaMatrixFullPageViewProps> = ({
 
                             {/* Status Badge */}
                             {isComplete ? (
-                              <span className="px-2.5 py-1 rounded-full bg-emerald-500/20 text-emerald-300 border border-emerald-500/40 text-[11px] font-bold flex items-center gap-1">
-                                <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400" />
+                              <span className="px-2.5 py-1 rounded-full bg-emerald-500/20 text-emerald-800 border border-emerald-500/40 text-[11px] font-bold flex items-center gap-1">
+                                <CheckCircle2 className="w-3.5 h-3.5 text-emerald-700" />
                                 <span>CAPA Lengkap</span>
                               </span>
                             ) : hasPartial ? (
-                              <span className="px-2.5 py-1 rounded-full bg-amber-500/20 text-amber-300 border border-amber-500/40 text-[11px] font-bold flex items-center gap-1">
-                                <Clock className="w-3.5 h-3.5 text-amber-400" />
+                              <span className="px-2.5 py-1 rounded-full bg-amber-500/20 text-amber-800 border border-amber-500/40 text-[11px] font-bold flex items-center gap-1">
+                                <Clock className="w-3.5 h-3.5 text-amber-700" />
                                 <span>Draf Sebagian</span>
                               </span>
                             ) : (
-                              <span className="px-2.5 py-1 rounded-full bg-rose-500/20 text-rose-300 border border-rose-500/40 text-[11px] font-bold flex items-center gap-1">
-                                <AlertCircle className="w-3.5 h-3.5 text-rose-400" />
+                              <span className="px-2.5 py-1 rounded-full bg-rose-500/20 text-rose-700 border border-rose-500/40 text-[11px] font-bold flex items-center gap-1">
+                                <AlertCircle className="w-3.5 h-3.5 text-rose-700" />
                                 <span>Belum Diisi</span>
                               </span>
                             )}
                           </div>
 
                           {/* Klausul Acuan Standar */}
-                          <div className="text-xs font-bold text-white flex items-start gap-1.5">
-                            <ShieldCheck className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
+                          <div className="text-xs font-bold text-[#1e3a5f] flex items-start gap-1.5">
+                            <ShieldCheck className="w-4 h-4 text-emerald-700 shrink-0 mt-0.5" />
                             <span>{f.clause}</span>
                           </div>
 
                           {/* Deskripsi Temuan Ketidaksesuaian dari Pemeriksa */}
-                          <div className="p-3.5 bg-slate-950 rounded-xl border border-slate-800 space-y-1">
-                            <div className="text-[10px] font-bold uppercase tracking-wider text-amber-400 flex items-center gap-1.5">
-                              <AlertCircle className="w-3 h-3 text-amber-400" />
+                          <div className="p-3.5 bg-[#f4f8fd] rounded-xl border border-blue-200/80 space-y-1">
+                            <div className="text-[10px] font-bold uppercase tracking-wider text-amber-700 flex items-center gap-1.5">
+                              <AlertCircle className="w-3 h-3 text-amber-700" />
                               <span>Temuan Hasil Pemeriksaan Lapangan:</span>
                             </div>
-                            <p className="text-xs text-slate-200 leading-relaxed font-normal">
+                            <p className="text-xs text-[#1e3a5f] leading-relaxed font-normal">
                               {f.description}
                             </p>
                           </div>
@@ -1084,28 +1084,28 @@ export const CapaMatrixFullPageView: React.FC<CapaMatrixFullPageViewProps> = ({
                           {/* Mini Checklist of Filled Items */}
                           <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 text-[10px] pt-1">
                             <div className={`p-1.5 rounded-lg border text-center ${
-                              f.capa?.rootCauseAnalysis ? 'bg-emerald-950/40 border-emerald-500/30 text-emerald-300' : 'bg-slate-950 border-slate-800 text-slate-500'
+                              f.capa?.rootCauseAnalysis ? 'bg-emerald-50 border-emerald-500/30 text-emerald-800' : 'bg-[#f4f8fd] border-blue-200/80 text-slate-500'
                             }`}>
                               <span className="block font-bold">Akar Masalah</span>
                               <span>{f.capa?.rootCauseAnalysis ? '✓ Ada' : 'Belum'}</span>
                             </div>
 
                             <div className={`p-1.5 rounded-lg border text-center ${
-                              f.capa?.correctiveAction ? 'bg-emerald-950/40 border-emerald-500/30 text-emerald-300' : 'bg-slate-950 border-slate-800 text-slate-500'
+                              f.capa?.correctiveAction ? 'bg-emerald-50 border-emerald-500/30 text-emerald-800' : 'bg-[#f4f8fd] border-blue-200/80 text-slate-500'
                             }`}>
                               <span className="block font-bold">Tindakan CA</span>
                               <span>{f.capa?.correctiveAction ? '✓ Ada' : 'Belum'}</span>
                             </div>
 
                             <div className={`p-1.5 rounded-lg border text-center ${
-                              f.capa?.preventiveAction ? 'bg-emerald-950/40 border-emerald-500/30 text-emerald-300' : 'bg-slate-950 border-slate-800 text-slate-500'
+                              f.capa?.preventiveAction ? 'bg-emerald-50 border-emerald-500/30 text-emerald-800' : 'bg-[#f4f8fd] border-blue-200/80 text-slate-500'
                             }`}>
                               <span className="block font-bold">Tindakan PA</span>
                               <span>{f.capa?.preventiveAction ? '✓ Ada' : 'Belum'}</span>
                             </div>
 
                             <div className={`p-1.5 rounded-lg border text-center ${
-                              evidenceCount > 0 ? 'bg-emerald-950/40 border-emerald-500/30 text-emerald-300' : 'bg-slate-950 border-slate-800 text-slate-500'
+                              evidenceCount > 0 ? 'bg-emerald-50 border-emerald-500/30 text-emerald-800' : 'bg-[#f4f8fd] border-blue-200/80 text-slate-500'
                             }`}>
                               <span className="block font-bold">Bukti Foto/SOP</span>
                               <span>{evidenceCount > 0 ? `✓ ${evidenceCount} berkas` : 'Belum ada'}</span>
@@ -1113,12 +1113,12 @@ export const CapaMatrixFullPageView: React.FC<CapaMatrixFullPageViewProps> = ({
                           </div>
 
                           {/* Card Footer Actions */}
-                          <div className="pt-3 border-t border-slate-800/80 flex items-center justify-between gap-2 flex-wrap">
+                          <div className="pt-3 border-t border-blue-200/80 flex items-center justify-between gap-2 flex-wrap">
                             {!isReadOnlyForOfficer && !isComplete ? (
                               <button
                                 type="button"
                                 onClick={() => handleApplyPreset(idx)}
-                                className="text-xs text-amber-400 hover:text-amber-300 font-semibold flex items-center gap-1 cursor-pointer transition-colors"
+                                className="text-xs text-amber-700 hover:text-amber-800 font-semibold flex items-center gap-1 cursor-pointer transition-colors"
                                 title="Gunakan draf rekomendasi standar untuk butir ini"
                               >
                                 <Sparkles className="w-3.5 h-3.5" />
@@ -1138,7 +1138,7 @@ export const CapaMatrixFullPageView: React.FC<CapaMatrixFullPageViewProps> = ({
                               }}
                               className={`px-4 py-2 rounded-xl text-xs font-bold flex items-center gap-1.5 transition-all cursor-pointer shadow-md ${
                                 isComplete
-                                  ? 'bg-slate-800 hover:bg-slate-700 text-emerald-400 border border-emerald-500/30'
+                                  ? 'bg-[#e8f1fb] hover:bg-[#d0e2f5] text-emerald-700 border border-emerald-500/30'
                                   : 'bg-emerald-600 hover:bg-emerald-500 text-white'
                               }`}
                             >
@@ -1154,42 +1154,42 @@ export const CapaMatrixFullPageView: React.FC<CapaMatrixFullPageViewProps> = ({
                 </div>
 
                 {/* Collapsible Section for the Full Matrix Document Table */}
-                <div className="pt-4 border-t border-slate-800 space-y-3">
+                <div className="pt-4 border-t border-blue-200/80 space-y-3">
                   <button
                     type="button"
                     onClick={() => setShowFullMatrixTable(!showFullMatrixTable)}
-                    className="w-full p-4 bg-slate-900/90 hover:bg-slate-900 border border-slate-800 hover:border-slate-700 rounded-2xl flex items-center justify-between text-left transition-all cursor-pointer group"
+                    className="w-full p-4 bg-white hover:bg-white border border-blue-200/80 hover:border-blue-200 rounded-2xl flex items-center justify-between text-left transition-all cursor-pointer group"
                   >
                     <div className="flex items-center gap-3">
-                      <div className="w-9 h-9 rounded-xl bg-slate-800 flex items-center justify-center text-emerald-400 group-hover:bg-slate-700 transition-colors">
+                      <div className="w-9 h-9 rounded-xl bg-[#e8f1fb] flex items-center justify-center text-emerald-700 group-hover:bg-[#d0e2f5] transition-colors">
                         <Table className="w-5 h-5" />
                       </div>
                       <div>
-                        <div className="font-extrabold text-sm text-white flex items-center gap-2 flex-wrap">
+                        <div className="font-extrabold text-sm text-[#1e3a5f] flex items-center gap-2 flex-wrap">
                           <span>{showFullMatrixTable ? 'Sembunyikan' : 'Tampilkan'} Format Tabel Matriks Resmi Komoditi</span>
-                          <span className="text-[10px] px-2 py-0.5 rounded bg-slate-800 text-slate-300 border border-slate-700">
+                          <span className="text-[10px] px-2 py-0.5 rounded bg-[#e8f1fb] text-slate-700 border border-blue-200">
                             {matrixConfig.codeStandard}
                           </span>
                         </div>
-                        <p className="text-xs text-slate-400 mt-0.5">
+                        <p className="text-xs text-slate-600 mt-0.5">
                           Klik untuk melihat atau mengecek tata letak lembar matriks cetak kertas formal BBPOM Semarang lengkap dengan kop surat dan kolom regulasi komoditi.
                         </p>
                       </div>
                     </div>
 
-                    <div className="flex items-center gap-2 text-xs font-semibold text-emerald-400 shrink-0 ml-2">
+                    <div className="flex items-center gap-2 text-xs font-semibold text-emerald-700 shrink-0 ml-2">
                       <span>{showFullMatrixTable ? 'Tutup Tabel' : 'Buka Tabel Matriks'}</span>
                       {showFullMatrixTable ? (
-                        <ChevronUp className="w-5 h-5 text-emerald-400" />
+                        <ChevronUp className="w-5 h-5 text-emerald-700" />
                       ) : (
-                        <ChevronDown className="w-5 h-5 text-emerald-400" />
+                        <ChevronDown className="w-5 h-5 text-emerald-700" />
                       )}
                     </div>
                   </button>
 
                   {/* Render the full wide Commodity Matrix Table only when toggled */}
                   {showFullMatrixTable && (
-                    <div className="overflow-x-auto rounded-2xl border border-slate-800 bg-white text-slate-900 p-2 sm:p-4 shadow-inner animate-in fade-in">
+                    <div className="overflow-x-auto rounded-2xl border border-blue-200/80 bg-white text-slate-900 p-2 sm:p-4 shadow-inner animate-in fade-in">
                       <div className="mb-3 p-3 bg-slate-100 rounded-xl border border-slate-200 flex items-center justify-between text-xs text-slate-700">
                         <span>Format Dokumen Kertas Resmi Srikandi / BBPOM di Semarang:</span>
                         <span className="font-semibold text-slate-900">{matrixConfig.title}</span>
@@ -1214,12 +1214,12 @@ export const CapaMatrixFullPageView: React.FC<CapaMatrixFullPageViewProps> = ({
 
             {/* 2. VIEW MODE: GUIDED FORM (Formulir Rinci per Butir Temuan) */}
             {viewMode === 'GUIDED_FORM' && currentFinding && (
-              <div className="bg-slate-950 border border-slate-800 rounded-3xl overflow-hidden shadow-2xl p-6 sm:p-8 space-y-6">
+              <div className="bg-[#f4f8fd] border border-blue-200/80 rounded-3xl overflow-hidden shadow-2xl p-6 sm:p-8 space-y-6">
                 
                 {/* Findings Selector Tabs & Back Button */}
-                <div className="flex items-center justify-between gap-3 pb-4 border-b border-slate-800 flex-wrap">
+                <div className="flex items-center justify-between gap-3 pb-4 border-b border-blue-200/80 flex-wrap">
                   <div className="flex items-center gap-2 flex-wrap">
-                    <span className="text-xs font-bold text-slate-400">Pilih Butir Temuan:</span>
+                    <span className="text-xs font-bold text-slate-600">Pilih Butir Temuan:</span>
                     {findingsData.map((f, idx) => {
                       const isCurrent = activeFindingIndex === idx;
                       const cat = getCategoryBadge(f.category);
@@ -1232,10 +1232,10 @@ export const CapaMatrixFullPageView: React.FC<CapaMatrixFullPageViewProps> = ({
                           className={`px-3 py-1.5 rounded-xl text-xs font-bold transition-all flex items-center gap-1.5 cursor-pointer ${
                             isCurrent
                               ? 'bg-emerald-600 text-white shadow-md'
-                              : 'bg-slate-900 text-slate-400 hover:text-white border border-slate-800'
+                              : 'bg-white text-slate-600 hover:text-[#1e3a5f] border border-blue-200/80'
                           }`}
                         >
-                          {isComplete && <Check className="w-3 h-3 text-emerald-300 shrink-0" />}
+                          {isComplete && <Check className="w-3 h-3 text-emerald-800 shrink-0" />}
                           <span>Butir #{idx + 1}</span>
                           <span className={`text-[9px] px-1 py-0.2 rounded font-mono ${cat.bg} ${cat.text}`}>
                             {f.category}
@@ -1249,9 +1249,9 @@ export const CapaMatrixFullPageView: React.FC<CapaMatrixFullPageViewProps> = ({
                     <button
                       type="button"
                       onClick={() => setViewMode('WIDE_MATRIX')}
-                      className="px-3.5 py-1.5 bg-slate-900 hover:bg-slate-800 text-slate-200 hover:text-white rounded-xl text-xs font-bold border border-slate-700 flex items-center gap-1.5 transition-colors cursor-pointer"
+                      className="px-3.5 py-1.5 bg-white hover:bg-[#e8f1fb] text-[#1e3a5f] hover:text-[#1e3a5f] rounded-xl text-xs font-bold border border-blue-200 flex items-center gap-1.5 transition-colors cursor-pointer"
                     >
-                      <ArrowLeft className="w-3.5 h-3.5 text-emerald-400" />
+                      <ArrowLeft className="w-3.5 h-3.5 text-emerald-700" />
                       <span>Kembali ke Daftar Butir Temuan</span>
                     </button>
                   </div>
@@ -1266,22 +1266,22 @@ export const CapaMatrixFullPageView: React.FC<CapaMatrixFullPageViewProps> = ({
                   // Dynamic styles based on severity
                   const theme = isKritis
                     ? {
-                        wrapper: 'border-2 border-red-500/70 bg-gradient-to-br from-red-950/50 via-slate-900 to-slate-950 shadow-xl shadow-red-500/10',
+                        wrapper: 'border-2 border-red-500/70 bg-gradient-to-br from-rose-50/90 via-white to-red-50/60 shadow-xl shadow-red-500/10',
                         accentBar: 'border-l-4 border-l-red-500',
-                        badgeGlow: 'bg-red-500/20 text-red-300 border-red-500/50',
-                        titleColor: 'text-red-400',
-                        iconColor: 'text-red-400'
+                        badgeGlow: 'bg-red-500/20 text-red-700 border-red-500/50',
+                        titleColor: 'text-red-700',
+                        iconColor: 'text-red-700'
                       }
                     : isMayor
                     ? {
-                        wrapper: 'border-2 border-amber-500/70 bg-gradient-to-br from-amber-950/50 via-slate-900 to-slate-950 shadow-xl shadow-amber-500/10',
+                        wrapper: 'border-2 border-amber-500/70 bg-gradient-to-br from-amber-50/90 via-white to-yellow-50/60 shadow-xl shadow-amber-500/10',
                         accentBar: 'border-l-4 border-l-amber-500',
-                        badgeGlow: 'bg-amber-500/20 text-amber-300 border-amber-500/50',
-                        titleColor: 'text-amber-400',
-                        iconColor: 'text-amber-400'
+                        badgeGlow: 'bg-amber-500/20 text-amber-800 border-amber-500/50',
+                        titleColor: 'text-amber-700',
+                        iconColor: 'text-amber-700'
                       }
                     : {
-                        wrapper: 'border-2 border-sky-500/60 bg-gradient-to-br from-sky-950/40 via-slate-900 to-slate-950 shadow-xl shadow-sky-500/10',
+                        wrapper: 'border-2 border-sky-500/60 bg-gradient-to-br from-sky-50/90 via-white to-blue-50/60 shadow-xl shadow-sky-500/10',
                         accentBar: 'border-l-4 border-l-sky-500',
                         badgeGlow: 'bg-sky-500/20 text-sky-300 border-sky-500/50',
                         titleColor: 'text-sky-400',
@@ -1293,10 +1293,10 @@ export const CapaMatrixFullPageView: React.FC<CapaMatrixFullPageViewProps> = ({
                   return (
                     <div className={`p-5 sm:p-6 rounded-3xl transition-all space-y-4 ${theme.wrapper}`}>
                       {/* Top Bar: Spotlight Badge, Severity Pill, Completion Status, and Quick Navigator */}
-                      <div className="flex flex-col md:flex-row md:items-center justify-between gap-3 border-b border-slate-800 pb-3.5">
+                      <div className="flex flex-col md:flex-row md:items-center justify-between gap-3 border-b border-blue-200/80 pb-3.5">
                         <div className="flex items-center gap-2.5 flex-wrap">
-                          <span className="px-3 py-1 rounded-xl bg-slate-950 border border-slate-700 font-mono font-black text-xs text-white flex items-center gap-1.5 shadow-sm">
-                            <Target className="w-4 h-4 text-emerald-400" />
+                          <span className="px-3 py-1 rounded-xl bg-[#f4f8fd] border border-blue-200 font-mono font-black text-xs text-[#1e3a5f] flex items-center gap-1.5 shadow-sm">
+                            <Target className="w-4 h-4 text-emerald-700" />
                             <span>FOKUS TEMUAN BUTIR #{activeFindingIndex + 1} DARI {findingsData.length}</span>
                           </span>
 
@@ -1307,13 +1307,13 @@ export const CapaMatrixFullPageView: React.FC<CapaMatrixFullPageViewProps> = ({
                           </span>
 
                           {isCurrentComplete ? (
-                            <span className="px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-300 border border-emerald-500/40 text-xs font-bold flex items-center gap-1.5">
-                              <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400" />
+                            <span className="px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-800 border border-emerald-500/40 text-xs font-bold flex items-center gap-1.5">
+                              <CheckCircle2 className="w-3.5 h-3.5 text-emerald-700" />
                               <span>CAPA Sudah Lengkap</span>
                             </span>
                           ) : (
-                            <span className="px-3 py-1 rounded-full bg-amber-500/20 text-amber-300 border border-amber-500/40 text-xs font-bold flex items-center gap-1.5">
-                              <Clock className="w-3.5 h-3.5 text-amber-400" />
+                            <span className="px-3 py-1 rounded-full bg-amber-500/20 text-amber-800 border border-amber-500/40 text-xs font-bold flex items-center gap-1.5">
+                              <Clock className="w-3.5 h-3.5 text-amber-700" />
                               <span>Wajib Diisi & Dilengkapi</span>
                             </span>
                           )}
@@ -1338,19 +1338,19 @@ export const CapaMatrixFullPageView: React.FC<CapaMatrixFullPageViewProps> = ({
                               type="button"
                               disabled={activeFindingIndex === 0}
                               onClick={() => setActiveFindingIndex((prev) => Math.max(0, prev - 1))}
-                              className="p-1.5 bg-slate-900 hover:bg-slate-800 disabled:opacity-30 text-slate-300 rounded-lg text-xs border border-slate-700 cursor-pointer disabled:cursor-not-allowed transition-colors"
+                              className="p-1.5 bg-white hover:bg-[#e8f1fb] disabled:opacity-30 text-slate-700 rounded-lg text-xs border border-blue-200 cursor-pointer disabled:cursor-not-allowed transition-colors"
                               title="Butir Sebelumnya"
                             >
                               <ChevronLeft className="w-4 h-4" />
                             </button>
-                            <span className="text-[11px] font-mono text-slate-400 px-1">
+                            <span className="text-[11px] font-mono text-slate-600 px-1">
                               {activeFindingIndex + 1}/{findingsData.length}
                             </span>
                             <button
                               type="button"
                               disabled={activeFindingIndex === findingsData.length - 1}
                               onClick={() => setActiveFindingIndex((prev) => Math.min(findingsData.length - 1, prev + 1))}
-                              className="p-1.5 bg-slate-900 hover:bg-slate-800 disabled:opacity-30 text-slate-300 rounded-lg text-xs border border-slate-700 cursor-pointer disabled:cursor-not-allowed transition-colors"
+                              className="p-1.5 bg-white hover:bg-[#e8f1fb] disabled:opacity-30 text-slate-700 rounded-lg text-xs border border-blue-200 cursor-pointer disabled:cursor-not-allowed transition-colors"
                               title="Butir Berikutnya"
                             >
                               <ChevronRight className="w-4 h-4" />
@@ -1360,19 +1360,19 @@ export const CapaMatrixFullPageView: React.FC<CapaMatrixFullPageViewProps> = ({
                       </div>
 
                       {/* Standar & Klausul Regulasi Acuan */}
-                      <div className="flex items-center gap-2 text-xs font-bold text-slate-200 bg-slate-950/80 p-2.5 px-3.5 rounded-xl border border-slate-800">
-                        <ShieldCheck className="w-4 h-4 text-emerald-400 shrink-0" />
-                        <span className="text-slate-400 font-semibold">Klausul Acuan Regulasi:</span>
-                        <span className="text-white font-mono">{currentFinding.clause}</span>
+                      <div className="flex items-center gap-2 text-xs font-bold text-[#1e3a5f] bg-[#f4f8fd] p-2.5 px-3.5 rounded-xl border border-blue-200/80">
+                        <ShieldCheck className="w-4 h-4 text-emerald-700 shrink-0" />
+                        <span className="text-slate-600 font-semibold">Klausul Acuan Regulasi:</span>
+                        <span className="text-[#1e3a5f] font-mono">{currentFinding.clause}</span>
                       </div>
 
                       {/* Centerpiece Spotlight: Deskripsi Temuan Ketidaksesuaian Hasil Pemeriksaan */}
-                      <div className={`p-4 sm:p-5 rounded-2xl bg-slate-950 border border-slate-800 space-y-2 shadow-inner ${theme.accentBar}`}>
-                        <div className="text-[11px] font-black uppercase tracking-wider text-amber-400 flex items-center gap-2">
-                          <AlertCircle className="w-4 h-4 text-amber-400 shrink-0" />
+                      <div className={`p-4 sm:p-5 rounded-2xl bg-[#f4f8fd] border border-blue-200/80 space-y-2 shadow-inner ${theme.accentBar}`}>
+                        <div className="text-[11px] font-black uppercase tracking-wider text-amber-700 flex items-center gap-2">
+                          <AlertCircle className="w-4 h-4 text-amber-700 shrink-0" />
                           <span>Deskripsi Ketidaksesuaian Hasil Pemeriksaan Lapangan (Wajib Ditindaklanjuti):</span>
                         </div>
-                        <p className="text-sm sm:text-base font-bold text-white leading-relaxed font-sans pl-1">
+                        <p className="text-sm sm:text-base font-bold text-[#1e3a5f] leading-relaxed font-sans pl-1">
                           "{currentFinding.description}"
                         </p>
                       </div>
@@ -1381,11 +1381,11 @@ export const CapaMatrixFullPageView: React.FC<CapaMatrixFullPageViewProps> = ({
                       <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 pt-1 text-xs">
                         <div className={`p-2.5 rounded-xl border flex items-center gap-2 transition-colors ${
                           currentFinding.capa?.rootCauseAnalysis?.trim()
-                            ? 'bg-emerald-950/50 border-emerald-500/40 text-emerald-300'
-                            : 'bg-slate-950/70 border-slate-800 text-slate-400'
+                            ? 'bg-emerald-50 border-emerald-500/40 text-emerald-800'
+                            : 'bg-[#f4f8fd] border-blue-200/80 text-slate-600'
                         }`}>
                           <div className={`w-5 h-5 rounded-full flex items-center justify-center text-[10px] font-bold shrink-0 ${
-                            currentFinding.capa?.rootCauseAnalysis?.trim() ? 'bg-emerald-500 text-slate-950' : 'bg-slate-800 text-slate-400'
+                            currentFinding.capa?.rootCauseAnalysis?.trim() ? 'bg-emerald-500 text-slate-950' : 'bg-[#e8f1fb] text-slate-600'
                           }`}>
                             {currentFinding.capa?.rootCauseAnalysis?.trim() ? '✓' : '1'}
                           </div>
@@ -1399,11 +1399,11 @@ export const CapaMatrixFullPageView: React.FC<CapaMatrixFullPageViewProps> = ({
 
                         <div className={`p-2.5 rounded-xl border flex items-center gap-2 transition-colors ${
                           currentFinding.capa?.correctiveAction?.trim()
-                            ? 'bg-emerald-950/50 border-emerald-500/40 text-emerald-300'
-                            : 'bg-slate-950/70 border-slate-800 text-slate-400'
+                            ? 'bg-emerald-50 border-emerald-500/40 text-emerald-800'
+                            : 'bg-[#f4f8fd] border-blue-200/80 text-slate-600'
                         }`}>
                           <div className={`w-5 h-5 rounded-full flex items-center justify-center text-[10px] font-bold shrink-0 ${
-                            currentFinding.capa?.correctiveAction?.trim() ? 'bg-emerald-500 text-slate-950' : 'bg-slate-800 text-slate-400'
+                            currentFinding.capa?.correctiveAction?.trim() ? 'bg-emerald-500 text-slate-950' : 'bg-[#e8f1fb] text-slate-600'
                           }`}>
                             {currentFinding.capa?.correctiveAction?.trim() ? '✓' : '2'}
                           </div>
@@ -1417,11 +1417,11 @@ export const CapaMatrixFullPageView: React.FC<CapaMatrixFullPageViewProps> = ({
 
                         <div className={`p-2.5 rounded-xl border flex items-center gap-2 transition-colors ${
                           currentFinding.capa?.preventiveAction?.trim()
-                            ? 'bg-emerald-950/50 border-emerald-500/40 text-emerald-300'
-                            : 'bg-slate-950/70 border-slate-800 text-slate-400'
+                            ? 'bg-emerald-50 border-emerald-500/40 text-emerald-800'
+                            : 'bg-[#f4f8fd] border-blue-200/80 text-slate-600'
                         }`}>
                           <div className={`w-5 h-5 rounded-full flex items-center justify-center text-[10px] font-bold shrink-0 ${
-                            currentFinding.capa?.preventiveAction?.trim() ? 'bg-emerald-500 text-slate-950' : 'bg-slate-800 text-slate-400'
+                            currentFinding.capa?.preventiveAction?.trim() ? 'bg-emerald-500 text-slate-950' : 'bg-[#e8f1fb] text-slate-600'
                           }`}>
                             {currentFinding.capa?.preventiveAction?.trim() ? '✓' : '3'}
                           </div>
@@ -1435,11 +1435,11 @@ export const CapaMatrixFullPageView: React.FC<CapaMatrixFullPageViewProps> = ({
 
                         <div className={`p-2.5 rounded-xl border flex items-center gap-2 transition-colors ${
                           evidenceCount > 0
-                            ? 'bg-emerald-950/50 border-emerald-500/40 text-emerald-300'
-                            : 'bg-slate-950/70 border-slate-800 text-slate-400'
+                            ? 'bg-emerald-50 border-emerald-500/40 text-emerald-800'
+                            : 'bg-[#f4f8fd] border-blue-200/80 text-slate-600'
                         }`}>
                           <div className={`w-5 h-5 rounded-full flex items-center justify-center text-[10px] font-bold shrink-0 ${
-                            evidenceCount > 0 ? 'bg-emerald-500 text-slate-950' : 'bg-slate-800 text-slate-400'
+                            evidenceCount > 0 ? 'bg-emerald-500 text-slate-950' : 'bg-[#e8f1fb] text-slate-600'
                           }`}>
                             {evidenceCount > 0 ? '✓' : '4'}
                           </div>
@@ -1460,7 +1460,7 @@ export const CapaMatrixFullPageView: React.FC<CapaMatrixFullPageViewProps> = ({
                   
                   {/* Standar & Kriteria */}
                   <div className="space-y-1.5">
-                    <label className="font-bold text-slate-300">
+                    <label className="font-bold text-slate-700">
                       Standar / Kriteria Acuan Regulasi
                     </label>
                     <input
@@ -1469,13 +1469,13 @@ export const CapaMatrixFullPageView: React.FC<CapaMatrixFullPageViewProps> = ({
                       value={currentFinding.capa.requirement || currentFinding.clause}
                       onChange={(e) => handleFieldChange(activeFindingIndex, 'requirement', e.target.value)}
                       placeholder="Contoh: Permenkes Standar Pelayanan Kefarmasian / CDOB Klausul 3.4"
-                      className="w-full px-3.5 py-2.5 bg-slate-900 border border-slate-700 rounded-xl text-white focus:outline-none focus:border-emerald-500 disabled:opacity-60"
+                      className="w-full px-3.5 py-2.5 bg-white border border-blue-200 rounded-xl text-[#1e3a5f] focus:outline-none focus:border-emerald-500 disabled:opacity-60"
                     />
                   </div>
 
                   {/* Kondisi Nyata / Current Condition */}
                   <div className="space-y-1.5">
-                    <label className="font-bold text-slate-300">
+                    <label className="font-bold text-slate-700">
                       Kondisi Nyata Saat Pemeriksaan (Observasi Lapangan)
                     </label>
                     <input
@@ -1484,13 +1484,13 @@ export const CapaMatrixFullPageView: React.FC<CapaMatrixFullPageViewProps> = ({
                       value={currentFinding.capa.currentCondition || currentFinding.description}
                       onChange={(e) => handleFieldChange(activeFindingIndex, 'currentCondition', e.target.value)}
                       placeholder="Observasi fisik yang dicatat inspektur"
-                      className="w-full px-3.5 py-2.5 bg-slate-900 border border-slate-700 rounded-xl text-white focus:outline-none focus:border-emerald-500 disabled:opacity-60"
+                      className="w-full px-3.5 py-2.5 bg-white border border-blue-200 rounded-xl text-[#1e3a5f] focus:outline-none focus:border-emerald-500 disabled:opacity-60"
                     />
                   </div>
 
                   {/* Analisis GAP */}
                   <div className="space-y-1.5 md:col-span-2">
-                    <label className="font-bold text-slate-300 flex items-center justify-between">
+                    <label className="font-bold text-slate-700 flex items-center justify-between">
                       <span>Analisis Kesenjangan (GAP Analysis)</span>
                       <span className="text-[11px] text-slate-500">Perbandingan kondisi nyata vs persyaratan regulasi</span>
                     </label>
@@ -1500,15 +1500,15 @@ export const CapaMatrixFullPageView: React.FC<CapaMatrixFullPageViewProps> = ({
                       value={currentFinding.capa.gapAnalysis || ''}
                       onChange={(e) => handleFieldChange(activeFindingIndex, 'gapAnalysis', e.target.value)}
                       placeholder="Tuliskan gap atau kesenjangan yang terjadi antara SOP / fasilitas fisik dengan standar BPOM..."
-                      className="w-full p-3 bg-slate-900 border border-slate-700 rounded-xl text-white focus:outline-none focus:border-emerald-500 disabled:opacity-60"
+                      className="w-full p-3 bg-white border border-blue-200 rounded-xl text-[#1e3a5f] focus:outline-none focus:border-emerald-500 disabled:opacity-60"
                     />
                   </div>
 
                   {/* Analisis Akar Masalah (Root Cause Analysis - 5 Whys / Fishbone) */}
                   <div className="space-y-1.5 md:col-span-2">
-                    <label className="font-bold text-slate-300 flex items-center justify-between">
+                    <label className="font-bold text-slate-700 flex items-center justify-between">
                       <span>Analisis Akar Penyebab Masalah (Root Cause Analysis - 5 Whys / Man, Machine, Method)</span>
-                      <span className="text-[11px] text-emerald-400 font-semibold">Wajib Analisis Mendalam</span>
+                      <span className="text-[11px] text-emerald-700 font-semibold">Wajib Analisis Mendalam</span>
                     </label>
                     <textarea
                       rows={3}
@@ -1516,16 +1516,16 @@ export const CapaMatrixFullPageView: React.FC<CapaMatrixFullPageViewProps> = ({
                       value={currentFinding.capa.rootCauseAnalysis || ''}
                       onChange={(e) => handleFieldChange(activeFindingIndex, 'rootCauseAnalysis', e.target.value)}
                       placeholder="Mengapa ketidaksesuaian ini bisa terjadi? Jelaskan penyebab mendasar (bukan hanya gejala di permukaan)..."
-                      className="w-full p-3 bg-slate-900 border border-slate-700 rounded-xl text-white focus:outline-none focus:border-emerald-500 disabled:opacity-60"
+                      className="w-full p-3 bg-white border border-blue-200 rounded-xl text-[#1e3a5f] focus:outline-none focus:border-emerald-500 disabled:opacity-60"
                     />
                   </div>
 
                   {/* Khusus Komoditi Pelayanan Kefarmasian: Dampak (Impact) */}
                   {matrixConfig.id === 'PELAYANAN_KEFARMASIAN' && (
-                    <div className="space-y-1.5 md:col-span-2 p-3.5 bg-amber-950/40 border border-amber-500/40 rounded-xl">
-                      <label className="font-bold text-amber-300 flex items-center justify-between">
+                    <div className="space-y-1.5 md:col-span-2 p-3.5 bg-amber-50 border border-amber-500/40 rounded-xl">
+                      <label className="font-bold text-amber-800 flex items-center justify-between">
                         <span>Dampak terhadap Mutu Obat & Keselamatan Pasien (Form 8 Standar Pelayanan Kefarmasian)</span>
-                        <span className="text-[11px] text-amber-400">Kolom Khusus Apotek / Toko Obat</span>
+                        <span className="text-[11px] text-amber-700">Kolom Khusus Apotek / Toko Obat</span>
                       </label>
                       <textarea
                         rows={2}
@@ -1533,14 +1533,14 @@ export const CapaMatrixFullPageView: React.FC<CapaMatrixFullPageViewProps> = ({
                         value={currentFinding.capa.impact || ''}
                         onChange={(e) => handleFieldChange(activeFindingIndex, 'impact', e.target.value)}
                         placeholder="Jelaskan dampak temuan ini terhadap stabilitas obat, keabsahan resep, atau keselamatan pasien..."
-                        className="w-full p-2.5 bg-slate-900 border border-amber-500/50 rounded-lg text-white focus:outline-none focus:border-amber-400 disabled:opacity-60"
+                        className="w-full p-2.5 bg-white border border-amber-500/50 rounded-lg text-[#1e3a5f] focus:outline-none focus:border-amber-400 disabled:opacity-60"
                       />
                     </div>
                   )}
 
                   {/* Tindakan Perbaikan (Corrective Action - CA) */}
                   <div className="space-y-1.5">
-                    <label className="font-bold text-slate-300">
+                    <label className="font-bold text-slate-700">
                       Tindakan Perbaikan (Corrective Action / CA)
                     </label>
                     <textarea
@@ -1549,13 +1549,13 @@ export const CapaMatrixFullPageView: React.FC<CapaMatrixFullPageViewProps> = ({
                       value={currentFinding.capa.correctiveAction || ''}
                       onChange={(e) => handleFieldChange(activeFindingIndex, 'correctiveAction', e.target.value)}
                       placeholder="Langkah perbaikan langsung untuk menyelesaikan temuan saat ini..."
-                      className="w-full p-3 bg-slate-900 border border-slate-700 rounded-xl text-white focus:outline-none focus:border-emerald-500 disabled:opacity-60"
+                      className="w-full p-3 bg-white border border-blue-200 rounded-xl text-[#1e3a5f] focus:outline-none focus:border-emerald-500 disabled:opacity-60"
                     />
                   </div>
 
                   {/* Tindakan Pencegahan (Preventive Action - PA) */}
                   <div className="space-y-1.5">
-                    <label className="font-bold text-slate-300">
+                    <label className="font-bold text-slate-700">
                       Tindakan Pencegahan (Preventive Action / PA)
                     </label>
                     <textarea
@@ -1564,13 +1564,13 @@ export const CapaMatrixFullPageView: React.FC<CapaMatrixFullPageViewProps> = ({
                       value={currentFinding.capa.preventiveAction || ''}
                       onChange={(e) => handleFieldChange(activeFindingIndex, 'preventiveAction', e.target.value)}
                       placeholder="Langkah sistemik agar ketidaksesuaian serupa tidak terulang kembali..."
-                      className="w-full p-3 bg-slate-900 border border-slate-700 rounded-xl text-white focus:outline-none focus:border-emerald-500 disabled:opacity-60"
+                      className="w-full p-3 bg-white border border-blue-200 rounded-xl text-[#1e3a5f] focus:outline-none focus:border-emerald-500 disabled:opacity-60"
                     />
                   </div>
 
                   {/* Target Waktu & PIC */}
                   <div className="space-y-1.5">
-                    <label className="font-bold text-slate-300">
+                    <label className="font-bold text-slate-700">
                       Target Waktu Penyelesaian (Timeline)
                     </label>
                     <input
@@ -1578,12 +1578,12 @@ export const CapaMatrixFullPageView: React.FC<CapaMatrixFullPageViewProps> = ({
                       disabled={isReadOnlyForOfficer}
                       value={currentFinding.capa.targetCompletionDate || ''}
                       onChange={(e) => handleFieldChange(activeFindingIndex, 'targetCompletionDate', e.target.value)}
-                      className="w-full px-3.5 py-2.5 bg-slate-900 border border-slate-700 rounded-xl text-white focus:outline-none focus:border-emerald-500 disabled:opacity-60"
+                      className="w-full px-3.5 py-2.5 bg-white border border-blue-200 rounded-xl text-[#1e3a5f] focus:outline-none focus:border-emerald-500 disabled:opacity-60"
                     />
                   </div>
 
                   <div className="space-y-1.5">
-                    <label className="font-bold text-slate-300">
+                    <label className="font-bold text-slate-700">
                       Penanggung Jawab Tindakan (PIC)
                     </label>
                     <input
@@ -1592,26 +1592,26 @@ export const CapaMatrixFullPageView: React.FC<CapaMatrixFullPageViewProps> = ({
                       value={currentFinding.capa.pic || ''}
                       onChange={(e) => handleFieldChange(activeFindingIndex, 'pic', e.target.value)}
                       placeholder="Nama Apoteker / Penanggung Jawab Teknis"
-                      className="w-full px-3.5 py-2.5 bg-slate-900 border border-slate-700 rounded-xl text-white focus:outline-none focus:border-emerald-500 disabled:opacity-60"
+                      className="w-full px-3.5 py-2.5 bg-white border border-blue-200 rounded-xl text-[#1e3a5f] focus:outline-none focus:border-emerald-500 disabled:opacity-60"
                     />
                   </div>
 
                 </div>
 
                 {/* BUKTI DUKUNG PERBAIKAN (EVIDENCE UPLOAD) */}
-                <div className="pt-6 border-t border-slate-800 space-y-4">
+                <div className="pt-6 border-t border-blue-200/80 space-y-4">
                   <div className="flex items-center justify-between gap-3 flex-wrap">
                     <div>
-                      <h4 className="font-extrabold text-sm text-white flex items-center gap-2">
-                        <Upload className="w-4 h-4 text-emerald-400" />
+                      <h4 className="font-extrabold text-sm text-[#1e3a5f] flex items-center gap-2">
+                        <Upload className="w-4 h-4 text-emerald-700" />
                         <span>Berkas Bukti Dukung Perbaikan untuk Butir #{activeFindingIndex + 1}</span>
                       </h4>
-                      <p className="text-xs text-slate-400">
+                      <p className="text-xs text-slate-600">
                         Unggah foto perbaikan fisik, SOP yang telah direvisi & ditandatangani, logbook, sertifikat kalibrasi, atau dokumen pendukung.
                       </p>
                     </div>
 
-                    <span className="text-xs font-mono text-emerald-400 bg-emerald-950/80 px-2.5 py-1 rounded-lg border border-emerald-500/30">
+                    <span className="text-xs font-mono text-emerald-700 bg-emerald-50 px-2.5 py-1 rounded-lg border border-emerald-500/30">
                       {currentFinding.capa.evidenceFiles.length} Berkas Terlampir
                     </span>
                   </div>
@@ -1620,10 +1620,10 @@ export const CapaMatrixFullPageView: React.FC<CapaMatrixFullPageViewProps> = ({
                   {!isReadOnlyForOfficer && (
                     <div className="space-y-3">
                       {/* Opsi 1: Unggah Berkas Langsung */}
-                      <div className="p-4 bg-slate-900 rounded-2xl border border-slate-800 space-y-2.5">
+                      <div className="p-4 bg-white rounded-2xl border border-blue-200/80 space-y-2.5">
                         <div className="flex items-center justify-between gap-2">
-                          <span className="text-[11px] font-bold text-slate-300 uppercase tracking-wider flex items-center gap-1.5">
-                            <Upload className="w-3.5 h-3.5 text-emerald-400" />
+                          <span className="text-[11px] font-bold text-slate-700 uppercase tracking-wider flex items-center gap-1.5">
+                            <Upload className="w-3.5 h-3.5 text-emerald-700" />
                             <span>Metode 1: Unggah Berkas Langsung (File dari Komputer / HP)</span>
                           </span>
                           <span className="text-[10px] text-slate-500">PDF, JPG, PNG, DOC (Maks. 25MB)</span>
@@ -1640,10 +1640,10 @@ export const CapaMatrixFullPageView: React.FC<CapaMatrixFullPageViewProps> = ({
                                   setShowGdriveHelpPopover(true);
                                 }
                               }}
-                              className={`px-3 py-2 bg-slate-800 border rounded-xl text-xs text-white focus:outline-none transition-all ${
+                              className={`px-3 py-2 bg-[#e8f1fb] border rounded-xl text-xs text-white focus:outline-none transition-all ${
                                 newFileCategory === 'Link Google Drive'
-                                  ? 'border-blue-500 bg-blue-950/40 text-blue-200 ring-1 ring-blue-500/40'
-                                  : 'border-slate-700 focus:border-emerald-500'
+                                  ? 'border-blue-500 bg-blue-50 text-blue-800 ring-1 ring-blue-500/40'
+                                  : 'border-blue-200 focus:border-emerald-500'
                               }`}
                               title="Pilih jenis bukti dukung atau repositori cloud"
                             >
@@ -1663,27 +1663,27 @@ export const CapaMatrixFullPageView: React.FC<CapaMatrixFullPageViewProps> = ({
                                 className={`px-2 py-2 rounded-xl text-xs font-bold transition-all flex items-center gap-1 cursor-pointer border ${
                                   showGdriveHelpPopover || newFileCategory === 'Link Google Drive'
                                     ? 'bg-blue-600 border-blue-400 text-white shadow-md shadow-blue-500/30'
-                                    : 'bg-blue-950/60 hover:bg-blue-900 border-blue-500/40 text-blue-300 hover:text-white'
+                                    : 'bg-blue-50 hover:bg-blue-900 border-blue-500/40 text-blue-700 hover:text-[#1e3a5f]'
                                 }`}
                                 title="Klik untuk Bantuan & Penjelasan Repositori Google Drive"
                               >
-                                <HelpCircle className="w-4 h-4 text-blue-300" />
+                                <HelpCircle className="w-4 h-4 text-blue-700" />
                                 <span className="text-[11px] font-semibold hidden md:inline">Bantuan</span>
                               </button>
 
                               {/* POPOVER PENJELASAN REPOSITORI GOOGLE DRIVE */}
                               {showGdriveHelpPopover && (
-                                <div className="absolute z-50 left-0 sm:left-auto sm:right-0 top-full mt-2 w-80 sm:w-96 p-4 bg-slate-900 border border-blue-500/60 rounded-2xl shadow-2xl text-xs text-slate-200 animate-in fade-in zoom-in-95">
-                                  <div className="flex items-start justify-between gap-2 pb-2.5 border-b border-slate-800">
+                                <div className="absolute z-50 left-0 sm:left-auto sm:right-0 top-full mt-2 w-80 sm:w-96 p-4 bg-white border border-blue-500/60 rounded-2xl shadow-2xl text-xs text-[#1e3a5f] animate-in fade-in zoom-in-95">
+                                  <div className="flex items-start justify-between gap-2 pb-2.5 border-b border-blue-200/80">
                                     <div className="flex items-center gap-2">
                                       <div className="w-7 h-7 rounded-lg bg-blue-500/20 text-blue-400 border border-blue-500/40 flex items-center justify-center font-bold">
                                         <HelpCircle className="w-4 h-4" />
                                       </div>
                                       <div>
-                                        <h5 className="font-extrabold text-white text-xs">
+                                        <h5 className="font-extrabold text-[#1e3a5f] text-xs">
                                           Bantuan: Repositori Google Drive
                                         </h5>
-                                        <span className="text-[10px] text-blue-300 font-semibold">
+                                        <span className="text-[10px] text-blue-700 font-semibold">
                                           Penyimpanan Dokumen Terpusat
                                         </span>
                                       </div>
@@ -1691,32 +1691,32 @@ export const CapaMatrixFullPageView: React.FC<CapaMatrixFullPageViewProps> = ({
                                     <button
                                       type="button"
                                       onClick={() => setShowGdriveHelpPopover(false)}
-                                      className="p-1 text-slate-400 hover:text-white rounded-lg hover:bg-slate-800 cursor-pointer"
+                                      className="p-1 text-slate-600 hover:text-[#1e3a5f] rounded-lg hover:bg-[#e8f1fb] cursor-pointer"
                                     >
                                       <X className="w-4 h-4" />
                                     </button>
                                   </div>
 
-                                  <div className="py-2.5 space-y-2 text-[11px] leading-relaxed text-slate-300">
+                                  <div className="py-2.5 space-y-2 text-[11px] leading-relaxed text-slate-700">
                                     <p>
-                                      Tautan ini adalah <strong className="text-white">repository dokumen pendukung</strong> (seperti file surat dinas tindak lanjut, foto bukti fisik resolusi tinggi, rekaman video inspeksi, sertifikat kalibrasi, atau laporan teknis) yang tersimpan secara terpusat untuk memudahkan evaluasi oleh petugas Balai POM.
+                                      Tautan ini adalah <strong className="text-[#1e3a5f]">repository dokumen pendukung</strong> (seperti file surat dinas tindak lanjut, foto bukti fisik resolusi tinggi, rekaman video inspeksi, sertifikat kalibrasi, atau laporan teknis) yang tersimpan secara terpusat untuk memudahkan evaluasi oleh petugas Balai POM.
                                     </p>
 
-                                    <div className="p-2.5 bg-blue-950/40 border border-blue-500/30 rounded-xl space-y-1.5 text-[10px]">
-                                      <span className="font-bold text-blue-300 flex items-center gap-1">
+                                    <div className="p-2.5 bg-blue-50 border border-blue-500/30 rounded-xl space-y-1.5 text-[10px]">
+                                      <span className="font-bold text-blue-700 flex items-center gap-1">
                                         <Sparkles className="w-3 h-3 text-blue-400" />
                                         Keuntungan Repositori Cloud:
                                       </span>
-                                      <ul className="list-disc pl-4 space-y-0.5 text-slate-300">
+                                      <ul className="list-disc pl-4 space-y-0.5 text-slate-700">
                                         <li>Bebas batas ukuran upload untuk dokumen tebal / video.</li>
                                         <li>Auditor Balai POM dapat meninjau seluruh berkas secara terstruktur dalam 1 klik.</li>
-                                        <li>Pastikan hak akses tautan disetel ke: <span className="text-emerald-300 font-semibold">"Anyone with the link / Siapa saja yang memiliki link (Viewer)"</span>.</li>
+                                        <li>Pastikan hak akses tautan disetel ke: <span className="text-emerald-800 font-semibold">"Anyone with the link / Siapa saja yang memiliki link (Viewer)"</span>.</li>
                                       </ul>
                                     </div>
                                   </div>
 
-                                  <div className="pt-2 border-t border-slate-800 flex items-center justify-between">
-                                    <span className="text-[10px] text-slate-400">SIMONCER Cloud Repo</span>
+                                  <div className="pt-2 border-t border-blue-200/80 flex items-center justify-between">
+                                    <span className="text-[10px] text-slate-600">SIMONCER Cloud Repo</span>
                                     <button
                                       type="button"
                                       onClick={() => setShowGdriveHelpPopover(false)}
@@ -1737,7 +1737,7 @@ export const CapaMatrixFullPageView: React.FC<CapaMatrixFullPageViewProps> = ({
                               value={newFileName}
                               onChange={(e) => setNewFileName(e.target.value)}
                               placeholder="Tempel tautan folder / file Google Drive (https://drive.google.com/drive/...)"
-                              className="flex-1 px-3.5 py-2 bg-slate-950 border border-blue-500/50 rounded-xl text-xs text-white placeholder-slate-500 font-mono focus:outline-none focus:border-blue-400 ring-1 ring-blue-500/30"
+                              className="flex-1 px-3.5 py-2 bg-[#f4f8fd] border border-blue-500/50 rounded-xl text-xs text-[#1e3a5f] placeholder-slate-500 font-mono focus:outline-none focus:border-blue-400 ring-1 ring-blue-500/30"
                             />
                           ) : (
                             <input
@@ -1745,7 +1745,7 @@ export const CapaMatrixFullPageView: React.FC<CapaMatrixFullPageViewProps> = ({
                               value={newFileName}
                               onChange={(e) => setNewFileName(e.target.value)}
                               placeholder="Nama berkas bukti (contoh: Foto_Suhu_Chiller_Terkalibrasi.jpg)"
-                              className="flex-1 px-3.5 py-2 bg-slate-800 border border-slate-700 rounded-xl text-xs text-white focus:outline-none focus:border-emerald-500"
+                              className="flex-1 px-3.5 py-2 bg-[#e8f1fb] border border-blue-200 rounded-xl text-xs text-[#1e3a5f] focus:outline-none focus:border-emerald-500"
                             />
                           )}
 
@@ -1773,8 +1773,8 @@ export const CapaMatrixFullPageView: React.FC<CapaMatrixFullPageViewProps> = ({
                           </button>
 
                           {newFileCategory !== 'Link Google Drive' && (
-                            <label className="px-3.5 py-2 bg-slate-800 hover:bg-slate-750 text-emerald-300 hover:text-white rounded-xl text-xs font-semibold border border-slate-700 transition-colors flex items-center justify-center gap-1.5 cursor-pointer shrink-0">
-                              <Upload className="w-3.5 h-3.5 text-emerald-400" />
+                            <label className="px-3.5 py-2 bg-[#e8f1fb] hover:bg-slate-750 text-emerald-800 hover:text-[#1e3a5f] rounded-xl text-xs font-semibold border border-blue-200 transition-colors flex items-center justify-center gap-1.5 cursor-pointer shrink-0">
+                              <Upload className="w-3.5 h-3.5 text-emerald-700" />
                               <span>Pilih File</span>
                               <input
                                 type="file"
@@ -1790,7 +1790,7 @@ export const CapaMatrixFullPageView: React.FC<CapaMatrixFullPageViewProps> = ({
                   )}
 
                   {/* TAUTAN GOOGLE DRIVE / CLOUD STORAGE (Metode 2 untuk bukti dukung jumlah banyak) */}
-                  <div className="p-4 bg-gradient-to-r from-blue-950/40 via-slate-900 to-indigo-950/40 border border-blue-500/30 rounded-2xl space-y-2.5">
+                  <div className="p-4 bg-gradient-to-r from-blue-50 via-white to-indigo-50 border border-blue-500/30 rounded-2xl space-y-2.5">
                     <div className="flex items-start sm:items-center justify-between gap-2.5 flex-wrap">
                       <div className="flex items-center gap-2.5">
                         <div className="w-8 h-8 rounded-xl bg-blue-500/20 text-blue-400 border border-blue-500/40 flex items-center justify-center shrink-0">
@@ -1798,15 +1798,15 @@ export const CapaMatrixFullPageView: React.FC<CapaMatrixFullPageViewProps> = ({
                         </div>
                         <div>
                           <div className="flex items-center gap-2 flex-wrap">
-                            <h5 className="font-extrabold text-xs sm:text-sm text-white">
+                            <h5 className="font-extrabold text-xs sm:text-sm text-[#1e3a5f]">
                               Metode 2: Tautan Google Drive / Cloud Storage Bukti Dukung
                             </h5>
-                            <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-blue-500/20 text-blue-300 border border-blue-500/40">
+                            <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-blue-500/20 text-blue-700 border border-blue-500/40">
                               Alternatif Berkas Banyak / Arsip Besar
                             </span>
                           </div>
-                          <p className="text-[11px] text-slate-300 leading-relaxed mt-0.5">
-                            Jika sarana memiliki puluhan berkas (seperti logbook suhu berkala, rekaman video, atau arsip tebal), simpan semua berkas ke folder Google Drive sarana, lalu <span className="text-blue-300 font-semibold">tempelkan tautan/link share folder di bawah ini</span>. Petugas Balai POM dapat langsung membuka folder tersebut.
+                          <p className="text-[11px] text-slate-700 leading-relaxed mt-0.5">
+                            Jika sarana memiliki puluhan berkas (seperti logbook suhu berkala, rekaman video, atau arsip tebal), simpan semua berkas ke folder Google Drive sarana, lalu <span className="text-blue-700 font-semibold">tempelkan tautan/link share folder di bawah ini</span>. Petugas Balai POM dapat langsung membuka folder tersebut.
                           </p>
                         </div>
                       </div>
@@ -1832,14 +1832,14 @@ export const CapaMatrixFullPageView: React.FC<CapaMatrixFullPageViewProps> = ({
                             value={currentFinding.capa.evidenceDriveUrl || ''}
                             onChange={(e) => handleEvidenceDriveUrlChange(activeFindingIndex, e.target.value)}
                             placeholder="Tempel tautan folder Google Drive (contoh: https://drive.google.com/drive/folders/...)"
-                            className="w-full pl-9 pr-8 py-2.5 bg-slate-950/80 border border-blue-500/40 focus:border-blue-400 focus:ring-1 focus:ring-blue-400 rounded-xl text-xs text-white placeholder-slate-500 font-mono transition-all"
+                            className="w-full pl-9 pr-8 py-2.5 bg-[#f4f8fd] border border-blue-500/40 focus:border-blue-400 focus:ring-1 focus:ring-blue-400 rounded-xl text-xs text-[#1e3a5f] placeholder-slate-500 font-mono transition-all"
                           />
                           <ExternalLink className="w-4 h-4 text-blue-400 absolute left-3 top-3" />
                           {currentFinding.capa.evidenceDriveUrl && (
                             <button
                               type="button"
                               onClick={() => handleEvidenceDriveUrlChange(activeFindingIndex, '')}
-                              className="absolute right-2.5 top-2.5 text-slate-400 hover:text-rose-400 text-xs px-1"
+                              className="absolute right-2.5 top-2.5 text-slate-600 hover:text-rose-700 text-xs px-1"
                               title="Hapus tautan"
                             >
                               ✕
@@ -1849,8 +1849,8 @@ export const CapaMatrixFullPageView: React.FC<CapaMatrixFullPageViewProps> = ({
                       </div>
                     ) : (
                       currentFinding.capa.evidenceDriveUrl ? (
-                        <div className="p-3 bg-slate-950/80 rounded-xl border border-blue-500/40 flex items-center justify-between gap-2">
-                          <span className="text-xs font-mono text-blue-300 truncate">
+                        <div className="p-3 bg-[#f4f8fd] rounded-xl border border-blue-500/40 flex items-center justify-between gap-2">
+                          <span className="text-xs font-mono text-blue-700 truncate">
                             {currentFinding.capa.evidenceDriveUrl}
                           </span>
                           <a
@@ -1881,8 +1881,8 @@ export const CapaMatrixFullPageView: React.FC<CapaMatrixFullPageViewProps> = ({
                           key={`${file.id || 'ev'}-${fileIdx}`}
                           className={`p-3 rounded-xl flex items-center justify-between gap-2.5 text-xs border transition-all ${
                             isDriveItem
-                              ? 'bg-blue-950/30 border-blue-500/40 hover:border-blue-400/60'
-                              : 'bg-slate-900 border-slate-800 hover:border-slate-700'
+                              ? 'bg-blue-50 border-blue-500/40 hover:border-blue-400/60'
+                              : 'bg-white border-blue-200/80 hover:border-blue-200'
                           }`}
                         >
                           <div className="flex items-center gap-2.5 min-w-0">
@@ -1891,20 +1891,20 @@ export const CapaMatrixFullPageView: React.FC<CapaMatrixFullPageViewProps> = ({
                                 <ExternalLink className="w-3.5 h-3.5" />
                               </div>
                             ) : (
-                              <div className="w-7 h-7 rounded-lg bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 flex items-center justify-center shrink-0">
+                              <div className="w-7 h-7 rounded-lg bg-emerald-500/10 text-emerald-700 border border-emerald-500/20 flex items-center justify-center shrink-0">
                                 <FileText className="w-3.5 h-3.5" />
                               </div>
                             )}
                             <div className="min-w-0">
-                              <span className="font-semibold text-white truncate block">
+                              <span className="font-semibold text-[#1e3a5f] truncate block">
                                 {file.name}
                               </span>
                               <div className="flex items-center gap-1.5 flex-wrap mt-0.5">
-                                <span className={`text-[10px] ${isDriveItem ? 'text-blue-300 font-semibold' : 'text-slate-400'}`}>
+                                <span className={`text-[10px] ${isDriveItem ? 'text-blue-700 font-semibold' : 'text-slate-600'}`}>
                                   {file.category}
                                 </span>
                                 <span className="text-[10px] text-slate-500">•</span>
-                                <span className="text-[10px] text-slate-400 font-mono">
+                                <span className="text-[10px] text-slate-600 font-mono">
                                   {file.size}
                                 </span>
                                 {linkHref && (
@@ -1912,7 +1912,7 @@ export const CapaMatrixFullPageView: React.FC<CapaMatrixFullPageViewProps> = ({
                                     href={linkHref}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="text-[10px] text-cyan-400 hover:text-cyan-300 underline font-semibold flex items-center gap-0.5 ml-1"
+                                    className="text-[10px] text-sky-700 hover:text-sky-800 underline font-semibold flex items-center gap-0.5 ml-1"
                                   >
                                     Buka Drive ↗
                                   </a>
@@ -1924,7 +1924,7 @@ export const CapaMatrixFullPageView: React.FC<CapaMatrixFullPageViewProps> = ({
                             <button
                               type="button"
                               onClick={() => handleRemoveEvidence(activeFindingIndex, file.id)}
-                              className="p-1.5 text-slate-500 hover:text-red-400 rounded-lg hover:bg-slate-800 transition-colors cursor-pointer shrink-0"
+                              className="p-1.5 text-slate-500 hover:text-red-700 rounded-lg hover:bg-[#e8f1fb] transition-colors cursor-pointer shrink-0"
                               title="Hapus berkas"
                             >
                               <Trash2 className="w-3.5 h-3.5" />
@@ -1934,7 +1934,7 @@ export const CapaMatrixFullPageView: React.FC<CapaMatrixFullPageViewProps> = ({
                       );
                     })}
                     {currentFinding.capa.evidenceFiles.length === 0 && (
-                      <div className="col-span-full py-6 text-center text-xs text-slate-500 bg-slate-900/40 rounded-2xl border border-dashed border-slate-800">
+                      <div className="col-span-full py-6 text-center text-xs text-slate-500 bg-[#f4f8fd] rounded-2xl border border-dashed border-blue-200/80">
                         Belum ada berkas bukti dukung untuk butir ini. Tambahkan minimal 1 foto atau dokumen pendukung.
                       </div>
                     )}
@@ -1943,14 +1943,14 @@ export const CapaMatrixFullPageView: React.FC<CapaMatrixFullPageViewProps> = ({
                 </div>
 
                 {/* Bottom Navigation & Submission Section in GUIDED_FORM */}
-                <div className="pt-6 border-t border-slate-800 flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-4">
+                <div className="pt-6 border-t border-blue-200/80 flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-4">
                   {/* Paging between findings */}
                   <div className="flex items-center gap-2">
                     <button
                       type="button"
                       disabled={activeFindingIndex === 0}
                       onClick={() => setActiveFindingIndex((prev) => Math.max(0, prev - 1))}
-                      className="px-3.5 py-2 bg-slate-900 hover:bg-slate-800 disabled:opacity-40 text-slate-300 rounded-xl text-xs font-semibold border border-slate-800 transition-colors flex items-center gap-1.5 cursor-pointer disabled:cursor-not-allowed"
+                      className="px-3.5 py-2 bg-white hover:bg-[#e8f1fb] disabled:opacity-40 text-slate-700 rounded-xl text-xs font-semibold border border-blue-200/80 transition-colors flex items-center gap-1.5 cursor-pointer disabled:cursor-not-allowed"
                     >
                       <ChevronLeft className="w-4 h-4" />
                       <span>Butir Sebelumnya</span>
@@ -1960,7 +1960,7 @@ export const CapaMatrixFullPageView: React.FC<CapaMatrixFullPageViewProps> = ({
                       type="button"
                       disabled={activeFindingIndex === findingsData.length - 1}
                       onClick={() => setActiveFindingIndex((prev) => Math.min(findingsData.length - 1, prev + 1))}
-                      className="px-3.5 py-2 bg-slate-900 hover:bg-slate-800 disabled:opacity-40 text-slate-300 rounded-xl text-xs font-semibold border border-slate-800 transition-colors flex items-center gap-1.5 cursor-pointer disabled:cursor-not-allowed"
+                      className="px-3.5 py-2 bg-white hover:bg-[#e8f1fb] disabled:opacity-40 text-slate-700 rounded-xl text-xs font-semibold border border-blue-200/80 transition-colors flex items-center gap-1.5 cursor-pointer disabled:cursor-not-allowed"
                     >
                       <span>Butir Berikutnya</span>
                       <ChevronRight className="w-4 h-4" />
@@ -1973,9 +1973,9 @@ export const CapaMatrixFullPageView: React.FC<CapaMatrixFullPageViewProps> = ({
                       <button
                         type="button"
                         onClick={handleSaveDraft}
-                        className="px-4 py-2.5 bg-slate-900 hover:bg-slate-800 text-slate-200 rounded-xl text-xs font-semibold border border-slate-700 transition-colors flex items-center gap-1.5 cursor-pointer"
+                        className="px-4 py-2.5 bg-white hover:bg-[#e8f1fb] text-[#1e3a5f] rounded-xl text-xs font-semibold border border-blue-200 transition-colors flex items-center gap-1.5 cursor-pointer"
                       >
-                        <Save className="w-3.5 h-3.5 text-emerald-400" />
+                        <Save className="w-3.5 h-3.5 text-emerald-700" />
                         <span>Simpan Draf</span>
                       </button>
                     )}
@@ -1983,8 +1983,8 @@ export const CapaMatrixFullPageView: React.FC<CapaMatrixFullPageViewProps> = ({
                     {!isReadOnlyForOfficer && (
                       isAlreadySubmitted ? (
                         <div className="flex items-center gap-2 flex-wrap">
-                          <div className="px-3.5 py-2 bg-emerald-950/80 border border-emerald-500/50 text-emerald-300 rounded-xl text-xs font-bold flex items-center gap-2">
-                            <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
+                          <div className="px-3.5 py-2 bg-emerald-50 border border-emerald-500/50 text-emerald-800 rounded-xl text-xs font-bold flex items-center gap-2">
+                            <CheckCircle2 className="w-4 h-4 text-emerald-700 shrink-0" />
                             <span>
                               {inspection.status === 'TERVALIDASI' || inspection.status === 'SELESAI_CLOSED'
                                 ? 'CAPA Telah Tervalidasi Balai'
@@ -1995,7 +1995,7 @@ export const CapaMatrixFullPageView: React.FC<CapaMatrixFullPageViewProps> = ({
                             type="button"
                             onClick={handleFinalSubmit}
                             disabled={isSubmitting}
-                            className="px-3.5 py-2.5 bg-slate-800 hover:bg-slate-700 text-slate-200 rounded-xl text-xs font-semibold border border-slate-700 flex items-center gap-1.5 cursor-pointer disabled:opacity-60"
+                            className="px-3.5 py-2.5 bg-[#e8f1fb] hover:bg-[#d0e2f5] text-[#1e3a5f] rounded-xl text-xs font-semibold border border-blue-200 flex items-center gap-1.5 cursor-pointer disabled:opacity-60"
                           >
                             <RefreshCw className={`w-3.5 h-3.5 ${isSubmitting ? 'animate-spin' : ''}`} />
                             <span>Kirim Pembaruan Tambahan</span>
@@ -2144,7 +2144,7 @@ export const CapaMatrixFullPageView: React.FC<CapaMatrixFullPageViewProps> = ({
                     <button
                       type="button"
                       onClick={handlePrint}
-                      className="px-4 py-2 bg-slate-900 hover:bg-slate-800 text-white rounded-xl text-xs font-bold flex items-center gap-1.5 cursor-pointer shadow-md"
+                      className="px-4 py-2 bg-white hover:bg-[#e8f1fb] text-[#1e3a5f] rounded-xl text-xs font-bold flex items-center gap-1.5 cursor-pointer shadow-md"
                     >
                       <Printer className="w-4 h-4" />
                       <span>Cetak Sekarang</span>
@@ -2172,44 +2172,44 @@ export const CapaMatrixFullPageView: React.FC<CapaMatrixFullPageViewProps> = ({
 
       {/* Modal Sukses Pengiriman CAPA & WhatsApp Dispatch Info */}
       {showSubmissionSuccessModal && (
-        <div className="fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-md flex items-center justify-center p-4 overflow-y-auto animate-in fade-in duration-200">
-          <div className="bg-slate-900 border border-slate-700/80 rounded-2xl max-w-2xl w-full shadow-2xl overflow-hidden my-8">
+        <div className="fixed inset-0 z-50 bg-slate-900/45 backdrop-blur-md flex items-center justify-center p-4 overflow-y-auto animate-in fade-in duration-200">
+          <div className="bg-white border border-blue-200 rounded-2xl max-w-2xl w-full shadow-2xl overflow-hidden my-8">
             {/* Header */}
-            <div className="bg-gradient-to-r from-emerald-900/60 via-teal-900/50 to-slate-900 p-6 border-b border-emerald-500/20 text-center relative">
+            <div className="bpom-hero-gradient p-6 border-b border-emerald-500/20 text-center relative">
               <div className="w-16 h-16 bg-emerald-500/10 border-2 border-emerald-500/40 rounded-full flex items-center justify-center mx-auto mb-3 shadow-lg shadow-emerald-500/20">
-                <CheckCircle2 className="w-9 h-9 text-emerald-400" />
+                <CheckCircle2 className="w-9 h-9 text-emerald-700" />
               </div>
-              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-emerald-500/20 text-emerald-300 border border-emerald-500/40 mb-2">
+              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-emerald-500/20 text-emerald-800 border border-emerald-500/40 mb-2">
                 <Check className="w-3.5 h-3.5" />
                 Status Sesi: EVALUASI_PETUGAS
               </span>
-              <h3 className="text-xl font-black text-white">Laporan CAPA Berhasil Terkirim ke Balai!</h3>
-              <p className="text-xs text-slate-300 mt-1 max-w-md mx-auto">
-                Berkas tindak lanjut perbaikan matriks komoditi <strong className="text-emerald-300">{inspection.facility.name}</strong> telah tersimpan dalam sistem dan diserahkan ke evaluator BBPOM di Semarang.
+              <h3 className="text-xl font-black text-[#1e3a5f]">Laporan CAPA Berhasil Terkirim ke Balai!</h3>
+              <p className="text-xs text-slate-700 mt-1 max-w-md mx-auto">
+                Berkas tindak lanjut perbaikan matriks komoditi <strong className="text-emerald-800">{inspection.facility.name}</strong> telah tersimpan dalam sistem dan diserahkan ke evaluator BBPOM di Semarang.
               </p>
             </div>
 
             {/* Content Details */}
             <div className="p-6 space-y-4 max-h-[65vh] overflow-y-auto text-sm">
               {/* Summary card */}
-              <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 bg-slate-950/60 border border-slate-800 rounded-xl p-3.5">
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 bg-[#f4f8fd] border border-blue-200/80 rounded-xl p-3.5">
                 <div>
-                  <span className="text-[11px] text-slate-400 block font-medium">Kode CAPA</span>
-                  <span className="text-xs font-mono font-bold text-white">{inspection.capaCode}</span>
+                  <span className="text-[11px] text-slate-600 block font-medium">Kode CAPA</span>
+                  <span className="text-xs font-mono font-bold text-[#1e3a5f]">{inspection.capaCode}</span>
                 </div>
                 <div>
-                  <span className="text-[11px] text-slate-400 block font-medium">Total Temuan</span>
-                  <span className="text-xs font-bold text-white">{findingsData.length} Butir</span>
+                  <span className="text-[11px] text-slate-600 block font-medium">Total Temuan</span>
+                  <span className="text-xs font-bold text-[#1e3a5f]">{findingsData.length} Butir</span>
                 </div>
                 <div>
-                  <span className="text-[11px] text-slate-400 block font-medium">Berkas Bukti</span>
-                  <span className="text-xs font-bold text-emerald-400">
+                  <span className="text-[11px] text-slate-600 block font-medium">Berkas Bukti</span>
+                  <span className="text-xs font-bold text-emerald-700">
                     {findingsData.reduce((acc, f) => acc + (f.capa?.evidenceFiles?.length || 0), 0)} Berkas Terunggah
                   </span>
                 </div>
                 <div>
-                  <span className="text-[11px] text-slate-400 block font-medium">Evaluator</span>
-                  <span className="text-xs font-bold text-cyan-300 truncate block">
+                  <span className="text-[11px] text-slate-600 block font-medium">Evaluator</span>
+                  <span className="text-xs font-bold text-sky-800 truncate block">
                     {inspection.assignedOfficer?.name || inspection.leadAuditor}
                   </span>
                 </div>
@@ -2218,39 +2218,39 @@ export const CapaMatrixFullPageView: React.FC<CapaMatrixFullPageViewProps> = ({
               {/* WhatsApp Gateway Dispatch Cards */}
               <div className="space-y-2.5">
                 <div className="flex items-center justify-between">
-                  <h4 className="text-xs font-bold text-slate-300 uppercase tracking-wider flex items-center gap-1.5">
-                    <MessageSquare className="w-3.5 h-3.5 text-emerald-400" />
+                  <h4 className="text-xs font-bold text-slate-700 uppercase tracking-wider flex items-center gap-1.5">
+                    <MessageSquare className="w-3.5 h-3.5 text-emerald-700" />
                     Notifikasi Otomatis WhatsApp Gateway
                   </h4>
                   <button
                     type="button"
                     onClick={() => setShowWaPreviewInModal(!showWaPreviewInModal)}
-                    className="text-xs text-emerald-400 hover:text-emerald-300 font-semibold cursor-pointer underline flex items-center gap-1"
+                    className="text-xs text-emerald-700 hover:text-emerald-800 font-semibold cursor-pointer underline flex items-center gap-1"
                   >
                     {showWaPreviewInModal ? 'Sembunyikan Draf Pesan' : 'Lihat Draf Pesan Terkirim'}
                   </button>
                 </div>
 
                 {/* 1. Ke Sarana */}
-                <div className="bg-slate-950/70 border border-slate-800 rounded-xl p-3.5 flex items-start gap-3">
+                <div className="bg-[#f4f8fd] border border-blue-200/80 rounded-xl p-3.5 flex items-start gap-3">
                   <div className="w-8 h-8 rounded-lg bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center shrink-0 mt-0.5">
-                    <CheckCircle2 className="w-4 h-4 text-emerald-400" />
+                    <CheckCircle2 className="w-4 h-4 text-emerald-700" />
                   </div>
                   <div className="flex-1 min-w-0">
                     <div className="flex items-center justify-between gap-2 flex-wrap">
-                      <span className="font-bold text-xs text-white">Notifikasi Tanda Terima ke Sarana</span>
-                      <span className="px-2 py-0.5 rounded text-[10px] font-bold bg-emerald-950 text-emerald-300 border border-emerald-700/50">
+                      <span className="font-bold text-xs text-[#1e3a5f]">Notifikasi Tanda Terima ke Sarana</span>
+                      <span className="px-2 py-0.5 rounded text-[10px] font-bold bg-emerald-50 text-emerald-800 border border-emerald-700/50">
                         ✓ Terkirim ke WhatsApp PIC
                       </span>
                     </div>
-                    <p className="text-xs text-slate-400 mt-1">
-                      Penerima: <span className="text-slate-200 font-medium">{inspection.facility.picPhone}</span> ({inspection.facility.picName})
+                    <p className="text-xs text-slate-600 mt-1">
+                      Penerima: <span className="text-[#1e3a5f] font-medium">{inspection.facility.picPhone}</span> ({inspection.facility.picName})
                     </p>
-                    <p className="text-[11px] text-slate-400 mt-0.5">
+                    <p className="text-[11px] text-slate-600 mt-0.5">
                       Pesan tanda terima resmi penyerahan CAPA dan nomor tiket konfirmasi telah dikirimkan ke WhatsApp PIC sarana.
                     </p>
                     {showWaPreviewInModal && (
-                      <div className="mt-2.5 p-2.5 bg-slate-900 border border-slate-800 rounded-lg text-[11px] font-mono text-slate-300 whitespace-pre-line">
+                      <div className="mt-2.5 p-2.5 bg-white border border-blue-200/80 rounded-lg text-[11px] font-mono text-slate-700 whitespace-pre-line">
                         {`*PEMBERITAHUAN RESMI: LAPORAN CAPA TELAH DIKIRIMKAN*\n\nYth. Manajemen ${inspection.facility.name},\nLaporan CAPA (${inspection.capaCode}) format ${matrixConfig.title} telah *BERHASIL DIKIRIMKAN* ke Balai BBPOM di Semarang.\nStatus: EVALUASI_PETUGAS\nEvaluator: ${inspection.assignedOfficer?.name || inspection.leadAuditor}`}
                       </div>
                     )}
@@ -2258,25 +2258,25 @@ export const CapaMatrixFullPageView: React.FC<CapaMatrixFullPageViewProps> = ({
                 </div>
 
                 {/* 2. Ke Petugas Evaluator */}
-                <div className="bg-slate-950/70 border border-slate-800 rounded-xl p-3.5 flex items-start gap-3">
+                <div className="bg-[#f4f8fd] border border-blue-200/80 rounded-xl p-3.5 flex items-start gap-3">
                   <div className="w-8 h-8 rounded-lg bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center shrink-0 mt-0.5">
-                    <CheckCircle2 className="w-4 h-4 text-cyan-400" />
+                    <CheckCircle2 className="w-4 h-4 text-sky-700" />
                   </div>
                   <div className="flex-1 min-w-0">
                     <div className="flex items-center justify-between gap-2 flex-wrap">
-                      <span className="font-bold text-xs text-white">Notifikasi Berkas Masuk ke Petugas Evaluator</span>
-                      <span className="px-2 py-0.5 rounded text-[10px] font-bold bg-cyan-950 text-cyan-300 border border-cyan-700/50">
+                      <span className="font-bold text-xs text-[#1e3a5f]">Notifikasi Berkas Masuk ke Petugas Evaluator</span>
+                      <span className="px-2 py-0.5 rounded text-[10px] font-bold bg-sky-50 text-sky-800 border border-cyan-700/50">
                         ✓ Berkas Siap Ditelaah
                       </span>
                     </div>
-                    <p className="text-xs text-slate-400 mt-1">
-                      Penerima: <span className="text-slate-200 font-medium">{inspection.assignedOfficer?.phone || '+62 812-7788-9911'}</span> ({inspection.assignedOfficer?.name || inspection.leadAuditor})
+                    <p className="text-xs text-slate-600 mt-1">
+                      Penerima: <span className="text-[#1e3a5f] font-medium">{inspection.assignedOfficer?.phone || '+62 812-7788-9911'}</span> ({inspection.assignedOfficer?.name || inspection.leadAuditor})
                     </p>
-                    <p className="text-[11px] text-slate-400 mt-0.5">
+                    <p className="text-[11px] text-slate-600 mt-0.5">
                       Petugas evaluator telah menerima pemberitahuan bahwa berkas CAPA telah lengkap dan siap ditelaah di portal SIMONCER.
                     </p>
                     {showWaPreviewInModal && (
-                      <div className="mt-2.5 p-2.5 bg-slate-900 border border-slate-800 rounded-lg text-[11px] font-mono text-slate-300 whitespace-pre-line">
+                      <div className="mt-2.5 p-2.5 bg-white border border-blue-200/80 rounded-lg text-[11px] font-mono text-slate-700 whitespace-pre-line">
                         {`*NOTIFIKASI DOKUMEN: BERKAS CAPA TELAH DITERIMA*\n\nYth. Petugas Evaluator ${inspection.assignedOfficer?.name || inspection.leadAuditor},\nSarana ${inspection.facility.name} telah mengirimkan berkas CAPA (${inspection.capaCode}). Berkas telah diterima dan siap untuk dilakukan telaah & evaluasi.`}
                       </div>
                     )}
@@ -2286,14 +2286,14 @@ export const CapaMatrixFullPageView: React.FC<CapaMatrixFullPageViewProps> = ({
             </div>
 
             {/* Footer Buttons */}
-            <div className="p-4 bg-slate-950 border-t border-slate-800 flex items-center justify-between gap-2 flex-wrap">
+            <div className="p-4 bg-[#f4f8fd] border-t border-blue-200/80 flex items-center justify-between gap-2 flex-wrap">
               <button
                 type="button"
                 onClick={handleDownloadPdfAttachment}
                 disabled={isDownloadingMatrix}
-                className="px-3.5 py-2 bg-slate-800 hover:bg-slate-700 text-slate-200 rounded-xl text-xs font-semibold border border-slate-700 flex items-center gap-1.5 cursor-pointer disabled:opacity-50"
+                className="px-3.5 py-2 bg-[#e8f1fb] hover:bg-[#d0e2f5] text-[#1e3a5f] rounded-xl text-xs font-semibold border border-blue-200 flex items-center gap-1.5 cursor-pointer disabled:opacity-50"
               >
-                <Download className="w-3.5 h-3.5 text-cyan-400" />
+                <Download className="w-3.5 h-3.5 text-sky-700" />
                 <span>Unduh PDF Matriks</span>
               </button>
 
@@ -2301,7 +2301,7 @@ export const CapaMatrixFullPageView: React.FC<CapaMatrixFullPageViewProps> = ({
                 <button
                   type="button"
                   onClick={() => setShowSubmissionSuccessModal(false)}
-                  className="px-3.5 py-2 bg-slate-800 hover:bg-slate-700 text-slate-300 rounded-xl text-xs font-medium cursor-pointer transition-colors"
+                  className="px-3.5 py-2 bg-[#e8f1fb] hover:bg-[#d0e2f5] text-slate-700 rounded-xl text-xs font-medium cursor-pointer transition-colors"
                 >
                   Tetap di Halaman Ini
                 </button>
@@ -2321,14 +2321,14 @@ export const CapaMatrixFullPageView: React.FC<CapaMatrixFullPageViewProps> = ({
 
       {/* STICKY MOBILE BOTTOM ACTION BAR FOR CAPA MATRIX (HP < sm) */}
       {(surveyData?.completed || activeStep === 'CAPA') && (
-        <div className="fixed bottom-0 inset-x-0 z-40 sm:hidden glass-bottom-nav border-t border-slate-800 px-3 py-2 flex items-center justify-between gap-2 shadow-[0_-10px_30px_rgba(0,0,0,0.6)] print:hidden">
+        <div className="fixed bottom-0 inset-x-0 z-40 sm:hidden glass-bottom-nav border-t border-blue-200/80 px-3 py-2 flex items-center justify-between gap-2 shadow-[0_-10px_30px_rgba(0,0,0,0.6)] print:hidden">
           {!isReadOnlyForOfficer && (
             <button
               type="button"
               onClick={handleSaveDraft}
-              className="px-3 py-2.5 bg-slate-900 hover:bg-slate-800 text-slate-200 rounded-xl text-xs font-bold border border-slate-700 flex items-center justify-center gap-1.5 cursor-pointer shrink-0"
+              className="px-3 py-2.5 bg-white hover:bg-[#e8f1fb] text-[#1e3a5f] rounded-xl text-xs font-bold border border-blue-200 flex items-center justify-center gap-1.5 cursor-pointer shrink-0"
             >
-              <Save className="w-3.5 h-3.5 text-emerald-400" />
+              <Save className="w-3.5 h-3.5 text-emerald-700" />
               <span>Simpan</span>
             </button>
           )}
@@ -2337,9 +2337,9 @@ export const CapaMatrixFullPageView: React.FC<CapaMatrixFullPageViewProps> = ({
             type="button"
             onClick={handleDownloadPdfAttachment}
             disabled={isDownloadingMatrix}
-            className="px-3 py-2.5 bg-slate-900 hover:bg-slate-800 text-slate-200 rounded-xl text-xs font-bold border border-slate-700 flex items-center justify-center gap-1.5 cursor-pointer shrink-0 disabled:opacity-50"
+            className="px-3 py-2.5 bg-white hover:bg-[#e8f1fb] text-[#1e3a5f] rounded-xl text-xs font-bold border border-blue-200 flex items-center justify-center gap-1.5 cursor-pointer shrink-0 disabled:opacity-50"
           >
-            <Download className="w-3.5 h-3.5 text-cyan-400" />
+            <Download className="w-3.5 h-3.5 text-sky-700" />
             <span>PDF</span>
           </button>
 
@@ -2350,7 +2350,7 @@ export const CapaMatrixFullPageView: React.FC<CapaMatrixFullPageViewProps> = ({
                 onClick={() => setShowSubmissionSuccessModal(true)}
                 className="flex-1 px-3 py-2.5 bg-emerald-900/80 border border-emerald-500/50 text-emerald-200 rounded-xl text-xs font-bold flex items-center justify-center gap-1.5 cursor-pointer"
               >
-                <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
+                <CheckCircle2 className="w-4 h-4 text-emerald-700 shrink-0" />
                 <span className="truncate">Terkirim (Bukti)</span>
               </button>
             ) : (

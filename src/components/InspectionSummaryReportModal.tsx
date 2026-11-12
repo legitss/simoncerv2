@@ -102,37 +102,37 @@ export const InspectionSummaryReportModal: React.FC<InspectionSummaryReportModal
   const countAccepted = inspection.findings.filter((f) => f.capa.evaluationStatus === 'MEMADAI').length;
 
   return (
-    <div className="fixed inset-0 z-60 bg-slate-950 flex flex-col w-screen h-screen overflow-hidden animate-in fade-in duration-100">
+    <div className="fixed inset-0 z-60 bg-[#f4f8fd] flex flex-col w-screen h-screen overflow-hidden animate-in fade-in duration-100">
       <div className="bg-white flex flex-col w-full h-full overflow-hidden">
         
         {/* Top Header / Control Toolbar (Hidden in print) */}
-        <div className="no-print bg-gradient-to-r from-slate-950 via-[#0b1437] to-slate-900 text-white px-4 sm:px-6 py-3.5 flex items-center justify-between border-b border-slate-800 shrink-0 flex-wrap gap-3">
+        <div className="no-print bpom-hero-gradient text-[#1e3a5f] px-4 sm:px-6 py-3.5 flex items-center justify-between border-b border-blue-200/80 shrink-0 flex-wrap gap-3">
           <div className="flex items-center gap-3">
             <button
               onClick={onClose}
               type="button"
-              className="flex items-center gap-1.5 px-3 py-1.5 bg-slate-800 hover:bg-slate-700 text-slate-200 hover:text-white rounded-xl transition-all cursor-pointer text-xs font-semibold border border-slate-700 shadow-xs"
+              className="flex items-center gap-1.5 px-3 py-1.5 bg-[#e8f1fb] hover:bg-[#d0e2f5] text-[#1e3a5f] hover:text-[#1e3a5f] rounded-xl transition-all cursor-pointer text-xs font-semibold border border-blue-200 shadow-xs"
               title="Kembali ke Dashboard Utama"
             >
               <ArrowLeft className="w-4 h-4" />
               <span className="hidden sm:inline">Kembali</span>
             </button>
-            <div className="w-10 h-10 rounded-xl bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 flex items-center justify-center shrink-0">
+            <div className="w-10 h-10 rounded-xl bg-emerald-500/20 text-emerald-700 border border-emerald-500/30 flex items-center justify-center shrink-0">
               <FileText className="w-5 h-5" />
             </div>
             <div>
               <div className="flex items-center gap-2 flex-wrap">
-                <h3 className="font-extrabold text-sm sm:text-base text-white">
+                <h3 className="font-extrabold text-sm sm:text-base text-[#1e3a5f]">
                   Laporan Ringkasan Temuan & Rekap CAPA
                 </h3>
-                <span className="text-[10px] font-mono px-2 py-0.5 rounded-full bg-emerald-500/20 text-emerald-300 border border-emerald-500/40">
+                <span className="text-[10px] font-mono px-2 py-0.5 rounded-full bg-emerald-500/20 text-emerald-800 border border-emerald-500/40">
                   {inspection.capaCode}
                 </span>
-                <span className="text-[10px] px-2 py-0.5 rounded-full bg-indigo-500/20 text-indigo-300 border border-indigo-500/40 font-semibold">
+                <span className="text-[10px] px-2 py-0.5 rounded-full bg-indigo-500/20 text-indigo-800 border border-indigo-500/40 font-semibold">
                   {matrixConfig.codeStandard}
                 </span>
               </div>
-              <p className="text-xs text-slate-300 mt-0.5 truncate max-w-md sm:max-w-lg">
+              <p className="text-xs text-slate-700 mt-0.5 truncate max-w-md sm:max-w-lg">
                 Format resmi Balai Besar POM di Semarang dengan Matriks Komoditi Asli ({inspection.facility.type})
               </p>
             </div>
@@ -149,7 +149,7 @@ export const InspectionSummaryReportModal: React.FC<InspectionSummaryReportModal
             >
               {downloadSuccess ? (
                 <>
-                  <Check className="w-3.5 h-3.5 text-white" />
+                  <Check className="w-3.5 h-3.5 text-[#1e3a5f]" />
                   <span>PDF Terunduh!</span>
                 </>
               ) : isGeneratingPdf ? (
@@ -170,10 +170,10 @@ export const InspectionSummaryReportModal: React.FC<InspectionSummaryReportModal
               type="button"
               onClick={handleDownloadMatrixOnly}
               disabled={isDownloadingMatrix}
-              className="px-3 py-2 bg-slate-800 hover:bg-slate-700 text-slate-200 hover:text-white rounded-xl text-xs font-semibold flex items-center gap-1.5 border border-slate-700 transition-colors cursor-pointer"
+              className="px-3 py-2 bg-[#e8f1fb] hover:bg-[#d0e2f5] text-[#1e3a5f] hover:text-[#1e3a5f] rounded-xl text-xs font-semibold flex items-center gap-1.5 border border-blue-200 transition-colors cursor-pointer"
               title="Unduh khusus Lampiran Matriks CAPA resmi untuk naskah SRIKANDI"
             >
-              <Download className="w-3.5 h-3.5 text-emerald-400" />
+              <Download className="w-3.5 h-3.5 text-emerald-700" />
               <span className="hidden sm:inline">Unduh Lampiran Matriks (.pdf)</span>
             </button>
 
@@ -194,7 +194,7 @@ export const InspectionSummaryReportModal: React.FC<InspectionSummaryReportModal
             <button
               type="button"
               onClick={handlePrint}
-              className="px-2.5 py-2 bg-slate-800 hover:bg-slate-700 text-slate-200 hover:text-white rounded-xl text-xs font-semibold flex items-center gap-1.5 border border-slate-700 transition-colors cursor-pointer"
+              className="px-2.5 py-2 bg-[#e8f1fb] hover:bg-[#d0e2f5] text-[#1e3a5f] hover:text-[#1e3a5f] rounded-xl text-xs font-semibold flex items-center gap-1.5 border border-blue-200 transition-colors cursor-pointer"
               title="Cetak langsung ke printer atau simpan sebagai PDF via browser"
             >
               <Printer className="w-3.5 h-3.5" />
@@ -205,7 +205,7 @@ export const InspectionSummaryReportModal: React.FC<InspectionSummaryReportModal
             <button
               type="button"
               onClick={onClose}
-              className="p-2 text-slate-400 hover:text-white hover:bg-slate-800 rounded-lg transition-colors cursor-pointer"
+              className="p-2 text-slate-600 hover:text-[#1e3a5f] hover:bg-[#e8f1fb] rounded-lg transition-colors cursor-pointer"
             >
               <X className="w-5 h-5" />
             </button>
@@ -226,7 +226,7 @@ export const InspectionSummaryReportModal: React.FC<InspectionSummaryReportModal
             <p className="text-[10px] text-slate-500">
               Jl Sukun Raya No 41 A Banyumanik Semarang | Telp: (024) 7612305 | Email: bbpom_semarang@pom.go.id
             </p>
-            <div className="h-0.5 bg-slate-900 w-full mt-2"></div>
+            <div className="h-0.5 bg-white w-full mt-2"></div>
             <div className="h-px bg-slate-400 w-full mt-0.5"></div>
           </div>
 

@@ -406,37 +406,37 @@ export const SubmitCapaModal: React.FC<SubmitCapaModalProps> = ({
   const isPelayananKefarmasian = matrixConfig.id === 'PELAYANAN_KEFARMASIAN';
 
   return (
-    <div className="fixed inset-0 z-50 bg-slate-900 flex flex-col w-screen h-screen overflow-hidden animate-in fade-in duration-100">
+    <div className="fixed inset-0 z-50 bg-white flex flex-col w-screen h-screen overflow-hidden animate-in fade-in duration-100">
       <div className="bg-white flex flex-col w-full h-full overflow-hidden">
         
         {/* Header */}
-        <div className="bg-gradient-to-r from-slate-950 via-[#0a1e1b] to-slate-900 text-white px-4 sm:px-6 py-3.5 flex items-center justify-between border-b border-slate-800 shrink-0">
+        <div className="bpom-hero-gradient text-[#1e3a5f] px-4 sm:px-6 py-3.5 flex items-center justify-between border-b border-blue-200/80 shrink-0">
           <div className="flex items-center gap-3">
             <button
               onClick={onClose}
               type="button"
-              className="flex items-center gap-1.5 px-3 py-1.5 bg-slate-800 hover:bg-slate-700 text-slate-200 hover:text-white rounded-xl transition-all cursor-pointer text-xs font-semibold border border-slate-700 shadow-xs"
+              className="flex items-center gap-1.5 px-3 py-1.5 bg-[#e8f1fb] hover:bg-[#d0e2f5] text-[#1e3a5f] hover:text-[#1e3a5f] rounded-xl transition-all cursor-pointer text-xs font-semibold border border-blue-200 shadow-xs"
               title="Kembali ke Dashboard Utama"
             >
               <ArrowLeft className="w-4 h-4" />
               <span className="hidden sm:inline">Kembali</span>
             </button>
-            <div className="p-2.5 rounded-2xl bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 shrink-0">
+            <div className="p-2.5 rounded-2xl bg-emerald-500/20 text-emerald-800 border border-emerald-500/30 shrink-0">
               <Send className="w-5 h-5" />
             </div>
             <div>
               <div className="flex items-center gap-2 flex-wrap">
-                <h3 className="font-extrabold text-base sm:text-lg text-white">
+                <h3 className="font-extrabold text-base sm:text-lg text-[#1e3a5f]">
                   Formulir Tindak Lanjut CAPA
                 </h3>
-                <span className="font-mono text-xs px-2.5 py-0.5 rounded-full bg-emerald-950 text-emerald-300 border border-emerald-500/50 font-bold">
+                <span className="font-mono text-xs px-2.5 py-0.5 rounded-full bg-emerald-50 text-emerald-800 border border-emerald-500/50 font-bold">
                   {inspection.capaCode}
                 </span>
-                <span className="text-[10px] px-2 py-0.5 rounded-full bg-slate-800 text-slate-300 border border-slate-700">
+                <span className="text-[10px] px-2 py-0.5 rounded-full bg-[#e8f1fb] text-slate-700 border border-blue-200">
                   {matrixConfig.codeStandard}
                 </span>
               </div>
-              <p className="text-xs text-slate-300 mt-0.5">
+              <p className="text-xs text-slate-700 mt-0.5">
                 {inspection.facility.name} • {matrixConfig.title}
               </p>
             </div>
@@ -444,12 +444,12 @@ export const SubmitCapaModal: React.FC<SubmitCapaModalProps> = ({
 
           <div className="flex items-center gap-2">
             {activeStep === 'CAPA' && (
-              <div className="bg-slate-800 p-1 rounded-xl flex items-center text-xs font-semibold">
+              <div className="bg-[#e8f1fb] p-1 rounded-xl flex items-center text-xs font-semibold">
                 <button
                   type="button"
                   onClick={() => setViewMode('FORM')}
                   className={`px-3 py-1 rounded-lg transition-all cursor-pointer ${
-                    viewMode === 'FORM' ? 'bg-emerald-600 text-white font-bold shadow-xs' : 'text-slate-400 hover:text-white'
+                    viewMode === 'FORM' ? 'bg-emerald-600 text-white font-bold shadow-xs' : 'text-slate-600 hover:text-[#1e3a5f]'
                   }`}
                 >
                   Form Terpandu
@@ -458,7 +458,7 @@ export const SubmitCapaModal: React.FC<SubmitCapaModalProps> = ({
                   type="button"
                   onClick={() => setViewMode('MATRIX')}
                   className={`px-3 py-1 rounded-lg transition-all cursor-pointer flex items-center gap-1 ${
-                    viewMode === 'MATRIX' ? 'bg-emerald-600 text-white font-bold shadow-xs' : 'text-slate-400 hover:text-white'
+                    viewMode === 'MATRIX' ? 'bg-emerald-600 text-white font-bold shadow-xs' : 'text-slate-600 hover:text-[#1e3a5f]'
                   }`}
                 >
                   <Table className="w-3.5 h-3.5" />
@@ -470,7 +470,7 @@ export const SubmitCapaModal: React.FC<SubmitCapaModalProps> = ({
             <button
               onClick={onClose}
               type="button"
-              className="p-1.5 text-slate-400 hover:text-white rounded-lg hover:bg-white/10 transition-colors cursor-pointer"
+              className="p-1.5 text-slate-600 hover:text-[#1e3a5f] rounded-lg hover:bg-white/10 transition-colors cursor-pointer"
               title="Tutup Halaman (Kembali ke Beranda)"
             >
               <X className="w-5 h-5" />
@@ -479,55 +479,55 @@ export const SubmitCapaModal: React.FC<SubmitCapaModalProps> = ({
         </div>
 
         {/* Step Navigation Bar */}
-        <div className="bg-slate-900 border-b border-slate-800 px-4 sm:px-6 py-2.5 flex items-center justify-between gap-3 text-xs shrink-0 flex-wrap">
+        <div className="bg-white border-b border-blue-200/80 px-4 sm:px-6 py-2.5 flex items-center justify-between gap-3 text-xs shrink-0 flex-wrap">
           {!surveyData?.completed ? (
             <div className="flex items-center gap-2 flex-wrap">
-              <div className="flex items-center gap-2 px-3 py-1.5 rounded-xl font-bold bg-amber-950/80 text-amber-300 border border-amber-500/40">
+              <div className="flex items-center gap-2 px-3 py-1.5 rounded-xl font-bold bg-amber-50 text-amber-800 border border-amber-500/40">
                 <div className="w-5 h-5 rounded-full bg-amber-500 text-slate-950 flex items-center justify-center text-[10px] font-bold">
                   1
                 </div>
                 <span>1. Survei Integritas SIBERGAS</span>
-                <span className="text-[10px] bg-amber-500/20 px-1.5 py-0.5 rounded text-amber-300 font-bold">
+                <span className="text-[10px] bg-amber-500/20 px-1.5 py-0.5 rounded text-amber-800 font-bold">
                   Wajib Diisi
                 </span>
               </div>
 
               <ChevronRight className="w-4 h-4 text-slate-600 shrink-0" />
 
-              <div className="flex items-center gap-2 px-3 py-1.5 rounded-xl font-bold bg-slate-800 text-slate-500 border border-slate-700 opacity-75">
-                <div className="w-5 h-5 rounded-full bg-slate-700 text-white flex items-center justify-center text-[11px] font-bold">
+              <div className="flex items-center gap-2 px-3 py-1.5 rounded-xl font-bold bg-[#e8f1fb] text-slate-500 border border-blue-200 opacity-75">
+                <div className="w-5 h-5 rounded-full bg-slate-700 text-[#1e3a5f] flex items-center justify-center text-[11px] font-bold">
                   2
                 </div>
                 <span>2. Tindak Lanjut CAPA & Bukti (Terkunci)</span>
               </div>
             </div>
           ) : (
-            <div className="flex items-center gap-2 text-slate-300">
-              <div className="w-5 h-5 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center font-bold text-xs">
+            <div className="flex items-center gap-2 text-slate-700">
+              <div className="w-5 h-5 rounded-full bg-emerald-500/20 text-emerald-700 flex items-center justify-center font-bold text-xs">
                 ✓
               </div>
-              <span className="font-bold text-white">Formulir Tindak Lanjut CAPA & Bukti Dukung</span>
+              <span className="font-bold text-[#1e3a5f]">Formulir Tindak Lanjut CAPA & Bukti Dukung</span>
               <span className="text-slate-500">•</span>
-              <span className="text-[11px] text-emerald-400 font-semibold">SIBERGAS Terverifikasi</span>
+              <span className="text-[11px] text-emerald-700 font-semibold">SIBERGAS Terverifikasi</span>
             </div>
           )}
 
-          <div className="text-[11px] text-slate-400 flex items-center gap-1.5">
-            <ShieldCheck className="w-3.5 h-3.5 text-emerald-400" />
+          <div className="text-[11px] text-slate-600 flex items-center gap-1.5">
+            <ShieldCheck className="w-3.5 h-3.5 text-emerald-700" />
             <span>Zona Integritas WBK / WBBM</span>
           </div>
         </div>
 
         {/* Officer Read-Only Security Banner */}
         {isReadOnlyForOfficer && (
-          <div className="bg-amber-950/90 text-amber-200 border-b border-amber-800/80 px-4 sm:px-6 py-2.5 text-xs flex items-center justify-between gap-3 shrink-0">
+          <div className="bg-amber-50 text-amber-800 border-b border-amber-200 px-4 sm:px-6 py-2.5 text-xs flex items-center justify-between gap-3 shrink-0">
             <div className="flex items-center gap-2">
-              <ShieldCheck className="w-4 h-4 text-amber-400 shrink-0" />
+              <ShieldCheck className="w-4 h-4 text-amber-700 shrink-0" />
               <span>
                 <strong>Mode Pratinjau Pengawas (Hanya Baca):</strong> Anda sedang mengakses sebagai <strong>{currentRole}</strong>. Formulir CAPA dan berkas bukti di bawah ini adalah milik Sarana ({inspection.facility.name}) dan terproteksi dari perubahan oleh petugas.
               </span>
             </div>
-            <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-amber-900 border border-amber-600/50 text-amber-300 shrink-0 font-bold">
+            <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-amber-900 border border-amber-600/50 text-amber-800 shrink-0 font-bold">
               TERPROTEKSI
             </span>
           </div>
@@ -630,7 +630,7 @@ export const SubmitCapaModal: React.FC<SubmitCapaModalProps> = ({
                 <button
                   type="button"
                   onClick={handleApplyPreset}
-                  className="px-3 py-1.5 bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-white rounded-xl text-xs font-bold flex items-center gap-1.5 shadow-sm transition-all cursor-pointer"
+                  className="px-3 py-1.5 bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-[#1e3a5f] rounded-xl text-xs font-bold flex items-center gap-1.5 shadow-sm transition-all cursor-pointer"
                   title="Isi contoh draf standar sesuai format komoditi ini"
                 >
                   <Sparkles className="w-3.5 h-3.5" />
@@ -906,24 +906,24 @@ export const SubmitCapaModal: React.FC<SubmitCapaModalProps> = ({
 
                             {/* Popover Bantuan Google Drive */}
                             {showGdriveHelpPopover && (
-                              <div className="absolute z-50 left-0 sm:left-auto sm:right-0 top-full mt-1.5 w-72 sm:w-80 p-3.5 bg-slate-900 border border-blue-500/60 rounded-2xl shadow-2xl text-xs text-slate-200 animate-in fade-in">
-                                <div className="flex items-center justify-between pb-2 border-b border-slate-800">
-                                  <span className="font-bold text-white text-xs flex items-center gap-1.5">
+                              <div className="absolute z-50 left-0 sm:left-auto sm:right-0 top-full mt-1.5 w-72 sm:w-80 p-3.5 bg-white border border-blue-500/60 rounded-2xl shadow-2xl text-xs text-[#1e3a5f] animate-in fade-in">
+                                <div className="flex items-center justify-between pb-2 border-b border-blue-200/80">
+                                  <span className="font-bold text-[#1e3a5f] text-xs flex items-center gap-1.5">
                                     <HelpCircle className="w-3.5 h-3.5 text-blue-400" />
                                     Repositori Dokumen Google Drive
                                   </span>
                                   <button
                                     type="button"
                                     onClick={() => setShowGdriveHelpPopover(false)}
-                                    className="text-slate-400 hover:text-white"
+                                    className="text-slate-600 hover:text-[#1e3a5f]"
                                   >
                                     ✕
                                   </button>
                                 </div>
-                                <p className="py-2 text-[11px] text-slate-300 leading-relaxed">
-                                  Tautan ini adalah <strong className="text-white">repository dokumen pendukung</strong> (seperti file surat dinas, foto fisik, atau laporan teknis) yang tersimpan secara terpusat untuk memudahkan evaluasi oleh petugas Balai POM.
+                                <p className="py-2 text-[11px] text-slate-700 leading-relaxed">
+                                  Tautan ini adalah <strong className="text-[#1e3a5f]">repository dokumen pendukung</strong> (seperti file surat dinas, foto fisik, atau laporan teknis) yang tersimpan secara terpusat untuk memudahkan evaluasi oleh petugas Balai POM.
                                 </p>
-                                <div className="p-2 bg-blue-950/60 border border-blue-500/30 rounded-lg text-[10px] text-blue-200">
+                                <div className="p-2 bg-blue-50 border border-blue-500/30 rounded-lg text-[10px] text-blue-800">
                                   💡 Pastikan hak akses link Google Drive disetel ke: <strong>"Anyone with the link (Viewer)"</strong>.
                                 </div>
                               </div>
@@ -978,7 +978,7 @@ export const SubmitCapaModal: React.FC<SubmitCapaModalProps> = ({
                             className={`px-4 py-2 text-white rounded-xl text-xs font-bold cursor-pointer transition-all ${
                               newFileCategory === 'Link Google Drive'
                                 ? 'bg-blue-600 hover:bg-blue-500'
-                                : 'bg-slate-900 hover:bg-slate-800'
+                                : 'bg-white hover:bg-[#e8f1fb]'
                             }`}
                           >
                             {newFileCategory === 'Link Google Drive' ? '+ Tautkan' : '+ Tambah'}
@@ -1038,7 +1038,7 @@ export const SubmitCapaModal: React.FC<SubmitCapaModalProps> = ({
 
                       <div className="flex gap-2">
                         <div className="relative flex-1">
-                          <span className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400">
+                          <span className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-600">
                             <Link2 className="w-3.5 h-3.5" />
                           </span>
                           <input
@@ -1084,7 +1084,7 @@ export const SubmitCapaModal: React.FC<SubmitCapaModalProps> = ({
                           <button
                             type="button"
                             onClick={() => handleRemoveEvidence(file.id)}
-                            className="p-1 text-slate-400 hover:text-rose-600"
+                            className="p-1 text-slate-600 hover:text-rose-600"
                           >
                             <Trash2 className="w-3.5 h-3.5" />
                           </button>
@@ -1116,9 +1116,9 @@ export const SubmitCapaModal: React.FC<SubmitCapaModalProps> = ({
 
         {/* Footer */}
         {activeStep === 'CAPA' && (
-          <div className="p-4 bg-slate-900 border-t border-slate-800 flex items-center justify-between text-xs text-white shrink-0">
-            <div className="flex items-center gap-2 text-slate-400">
-              <ShieldCheck className="w-4 h-4 text-emerald-400" />
+          <div className="p-4 bg-white border-t border-blue-200/80 flex items-center justify-between text-xs text-[#1e3a5f] shrink-0">
+            <div className="flex items-center gap-2 text-slate-600">
+              <ShieldCheck className="w-4 h-4 text-emerald-700" />
               <span className="hidden sm:inline">
                 Notifikasi otomatis WhatsApp Gateway Fonnte akan dikirimkan ke Petugas Evaluator PIC ({inspection.assignedOfficer?.name || inspection.leadAuditor})
               </span>
@@ -1128,7 +1128,7 @@ export const SubmitCapaModal: React.FC<SubmitCapaModalProps> = ({
               <button
                 type="button"
                 onClick={onClose}
-                className="px-4 py-2 bg-slate-800 hover:bg-slate-700 text-slate-200 rounded-xl text-xs font-semibold cursor-pointer"
+                className="px-4 py-2 bg-[#e8f1fb] hover:bg-[#d0e2f5] text-[#1e3a5f] rounded-xl text-xs font-semibold cursor-pointer"
               >
                 Tutup
               </button>
@@ -1137,15 +1137,15 @@ export const SubmitCapaModal: React.FC<SubmitCapaModalProps> = ({
                 <button
                   type="button"
                   onClick={onClose}
-                  className="px-5 py-2.5 bg-slate-800 hover:bg-slate-700 text-slate-300 rounded-xl font-bold text-xs flex items-center gap-2 cursor-pointer border border-slate-700"
+                  className="px-5 py-2.5 bg-[#e8f1fb] hover:bg-[#d0e2f5] text-slate-700 rounded-xl font-bold text-xs flex items-center gap-2 cursor-pointer border border-blue-200"
                 >
-                  <ShieldCheck className="w-4 h-4 text-amber-400" />
+                  <ShieldCheck className="w-4 h-4 text-amber-700" />
                   <span>Tutup Pratinjau (Terkunci untuk Petugas)</span>
                 </button>
               ) : isAlreadySubmitted ? (
                 <div className="flex items-center gap-2 flex-wrap">
-                  <div className="px-3.5 py-2 bg-emerald-950/90 border border-emerald-500/50 text-emerald-300 rounded-xl text-xs font-bold flex items-center gap-2">
-                    <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
+                  <div className="px-3.5 py-2 bg-emerald-50 border border-emerald-500/50 text-emerald-800 rounded-xl text-xs font-bold flex items-center gap-2">
+                    <CheckCircle2 className="w-4 h-4 text-emerald-700 shrink-0" />
                     <span>
                       {inspection.status === 'TERVALIDASI' || inspection.status === 'SELESAI_CLOSED'
                         ? 'CAPA Telah Tervalidasi Balai'
@@ -1156,7 +1156,7 @@ export const SubmitCapaModal: React.FC<SubmitCapaModalProps> = ({
                     type="button"
                     onClick={handleFinalSubmit}
                     disabled={isSubmitting}
-                    className="px-3.5 py-2 bg-slate-800 hover:bg-slate-700 text-slate-200 rounded-xl text-xs font-semibold border border-slate-700 flex items-center gap-1.5 cursor-pointer disabled:opacity-60"
+                    className="px-3.5 py-2 bg-[#e8f1fb] hover:bg-[#d0e2f5] text-[#1e3a5f] rounded-xl text-xs font-semibold border border-blue-200 flex items-center gap-1.5 cursor-pointer disabled:opacity-60"
                   >
                     <RefreshCw className={`w-3.5 h-3.5 ${isSubmitting ? 'animate-spin' : ''}`} />
                     <span>Kirim Pembaruan Tambahan</span>

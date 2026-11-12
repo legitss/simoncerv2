@@ -167,13 +167,13 @@ export const OfficerDirectoryModal: React.FC<OfficerDirectoryModalProps> = ({
   );
 
   return (
-    <div className="fixed inset-0 z-[70] bg-slate-950/80 backdrop-blur-sm flex items-center justify-center p-3 sm:p-5">
+    <div className="fixed inset-0 z-[70] bg-slate-900/45 backdrop-blur-sm flex items-center justify-center p-3 sm:p-5">
       <div className="bg-white rounded-2xl max-w-4xl w-full max-h-[88vh] flex flex-col shadow-2xl border border-slate-200 overflow-hidden animate-in fade-in zoom-in-95">
         
         {/* Header */}
-        <div className="p-4 sm:p-5 bg-gradient-to-r from-slate-900 via-emerald-950 to-slate-900 text-white flex items-center justify-between border-b border-slate-800">
+        <div className="p-4 sm:p-5 bpom-hero-gradient text-[#1e3a5f] flex items-center justify-between border-b border-blue-200/80">
           <div className="flex items-center gap-3">
-            <span className="p-2 rounded-xl bg-emerald-500/20 text-emerald-400 border border-emerald-500/30">
+            <span className="p-2 rounded-xl bg-emerald-500/20 text-emerald-700 border border-emerald-500/30">
               <UserCheck className="w-5 h-5" />
             </span>
             <div>
@@ -191,7 +191,7 @@ export const OfficerDirectoryModal: React.FC<OfficerDirectoryModalProps> = ({
           <button
             type="button"
             onClick={onClose}
-            className="p-1.5 text-slate-400 hover:text-white rounded-lg hover:bg-slate-800 transition-colors cursor-pointer"
+            className="p-1.5 text-slate-600 hover:text-[#1e3a5f] rounded-lg hover:bg-[#e8f1fb] transition-colors cursor-pointer"
           >
             <X className="w-5 h-5" />
           </button>
@@ -200,7 +200,7 @@ export const OfficerDirectoryModal: React.FC<OfficerDirectoryModalProps> = ({
         {/* Toolbar */}
         <div className="p-3.5 bg-slate-100 border-b border-slate-200 flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3 text-xs">
           <div className="relative flex-1 max-w-md">
-            <Search className="w-4 h-4 text-slate-400 absolute left-3 top-2.5" />
+            <Search className="w-4 h-4 text-slate-600 absolute left-3 top-2.5" />
             <input
               type="text"
               value={searchTerm}
@@ -297,7 +297,7 @@ export const OfficerDirectoryModal: React.FC<OfficerDirectoryModalProps> = ({
                     <Phone className="w-3 h-3 text-emerald-600" />
                     Nomor WhatsApp <span className="text-red-500">*</span>
                   </span>
-                  <span className="text-[10px] text-slate-400">Notif WA</span>
+                  <span className="text-[10px] text-slate-600">Notif WA</span>
                 </label>
                 <input
                   type="text"
@@ -358,8 +358,8 @@ export const OfficerDirectoryModal: React.FC<OfficerDirectoryModalProps> = ({
         {/* Officers Directory List */}
         <div className="p-4 sm:p-5 overflow-y-auto space-y-3 bg-slate-50 flex-1 text-xs">
           {filteredOfficers.length === 0 ? (
-            <div className="p-8 text-center bg-white rounded-xl border border-slate-200 text-slate-400">
-              <UserCheck className="w-8 h-8 mx-auto mb-2 text-slate-300" />
+            <div className="p-8 text-center bg-white rounded-xl border border-slate-200 text-slate-600">
+              <UserCheck className="w-8 h-8 mx-auto mb-2 text-slate-700" />
               <p className="font-semibold text-slate-600">Tidak ada petugas yang cocok dengan kata kunci "{searchTerm}"</p>
               <button
                 type="button"
@@ -407,7 +407,7 @@ export const OfficerDirectoryModal: React.FC<OfficerDirectoryModalProps> = ({
 
                         {officer.email && (
                           <span className="inline-flex items-center gap-1 text-[10px] text-slate-500 font-mono truncate max-w-[160px]">
-                            <Mail className="w-3 h-3 text-slate-400" />
+                            <Mail className="w-3 h-3 text-slate-600" />
                             {officer.email}
                           </span>
                         )}
@@ -441,7 +441,7 @@ export const OfficerDirectoryModal: React.FC<OfficerDirectoryModalProps> = ({
                       <button
                         type="button"
                         onClick={() => handleDelete(officer.id, officer.name)}
-                        className="p-1 text-slate-400 hover:text-red-600 rounded transition-colors cursor-pointer"
+                        className="p-1 text-slate-600 hover:text-red-600 rounded transition-colors cursor-pointer"
                         title="Hapus petugas"
                       >
                         <Trash2 className="w-3.5 h-3.5" />
@@ -476,7 +476,7 @@ export const OfficerDirectoryModal: React.FC<OfficerDirectoryModalProps> = ({
           <button
             type="button"
             onClick={onClose}
-            className="px-4 py-1.5 bg-slate-900 hover:bg-slate-800 text-white rounded-lg text-xs font-bold ml-auto cursor-pointer"
+            className="px-4 py-1.5 bg-white hover:bg-[#e8f1fb] text-[#1e3a5f] rounded-lg text-xs font-bold ml-auto cursor-pointer"
           >
             Selesai & Tutup
           </button>

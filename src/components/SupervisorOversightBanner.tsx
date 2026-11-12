@@ -52,27 +52,27 @@ export const SupervisorOversightBanner: React.FC<SupervisorOversightBannerProps>
   const completionRate = total > 0 ? Math.round((completed / total) * 100) : 0;
 
   return (
-    <div className="bg-gradient-to-r from-purple-950 via-slate-900 to-indigo-950 rounded-2xl p-5 sm:p-6 text-white border border-purple-500/30 shadow-xl space-y-4">
+    <div className="bpom-hero-gradient rounded-2xl p-5 sm:p-6 text-[#1e3a5f] border border-purple-500/30 shadow-xl space-y-4">
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
         
         {/* Left: Supervisor Identity & Role */}
         <div className="flex items-start sm:items-center gap-3.5">
-          <div className="w-12 h-12 rounded-2xl bg-purple-500/20 text-purple-300 border border-purple-500/40 flex items-center justify-center shrink-0 shadow-lg">
+          <div className="w-12 h-12 rounded-2xl bg-purple-500/20 text-purple-800 border border-purple-500/40 flex items-center justify-center shrink-0 shadow-lg">
             <Award className="w-6 h-6" />
           </div>
           <div>
             <div className="flex items-center gap-2">
-              <span className="text-[11px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full bg-purple-500/20 text-purple-300 border border-purple-500/30">
+              <span className="text-[11px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full bg-purple-500/20 text-purple-800 border border-purple-500/30">
                 Mode Supervisi Pimpinan Balai
               </span>
-              <span className="text-[11px] font-mono text-purple-200/80">
+              <span className="text-[11px] font-mono text-purple-800">
                 BBPOM di Semarang
               </span>
             </div>
-            <h3 className="font-extrabold text-base sm:text-lg text-white mt-0.5">
+            <h3 className="font-extrabold text-base sm:text-lg text-[#1e3a5f] mt-0.5">
               {currentUser?.name || 'Dr. apt. Hendrawan Kusuma, M.Si'}
             </h3>
-            <p className="text-xs text-slate-300">
+            <p className="text-xs text-slate-700">
               {currentUser?.position || 'Kepala Balai Besar Pengawas Obat dan Makanan (Supervisor)'}
             </p>
           </div>
@@ -83,7 +83,7 @@ export const SupervisorOversightBanner: React.FC<SupervisorOversightBannerProps>
           <button
             type="button"
             onClick={onOpenPrintReport}
-            className="px-3.5 py-2 bg-purple-900/60 hover:bg-purple-800 text-purple-200 hover:text-white border border-purple-500/40 rounded-xl text-xs font-bold flex items-center gap-1.5 transition-all shadow-sm cursor-pointer"
+            className="px-3.5 py-2 bg-purple-100 hover:bg-purple-800 text-purple-800 hover:text-[#1e3a5f] border border-purple-500/40 rounded-xl text-xs font-bold flex items-center gap-1.5 transition-all shadow-sm cursor-pointer"
             title="Cetak Rekapitulasi Laporan Pengawasan Terpadu & Audit Trail"
           >
             <Printer className="w-3.5 h-3.5" />
@@ -102,43 +102,43 @@ export const SupervisorOversightBanner: React.FC<SupervisorOversightBannerProps>
       </div>
 
       {/* KPI Cards Grid */}
-      <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-2 border-t border-purple-900/50">
+      <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-2 border-t border-purple-200">
         
         {/* Completion Rate */}
-        <div className="p-3 bg-slate-900/60 rounded-xl border border-purple-500/20">
-          <span className="text-[10px] text-purple-300 block font-semibold">Tingkat Penyelesaian CAPA</span>
+        <div className="p-3 bg-white/85 rounded-xl border border-purple-500/20">
+          <span className="text-[10px] text-purple-800 block font-semibold">Tingkat Penyelesaian CAPA</span>
           <div className="flex items-baseline gap-1 mt-0.5">
-            <span className="text-xl sm:text-2xl font-black text-white">{completionRate}%</span>
-            <span className="text-[11px] text-slate-400">({completed}/{total})</span>
+            <span className="text-xl sm:text-2xl font-black text-[#1e3a5f]">{completionRate}%</span>
+            <span className="text-[11px] text-slate-600">({completed}/{total})</span>
           </div>
         </div>
 
         {/* Pending Evaluation */}
-        <div className="p-3 bg-slate-900/60 rounded-xl border border-purple-500/20">
-          <span className="text-[10px] text-purple-300 block font-semibold">Menunggu Evaluasi Petugas</span>
+        <div className="p-3 bg-white/85 rounded-xl border border-purple-500/20">
+          <span className="text-[10px] text-purple-800 block font-semibold">Menunggu Evaluasi Petugas</span>
           <div className="flex items-baseline gap-1 mt-0.5">
-            <span className="text-xl sm:text-2xl font-black text-amber-300">{inEvaluation}</span>
-            <span className="text-[11px] text-slate-400">Sarana</span>
+            <span className="text-xl sm:text-2xl font-black text-amber-800">{inEvaluation}</span>
+            <span className="text-[11px] text-slate-600">Sarana</span>
           </div>
         </div>
 
         {/* Near Deadline H-7 */}
-        <div className="p-3 bg-slate-900/60 rounded-xl border border-purple-500/20">
-          <span className="text-[10px] text-purple-300 block font-semibold">Peringatan H-7 (Auto-WA)</span>
+        <div className="p-3 bg-white/85 rounded-xl border border-purple-500/20">
+          <span className="text-[10px] text-purple-800 block font-semibold">Peringatan H-7 (Auto-WA)</span>
           <div className="flex items-baseline gap-1 mt-0.5">
-            <span className="text-xl sm:text-2xl font-black text-yellow-400">{nearDeadlineH7}</span>
-            <span className="text-[11px] text-slate-400">Mendekati Deadline</span>
+            <span className="text-xl sm:text-2xl font-black text-amber-700">{nearDeadlineH7}</span>
+            <span className="text-[11px] text-slate-600">Mendekati Deadline</span>
           </div>
         </div>
 
         {/* Overdue */}
-        <div className="p-3 bg-slate-900/60 rounded-xl border border-purple-500/20">
-          <span className="text-[10px] text-purple-300 block font-semibold">Terlambat SLA Batas Waktu</span>
+        <div className="p-3 bg-white/85 rounded-xl border border-purple-500/20">
+          <span className="text-[10px] text-purple-800 block font-semibold">Terlambat SLA Batas Waktu</span>
           <div className="flex items-baseline gap-1 mt-0.5">
-            <span className={`text-xl sm:text-2xl font-black ${overdue > 0 ? 'text-red-400' : 'text-emerald-400'}`}>
+            <span className={`text-xl sm:text-2xl font-black ${overdue > 0 ? 'text-red-700' : 'text-emerald-700'}`}>
               {overdue}
             </span>
-            <span className="text-[11px] text-slate-400">Sarana</span>
+            <span className="text-[11px] text-slate-600">Sarana</span>
           </div>
         </div>
 

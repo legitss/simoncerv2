@@ -402,10 +402,10 @@ export const DashboardStats: React.FC<DashboardStatsProps> = ({
   const CustomTrendTooltip = ({ active, payload, label }: any) => {
     if (active && payload && payload.length) {
       return (
-        <div className="bg-slate-900/95 text-white p-3 rounded-xl shadow-xl border border-slate-700 text-xs backdrop-blur-xs min-w-[200px]">
-          <div className="font-bold text-slate-100 border-b border-slate-700 pb-1 mb-2 flex items-center justify-between">
+        <div className="bg-white text-[#1e3a5f] p-3 rounded-xl shadow-xl border border-blue-200 text-xs backdrop-blur-xs min-w-[200px]">
+          <div className="font-bold text-[#1e3a5f] border-b border-blue-200 pb-1 mb-2 flex items-center justify-between">
             <span>{label}</span>
-            <span className="text-[10px] text-emerald-400 font-semibold px-1.5 py-0.2 bg-emerald-950/80 rounded border border-emerald-800/60">
+            <span className="text-[10px] text-emerald-700 font-semibold px-1.5 py-0.2 bg-emerald-50 rounded border border-emerald-200">
               Periode Sesi
             </span>
           </div>
@@ -414,9 +414,9 @@ export const DashboardStats: React.FC<DashboardStatsProps> = ({
               <div key={`tooltip-${index}`} className="flex items-center justify-between gap-3">
                 <div className="flex items-center gap-1.5">
                   <span className="w-2.5 h-2.5 rounded-sm shrink-0" style={{ backgroundColor: entry.color }} />
-                  <span className="text-slate-300 text-[11px]">{entry.name}:</span>
+                  <span className="text-slate-700 text-[11px]">{entry.name}:</span>
                 </div>
-                <span className="font-bold text-slate-100">{entry.value}</span>
+                <span className="font-bold text-[#1e3a5f]">{entry.value}</span>
               </div>
             ))}
           </div>
@@ -430,15 +430,15 @@ export const DashboardStats: React.FC<DashboardStatsProps> = ({
     if (active && payload && payload.length) {
       const data = payload[0].payload;
       return (
-        <div className="bg-slate-900/95 text-white p-3 rounded-xl shadow-xl border border-slate-700 text-xs backdrop-blur-xs min-w-[190px]">
+        <div className="bg-white text-[#1e3a5f] p-3 rounded-xl shadow-xl border border-blue-200 text-xs backdrop-blur-xs min-w-[190px]">
           <div className="flex items-center gap-2 mb-1">
             <span className="w-3 h-3 rounded-full shrink-0" style={{ backgroundColor: data.color }} />
-            <span className="font-bold text-slate-100">{data.name}</span>
+            <span className="font-bold text-[#1e3a5f]">{data.name}</span>
           </div>
-          <div className="text-[11px] text-slate-300 pl-5">
-            <div>Jumlah: <strong className="text-white">{data.value} Butir</strong></div>
-            <div>Porsi: <strong className="text-white">{data.percentage}%</strong> dari total temuan</div>
-            <div className="text-[10px] text-slate-400 mt-1 italic">{data.desc}</div>
+          <div className="text-[11px] text-slate-700 pl-5">
+            <div>Jumlah: <strong className="text-[#1e3a5f]">{data.value} Butir</strong></div>
+            <div>Porsi: <strong className="text-[#1e3a5f]">{data.percentage}%</strong> dari total temuan</div>
+            <div className="text-[10px] text-slate-600 mt-1 italic">{data.desc}</div>
           </div>
         </div>
       );
@@ -460,10 +460,10 @@ export const DashboardStats: React.FC<DashboardStatsProps> = ({
       {/* ========================================================================= */}
       {/* 1. TOP BAR: REAL-TIME TRACKING & SEARCH BY KODE UNIK / KODE CAPA */}
       {/* ========================================================================= */}
-      <div className="bg-gradient-to-r from-slate-900 via-slate-800 to-emerald-950 text-white rounded-2xl p-4 sm:p-5 shadow-sm border border-slate-800">
+      <div className="bpom-hero-gradient text-[#1e3a5f] rounded-2xl p-4 sm:p-5 shadow-sm border border-blue-200/80">
         <div className="flex flex-col md:flex-row md:items-center justify-between gap-3 mb-3">
           <div className="flex items-center gap-2.5">
-            <div className="p-2 rounded-xl bg-emerald-500/20 text-emerald-400 border border-emerald-500/30">
+            <div className="p-2 rounded-xl bg-emerald-500/20 text-emerald-700 border border-emerald-500/30">
               <Search className="w-5 h-5" />
             </div>
             <div>
@@ -471,18 +471,18 @@ export const DashboardStats: React.FC<DashboardStatsProps> = ({
                 <h3 className="font-bold text-sm sm:text-base tracking-tight">
                   Pencarian & Pelacakan Progres CAPA Real-Time
                 </h3>
-                <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-emerald-500/20 text-emerald-300 border border-emerald-500/40 flex items-center gap-1">
+                <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-emerald-500/20 text-emerald-800 border border-emerald-500/40 flex items-center gap-1">
                   <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
                   Live Sync
                 </span>
               </div>
-              <p className="text-xs text-slate-300 mt-0.5">
-                Masukkan Kode Unik (misal: <span className="font-mono text-emerald-300">CAPA-2026-SRN88</span> atau <span className="font-mono text-emerald-300">INS-2026-102</span>), Nomor Surat SRIKANDI, atau Nama Sarana
+              <p className="text-xs text-slate-700 mt-0.5">
+                Masukkan Kode Unik (misal: <span className="font-mono text-emerald-800">CAPA-2026-SRN88</span> atau <span className="font-mono text-emerald-800">INS-2026-102</span>), Nomor Surat SRIKANDI, atau Nama Sarana
               </p>
             </div>
           </div>
 
-          <div className="text-[11px] text-slate-400 flex items-center gap-2 self-start md:self-auto">
+          <div className="text-[11px] text-slate-600 flex items-center gap-2 self-start md:self-auto">
             <span>Terhubung ke {totalSessions} Sesi Aktif</span>
             <span>•</span>
             <span>{totalFindings} Temuan Lapangan</span>
@@ -492,7 +492,7 @@ export const DashboardStats: React.FC<DashboardStatsProps> = ({
         {/* Search Input Bar */}
         <div className="relative">
           <div className="relative flex items-center">
-            <Search className="w-4 h-4 text-slate-400 absolute left-3.5 pointer-events-none" />
+            <Search className="w-4 h-4 text-slate-600 absolute left-3.5 pointer-events-none" />
             <input
               type="text"
               value={searchQuery}
@@ -501,7 +501,7 @@ export const DashboardStats: React.FC<DashboardStatsProps> = ({
                 setIsSearchActive(true);
               }}
               placeholder="Ketik Kode CAPA / Kode Unik / No. Surat / Nama Sarana..."
-              className="w-full pl-10 pr-10 py-2.5 bg-slate-950/80 border border-slate-700/80 hover:border-emerald-500/60 focus:border-emerald-400 rounded-xl text-xs sm:text-sm font-medium text-white placeholder-slate-400 focus:outline-none focus:ring-1 focus:ring-emerald-400 transition-all font-mono"
+              className="w-full pl-10 pr-10 py-2.5 bg-[#f4f8fd] border border-blue-200 hover:border-emerald-500/60 focus:border-emerald-400 rounded-xl text-xs sm:text-sm font-medium text-[#1e3a5f] placeholder-slate-400 focus:outline-none focus:ring-1 focus:ring-emerald-400 transition-all font-mono"
             />
             {searchQuery && (
               <button
@@ -510,7 +510,7 @@ export const DashboardStats: React.FC<DashboardStatsProps> = ({
                   setSearchQuery('');
                   setIsSearchActive(false);
                 }}
-                className="absolute right-3 text-slate-400 hover:text-white p-1 rounded-md hover:bg-slate-800 transition-colors cursor-pointer"
+                className="absolute right-3 text-slate-600 hover:text-[#1e3a5f] p-1 rounded-md hover:bg-[#e8f1fb] transition-colors cursor-pointer"
                 title="Hapus pencarian"
               >
                 <X className="w-4 h-4" />
@@ -520,7 +520,7 @@ export const DashboardStats: React.FC<DashboardStatsProps> = ({
 
           {/* Quick-Pick Codes Chips */}
           <div className="flex items-center gap-2 mt-2.5 flex-wrap">
-            <span className="text-[11px] text-slate-400 font-medium">Pilih Cepat Kode:</span>
+            <span className="text-[11px] text-slate-600 font-medium">Pilih Cepat Kode:</span>
             {quickPickCodes.map((item) => (
               <button
                 key={item.code}
@@ -532,7 +532,7 @@ export const DashboardStats: React.FC<DashboardStatsProps> = ({
                 className={`text-[11px] font-mono px-2 py-0.5 rounded-lg border transition-all cursor-pointer ${
                   searchQuery === item.code
                     ? 'bg-emerald-500 text-slate-950 border-emerald-400 font-bold shadow-xs'
-                    : 'bg-slate-800/80 text-slate-300 border-slate-700 hover:bg-slate-700 hover:text-white'
+                    : 'bg-[#e8f1fb] text-slate-700 border-blue-200 hover:bg-[#d0e2f5] hover:text-[#1e3a5f]'
                 }`}
                 title={`Lacak ${item.name}`}
               >
@@ -544,27 +544,27 @@ export const DashboardStats: React.FC<DashboardStatsProps> = ({
 
         {/* Real-Time Search Results Panel */}
         {searchQuery.trim() && isSearchActive && (
-          <div className="mt-4 pt-4 border-t border-slate-700/80 space-y-3 animate-in fade-in duration-150">
-            <div className="flex items-center justify-between text-xs text-slate-300">
+          <div className="mt-4 pt-4 border-t border-blue-200 space-y-3 animate-in fade-in duration-150">
+            <div className="flex items-center justify-between text-xs text-slate-700">
               <span className="font-semibold flex items-center gap-1.5">
-                <CheckCircle2 className="w-4 h-4 text-emerald-400" />
+                <CheckCircle2 className="w-4 h-4 text-emerald-700" />
                 Ditemukan {searchResults.length} Sesi CAPA yang Cocok
               </span>
               <button
                 type="button"
                 onClick={() => setIsSearchActive(false)}
-                className="text-[11px] text-slate-400 hover:text-white underline cursor-pointer"
+                className="text-[11px] text-slate-600 hover:text-[#1e3a5f] underline cursor-pointer"
               >
                 Tutup Hasil Pencarian
               </button>
             </div>
 
             {searchResults.length === 0 ? (
-              <div className="p-4 rounded-xl bg-slate-950/60 border border-slate-800 text-center text-xs text-slate-400">
-                <AlertCircle className="w-5 h-5 text-amber-400 mx-auto mb-1.5" />
+              <div className="p-4 rounded-xl bg-[#f4f8fd] border border-blue-200/80 text-center text-xs text-slate-600">
+                <AlertCircle className="w-5 h-5 text-amber-700 mx-auto mb-1.5" />
                 Tidak ditemukan sesi pemeriksaan dengan kode atau kata kunci "<strong>{searchQuery}</strong>".
                 <p className="text-[11px] text-slate-500 mt-1">
-                  Pastikan format kode benar, misal: <span className="font-mono text-slate-300">CAPA-2026-SRN88</span> atau ketik nama sarana.
+                  Pastikan format kode benar, misal: <span className="font-mono text-slate-700">CAPA-2026-SRN88</span> atau ketik nama sarana.
                 </p>
               </div>
             ) : (
@@ -581,11 +581,11 @@ export const DashboardStats: React.FC<DashboardStatsProps> = ({
                   return (
                     <div
                       key={ins.id}
-                      className="p-3.5 bg-slate-950/90 rounded-xl border border-slate-700/80 hover:border-emerald-500/80 transition-all flex flex-col justify-between gap-3 text-xs"
+                      className="p-3.5 bg-[#f4f8fd] rounded-xl border border-blue-200 hover:border-emerald-500/80 transition-all flex flex-col justify-between gap-3 text-xs"
                     >
                       <div>
                         <div className="flex items-center justify-between gap-2 mb-1.5">
-                          <span className="font-mono font-bold text-xs px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300 border border-emerald-500/40">
+                          <span className="font-mono font-bold text-xs px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-800 border border-emerald-500/40">
                             {ins.capaCode}
                           </span>
                           <span className={`text-[10px] font-bold px-2 py-0.5 rounded-full border ${badge.bg} ${badge.text} ${badge.border}`}>
@@ -593,28 +593,28 @@ export const DashboardStats: React.FC<DashboardStatsProps> = ({
                           </span>
                         </div>
 
-                        <h4 className="font-bold text-white text-sm truncate">
+                        <h4 className="font-bold text-[#1e3a5f] text-sm truncate">
                           {ins.facility.name}
                         </h4>
-                        <div className="text-[11px] text-slate-400 flex items-center gap-2 mt-0.5">
+                        <div className="text-[11px] text-slate-600 flex items-center gap-2 mt-0.5">
                           <span>{ins.facility.type}</span>
                           <span>•</span>
                           <span className="truncate">{ins.facility.address}</span>
                         </div>
 
                         {/* Surat Tindak Lanjut Info */}
-                        <div className="text-[11px] text-slate-300 mt-2 bg-slate-900/90 p-2 rounded-lg border border-slate-800 space-y-1">
+                        <div className="text-[11px] text-slate-700 mt-2 bg-white p-2 rounded-lg border border-blue-200/80 space-y-1">
                           <div className="flex items-center justify-between">
-                            <span className="text-slate-400">No. Surat SRIKANDI:</span>
-                            <span className="font-mono font-bold text-slate-200">{ins.srikandiLetter.letterNo}</span>
+                            <span className="text-slate-600">No. Surat SRIKANDI:</span>
+                            <span className="font-mono font-bold text-[#1e3a5f]">{ins.srikandiLetter.letterNo}</span>
                           </div>
                           <div className="flex items-center justify-between">
-                            <span className="text-slate-400">Petugas PIC:</span>
-                            <span className="font-semibold text-slate-200">{ins.leadAuditor}</span>
+                            <span className="text-slate-600">Petugas PIC:</span>
+                            <span className="font-semibold text-[#1e3a5f]">{ins.leadAuditor}</span>
                           </div>
                           <div className="flex items-center justify-between">
-                            <span className="text-slate-400">Batas Waktu (SLA):</span>
-                            <span className={`font-bold ${sla.isOverdue ? 'text-rose-400' : 'text-emerald-300'}`}>
+                            <span className="text-slate-600">Batas Waktu (SLA):</span>
+                            <span className={`font-bold ${sla.isOverdue ? 'text-rose-700' : 'text-emerald-800'}`}>
                               {sla.text} ({formatIndonesianDate(ins.srikandiLetter.deadlineDate)})
                             </span>
                           </div>
@@ -623,12 +623,12 @@ export const DashboardStats: React.FC<DashboardStatsProps> = ({
                         {/* Findings Progress Bar */}
                         <div className="mt-2.5">
                           <div className="flex items-center justify-between text-[11px] mb-1">
-                            <span className="text-slate-400">Progres Verifikasi Temuan:</span>
-                            <span className="font-bold text-emerald-300 font-mono">
+                            <span className="text-slate-600">Progres Verifikasi Temuan:</span>
+                            <span className="font-bold text-emerald-800 font-mono">
                               {valCount}/{totalCount} Butir ({percent}%)
                             </span>
                           </div>
-                          <div className="w-full h-1.5 bg-slate-800 rounded-full overflow-hidden">
+                          <div className="w-full h-1.5 bg-[#e8f1fb] rounded-full overflow-hidden">
                             <div
                               className="h-full bg-emerald-500 rounded-full transition-all duration-300"
                               style={{ width: `${percent}%` }}
@@ -638,7 +638,7 @@ export const DashboardStats: React.FC<DashboardStatsProps> = ({
                       </div>
 
                       {/* Action buttons */}
-                      <div className="flex items-center gap-2 pt-2 border-t border-slate-800">
+                      <div className="flex items-center gap-2 pt-2 border-t border-blue-200/80">
                         <button
                           type="button"
                           onClick={() => {
@@ -657,7 +657,7 @@ export const DashboardStats: React.FC<DashboardStatsProps> = ({
                         <button
                           type="button"
                           onClick={() => onSelectInspection && onSelectInspection(ins)}
-                          className="px-2.5 py-1.5 bg-slate-800 hover:bg-slate-700 text-slate-200 hover:text-white rounded-lg text-xs font-semibold border border-slate-700 transition-colors cursor-pointer"
+                          className="px-2.5 py-1.5 bg-[#e8f1fb] hover:bg-[#d0e2f5] text-[#1e3a5f] hover:text-[#1e3a5f] rounded-lg text-xs font-semibold border border-blue-200 transition-colors cursor-pointer"
                           title="Buka Sesi Pemeriksaan"
                         >
                           <FileText className="w-3.5 h-3.5" />
@@ -775,12 +775,12 @@ export const DashboardStats: React.FC<DashboardStatsProps> = ({
                 <span className="w-1.5 h-1.5 rounded-full bg-rose-500"></span>
                 {openKritis} Kritis
               </span>
-              <span className="text-slate-300">·</span>
+              <span className="text-slate-700">·</span>
               <span className="inline-flex items-center gap-1 font-medium text-amber-700">
                 <span className="w-1.5 h-1.5 rounded-full bg-amber-500"></span>
                 {openMayor} Mayor
               </span>
-              <span className="text-slate-300">·</span>
+              <span className="text-slate-700">·</span>
               <span className="inline-flex items-center gap-1 font-medium text-slate-600">
                 <span className="w-1.5 h-1.5 rounded-full bg-slate-400"></span>
                 {openMinor} Minor
@@ -837,12 +837,12 @@ export const DashboardStats: React.FC<DashboardStatsProps> = ({
                 <span className="w-1.5 h-1.5 rounded-full bg-rose-500"></span>
                 {inProgKritis} Kritis
               </span>
-              <span className="text-slate-300">·</span>
+              <span className="text-slate-700">·</span>
               <span className="inline-flex items-center gap-1 font-medium text-amber-700">
                 <span className="w-1.5 h-1.5 rounded-full bg-amber-500"></span>
                 {inProgMayor} Mayor
               </span>
-              <span className="text-slate-300">·</span>
+              <span className="text-slate-700">·</span>
               <span className="inline-flex items-center gap-1 font-medium text-slate-600">
                 <span className="w-1.5 h-1.5 rounded-full bg-slate-400"></span>
                 {inProgMinor} Minor
@@ -899,12 +899,12 @@ export const DashboardStats: React.FC<DashboardStatsProps> = ({
                 <span className="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
                 {valKritis} Kritis
               </span>
-              <span className="text-slate-300">·</span>
+              <span className="text-slate-700">·</span>
               <span className="inline-flex items-center gap-1 font-medium text-emerald-700">
                 <span className="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
                 {valMayor} Mayor
               </span>
-              <span className="text-slate-300">·</span>
+              <span className="text-slate-700">·</span>
               <span className="inline-flex items-center gap-1 font-medium text-emerald-700">
                 <span className="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
                 {valMinor} Minor
@@ -1046,7 +1046,7 @@ export const DashboardStats: React.FC<DashboardStatsProps> = ({
                         <span className="font-bold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200">
                           {valCount} Tervalidasi
                         </span>
-                        <span className="text-slate-400 ml-auto font-mono text-[10px]">
+                        <span className="text-slate-600 ml-auto font-mono text-[10px]">
                           Total: {total}
                         </span>
                       </div>
@@ -1076,9 +1076,9 @@ export const DashboardStats: React.FC<DashboardStatsProps> = ({
                             onSelectInspection(ins);
                           }
                         }}
-                        className="flex-1 py-1 px-2 bg-slate-900 hover:bg-slate-800 text-white rounded-lg text-xs font-semibold flex items-center justify-center gap-1 cursor-pointer transition-colors"
+                        className="flex-1 py-1 px-2 bg-white hover:bg-[#e8f1fb] text-[#1e3a5f] rounded-lg text-xs font-semibold flex items-center justify-center gap-1 cursor-pointer transition-colors"
                       >
-                        <Eye className="w-3.5 h-3.5 text-emerald-400" />
+                        <Eye className="w-3.5 h-3.5 text-emerald-700" />
                         <span>Buka & Telaah Sarana</span>
                       </button>
 
@@ -1109,12 +1109,12 @@ export const DashboardStats: React.FC<DashboardStatsProps> = ({
                 <span className="w-2.5 h-2.5 rounded-sm bg-emerald-500 inline-block" />
                 {validatedFindingsRate}% Tervalidasi ({validatedFindingsCount})
               </span>
-              <span className="text-slate-300">/</span>
+              <span className="text-slate-700">/</span>
               <span className="flex items-center gap-1 text-[11px] font-bold text-purple-700">
                 <span className="w-2.5 h-2.5 rounded-sm bg-purple-500 inline-block" />
                 {inProgressFindingsRate}% Dalam Proses ({inProgressFindingsCount})
               </span>
-              <span className="text-slate-300">/</span>
+              <span className="text-slate-700">/</span>
               <span className="flex items-center gap-1 text-[11px] font-bold text-amber-700">
                 <span className="w-2.5 h-2.5 rounded-sm bg-amber-500 inline-block" />
                 {openFindingsRate}% Terbuka ({openFindingsCount})
@@ -1422,12 +1422,12 @@ export const DashboardStats: React.FC<DashboardStatsProps> = ({
       {/* 4. MODAL DRILLDOWN: DAFTAR BUTIR TEMUAN SESUAI METRIK */}
       {/* ========================================================================= */}
       {drilldownCategory && (
-        <div className="fixed inset-0 z-50 overflow-y-auto bg-slate-950/75 backdrop-blur-xs flex items-center justify-center p-4">
+        <div className="fixed inset-0 z-50 overflow-y-auto bg-slate-900/45 backdrop-blur-xs flex items-center justify-center p-4">
           <div className="bg-white rounded-2xl max-w-4xl w-full shadow-2xl border border-slate-200 overflow-hidden transform transition-all animate-in fade-in zoom-in-95 duration-200">
             {/* Modal Header */}
-            <div className="bg-gradient-to-r from-slate-900 via-slate-800 to-emerald-950 p-5 text-white flex items-center justify-between">
+            <div className="bpom-hero-gradient p-5 text-[#1e3a5f] flex items-center justify-between">
               <div className="flex items-center gap-2.5">
-                <div className="p-2 rounded-xl bg-emerald-500/20 text-emerald-400 border border-emerald-500/30">
+                <div className="p-2 rounded-xl bg-emerald-500/20 text-emerald-700 border border-emerald-500/30">
                   <Target className="w-5 h-5" />
                 </div>
                 <div>
@@ -1436,7 +1436,7 @@ export const DashboardStats: React.FC<DashboardStatsProps> = ({
                     {drilldownCategory === 'IN_PROGRESS' && 'Daftar Butir: Temuan Dalam Proses (In Progress)'}
                     {drilldownCategory === 'VALIDATED' && 'Daftar Butir: Temuan Tervalidasi (Validated)'}
                   </h3>
-                  <p className="text-xs text-slate-300">
+                  <p className="text-xs text-slate-700">
                     Total {activeDrilldownFindings.length} butir temuan tercatat pada kategori ini
                   </p>
                 </div>
@@ -1444,7 +1444,7 @@ export const DashboardStats: React.FC<DashboardStatsProps> = ({
               <button
                 type="button"
                 onClick={() => setDrilldownCategory(null)}
-                className="p-1.5 rounded-lg text-slate-400 hover:text-white hover:bg-white/10 transition-colors cursor-pointer"
+                className="p-1.5 rounded-lg text-slate-600 hover:text-[#1e3a5f] hover:bg-white/10 transition-colors cursor-pointer"
               >
                 <X className="w-5 h-5" />
               </button>
@@ -1534,7 +1534,7 @@ export const DashboardStats: React.FC<DashboardStatsProps> = ({
               <button
                 type="button"
                 onClick={() => setDrilldownCategory(null)}
-                className="px-4 py-2 bg-slate-800 hover:bg-slate-900 text-white font-bold rounded-xl text-xs transition-colors cursor-pointer"
+                className="px-4 py-2 bg-[#e8f1fb] hover:bg-white text-[#1e3a5f] font-bold rounded-xl text-xs transition-colors cursor-pointer"
               >
                 Tutup Rincian
               </button>

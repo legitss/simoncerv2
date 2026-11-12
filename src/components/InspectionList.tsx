@@ -152,7 +152,7 @@ export const InspectionList: React.FC<InspectionListProps> = ({
     <div className="space-y-4">
       {/* Officer / Evaluator Specific Context Banner */}
       {!hideOfficerBanner && currentRole === 'PETUGAS_EVALUATOR' && currentUser && (
-        <div className="p-4 bg-gradient-to-r from-emerald-950 via-slate-900 to-emerald-950 text-white rounded-2xl border border-emerald-500/30 shadow-md flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
+        <div className="p-4 bpom-hero-gradient text-[#1e3a5f] rounded-2xl border border-emerald-500/30 shadow-md flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
           <div className="flex items-center gap-3">
             <div className="w-10 h-10 rounded-xl bg-emerald-500/20 text-emerald-400 border border-emerald-500/40 flex items-center justify-center shrink-0">
               <UserCheck className="w-5 h-5" />
@@ -162,7 +162,7 @@ export const InspectionList: React.FC<InspectionListProps> = ({
                 <h3 className="font-bold text-sm text-white">
                   Portal Tugas Evaluator: {currentUser.name}
                 </h3>
-                <span className="text-[10px] font-mono px-2 py-0.5 rounded-full bg-emerald-500/20 text-emerald-300 border border-emerald-500/40 font-semibold">
+                <span className="text-[10px] font-mono px-2 py-0.5 rounded-full bg-emerald-500/20 text-emerald-800 border border-emerald-500/40 font-semibold">
                   NIP. {currentUser.nip || '-'}
                 </span>
               </div>
@@ -206,7 +206,7 @@ export const InspectionList: React.FC<InspectionListProps> = ({
 
       {/* Admin Specific SRIKANDI Action Alert Banner */}
       {(currentRole === 'ADMIN' || currentRole === 'SUPERVISOR') && pendingAdminCoverLetterCount > 0 && (
-        <div className="p-4 bg-gradient-to-r from-blue-950 via-slate-900 to-indigo-950 text-white rounded-2xl border border-blue-400/40 shadow-md flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 animate-in fade-in">
+        <div className="p-4 bpom-hero-gradient text-[#1e3a5f] rounded-2xl border border-blue-400/40 shadow-md flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 animate-in fade-in">
           <div className="flex items-center gap-3">
             <div className="w-10 h-10 rounded-xl bg-blue-500/20 text-blue-400 border border-blue-400/30 flex items-center justify-center shrink-0">
               <FileCheck2 className="w-5 h-5 text-blue-400" />

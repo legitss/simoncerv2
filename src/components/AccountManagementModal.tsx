@@ -133,25 +133,25 @@ export const AccountManagementModal: React.FC<AccountManagementModalProps> = ({
   );
 
   return (
-    <div className="fixed inset-0 z-50 overflow-y-auto bg-slate-950/80 backdrop-blur-sm flex items-center justify-center p-3 sm:p-5">
+    <div className="fixed inset-0 z-50 overflow-y-auto bg-slate-900/45 backdrop-blur-sm flex items-center justify-center p-3 sm:p-5">
       <div className="bg-white rounded-3xl max-w-4xl w-full max-h-[90vh] flex flex-col shadow-2xl border border-slate-200 overflow-hidden animate-in fade-in zoom-in-95">
         
         {/* Header */}
-        <div className="p-5 bg-gradient-to-r from-slate-900 via-indigo-950 to-slate-900 text-white flex items-center justify-between border-b border-slate-800">
+        <div className="p-5 bpom-hero-gradient text-[#1e3a5f] flex items-center justify-between border-b border-blue-200/80">
           <div className="flex items-center gap-3">
-            <span className="p-2.5 rounded-2xl bg-indigo-500/20 text-indigo-400 border border-indigo-500/30">
+            <span className="p-2.5 rounded-2xl bg-indigo-500/20 text-indigo-700 border border-indigo-500/30">
               <Users className="w-5 h-5" />
             </span>
             <div>
               <div className="flex items-center gap-2">
-                <h3 className="font-bold text-sm sm:text-base text-white">
+                <h3 className="font-bold text-sm sm:text-base text-[#1e3a5f]">
                   Manajemen Akun Internal BBPOM
                 </h3>
-                <span className="text-[10px] font-mono px-2 py-0.5 rounded-full bg-indigo-800/80 text-indigo-200 border border-indigo-600/40">
+                <span className="text-[10px] font-mono px-2 py-0.5 rounded-full bg-indigo-800/80 text-indigo-800 border border-indigo-600/40">
                   {accounts.length} Akun Terdaftar
                 </span>
               </div>
-              <p className="text-xs text-indigo-200/80 mt-0.5">
+              <p className="text-xs text-indigo-800/80 mt-0.5">
                 Kelola hak akses untuk Administrator, Petugas Evaluator, dan Supervisor
               </p>
             </div>
@@ -159,7 +159,7 @@ export const AccountManagementModal: React.FC<AccountManagementModalProps> = ({
           <button
             type="button"
             onClick={onClose}
-            className="p-1.5 text-slate-400 hover:text-white rounded-lg hover:bg-slate-800 transition-colors cursor-pointer"
+            className="p-1.5 text-slate-600 hover:text-[#1e3a5f] rounded-lg hover:bg-[#e8f1fb] transition-colors cursor-pointer"
           >
             <X className="w-5 h-5" />
           </button>
@@ -402,7 +402,7 @@ export const AccountManagementModal: React.FC<AccountManagementModalProps> = ({
                         )}
                         {acc.email && (
                           <span className="flex items-center gap-1 truncate max-w-[170px]">
-                            <Mail className="w-3 h-3 text-slate-400" />
+                            <Mail className="w-3 h-3 text-slate-600" />
                             {acc.email}
                           </span>
                         )}
@@ -411,14 +411,14 @@ export const AccountManagementModal: React.FC<AccountManagementModalProps> = ({
                   </div>
 
                   <div className="mt-3 pt-2 border-t border-slate-100 flex items-center justify-between">
-                    <span className="text-[10px] text-slate-400 font-mono">
+                    <span className="text-[10px] text-slate-600 font-mono">
                       ID: {acc.id}
                     </span>
                     {!isSelf && (
                       <button
                         type="button"
                         onClick={() => handleDelete(acc.id, acc.name)}
-                        className="p-1 text-slate-400 hover:text-red-600 transition-colors cursor-pointer"
+                        className="p-1 text-slate-600 hover:text-red-600 transition-colors cursor-pointer"
                         title="Hapus akun"
                       >
                         <Trash2 className="w-4 h-4" />
@@ -439,7 +439,7 @@ export const AccountManagementModal: React.FC<AccountManagementModalProps> = ({
           <button
             type="button"
             onClick={onClose}
-            className="px-4 py-1.5 bg-slate-900 hover:bg-slate-800 text-white rounded-xl text-xs font-bold cursor-pointer"
+            className="px-4 py-1.5 bg-white hover:bg-[#e8f1fb] text-[#1e3a5f] rounded-xl text-xs font-bold cursor-pointer"
           >
             Tutup
           </button>

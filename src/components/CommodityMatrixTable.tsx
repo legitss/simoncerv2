@@ -195,7 +195,7 @@ export const CommodityMatrixTable: React.FC<CommodityMatrixTableProps> = ({
             {capa.gapAnalysis ? (
               <div className="whitespace-pre-line text-slate-800">{capa.gapAnalysis}</div>
             ) : (
-              <span className="text-slate-400 italic">Belum diisi sarana</span>
+              <span className="text-slate-600 italic">Belum diisi sarana</span>
             )}
           </td>
         );
@@ -209,7 +209,7 @@ export const CommodityMatrixTable: React.FC<CommodityMatrixTableProps> = ({
             {capa.rootCauseAnalysis ? (
               <div className="whitespace-pre-line text-slate-800">{capa.rootCauseAnalysis}</div>
             ) : (
-              <span className="text-slate-400 italic">Belum diisi sarana</span>
+              <span className="text-slate-600 italic">Belum diisi sarana</span>
             )}
           </td>
         );
@@ -223,7 +223,7 @@ export const CommodityMatrixTable: React.FC<CommodityMatrixTableProps> = ({
             {capa.impact ? (
               <div className="whitespace-pre-line font-medium text-amber-950">{capa.impact}</div>
             ) : (
-              <span className="text-slate-400 italic">Belum diisi sarana</span>
+              <span className="text-slate-600 italic">Belum diisi sarana</span>
             )}
           </td>
         );
@@ -239,7 +239,7 @@ export const CommodityMatrixTable: React.FC<CommodityMatrixTableProps> = ({
                     {capa.correctiveAction}
                   </div>
                 ) : (
-                  <span className="text-slate-400 italic">Belum ada tindakan CA</span>
+                  <span className="text-slate-600 italic">Belum ada tindakan CA</span>
                 )}
               </td>
               <td className="p-3 border-r border-slate-200 text-[11px] text-slate-800 leading-relaxed min-w-[150px]">
@@ -248,7 +248,7 @@ export const CommodityMatrixTable: React.FC<CommodityMatrixTableProps> = ({
                     {capa.preventiveAction}
                   </div>
                 ) : (
-                  <span className="text-slate-400 italic">Belum ada tindakan PA</span>
+                  <span className="text-slate-600 italic">Belum ada tindakan PA</span>
                 )}
               </td>
             </React.Fragment>
@@ -262,11 +262,11 @@ export const CommodityMatrixTable: React.FC<CommodityMatrixTableProps> = ({
             <div className="space-y-1">
               <div>
                 <strong className="text-emerald-800 text-[10px] block">Perbaikan (CA):</strong>
-                {capa.correctiveAction || <span className="text-slate-400 italic">Belum diisi</span>}
+                {capa.correctiveAction || <span className="text-slate-600 italic">Belum diisi</span>}
               </div>
               <div>
                 <strong className="text-teal-800 text-[10px] block">Pencegahan (PA):</strong>
-                {capa.preventiveAction || <span className="text-slate-400 italic">Belum diisi</span>}
+                {capa.preventiveAction || <span className="text-slate-600 italic">Belum diisi</span>}
               </div>
             </div>
           </td>
@@ -294,7 +294,7 @@ export const CommodityMatrixTable: React.FC<CommodityMatrixTableProps> = ({
                 )}
               </div>
             ) : (
-              <span className="text-slate-400 italic">Belum diisi sarana</span>
+              <span className="text-slate-600 italic">Belum diisi sarana</span>
             )}
           </td>
         );
@@ -387,7 +387,7 @@ export const CommodityMatrixTable: React.FC<CommodityMatrixTableProps> = ({
                 ))}
               </div>
             ) : !capa.evidenceDriveUrl ? (
-              <span className="text-slate-400 italic text-[10px]">Belum ada berkas</span>
+              <span className="text-slate-600 italic text-[10px]">Belum ada berkas</span>
             ) : null}
           </td>
         );
@@ -435,22 +435,22 @@ export const CommodityMatrixTable: React.FC<CommodityMatrixTableProps> = ({
       
       {/* Top Bar for Action (Hidden on Print) */}
       {showTopBar && (
-        <div className="no-print bg-slate-900 text-white px-4 sm:px-5 py-3 flex items-center justify-between border-b border-slate-800 text-xs flex-wrap gap-2">
+        <div className="no-print bg-white text-[#1e3a5f] px-4 sm:px-5 py-3 flex items-center justify-between border-b border-blue-200/80 text-xs flex-wrap gap-2">
           <div className="flex items-center gap-2">
-            <span className="p-1 rounded bg-emerald-500/20 text-emerald-400 font-bold shrink-0">
+            <span className="p-1 rounded bg-emerald-500/20 text-emerald-700 font-bold shrink-0">
               <FileText className="w-4 h-4" />
             </span>
             <div>
               <div className="flex items-center gap-2 flex-wrap">
-                <span className="font-bold text-white text-xs sm:text-sm">
+                <span className="font-bold text-[#1e3a5f] text-xs sm:text-sm">
                   Matriks Format Standar: {config.title}
                 </span>
-                <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-emerald-950 text-emerald-300 border border-emerald-500/40">
+                <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-emerald-50 text-emerald-800 border border-emerald-500/40">
                   {config.codeStandard}
                 </span>
               </div>
               {inspection.srikandiWorkflow?.isMatrixSaved && (
-                <span className="inline-flex items-center gap-1 text-[10px] text-emerald-400 mt-0.5">
+                <span className="inline-flex items-center gap-1 text-[10px] text-emerald-700 mt-0.5">
                   <CheckCircle2 className="w-3 h-3" />
                   <span>Matriks CAPA telah terbentuk & disimpan resmi untuk lampiran SRIKANDI</span>
                 </span>
@@ -499,12 +499,12 @@ export const CommodityMatrixTable: React.FC<CommodityMatrixTableProps> = ({
               <button
                 type="button"
                 onClick={handleSave}
-                className="px-3 py-1.5 bg-slate-800 hover:bg-slate-700 text-slate-200 hover:text-white rounded-lg font-semibold flex items-center gap-1.5 border border-slate-700 transition-colors cursor-pointer"
+                className="px-3 py-1.5 bg-[#e8f1fb] hover:bg-[#d0e2f5] text-[#1e3a5f] hover:text-[#1e3a5f] rounded-lg font-semibold flex items-center gap-1.5 border border-blue-200 transition-colors cursor-pointer"
                 title="Simpan status Matriks CAPA Terbentuk ini di database SIMONCER"
               >
                 {saveSuccess ? (
                   <>
-                    <Check className="w-3.5 h-3.5 text-emerald-400" />
+                    <Check className="w-3.5 h-3.5 text-emerald-700" />
                     <span>Tersimpan!</span>
                   </>
                 ) : (
@@ -533,7 +533,7 @@ export const CommodityMatrixTable: React.FC<CommodityMatrixTableProps> = ({
             <button
               type="button"
               onClick={handlePrint}
-              className="px-2.5 py-1.5 bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white rounded-lg font-semibold flex items-center gap-1 border border-slate-700 transition-colors cursor-pointer"
+              className="px-2.5 py-1.5 bg-[#e8f1fb] hover:bg-[#d0e2f5] text-slate-700 hover:text-[#1e3a5f] rounded-lg font-semibold flex items-center gap-1 border border-blue-200 transition-colors cursor-pointer"
               title="Cetak Matriks Dokumen CAPA Resmi"
             >
               <Printer className="w-3.5 h-3.5" />

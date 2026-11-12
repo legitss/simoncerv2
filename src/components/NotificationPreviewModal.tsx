@@ -64,30 +64,30 @@ export const NotificationPreviewModal: React.FC<NotificationPreviewModalProps> =
   };
 
   return (
-    <div className="fixed inset-0 z-50 overflow-y-auto bg-slate-950/80 backdrop-blur-sm flex items-center justify-center p-3 sm:p-4">
+    <div className="fixed inset-0 z-50 overflow-y-auto bg-slate-900/45 backdrop-blur-sm flex items-center justify-center p-3 sm:p-4">
       <div className="bg-white rounded-2xl max-w-2xl w-full shadow-2xl border border-slate-300 overflow-hidden transform transition-all animate-in fade-in duration-150">
         
         {/* Header */}
-        <div className="bg-slate-900 text-white p-5 flex items-center justify-between border-b border-slate-800">
+        <div className="bg-white text-[#1e3a5f] p-5 flex items-center justify-between border-b border-blue-200/80">
           <div className="flex items-center gap-3">
-            <div className="p-2 rounded-xl bg-emerald-500/20 text-emerald-400 border border-emerald-500/30">
+            <div className="p-2 rounded-xl bg-emerald-500/20 text-emerald-700 border border-emerald-500/30">
               <MessageSquare className="w-5 h-5" />
             </div>
             <div>
               <h3 className="font-bold text-base flex items-center gap-2">
                 Notifikasi Otomatis Terintegrasi
-                <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">
+                <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-800 border border-emerald-500/30">
                   Real-time
                 </span>
               </h3>
-              <p className="text-xs text-slate-400">
+              <p className="text-xs text-slate-600">
                 Pemberitahuan resmi langsung ke PIC Sarana ({inspection.facility.name})
               </p>
             </div>
           </div>
           <button
             onClick={onClose}
-            className="p-1.5 text-slate-400 hover:text-white rounded-lg hover:bg-slate-800 transition-colors"
+            className="p-1.5 text-slate-600 hover:text-[#1e3a5f] rounded-lg hover:bg-[#e8f1fb] transition-colors"
           >
             <X className="w-5 h-5" />
           </button>
@@ -124,7 +124,7 @@ export const NotificationPreviewModal: React.FC<NotificationPreviewModalProps> =
             type="button"
             className={`flex items-center gap-1.5 px-4 py-2.5 rounded-t-lg transition-all ${
               activeTab === 'LOG'
-                ? 'bg-white text-slate-900 border-t-2 border-slate-800 shadow-2xs font-bold'
+                ? 'bg-white text-slate-900 border-t-2 border-blue-200/80 shadow-2xs font-bold'
                 : 'text-slate-600 hover:text-slate-900'
             }`}
           >
@@ -140,7 +140,7 @@ export const NotificationPreviewModal: React.FC<NotificationPreviewModalProps> =
               {/* WhatsApp UI Simulation Box */}
               <div className="rounded-2xl border border-emerald-200 overflow-hidden shadow-sm bg-[#efeae2] relative">
                 {/* Chat Header */}
-                <div className="bg-[#008069] text-white px-4 py-3 flex items-center justify-between">
+                <div className="bg-[#2e8b75] text-white px-4 py-3 flex items-center justify-between">
                   <div className="flex items-center gap-2.5">
                     <div className="w-8 h-8 rounded-full bg-emerald-800 flex items-center justify-center font-bold text-xs text-white">
                       SIM
@@ -167,7 +167,7 @@ export const NotificationPreviewModal: React.FC<NotificationPreviewModalProps> =
                     <div className="whitespace-pre-line break-words">
                       {waNotif.content}
                     </div>
-                    <div className="flex items-center justify-end gap-1 mt-2 text-[10px] text-slate-400">
+                    <div className="flex items-center justify-end gap-1 mt-2 text-[10px] text-slate-600">
                       <span>{formatIndonesianDateTime(waNotif.sentAt)}</span>
                       <CheckCheck className="w-3.5 h-3.5 text-blue-500" />
                     </div>
@@ -228,12 +228,12 @@ export const NotificationPreviewModal: React.FC<NotificationPreviewModalProps> =
 
                 {/* Email Content Body */}
                 <div className="p-6 space-y-4 text-xs text-slate-800 leading-relaxed font-sans">
-                  <div className="p-3 bg-slate-900 text-white rounded-lg flex items-center justify-between">
+                  <div className="p-3 bg-white text-[#1e3a5f] rounded-lg flex items-center justify-between">
                     <div className="flex items-center gap-2">
-                      <ShieldCheck className="w-5 h-5 text-emerald-400" />
+                      <ShieldCheck className="w-5 h-5 text-emerald-700" />
                       <span className="font-bold">SIMONCER NOTIFIKASI DINAS</span>
                     </div>
-                    <span className="text-[10px] font-mono text-slate-300">
+                    <span className="text-[10px] font-mono text-slate-700">
                       ID: {inspection.capaCode}
                     </span>
                   </div>
@@ -265,7 +265,7 @@ export const NotificationPreviewModal: React.FC<NotificationPreviewModalProps> =
               </h4>
 
               {inspection.notifications.length === 0 ? (
-                <div className="text-center py-8 text-slate-400 text-xs">
+                <div className="text-center py-8 text-slate-600 text-xs">
                   Belum ada log notifikasi yang tercatat.
                 </div>
               ) : (
@@ -320,7 +320,7 @@ export const NotificationPreviewModal: React.FC<NotificationPreviewModalProps> =
           <button
             onClick={onClose}
             type="button"
-            className="px-4 py-2 bg-slate-800 hover:bg-slate-700 text-white rounded-lg text-xs font-semibold transition-colors"
+            className="px-4 py-2 bg-[#e8f1fb] hover:bg-[#d0e2f5] text-[#1e3a5f] rounded-lg text-xs font-semibold transition-colors"
           >
             Tutup
           </button>
