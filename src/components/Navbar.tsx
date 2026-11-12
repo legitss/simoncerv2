@@ -215,7 +215,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                   ? 'Sesi CAPA'
                   : 'SIBERGAS'}
               </span>
-              <span className="text-[10px] font-mono font-bold px-2 py-0.5 rounded-md bg-white/15 text-white border border-white/20 hidden md:inline">
+              <span className="text-[10px] font-mono font-bold px-2 py-0.5 rounded-md bg-white/15 text-white border border-white/20 whitespace-nowrap shrink-0 hidden 2xl:inline">
                 {currentRoleObj.label}
               </span>
             </div>
