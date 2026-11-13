@@ -38,13 +38,14 @@ import { WhatsAppGatewaySettingsModal } from './components/WhatsAppGatewaySettin
 import { SuperAdminSettingsModal, SuperAdminTab } from './components/SuperAdminSettingsModal';
 import { SibergasSurveyModal } from './components/SibergasSurveyModal';
 import { SibergasSurveyTable } from './components/SibergasSurveyTable';
+import { SpreadsheetRekapView } from './components/SpreadsheetRekapView';
 import { CapaMatrixFullPageView } from './components/CapaMatrixFullPageView';
 import { InteractiveFindingsDashboard } from './components/InteractiveFindingsDashboard';
 import { SessionDocumentManager } from './components/SessionDocumentManager';
 import { sendSrikandiLetterNotification, sendCapaSubmittedNotification } from './utils/whatsappGateway';
 import { createAutomaticNotifications, getNotificationPreferences } from './utils/notificationService';
 import { SibergasSurveyData, AuditTrailLog } from './types';
-import { PanelLeftOpen, PanelLeftClose } from 'lucide-react';
+import { PanelLeftOpen, PanelLeftClose, FileSpreadsheet } from 'lucide-react';
 import { 
   ShieldCheck, 
   Building2, 
@@ -155,7 +156,7 @@ export default function App() {
   const [fullPageMatrixInspection, setFullPageMatrixInspection] = useState<InspectionSession | null>(null);
 
   // Navigation view mode: 'HOME' (Beranda) | 'DASHBOARD' (Visual Dashboard Temuan) | 'DOCUMENTS' (Manajemen Dokumen) | 'INSPECTIONS' (Daftar Sesi CAPA) | 'SIBERGAS_TABLE' (Survei SIBERGAS)
-  const [activeHomeTab, setActiveHomeTab] = useState<'HOME' | 'DASHBOARD' | 'DOCUMENTS' | 'INSPECTIONS' | 'SIBERGAS_TABLE'>('HOME');
+  const [activeHomeTab, setActiveHomeTab] = useState<'HOME' | 'DASHBOARD' | 'DOCUMENTS' | 'INSPECTIONS' | 'SIBERGAS_TABLE' | 'SHEET_REKAP'>('HOME');
   const [activeDocumentSessionId, setActiveDocumentSessionId] = useState<string | undefined>(undefined);
 
   const handleOpenDocumentManager = (sessionId?: string) => {
@@ -857,6 +858,19 @@ export default function App() {
                       {inspections.filter((i) => i.sibergasSurvey?.completed).length}/{inspections.length}
                     </span>
                   </button>
+
+                  <button
+                    type="button"
+                    onClick={() => setActiveHomeTab('SHEET_REKAP')}
+                    className={`flex items-center gap-2 px-3.5 py-2 rounded-xl text-xs sm:text-sm transition-all whitespace-nowrap shrink-0 cursor-pointer ${
+                      activeHomeTab === 'SHEET_REKAP'
+                        ? 'bpom-active-gradient text-white font-extrabold shadow-sm'
+                        : 'text-slate-600 dark:text-slate-300 hover:text-[#243b55] dark:hover:text-white hover:bg-[#2c4c70]/[0.06] font-bold'
+                    }`}
+                  >
+                    <FileSpreadsheet className={`w-4 h-4 ${activeHomeTab === 'SHEET_REKAP' ? 'text-white' : 'text-[#2e856e]'}`} />
+                    <span>Rekap Spreadsheet</span>
+                  </button>
                 </nav>
 
                 <div className="text-xs font-semibold text-[#243b55] dark:text-slate-300 items-center gap-1.5 hidden md:flex">
@@ -1118,6 +1132,14 @@ export default function App() {
                   onSelectInspection={(ins) => setSelectedInspection(ins)}
                 />
               )}
+
+              {/* 4. MENU UTAMA: REKAP PEMERIKSAAN DARI GOOGLE SPREADSHEET */}
+              {activeHomeTab === 'SHEET_REKAP' && (
+                <SpreadsheetRekapView
+                  canEdit={currentRole === 'ADMIN'}
+                  userName={currentUser?.name || currentUser?.username || 'Admin'}
+                />
+              )}
             </main>
 
             {/* Footer — BPOM Navy Identity */}
@@ -1141,7 +1163,7 @@ export default function App() {
 
             {/* Mobile Bottom Navigation Bar for Internal Dashboard (HP / Tablet < lg) — BPOM Clean White & Navy/Green */}
             <nav className="fixed bottom-0 inset-x-0 z-40 lg:hidden glass-bottom-nav px-2 py-1.5 shadow-[0_-8px_24px_rgba(29,25,115,0.12)]">
-              <div className="grid grid-cols-5 gap-1">
+              <div className="grid grid-cols-6 gap-1">
                 <button
                   type="button"
                   onClick={() => {
@@ -1220,6 +1242,22 @@ export default function App() {
                 >
                   <ShieldCheck className="w-4 h-4" />
                   <span className="text-[10px] mt-0.5">SIBERGAS</span>
+                </button>
+
+                <button
+                  type="button"
+                  onClick={() => {
+                    setActiveHomeTab('SHEET_REKAP');
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                  }}
+                  className={`flex flex-col items-center justify-center py-1.5 rounded-xl transition-all cursor-pointer ${
+                    activeHomeTab === 'SHEET_REKAP'
+                      ? 'bpom-active-gradient text-white font-extrabold shadow-sm'
+                      : 'text-slate-600 dark:text-slate-400 hover:text-[#243b55]'
+                  }`}
+                >
+                  <FileSpreadsheet className="w-4 h-4" />
+                  <span className="text-[10px] mt-0.5">Rekap</span>
                 </button>
               </div>
             </nav>

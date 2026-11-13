@@ -48,8 +48,8 @@ interface NavbarProps {
   onToggleWideView?: () => void;
   isFullscreen?: boolean;
   onToggleFullscreen?: () => void;
-  activeHomeTab?: 'HOME' | 'DASHBOARD' | 'DOCUMENTS' | 'INSPECTIONS' | 'SIBERGAS_TABLE';
-  onSelectHomeTab?: (tab: 'HOME' | 'DASHBOARD' | 'DOCUMENTS' | 'INSPECTIONS' | 'SIBERGAS_TABLE') => void;
+  activeHomeTab?: 'HOME' | 'DASHBOARD' | 'DOCUMENTS' | 'INSPECTIONS' | 'SIBERGAS_TABLE' | 'SHEET_REKAP';
+  onSelectHomeTab?: (tab: 'HOME' | 'DASHBOARD' | 'DOCUMENTS' | 'INSPECTIONS' | 'SIBERGAS_TABLE' | 'SHEET_REKAP') => void;
 }
 
 export const Navbar: React.FC<NavbarProps> = ({

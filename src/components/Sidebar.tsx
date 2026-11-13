@@ -28,14 +28,15 @@ import {
   Home,
   LayoutDashboard,
   FolderOpen,
-  Bell
+  Bell,
+  FileSpreadsheet
 } from 'lucide-react';
 
 export interface SidebarProps {
   currentRole: UserRole;
   currentUser: AuthAccount | null;
-  activeHomeTab: 'HOME' | 'DASHBOARD' | 'DOCUMENTS' | 'INSPECTIONS' | 'SIBERGAS_TABLE';
-  onSelectHomeTab: (tab: 'HOME' | 'DASHBOARD' | 'DOCUMENTS' | 'INSPECTIONS' | 'SIBERGAS_TABLE') => void;
+  activeHomeTab: 'HOME' | 'DASHBOARD' | 'DOCUMENTS' | 'INSPECTIONS' | 'SIBERGAS_TABLE' | 'SHEET_REKAP';
+  onSelectHomeTab: (tab: 'HOME' | 'DASHBOARD' | 'DOCUMENTS' | 'INSPECTIONS' | 'SIBERGAS_TABLE' | 'SHEET_REKAP') => void;
   inspectionsCount: number;
   surveysCount: number;
   isCollapsed: boolean;
@@ -386,6 +387,37 @@ export const Sidebar: React.FC<SidebarProps> = ({
               ) : (
                 <div className="absolute left-full ml-2 hidden group-hover:block px-2.5 py-1.5 bg-[#243b55] text-white text-xs rounded-lg shadow-lg whitespace-nowrap z-50 font-sans">
                   Survei SIBERGAS ({surveysCount})
+                </div>
+              )}
+            </button>
+
+            {/* 5b. Rekap Pemeriksaan dari Google Spreadsheet */}
+            <button
+              type="button"
+              onClick={() => {
+                onSelectHomeTab('SHEET_REKAP');
+                if (isOpenMobile) onCloseMobile();
+              }}
+              className={`w-full flex items-center gap-2.5 px-2.5 py-2 rounded-xl font-bold text-xs transition-all cursor-pointer group relative ${
+                activeHomeTab === 'SHEET_REKAP'
+                  ? 'bpom-active-gradient text-white shadow-sm shadow-[#243b55]/15'
+                  : 'text-slate-600 dark:text-slate-300 hover:bg-[#2c4c70]/[0.06] dark:hover:bg-slate-800 hover:text-[#243b55] dark:hover:text-white'
+              }`}
+              title="Rekap Pemeriksaan dari Google Spreadsheet (sinkron otomatis)"
+            >
+              <span className={`w-6 h-6 rounded-lg flex items-center justify-center shrink-0 transition-colors ${
+                activeHomeTab === 'SHEET_REKAP'
+                  ? 'bg-white/20 text-white'
+                  : 'bg-[#2e856e]/10 dark:bg-slate-800 text-[#2e856e]'
+              }`}>
+                <FileSpreadsheet className="w-3.5 h-3.5" />
+              </span>
+
+              {!isCollapsed ? (
+                <span className="flex-1 text-left truncate">Rekap Spreadsheet</span>
+              ) : (
+                <div className="absolute left-full ml-2 hidden group-hover:block px-2.5 py-1.5 bg-[#243b55] text-white text-xs rounded-lg shadow-lg whitespace-nowrap z-50 font-sans">
+                  Rekap Spreadsheet
                 </div>
               )}
             </button>
